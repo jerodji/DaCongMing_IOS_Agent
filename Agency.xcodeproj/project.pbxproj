@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E0E6E401FAAF3D700F058EB /* HYHomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E0E6E3F1FAAF3D700F058EB /* HYHomePageViewController.m */; };
+		3E0E6E431FAAF43C00F058EB /* HYHomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E0E6E421FAAF43C00F058EB /* HYHomeView.m */; };
+		3E0E6E461FAAF46700F058EB /* HYHomeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E0E6E451FAAF46700F058EB /* HYHomeHeaderView.m */; };
+		3E0E6E491FAAF49600F058EB /* HYHomeMiddleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E0E6E481FAAF49600F058EB /* HYHomeMiddleView.m */; };
+		3E0E6E4C1FAAF4AD00F058EB /* HYHomeBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E0E6E4B1FAAF4AD00F058EB /* HYHomeBottomView.m */; };
+		3E0E6E4F1FAAF4D700F058EB /* HYHomeBtnView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E0E6E4E1FAAF4D700F058EB /* HYHomeBtnView.m */; };
+		3E0E6E501FAAFB0C00F058EB /* Macro.h in Sources */ = {isa = PBXBuildFile; fileRef = 3E0FDF581FA99E2200F52DC0 /* Macro.h */; };
+		3E0E6E511FAAFB0C00F058EB /* WebApi.h in Sources */ = {isa = PBXBuildFile; fileRef = 3E0FDF541FA99E1700F52DC0 /* WebApi.h */; };
+		3E0E6E541FAB000400F058EB /* HYUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E0E6E531FAB000400F058EB /* HYUserModel.m */; };
+		3E0E6E591FAB06A600F058EB /* HYPlistTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E0E6E571FAB06A600F058EB /* HYPlistTools.m */; };
+		3E0E6E5C1FAB1ADC00F058EB /* HYButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E0E6E5B1FAB1ADC00F058EB /* HYButton.m */; };
 		3E0FDF231FA9647800F52DC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E0FDF221FA9647800F52DC0 /* Assets.xcassets */; };
 		3E0FDF291FA9647900F52DC0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E0FDF281FA9647900F52DC0 /* main.m */; };
 		3E0FDF361FA9954E00F52DC0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E0FDF311FA9954D00F52DC0 /* AppDelegate.m */; };
@@ -18,11 +29,50 @@
 		3E95E1EE1FA9BF1900995AB2 /* HYLoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E95E1ED1FA9BF1900995AB2 /* HYLoginViewModel.m */; };
 		3E95E1EF1FA9C98000995AB2 /* JRToast.h in Sources */ = {isa = PBXBuildFile; fileRef = 3E95E1CD1FA9AB0300995AB2 /* JRToast.h */; };
 		3E95E1F01FA9C98000995AB2 /* JRToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E95E1CE1FA9AB0300995AB2 /* JRToast.m */; };
+		3E95E1F31FAAC36800995AB2 /* AlipaySDK.bundle in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E95E1F11FAAC33B00995AB2 /* AlipaySDK.bundle */; };
+		3E95E1F41FAAC36800995AB2 /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E95E1F21FAAC33B00995AB2 /* AlipaySDK.framework */; };
+		3E95E1F81FAAC44C00995AB2 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E95E1F71FAAC44B00995AB2 /* libz.tbd */; };
+		3E95E1FA1FAAC45500995AB2 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E95E1F91FAAC45500995AB2 /* libc++.tbd */; };
+		3E95E1FC1FAAC45E00995AB2 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E95E1FB1FAAC45E00995AB2 /* SystemConfiguration.framework */; };
+		3E95E1FE1FAAC46700995AB2 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E95E1FD1FAAC46700995AB2 /* CoreTelephony.framework */; };
+		3E95E2001FAAC47700995AB2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E95E1FF1FAAC47700995AB2 /* QuartzCore.framework */; };
+		3E95E2021FAAC47D00995AB2 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E95E2011FAAC47D00995AB2 /* CoreText.framework */; };
+		3E95E2041FAAC48400995AB2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E95E2031FAAC48400995AB2 /* CoreGraphics.framework */; };
+		3E95E2061FAAC48B00995AB2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E95E2051FAAC48B00995AB2 /* UIKit.framework */; };
+		3E95E2081FAAC49300995AB2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E95E2071FAAC49300995AB2 /* Foundation.framework */; };
+		3E95E20A1FAAC49700995AB2 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E95E2091FAAC49700995AB2 /* CFNetwork.framework */; };
+		3E95E20C1FAAC49F00995AB2 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E95E20B1FAAC49F00995AB2 /* CoreMotion.framework */; };
+		3E95E20D1FAAC7F700995AB2 /* Const.h in Sources */ = {isa = PBXBuildFile; fileRef = 3E0FDF551FA99E1C00F52DC0 /* Const.h */; };
+		3E95E20E1FAAC7F700995AB2 /* Const.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E0FDF571FA99E2100F52DC0 /* Const.m */; };
+		3E95E2111FAAC8E800995AB2 /* HYLoginRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E95E2101FAAC8E800995AB2 /* HYLoginRequestManager.m */; };
+		3E95E2121FAACA7300995AB2 /* HTTPManager.h in Sources */ = {isa = PBXBuildFile; fileRef = 3E95E1C81FA9AA4E00995AB2 /* HTTPManager.h */; };
+		3E95E2131FAACA7300995AB2 /* HTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E95E1C91FA9AA4E00995AB2 /* HTTPManager.m */; };
+		3E95E2141FAACACD00995AB2 /* MBProgressHUD+HYExtension.h in Sources */ = {isa = PBXBuildFile; fileRef = 3E95E1D61FA9AB2E00995AB2 /* MBProgressHUD+HYExtension.h */; };
+		3E95E2151FAACACD00995AB2 /* MBProgressHUD+HYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E95E1D51FA9AB2E00995AB2 /* MBProgressHUD+HYExtension.m */; };
 		D794A536FF2A4EDED92DBF52 /* libPods-Agency.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 20B531B14B9717DA796BB8D4 /* libPods-Agency.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		20B531B14B9717DA796BB8D4 /* libPods-Agency.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Agency.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E0E6E3D1FAAF1AA00F058EB /* Agency.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Agency.entitlements; sourceTree = "<group>"; };
+		3E0E6E3E1FAAF3D700F058EB /* HYHomePageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HYHomePageViewController.h; sourceTree = "<group>"; };
+		3E0E6E3F1FAAF3D700F058EB /* HYHomePageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HYHomePageViewController.m; sourceTree = "<group>"; };
+		3E0E6E411FAAF43C00F058EB /* HYHomeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HYHomeView.h; sourceTree = "<group>"; };
+		3E0E6E421FAAF43C00F058EB /* HYHomeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HYHomeView.m; sourceTree = "<group>"; };
+		3E0E6E441FAAF46700F058EB /* HYHomeHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HYHomeHeaderView.h; sourceTree = "<group>"; };
+		3E0E6E451FAAF46700F058EB /* HYHomeHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HYHomeHeaderView.m; sourceTree = "<group>"; };
+		3E0E6E471FAAF49600F058EB /* HYHomeMiddleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HYHomeMiddleView.h; sourceTree = "<group>"; };
+		3E0E6E481FAAF49600F058EB /* HYHomeMiddleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HYHomeMiddleView.m; sourceTree = "<group>"; };
+		3E0E6E4A1FAAF4AD00F058EB /* HYHomeBottomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HYHomeBottomView.h; sourceTree = "<group>"; };
+		3E0E6E4B1FAAF4AD00F058EB /* HYHomeBottomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HYHomeBottomView.m; sourceTree = "<group>"; };
+		3E0E6E4D1FAAF4D700F058EB /* HYHomeBtnView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HYHomeBtnView.h; sourceTree = "<group>"; };
+		3E0E6E4E1FAAF4D700F058EB /* HYHomeBtnView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HYHomeBtnView.m; sourceTree = "<group>"; };
+		3E0E6E521FAB000400F058EB /* HYUserModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HYUserModel.h; sourceTree = "<group>"; };
+		3E0E6E531FAB000400F058EB /* HYUserModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HYUserModel.m; sourceTree = "<group>"; };
+		3E0E6E561FAB06A600F058EB /* HYPlistTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYPlistTools.h; sourceTree = "<group>"; };
+		3E0E6E571FAB06A600F058EB /* HYPlistTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYPlistTools.m; sourceTree = "<group>"; };
+		3E0E6E5A1FAB1ADC00F058EB /* HYButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYButton.h; sourceTree = "<group>"; };
+		3E0E6E5B1FAB1ADC00F058EB /* HYButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYButton.m; sourceTree = "<group>"; };
 		3E0FDF161FA9647500F52DC0 /* Agency.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Agency.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E0FDF221FA9647800F52DC0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3E0FDF281FA9647900F52DC0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -64,6 +114,22 @@
 		3E95E1EA1FA9B64400995AB2 /* HYLoginView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HYLoginView.m; sourceTree = "<group>"; };
 		3E95E1EC1FA9BF1900995AB2 /* HYLoginViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HYLoginViewModel.h; sourceTree = "<group>"; };
 		3E95E1ED1FA9BF1900995AB2 /* HYLoginViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HYLoginViewModel.m; sourceTree = "<group>"; };
+		3E95E1F11FAAC33B00995AB2 /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
+		3E95E1F21FAAC33B00995AB2 /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
+		3E95E1F51FAAC43D00995AB2 /* libc++.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.1.tbd"; path = "usr/lib/libc++.1.tbd"; sourceTree = SDKROOT; };
+		3E95E1F71FAAC44B00995AB2 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		3E95E1F91FAAC45500995AB2 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		3E95E1FB1FAAC45E00995AB2 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		3E95E1FD1FAAC46700995AB2 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		3E95E1FF1FAAC47700995AB2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		3E95E2011FAAC47D00995AB2 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		3E95E2031FAAC48400995AB2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		3E95E2051FAAC48B00995AB2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		3E95E2071FAAC49300995AB2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3E95E2091FAAC49700995AB2 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		3E95E20B1FAAC49F00995AB2 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		3E95E20F1FAAC8E800995AB2 /* HYLoginRequestManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HYLoginRequestManager.h; sourceTree = "<group>"; };
+		3E95E2101FAAC8E800995AB2 /* HYLoginRequestManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HYLoginRequestManager.m; sourceTree = "<group>"; };
 		7CE398DDC921D4516685D42A /* Pods-Agency.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Agency.release.xcconfig"; path = "Pods/Target Support Files/Pods-Agency/Pods-Agency.release.xcconfig"; sourceTree = "<group>"; };
 		876407F6BA8EF28FA0E76789 /* Pods-Agency.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Agency.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Agency/Pods-Agency.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -73,6 +139,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E95E20C1FAAC49F00995AB2 /* CoreMotion.framework in Frameworks */,
+				3E95E20A1FAAC49700995AB2 /* CFNetwork.framework in Frameworks */,
+				3E95E2081FAAC49300995AB2 /* Foundation.framework in Frameworks */,
+				3E95E2061FAAC48B00995AB2 /* UIKit.framework in Frameworks */,
+				3E95E2041FAAC48400995AB2 /* CoreGraphics.framework in Frameworks */,
+				3E95E2021FAAC47D00995AB2 /* CoreText.framework in Frameworks */,
+				3E95E2001FAAC47700995AB2 /* QuartzCore.framework in Frameworks */,
+				3E95E1FE1FAAC46700995AB2 /* CoreTelephony.framework in Frameworks */,
+				3E95E1FC1FAAC45E00995AB2 /* SystemConfiguration.framework in Frameworks */,
+				3E95E1FA1FAAC45500995AB2 /* libc++.tbd in Frameworks */,
+				3E95E1F81FAAC44C00995AB2 /* libz.tbd in Frameworks */,
+				3E95E1F31FAAC36800995AB2 /* AlipaySDK.bundle in Frameworks */,
+				3E95E1F41FAAC36800995AB2 /* AlipaySDK.framework in Frameworks */,
 				D794A536FF2A4EDED92DBF52 /* libPods-Agency.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -83,6 +162,18 @@
 		035B01D900B62BC3D76DC81D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3E95E20B1FAAC49F00995AB2 /* CoreMotion.framework */,
+				3E95E2091FAAC49700995AB2 /* CFNetwork.framework */,
+				3E95E2071FAAC49300995AB2 /* Foundation.framework */,
+				3E95E2051FAAC48B00995AB2 /* UIKit.framework */,
+				3E95E2031FAAC48400995AB2 /* CoreGraphics.framework */,
+				3E95E2011FAAC47D00995AB2 /* CoreText.framework */,
+				3E95E1FF1FAAC47700995AB2 /* QuartzCore.framework */,
+				3E95E1FD1FAAC46700995AB2 /* CoreTelephony.framework */,
+				3E95E1FB1FAAC45E00995AB2 /* SystemConfiguration.framework */,
+				3E95E1F91FAAC45500995AB2 /* libc++.tbd */,
+				3E95E1F71FAAC44B00995AB2 /* libz.tbd */,
+				3E95E1F51FAAC43D00995AB2 /* libc++.1.tbd */,
 				20B531B14B9717DA796BB8D4 /* libPods-Agency.a */,
 			);
 			name = Frameworks;
@@ -109,6 +200,7 @@
 		3E0FDF181FA9647500F52DC0 /* Agency */ = {
 			isa = PBXGroup;
 			children = (
+				3E0E6E3D1FAAF1AA00F058EB /* Agency.entitlements */,
 				3E0FDF341FA9954D00F52DC0 /* Base */,
 				3E0FDF331FA9954D00F52DC0 /* Module */,
 				3E0FDF351FA9954D00F52DC0 /* Vendor */,
@@ -155,6 +247,8 @@
 		3E0FDF351FA9954D00F52DC0 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				3E95E1F11FAAC33B00995AB2 /* AlipaySDK.bundle */,
+				3E95E1F21FAAC33B00995AB2 /* AlipaySDK.framework */,
 				3E95E1D71FA9AB4500995AB2 /* HYBUnicodeReadable */,
 				3E95E1DE1FA9AB4500995AB2 /* ShowChinese */,
 			);
@@ -184,6 +278,8 @@
 		3E0FDF3A1FA996B600F52DC0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3E0E6E521FAB000400F058EB /* HYUserModel.h */,
+				3E0E6E531FAB000400F058EB /* HYUserModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -202,6 +298,8 @@
 			children = (
 				3E95E1EC1FA9BF1900995AB2 /* HYLoginViewModel.h */,
 				3E95E1ED1FA9BF1900995AB2 /* HYLoginViewModel.m */,
+				3E95E20F1FAAC8E800995AB2 /* HYLoginRequestManager.h */,
+				3E95E2101FAAC8E800995AB2 /* HYLoginRequestManager.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -259,6 +357,8 @@
 		3E0FDF431FA996B600F52DC0 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				3E0E6E3E1FAAF3D700F058EB /* HYHomePageViewController.h */,
+				3E0E6E3F1FAAF3D700F058EB /* HYHomePageViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -273,6 +373,16 @@
 		3E0FDF451FA996B600F52DC0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3E0E6E411FAAF43C00F058EB /* HYHomeView.h */,
+				3E0E6E421FAAF43C00F058EB /* HYHomeView.m */,
+				3E0E6E441FAAF46700F058EB /* HYHomeHeaderView.h */,
+				3E0E6E451FAAF46700F058EB /* HYHomeHeaderView.m */,
+				3E0E6E471FAAF49600F058EB /* HYHomeMiddleView.h */,
+				3E0E6E481FAAF49600F058EB /* HYHomeMiddleView.m */,
+				3E0E6E4D1FAAF4D700F058EB /* HYHomeBtnView.h */,
+				3E0E6E4E1FAAF4D700F058EB /* HYHomeBtnView.m */,
+				3E0E6E4A1FAAF4AD00F058EB /* HYHomeBottomView.h */,
+				3E0E6E4B1FAAF4AD00F058EB /* HYHomeBottomView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -324,6 +434,10 @@
 				3E95E1CE1FA9AB0300995AB2 /* JRToast.m */,
 				3E95E1CB1FA9AAF900995AB2 /* SAMTextView.h */,
 				3E95E1CC1FA9AAF900995AB2 /* SAMTextView.m */,
+				3E0E6E561FAB06A600F058EB /* HYPlistTools.h */,
+				3E0E6E571FAB06A600F058EB /* HYPlistTools.m */,
+				3E0E6E5A1FAB1ADC00F058EB /* HYButton.h */,
+				3E0E6E5B1FAB1ADC00F058EB /* HYButton.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -406,6 +520,11 @@
 					3E0FDF151FA9647500F52DC0 = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -499,12 +618,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E0E6E501FAAFB0C00F058EB /* Macro.h in Sources */,
+				3E0E6E511FAAFB0C00F058EB /* WebApi.h in Sources */,
+				3E95E2141FAACACD00995AB2 /* MBProgressHUD+HYExtension.h in Sources */,
+				3E95E2151FAACACD00995AB2 /* MBProgressHUD+HYExtension.m in Sources */,
+				3E95E2121FAACA7300995AB2 /* HTTPManager.h in Sources */,
+				3E95E2131FAACA7300995AB2 /* HTTPManager.m in Sources */,
+				3E95E20D1FAAC7F700995AB2 /* Const.h in Sources */,
+				3E0E6E491FAAF49600F058EB /* HYHomeMiddleView.m in Sources */,
+				3E95E20E1FAAC7F700995AB2 /* Const.m in Sources */,
 				3E95E1EF1FA9C98000995AB2 /* JRToast.h in Sources */,
 				3E95E1F01FA9C98000995AB2 /* JRToast.m in Sources */,
+				3E0E6E401FAAF3D700F058EB /* HYHomePageViewController.m in Sources */,
 				3E95E1E21FA9AD4100995AB2 /* HYBaseViewController.m in Sources */,
 				3E95E1EB1FA9B64400995AB2 /* HYLoginView.m in Sources */,
 				3E0FDF361FA9954E00F52DC0 /* AppDelegate.m in Sources */,
+				3E0E6E431FAAF43C00F058EB /* HYHomeView.m in Sources */,
+				3E0E6E461FAAF46700F058EB /* HYHomeHeaderView.m in Sources */,
+				3E0E6E4F1FAAF4D700F058EB /* HYHomeBtnView.m in Sources */,
+				3E0E6E541FAB000400F058EB /* HYUserModel.m in Sources */,
+				3E0E6E5C1FAB1ADC00F058EB /* HYButton.m in Sources */,
 				3E0FDF291FA9647900F52DC0 /* main.m in Sources */,
+				3E0E6E591FAB06A600F058EB /* HYPlistTools.m in Sources */,
+				3E95E2111FAAC8E800995AB2 /* HYLoginRequestManager.m in Sources */,
+				3E0E6E4C1FAAF4AD00F058EB /* HYHomeBottomView.m in Sources */,
 				3E95E1EE1FA9BF1900995AB2 /* HYLoginViewModel.m in Sources */,
 				3E95E1E81FA9ADCA00995AB2 /* HYBaseNavController.m in Sources */,
 				3E95E1E51FA9ADA600995AB2 /* HYLoginViewController.m in Sources */,
@@ -625,14 +762,19 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_ENTITLEMENTS = Agency/Agency.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JR7BAVX2XH;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Agency/Vendor",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "${SRCROOT}/Agency/Config/PrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/Agency/APPDelegate/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = huyong.Agency;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hailin.agency;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -645,14 +787,19 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_ENTITLEMENTS = Agency/Agency.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JR7BAVX2XH;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Agency/Vendor",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "${SRCROOT}/Agency/Config/PrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/Agency/APPDelegate/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = huyong.Agency;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hailin.agency;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};

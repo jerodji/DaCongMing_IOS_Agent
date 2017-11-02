@@ -24,10 +24,18 @@
 #import <WXApi.h>
 #import <UIScrollView+EmptyDataSet.h>
 #import <ReactiveCocoa/ReactiveCocoa.h>
+#import <AlipaySDK/AlipaySDK.h>
 
 #import "Const.h"
 #import "Macro.h"
 #import "WebApi.h"
 #import "JRToast.h"
+#import "HTTPManager.h"
+#import "MBProgressHUD+HYExtension.h"
+#import "HYUserModel.h"
+#import "HYPlistTools.h"
+#import "HYButton.h"
+
+
 
 #endif /* PrefixHeader_pch */

@@ -9,6 +9,7 @@
 #import "HYLoginViewController.h"
 #import "HYLoginView.h"
 #import "HYLoginViewModel.h"
+#import "HYHomePageViewController.h"
 
 @interface HYLoginViewController ()
 
@@ -34,6 +35,8 @@
     
     [viewModel.loginSuccessSubject subscribeNext:^(id x) {
         
+        HYHomePageViewController *homeVC = [HYHomePageViewController new];
+        [self presentViewController:homeVC animated:YES completion:nil];
     }];
     
     [viewModel.loginErrorSubject subscribeNext:^(id x) {

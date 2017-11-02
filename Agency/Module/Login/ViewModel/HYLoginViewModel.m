@@ -7,6 +7,7 @@
 //
 
 #import "HYLoginViewModel.h"
+#import "HYLoginRequestManager.h"
 
 @interface HYLoginViewModel()
 
@@ -33,6 +34,13 @@
     
     _loginSuccessSubject = [RACSubject subject];
     _loginErrorSubject = [RACSubject subject];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(weChatLoginCallBack:) name:KWeChatLoginNotification object:nil];
+}
+
+- (void)dealloc{
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:KWeChatLoginNotification];
 }
 
 #pragma mark - public method
@@ -68,6 +76,19 @@
         
         [JRToast showWithText:@"please install WeChat"];
     }
+}
+
+#pragma mark - notification
+- (void)weChatLoginCallBack:(NSNotification *)notification{
+    
+    NSString *weChatCallbackCode = notification.object;
+    DLog(@"wechatLogin callBack code %@",weChatCallbackCode);
+    NSDictionary *dict = @{@"code" : weChatCallbackCode};
+    [HYLoginRequestManager weChatLoginWithProgram:dict ComplectionBlock:^(NSDictionary *result) {
+
+        [self.loginSuccessSubject sendNext:result];
+    }];
+    //[self.loginSuccessSubject sendNext:dict];
 }
 
 #pragma mark - privateMethod

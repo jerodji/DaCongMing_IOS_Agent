@@ -12,6 +12,8 @@
 
 NSString * const KUserModelData = @"userModelData";
 
+NSString * const KUserInfo = @"userInfo";
+
 NSString * const KUserPhone = @"userLoginPhone";
 
 NSString * const KUserPassword = @"userLoginPassword";

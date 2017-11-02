@@ -13,6 +13,9 @@
 /** 用户信息模型 */
 extern NSString * const KUserModelData;
 
+/** 用户信息 */
+extern NSString * const KUserInfo;
+
 /** 用户手机号 */
 extern NSString *const KUserPhone;
 

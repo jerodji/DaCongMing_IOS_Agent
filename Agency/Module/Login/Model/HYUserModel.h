@@ -29,6 +29,9 @@
 /** qr */
 @property (nonatomic, copy) NSString *qrpath;
 
+/** V0没有权限 */
+@property (nonatomic,copy) NSString *level;
+
 @end
 
 @interface HYUserModel : NSObject <NSCoding>

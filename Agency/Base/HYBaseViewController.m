@@ -7,8 +7,14 @@
 //
 
 #import "HYBaseViewController.h"
+#import "HYBaseNavController.h"
+#import "HYNoAccessView.h"
+#import "HYJoinProtocolVC.h"
 
 @interface HYBaseViewController ()
+
+/** 无权限 */
+@property (nonatomic,strong) HYNoAccessView *noAccessView;
 
 @end
 
@@ -20,8 +26,10 @@
     [self setupNav];
     
     self.edgesForExtendedLayout = UIRectEdgeNone;
-    
     self.view.backgroundColor = KAPP_TableView_BgColor;
+    [self setStatusBarBackgroundColor:[UIColor clearColor]];
+    //[self showNoAccessView];
+
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
@@ -41,6 +49,36 @@
     //设置返回按钮的颜色为白色
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor]};
+    
+    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back"] style:UIBarButtonItemStylePlain target:self action:@selector(backBtnAction)];
+    self.navigationItem.leftBarButtonItem = backItem;
+}
+
+- (void)backBtnAction{
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+//展示无权限View
+- (void)showNoAccessView{
+    
+    [self.view addSubview:self.noAccessView];
+    [_noAccessView mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        make.edges.equalTo(self.view);
+    }];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        [_noAccessView showNoAccessView];
+    });
+    
+    [[_noAccessView.joinBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+        
+        HYJoinProtocolVC *joinProtocolVC = [HYJoinProtocolVC new];
+        HYBaseNavController *nav = [[HYBaseNavController alloc] initWithRootViewController:joinProtocolVC];
+        [self presentViewController:nav animated:YES completion:nil];
+    }];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
@@ -49,6 +87,7 @@
     
 }
 
+#pragma mark - setStatusBar
 - (UIStatusBarStyle)preferredStatusBarStyle {
     
     return UIStatusBarStyleLightContent;
@@ -62,6 +101,16 @@
         
         statusBar.backgroundColor = color;
     }
+}
+
+#pragma mark - lazyload
+- (HYNoAccessView *)noAccessView{
+    
+    if (!_noAccessView) {
+        
+        _noAccessView = [HYNoAccessView new];
+    }
+    return _noAccessView;
 }
 
 

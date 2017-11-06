@@ -8,7 +8,11 @@
 
 #import "HYHomeBtnView.h"
 
+
 @interface HYHomeBtnView()
+
+/** viewModel */
+@property (nonatomic,strong) HYHomeViewModel *viewModel;
 
 @end
 
@@ -19,6 +23,7 @@
     if (self = [super initWithFrame:frame]) {
         
         self.backgroundColor = [UIColor clearColor];
+        [self createButtonsWithCount:4];
     }
     return self;
 }
@@ -48,6 +53,8 @@
         button.tag = 100 + i;
         [self addSubview:button];
         
+        if(itemWidth < 0) return;
+        
         [button mas_makeConstraints:^(MASConstraintMaker *make) {
            
             CGFloat buttonTop = i / 2 * (itemHeight + itemMargin);
@@ -57,7 +64,22 @@
             make.left.equalTo(self).offset(buttonLeft);
             make.size.mas_equalTo(CGSizeMake(itemWidth, itemHeight));
         }];
+        
+        [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
     }
+}
+
+- (void)buttonClick:(UIButton *)button{
+    
+    [self.viewModel.buttonSubject sendNext:@(button.tag - 100)];
+    [[button rac_signalForControlEvents:UIControlEventTouchUpInside] subscribe:self.viewModel.buttonSubject];
+}
+
+- (void)setWithViewModel:(id)viewModel{
+    
+    self.viewModel = viewModel;
+    
+
 }
 
 @end

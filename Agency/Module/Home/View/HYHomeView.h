@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HYHomeViewModel.h"
 
 @interface HYHomeView : UIView
+
+- (void)setWithViewModel:(HYHomeViewModel *)viewModel;
 
 @end

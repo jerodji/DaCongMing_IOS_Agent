@@ -19,13 +19,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Agency/Module/Home/View/HYHomeBtnView.m"
-            timestampString = "531311059.330279"
+            filePath = "Agency/Module/Login/ViewModel/HYLoginRequestManager.m"
+            timestampString = "531392258.578725"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "-createButtonsWithCount:"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "+weChatLoginWithProgram:ComplectionBlock:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

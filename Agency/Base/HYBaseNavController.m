@@ -19,7 +19,12 @@
     [super viewDidLoad];
     
     self.delegate = self;
+}
+
+
+- (UIStatusBarStyle)preferredStatusBarStyle{
     
+    return UIStatusBarStyleLightContent;
 }
 
 #pragma mark --------navigation delegate
@@ -38,7 +43,13 @@
 
 - (void)backBtnAction{
     
-    [self popViewControllerAnimated:YES];
+    if (self.viewControllers.count) {
+        
+        [self popViewControllerAnimated:YES];
+    }
+    else{
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
 }
 
 - (void)didReceiveMemoryWarning {

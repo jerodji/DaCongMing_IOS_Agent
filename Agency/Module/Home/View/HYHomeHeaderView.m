@@ -16,12 +16,7 @@
 @property (nonatomic,strong) UILabel *moneyLabel;
 /** 深颜色背景 */
 @property (nonatomic,strong) UIView *deepBgView;
-/** 图像 */
-@property (nonatomic,strong) UIImageView *headerImgView;
-/** 昵称 */
-@property (nonatomic,strong) UILabel *nickNameLabel;
-/** 我的团对 */
-@property (nonatomic,strong) UIButton *myTeamsBtn;
+
 
 @end
 
@@ -136,6 +131,7 @@
     if (!_headerImgView) {
         
         _headerImgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"header"]];
+        [_headerImgView sd_setImageWithURL:[NSURL URLWithString:[HYUserModel sharedInstance].userInfo.head_image_url] placeholderImage:[UIImage imageNamed:@"header"]];
         _headerImgView.contentMode = UIViewContentModeScaleAspectFill;
         _headerImgView.layer.cornerRadius = 20 * WIDTH_MULTIPLE;
         _headerImgView.clipsToBounds = YES;

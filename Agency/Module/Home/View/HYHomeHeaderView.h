@@ -10,4 +10,11 @@
 
 @interface HYHomeHeaderView : UIView
 
+/** 图像 */
+@property (nonatomic,strong) UIImageView *headerImgView;
+/** 昵称 */
+@property (nonatomic,strong) UILabel *nickNameLabel;
+/** 我的团对 */
+@property (nonatomic,strong) UIButton *myTeamsBtn;
+
 @end

@@ -21,6 +21,8 @@
 @property (nonatomic,strong) HYHomeMiddleView *middleView;
 @property (nonatomic,strong) HYHomeBtnView *buttonView;
 @property (nonatomic,strong) HYHomeBottomView *bottomView;
+/** viewModel */
+@property (nonatomic,strong) HYHomeViewModel *viewModel;
 
 
 @end
@@ -80,6 +82,30 @@
         make.top.equalTo(_middleView.mas_bottom).offset(20 * WIDTH_MULTIPLE);
         make.bottom.equalTo(_bottomView.mas_top).offset(-40 * WIDTH_MULTIPLE);
     }];
+}
+
+#pragma mark - setViewModel
+- (void)setWithViewModel:(HYHomeViewModel *)viewModel{
+    
+    self.viewModel = viewModel;
+    
+    //绑定数据
+    [RACObserve(viewModel,headImgUrlStr) subscribeNext:^(NSString *headImgUrlStr) {
+        
+        [_headerView.headerImgView sd_setImageWithURL:[NSURL URLWithString:headImgUrlStr] placeholderImage:[UIImage imageNamed:@"header"]];
+    }];
+    
+    [RACObserve(viewModel, nickName) subscribeNext:^(id x) {
+       
+        _headerView.nickNameLabel.text = x;
+    }];
+    
+    //点击按钮的信号
+    [[_middleView.reportBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribe:viewModel.jumpToReportVC];
+    [[_middleView.bankCardBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribe:viewModel.jumpToBankCardVC];
+    [[_middleView.authBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribe:viewModel.jumpToAuthVC];
+    
+    [_buttonView setWithViewModel:viewModel];
 }
 
 #pragma mark - lazyload

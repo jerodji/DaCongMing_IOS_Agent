@@ -10,6 +10,8 @@
 
 @interface HYBaseViewController : UIViewController
 
+- (void)showNoAccessView;
+
 - (void)setStatusBarBackgroundColor:(UIColor *)color;
 
 @end

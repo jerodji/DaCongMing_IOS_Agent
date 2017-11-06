@@ -35,7 +35,9 @@
 #import "HYUserModel.h"
 #import "HYPlistTools.h"
 #import "HYButton.h"
-
+#import "HYBaseTableViewModel.h"
+#import "HYBaseCellViewModel.h"
+#import "HYTableViewManager.h"
 
 
 #endif /* PrefixHeader_pch */

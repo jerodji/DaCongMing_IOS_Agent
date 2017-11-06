@@ -35,6 +35,7 @@
         }
         else{
             
+            complection(nil);
             [JRToast showWithText:@"wechat login error"];
         }
     }];

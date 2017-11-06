@@ -48,7 +48,7 @@
     
     RACSignal *isValid = [RACSignal combineLatest:@[_phoneSignal,_passwordSignal] reduce:^id{
        
-        return @(_phone.length == 11 && _password.length > 6);
+        return @(_phone.length == 11 && _password.length >= 6);
     }];
     
     return isValid;

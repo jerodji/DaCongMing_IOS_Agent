@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^selectTime)(NSString *selectDate);
+
 @interface HYDatePickerView : UIView
+
+@property (nonatomic,copy) selectTime selectBlock;
 
 - (void)setupSubviews;
 - (void)showDatePicker;

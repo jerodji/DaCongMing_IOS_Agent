@@ -18,27 +18,51 @@
 
 @implementation HYReportSelectCellModel
 
+
+- (instancetype)init{
+    
+    if (self = [super init]) {
+
+        self.startTimeStr = @"点我选择开始时间";
+        self.endTimeStr = @"点我选择结束时间";
+        
+    }
+    return self;
+}
+
 - (void)showStartValueSelectView{
     
-    DLog(@"%s",__func__);
     [KEYWINDOW addSubview:self.datePicker];
-    [_datePicker mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.datePicker mas_makeConstraints:^(MASConstraintMaker *make) {
        
         make.edges.equalTo(KEYWINDOW);
     }];
-    [_datePicker showDatePicker];
-    
+    [self.datePicker showDatePicker];
+    __weak typeof (self)weakSelf = self;
+    self.datePicker.selectBlock = ^(NSString *selectDate) {
+        
+        weakSelf.startTimeStr = selectDate;
+    };
 }
 
 - (void)showEndValueSelectView{
     
-    DLog(@"%s",__func__);
-
+    [KEYWINDOW addSubview:self.datePicker];
+    [self.datePicker mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        make.edges.equalTo(KEYWINDOW);
+    }];
+    [self.datePicker showDatePicker];
+    __weak typeof (self)weakSelf = self;
+    self.datePicker.selectBlock = ^(NSString *selectDate) {
+        
+        weakSelf.endTimeStr = selectDate;
+    };
 }
 
 - (void)selectReports{
     
-    DLog(@"%s",__func__);
+    
 
 }
 

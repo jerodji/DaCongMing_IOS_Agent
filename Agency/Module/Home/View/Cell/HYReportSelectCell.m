@@ -27,9 +27,10 @@
 @property (nonatomic,strong) UIButton *notEntry;
 /** 查询 */
 @property (nonatomic,strong) UIButton *selectBtn;
-
 /** cellModel */
 @property (nonatomic,strong) HYReportSelectCellModel *cellModel;
+/** 记录入账选择btn */
+@property (nonatomic,strong) UIButton *tempButton;
 
 @end
 
@@ -138,13 +139,8 @@
     [self addGesture];
 
     RAC(viewModel,orderNo) = [_orderNumTF rac_textSignal];
-    if (viewModel.startTimeStr) {
-        RAC(self.startTimeValueLabel,text) = RACObserve(viewModel, startTimeStr);
-    }
-    
-    if (viewModel.endTimeStr) {
-        RAC(self.endTimeValueLabel,text) = RACObserve(viewModel, endTimeStr);
-    }
+    RAC(self.startTimeValueLabel,text) = RACObserve(viewModel, startTimeStr);
+    RAC(self.endTimeValueLabel,text) = RACObserve(viewModel, endTimeStr);
     
     [[_selectBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
        
@@ -167,6 +163,15 @@
         
         [self.cellModel showEndValueSelectView];
     }];
+}
+
+- (void)entryBtnAction:(UIButton *)button{
+    
+    _tempButton.selected = NO;
+    button.selected = !button.selected;
+    _tempButton = button;
+    
+    self.cellModel.isEntry = _beEntry.selected;
 }
 
 #pragma mark - lazyload
@@ -245,7 +250,7 @@
         
         _orderNumTF = [[UITextField alloc] initWithFrame:CGRectZero];
         _orderNumTF.backgroundColor = [UIColor whiteColor];
-        _orderNumTF.attributedPlaceholder = [[NSAttributedString alloc]initWithString:@"输入订单号查询订单" attributes:@{NSForegroundColorAttributeName:KAPP_7b7b7b_COLOR,NSFontAttributeName : KFitFont(14)}];
+        _orderNumTF.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"输入订单号查询订单" attributes:@{NSForegroundColorAttributeName:KAPP_7b7b7b_COLOR,NSFontAttributeName : KFitFont(14)}];
         _orderNumTF.clearButtonMode = UITextFieldViewModeAlways;
         _orderNumTF.font = KFitFont(14);
         _orderNumTF.textColor = KAPP_272727_COLOR;
@@ -265,7 +270,11 @@
         _beEntry.backgroundColor = KAPP_WHITE_COLOR;
         [_beEntry setTitleColor:KAPP_272727_COLOR forState:UIControlStateNormal];
         [_beEntry setImage:[UIImage imageNamed:@"checkBox"] forState:UIControlStateNormal];
+        [_beEntry setImage:[UIImage imageNamed:@"checkBox_select"] forState:UIControlStateSelected];
         _beEntry.imageEdgeInsets = UIEdgeInsetsMake(0, -10 * WIDTH_MULTIPLE , 0, 10 * WIDTH_MULTIPLE);
+        [_beEntry addTarget:self action:@selector(entryBtnAction:) forControlEvents:UIControlEventTouchUpInside];
+        _beEntry.selected = YES;
+        _tempButton = _beEntry;
     }
     return _beEntry;
 }
@@ -281,6 +290,8 @@
         [_notEntry setTitleColor:KAPP_272727_COLOR forState:UIControlStateNormal];
         [_notEntry setImage:[UIImage imageNamed:@"checkBox"] forState:UIControlStateNormal];
         _notEntry.imageEdgeInsets = UIEdgeInsetsMake(0, -10 * WIDTH_MULTIPLE , 0, 10 * WIDTH_MULTIPLE);
+        [_notEntry setImage:[UIImage imageNamed:@"checkBox_select"] forState:UIControlStateSelected];
+        [_notEntry addTarget:self action:@selector(entryBtnAction:) forControlEvents:UIControlEventTouchUpInside];
 
     }
     return _notEntry;

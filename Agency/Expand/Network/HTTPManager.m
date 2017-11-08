@@ -87,7 +87,7 @@
         }
         [MBProgressHUD hidePregressHUD:KEYWINDOW];
         
-        NSInteger code = [[responseObject objectForKey:@"successed"] integerValue];
+        NSInteger code = [[responseObject objectForKey:@"code"] integerValue];
         
         if (code == -111) {
             

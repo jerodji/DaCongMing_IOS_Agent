@@ -19,12 +19,12 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Agency/Module/Login/ViewModel/HYLoginRequestManager.m"
-            timestampString = "531712015.499879"
+            filePath = "Agency/Expand/Network/HYUserRequestHandle.m"
+            timestampString = "531835619.549857"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "17"
-            endingLineNumber = "17"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
             landmarkName = "+weChatLoginWithProgram:ComplectionBlock:"
             landmarkType = "7">
          </BreakpointContent>
@@ -35,13 +35,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Agency/Module/Login/ViewModel/HYBindPhoneViewModel.m"
-            timestampString = "531742455.138494"
+            filePath = "Agency/Expand/Network/HYUserRequestHandle.m"
+            timestampString = "531835619.550557"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
-            landmarkName = "-getAuthCodeButtonIsValid"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "+getAuthCodeWithPhone:ComplectionBlock:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -51,29 +51,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Agency/Module/Login/ViewModel/HYBindPhoneViewModel.m"
-            timestampString = "531742455.138561"
+            filePath = "Agency/Expand/Network/HYUserRequestHandle.m"
+            timestampString = "531835641.420261"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
-            landmarkName = "-countDown"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Agency/Module/Login/View/HYBindPhoneView.m"
-            timestampString = "531742455.138613"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "157"
-            endingLineNumber = "157"
-            landmarkName = "-setWithViewModel:"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
+            landmarkName = "+getAuthCodeWithPhone:ComplectionBlock:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

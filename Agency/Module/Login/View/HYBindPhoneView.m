@@ -74,6 +74,8 @@
         make.height.equalTo(@(30 * WIDTH_MULTIPLE));
     }];
     
+    [_getAuthCodeBtn setNeedsLayout];
+    
     [_phoneLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         
         make.top.equalTo(_whiteBgView.mas_top);
@@ -140,26 +142,31 @@
     RAC(viewModel,phone) = [_phoneTextField rac_textSignal];
     RAC(viewModel,authCode) = [_authCodeTextField rac_textSignal];
     RAC(self.getAuthCodeBtn,enabled) = [viewModel getAuthCodeButtonIsValid];
-    //RAC(self.getAuthCodeBtn.titleLabel,text) = RACObserve(viewModel, authBtnTitle);
     RAC(self.getAuthCodeBtn,backgroundColor) = [[viewModel getAuthCodeButtonIsValid] map:^id(id value) {
-        
+
         return [value boolValue] ? KAPP_THEME_COLOR : KAPP_b7b7b7_COLOR;
+    }];
+   
+    
+    [[viewModel rac_valuesForKeyPath:@"authBtnTitle" observer:nil] subscribeNext:^(id x) {
+        
+        [self.getAuthCodeBtn setTitle:x forState:UIControlStateNormal];
     }];
     
     RAC(self.confirmBtn,enabled) = [viewModel confirmButtonIsValid];
     RAC(self.confirmBtn,backgroundColor) = [[viewModel confirmButtonIsValid] map:^id(id value) {
-        
+
         return [value boolValue] ? KAPP_THEME_COLOR : KAPP_b7b7b7_COLOR;
     }];
     
     [[self.getAuthCodeBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
-       
-        [viewModel getAuthCode];
+
+        [viewModel getAuthCodeAction];
     }];
     
     [[self.confirmBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         
-        [viewModel confirmButtonIsValid];
+        [viewModel verifyAuthCodeAction];
     }];
 }
 

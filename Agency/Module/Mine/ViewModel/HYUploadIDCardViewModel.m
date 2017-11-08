@@ -1,22 +1,23 @@
 //
-//  HYBindPhoneViewModel.m
+//  HYUploadIDCardViewModel.m
 //  Agency
 //
-//  Created by 胡勇 on 2017/11/7.
+//  Created by 胡勇 on 2017/11/8.
 //  Copyright © 2017年 胡勇. All rights reserved.
 //
 
-#import "HYBindPhoneViewModel.h"
+#import "HYUploadIDCardViewModel.h"
 
-@interface HYBindPhoneViewModel()
+@interface HYUploadIDCardViewModel()
 
-@property (nonatomic, strong) RACSignal *phoneSignal;
-@property (nonatomic, strong) RACSignal *authCodeSignal;
-@property (nonatomic, strong) RACSignal *isGettingSignal;
+@property (nonatomic, strong) RACSignal *nameSignal;
+@property (nonatomic, strong) RACSignal *IDCardSignal;
+@property (nonatomic, strong) RACSignal *bankCardNumSignal;
+@property (nonatomic, strong) RACSignal *authNumSignal;
 
-@end  
+@end
 
-@implementation HYBindPhoneViewModel
+@implementation HYUploadIDCardViewModel
 
 - (instancetype)init{
     
@@ -30,66 +31,52 @@
 - (void)initializeSignal{
     
     _authBtnTitle = @"获取验证码";
-    _phoneSignal = RACObserve(self, phone);
-    _authCodeSignal = RACObserve(self, authCode);
-    _isGettingSignal = RACObserve(self, isGetAuth);
-    
-    _AuthBtnTitleSubject = [RACSubject subject];
-    _AuthSuccessSubject = [RACSubject subject];
-    _AuthErrorSubject = [RACSubject subject];
-    
-    _AuthBtnTitleSubject = (RACSubject *)RACObserve(self, authBtnTitle);
+    _tipsLabelText = [NSString stringWithFormat:@"我们将发送验证码到:%@",[HYUserModel sharedInstance].userInfo.phone];
+    _isGetAuth = YES;
+    _nameSignal = RACObserve(self, name);
+    _IDCardSignal = RACObserve(self, IDCard);
+    _bankCardNumSignal = RACObserve(self, bankCardNum);
+    _authNumSignal = RACObserve(self, authNum);
 }
 
-#pragma mark - public method
 - (RACSignal *)getAuthCodeButtonIsValid{
-
-    RACSignal *isValid = [RACSignal combineLatest:@[_phoneSignal,_isGettingSignal] reduce:^id{
-        
-        if (_phone.length == 11 && _isGetAuth) {
-            
-            return @(0);
-        }
-        
-        if (_phone.length != 11 ) {
-            
-            return @(0);
-        }
-        return @(1);
-    }];
-
-    return isValid;
+    
+    return [self rac_valuesForKeyPath:@"isGetAuth" observer:nil];
 }
 
 - (RACSignal *)confirmButtonIsValid{
-
-    RACSignal *isValid = [RACSignal combineLatest:@[_phoneSignal,_authCodeSignal] reduce:^id{
+    
+    RACSignal *isValid = [RACSignal combineLatest:@[_nameSignal,_IDCardSignal,_bankCardNumSignal,_authNumSignal] reduce:^id{
         
-        return @(_phone.length == 11 && _authCode.length == 6);
+        return @([_name isNotBlank] && _IDCard.length == 18 && _bankCardNum.length >= 16  && _authNum.length == 6);
     }];
+    
     return isValid;
 }
 
 - (void)getAuthCodeAction{
     
-    if (![self validatePhoneNum:self.phone]) {
-        
-        [JRToast showWithText:@"请输入有效的手机号"];
-        return;
-    }
-    
-    [HYUserRequestHandle getAuthCodeWithPhone:_phone ComplectionBlock:^(NSString *authCode) {
+    [HYUserRequestHandle getAuthCodeWithPhone:[HYUserModel sharedInstance].userInfo.phone ComplectionBlock:^(NSString *authCode) {
         
         if (authCode) {
             
+            [JRToast showWithText:[NSString stringWithFormat:@"验证码已发送至%@",[HYUserModel sharedInstance].userInfo.phone]];
+            self.tipsLabelText = [NSString stringWithFormat:@"验证码已发送至%@",[HYUserModel sharedInstance].userInfo.phone];
             [self countDown];
         }
     }];
     
 }
 
-- (void)verifyAuthCodeAction{
+- (void)confirmAction{
     
+    [HYUserRequestHandle uploadIDCardInfoWithName:_name IDCardNum:_IDCard bankCardNum:_bankCardNum authCode:_authNum ComplectionBlock:^(BOOL isSuccess) {
+        
+        if (isSuccess) {
+            
+            
+        }
+    }];
 }
 
 #pragma mark - Private Method
@@ -119,14 +106,14 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 
                 self.authBtnTitle = [NSString stringWithFormat:@"重新发送"];
-                self.isGetAuth = NO;
+                self.isGetAuth = YES;
             });
         }
         else{
             dispatch_async(dispatch_get_main_queue(), ^{
                 
                 self.authBtnTitle = [NSString stringWithFormat:@"%ld秒后重试",time];
-                self.isGetAuth = YES;
+                self.isGetAuth = NO;
                 time--;
             });
         }

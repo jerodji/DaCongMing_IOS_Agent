@@ -14,6 +14,7 @@
 @property (nonatomic,copy) NSString *authCode;
 @property (nonatomic,copy) NSString *authBtnTitle;
 @property (nonatomic,assign) BOOL isGetAuth;
+@property (nonatomic,strong) RACSubject *AuthBtnTitleSubject;
 @property (nonatomic,strong) RACSubject *AuthSuccessSubject;
 @property (nonatomic,strong) RACSubject *AuthErrorSubject;
 
@@ -21,7 +22,7 @@
 - (RACSignal *)getAuthCodeButtonIsValid;
 - (RACSignal *)confirmButtonIsValid;
 
-- (void)getAuthCode;
-- (void)verifyAuthCode;
+- (void)getAuthCodeAction;
+- (void)verifyAuthCodeAction;
 
 @end

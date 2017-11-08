@@ -10,6 +10,7 @@
 #import "HYMyAccountTableViewCell.h"
 #import "HYSetUserNameVC.h"
 #import "HYBandPhoneVC.h"
+#import "HYUploadIDCardViewController.h"
 
 @interface HYMineViewController () <UITableViewDelegate,UITableViewDataSource>
 
@@ -40,7 +41,7 @@
 
 - (void)setupData{
     
-    self.datalist = [NSMutableArray arrayWithObjects:@"头像",@"用户名",@"上传身份证",@"绑定手机",@"退出登录", nil];
+    self.datalist = [NSMutableArray arrayWithObjects:@"头像",@"用户名",@"实名认证",@"绑定手机",@"退出登录", nil];
     self.dataSourceArray = [NSMutableArray arrayWithObjects:[HYUserModel sharedInstance].userInfo.head_image_url,[HYUserModel sharedInstance].userInfo.name,@"",@"",@"",nil];
     
 }
@@ -90,6 +91,12 @@
         {
             HYSetUserNameVC *setNameVC = [HYSetUserNameVC new];
             [self.navigationController pushViewController:setNameVC animated:YES];
+        }
+            break;
+        case 2:
+        {
+            HYUploadIDCardViewController *uploadIDCardVC = [HYUploadIDCardViewController new];
+            [self.navigationController pushViewController:uploadIDCardVC animated:YES];
         }
             break;
         case 3:

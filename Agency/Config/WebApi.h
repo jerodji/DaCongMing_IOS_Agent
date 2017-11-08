@@ -38,5 +38,7 @@
 //设置密码
 #define API_SetPassword           @"HAILIN_AGENT_SERVER/setUserPwd.do"
 
+//实名认证
+#define API_Certification           @"HAILIN_AGENT_SERVER/userAuth.do"
 
 #endif /* WebApi_h */

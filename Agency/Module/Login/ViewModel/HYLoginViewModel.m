@@ -7,7 +7,7 @@
 //
 
 #import "HYLoginViewModel.h"
-#import "HYLoginRequestManager.h"
+#import "HYUserRequestHandle.h"
 
 @interface HYLoginViewModel()
 
@@ -61,6 +61,15 @@
         [JRToast showWithText:@"请输入正确的手机号"];
         return;
     }
+    
+    //登录
+    [HYUserRequestHandle LoginWithPhone:_phone password:_password ComplectionBlock:^(NSDictionary *result) {
+       
+        if (result) {
+            
+            [self.loginSuccessSubject sendNext:result];
+        }
+    }];
 }
 
 - (void)wechatLoginAction{
@@ -84,11 +93,10 @@
     NSString *weChatCallbackCode = notification.object;
     DLog(@"wechatLogin callBack code %@",weChatCallbackCode);
     NSDictionary *dict = @{@"code" : weChatCallbackCode};
-    [HYLoginRequestManager weChatLoginWithProgram:dict ComplectionBlock:^(NSDictionary *result) {
+    [HYUserRequestHandle weChatLoginWithProgram:dict ComplectionBlock:^(NSDictionary *result) {
 
         [self.loginSuccessSubject sendNext:result];
     }];
-    //[self.loginSuccessSubject sendNext:dict];
 }
 
 #pragma mark - privateMethod

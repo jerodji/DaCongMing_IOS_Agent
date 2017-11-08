@@ -7,8 +7,22 @@
 //
 
 #import "HYWalletViewController.h"
+#import "HYMyWalletHeaderCell.h"
+#import "HYIconTitleCell.h"
+#import "HYMyWalletViewModel.h"
+#import "HYBillVC.h"
+#import "HYDepositVC.h"
+#import "HYAuthPhoneVC.h"
+#import "HYBaseNavController.h"
 
-@interface HYWalletViewController ()
+@interface HYWalletViewController ()<UITableViewDelegate,UITableViewDataSource>
+
+@property (nonatomic,strong) UITableView *tableView;
+@property (nonatomic,strong) HYMyWalletViewModel *viewModel;
+
+@property (nonatomic,copy) NSArray *iconArray;
+@property (nonatomic,copy) NSArray *titleArray;
+@property (nonatomic,copy) NSArray *headerBtnTitleArray;
 
 @end
 
@@ -18,11 +32,156 @@
     
     [super viewDidLoad];
     [self setupSubviews];
+    [self bindViewModel];
 }
 
 - (void)setupSubviews{
     
     self.title = @"钱包";
+    self.edgesForExtendedLayout = UIRectEdgeTop;
+    self.view.backgroundColor = KAPP_TableView_BgColor;
+    
+    _iconArray = @[@"deposit",@"bill",@"setting"];
+    _titleArray = @[@"提现",@"账单",@"设置提现密码"];
+    _headerBtnTitleArray = @[@"本月销售额(元)\n12306",@"本月佣金收入(元)\n12306",@"今日销售额(元)\n12306"];
+    _viewModel = [HYMyWalletViewModel new];
+    [self.view addSubview:self.tableView];
+}
+
+- (void)bindViewModel{
+    
+    __weak typeof (self)weakSelf = self;
+    [self.viewModel.backActionSubject subscribeNext:^(id x) {
+        
+        [weakSelf dismissViewControllerAnimated:YES completion:nil];
+    }];
+}
+
+#pragma mark - TableViewDataSource
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    
+    return 4;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    
+    return 1;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    switch (indexPath.section) {
+        case 0:
+        {
+            static NSString *myWalletHeaderCellID = @"myWalletHeaderCellID";
+            HYMyWalletHeaderCell *cell = [tableView dequeueReusableCellWithIdentifier:myWalletHeaderCellID];
+            if (!cell) {
+                cell = [[HYMyWalletHeaderCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:myWalletHeaderCellID];
+                cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            }
+            cell.titleArray = _headerBtnTitleArray;
+            [cell setWithViewModel:self.viewModel];
+            return cell;
+            
+        }
+            break;
+        default:
+        {
+            static NSString *iconTitleCellID = @"iconTitleCellID";
+            HYIconTitleCell *cell = [tableView dequeueReusableCellWithIdentifier:iconTitleCellID];
+            if (!cell) {
+                cell = [[HYIconTitleCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:iconTitleCellID];
+                cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            }
+            cell.titleLabel.text = _titleArray[indexPath.section - 1];
+            cell.iconImgView.image = [UIImage imageNamed:_iconArray[indexPath.section - 1]];
+            return cell;
+            
+        }
+            break;
+    }
+    
+    return nil;
+}
+
+#pragma mark - tableViewDelegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    
+    switch (indexPath.section) {
+        case 1:
+        {
+            HYDepositVC *depositVC = [HYDepositVC new];
+            HYBaseNavController *nav = [[HYBaseNavController alloc] initWithRootViewController:depositVC];
+            [self presentViewController:nav animated:YES completion:nil];
+        }
+            break;
+        case 2:
+        {
+            HYBillVC *billVC = [HYBillVC new];
+            HYBaseNavController *nav = [[HYBaseNavController alloc] initWithRootViewController:billVC];
+            [self presentViewController:nav animated:YES completion:nil];
+        }
+            break;
+        case 3:
+        {
+            HYAuthPhoneVC *authPhoneVC = [HYAuthPhoneVC new];
+            HYBaseNavController *nav = [[HYBaseNavController alloc] initWithRootViewController:authPhoneVC];
+            [self presentViewController:nav animated:YES completion:nil];
+        }
+            break;
+        default:
+            
+            break;
+    }
+}
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    switch (indexPath.section) {
+        case 0:
+            
+            return 280 * WIDTH_MULTIPLE;
+            break;
+            
+        default:
+            return 50 * WIDTH_MULTIPLE;
+            break;
+    }
+    
+    return 50 * WIDTH_MULTIPLE;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, KSCREEN_WIDTH, 10 * WIDTH_MULTIPLE)];
+    view.backgroundColor = KCOLOR(@"f4f4f4");
+    return view;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    
+    if (section == 3) {
+        
+        return 10 * WIDTH_MULTIPLE;
+    }
+    return 0;
+}
+
+
+#pragma mark -lazyload
+- (UITableView *)tableView{
+    if (!_tableView) {
+        
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, -20, KSCREEN_WIDTH, KSCREEN_HEIGHT) style:UITableViewStylePlain];
+        _tableView.delegate = self;
+        _tableView.dataSource = self;
+        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        _tableView.backgroundColor = KAPP_TableView_BgColor;
+        _tableView.bounces = NO;
+    }
+    return _tableView;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -30,14 +189,5 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

@@ -75,6 +75,11 @@
         if ([x isKindOfClass:[NSNumber class]]) {
             
             NSInteger i = [x integerValue];
+            if (i == 0) {
+                
+                [self presentViewController:[NSClassFromString(vcArray[i]) new] animated:YES completion:nil];
+                return ;
+            }
             HYBaseNavController *nav = [[HYBaseNavController alloc] initWithRootViewController:[NSClassFromString(vcArray[i]) new]];
             [self presentViewController:nav animated:YES completion:nil];
         }

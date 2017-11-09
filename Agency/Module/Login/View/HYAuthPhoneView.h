@@ -9,7 +9,10 @@
 /** 验证手机验证码 */
 
 #import <UIKit/UIKit.h>
+#import "HYBindPhoneViewModel.h"
 
 @interface HYAuthPhoneView : UIView
+
+- (void)setWithViewModel:(HYBindPhoneViewModel *)viewModel;
 
 @end

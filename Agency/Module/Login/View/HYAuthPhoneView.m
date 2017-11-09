@@ -21,6 +21,8 @@
 @property (nonatomic,strong) UIButton *sendAuthBtn;
 /** autoCodeView */
 @property (nonatomic,strong) HYPasswordView *authCodeView;
+/** viewModel */
+@property (nonatomic,strong) HYBindPhoneViewModel *viewModel;
 
 @end
 
@@ -82,7 +84,7 @@
         make.top.equalTo(_sendAuthBtn.mas_bottom).offset(40 * WIDTH_MULTIPLE);
         make.left.equalTo(self).offset(20 * WIDTH_MULTIPLE);
         make.right.equalTo(self).offset(-20 * WIDTH_MULTIPLE);
-        make.height.mas_equalTo(46 * WIDTH_MULTIPLE);
+        make.height.mas_equalTo(40 * WIDTH_MULTIPLE);
     }];
 }
 
@@ -93,6 +95,30 @@
     
     NSString *authCode = passwordView.passwordString;
     DLog(@"%@",authCode);
+    self.viewModel.authCode = authCode;
+    [self.viewModel verifyAuthCodeAction];
+}
+
+- (void)setWithViewModel:(HYBindPhoneViewModel *)viewModel{
+    
+    viewModel.phone = [HYUserModel sharedInstance].userInfo.phone;
+    self.viewModel = viewModel;
+    [[viewModel rac_valuesForKeyPath:@"authBtnTitle" observer:nil] subscribeNext:^(id x) {
+        
+        [self.sendAuthBtn setTitle:x forState:UIControlStateNormal];
+    }];
+    
+    RAC(self.sendAuthBtn,enabled) = [viewModel getAuthCodeButtonIsValid];
+    RAC(self.sendAuthBtn,backgroundColor) = [[viewModel getAuthCodeButtonIsValid] map:^id(id value) {
+        
+        return [value boolValue] ? KAPP_THEME_COLOR : KAPP_b7b7b7_COLOR;
+    }];
+    [[self.sendAuthBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+       
+        [viewModel getAuthCodeAction];
+    }];
+    
+    
 }
 
 #pragma mark - lazyload
@@ -155,6 +181,7 @@
     if (!_authCodeView) {
         
         _authCodeView = [[HYPasswordView alloc] init];
+        _authCodeView.isSetPassword = NO;
         _authCodeView.delegate = self;
     }
     return _authCodeView;

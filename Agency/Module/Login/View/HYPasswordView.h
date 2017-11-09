@@ -33,18 +33,10 @@
 
 @interface HYPasswordView : UIView <UIKeyInput>
 
-/** 密码位数 */
-@property (nonatomic,assign) NSInteger passwordNum;
-
-/** 密码框的宽度 */
-@property (nonatomic,assign) CGFloat squareWidth;
-
-/** 原点半径 */
-@property (nonatomic,assign) CGFloat dotRadius;
-
+/** 是否是输入密码 */
+@property (nonatomic,assign) BOOL isSetPassword;
 /** 存放密码的字符串 */
 @property (nonatomic,strong) NSMutableString *passwordString;
-
 /**delegate*/
 @property (nonatomic,weak) id<HYPasswordViewDelegate>delegate;
 

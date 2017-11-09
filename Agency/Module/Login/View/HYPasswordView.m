@@ -7,8 +7,26 @@
 //
 
 #define PasswordNum     6
+#define Width           KSCREEN_WIDTH - 80 * WIDTH_MULTIPLE
+#define leftMargin      20 * WIDTH_MULTIPLE
+#define margin          10 * WIDTH_MULTIPLE
 
 #import "HYPasswordView.h"
+
+@interface HYPasswordView()
+
+/** 密码位数 */
+@property (nonatomic,assign) NSInteger passwordNum;
+
+/** 密码框的宽度 */
+@property (nonatomic,assign) CGFloat squareWidth;
+
+/** 原点半径 */
+@property (nonatomic,assign) CGFloat dotRadius;
+
+
+
+@end
 
 @implementation HYPasswordView
 
@@ -20,8 +38,8 @@
         self.backgroundColor = [UIColor whiteColor];
         self.passwordString = [NSMutableString string];
         self.passwordNum = 6;
-        //self.squareWidth = (KSCREEN_WIDTH - 80 * WIDTH_MULTIPLE) / _passwordNum;
         self.dotRadius = 6;
+        self.squareWidth = (Width - 5 * margin) / 6;
     }
     return self;
 }
@@ -30,56 +48,69 @@
 
     [super drawRect:rect];
     
-    CGFloat width = rect.size.width - 40 * WIDTH_MULTIPLE;
-    self.squareWidth = width / 6;
+    [self drawBorder];
     
-    CGFloat x = 20 * WIDTH_MULTIPLE;
-    CGFloat y = 0;
+    if (self.isSetPassword) {
+        
+        [self drawDot];
+    }
+    else{
+        
+        [self drawText];
+    }
+    
+}
+
+#pragma mark - method
+- (void)drawBorder{
+    
     //画外框
     CGContextRef context = UIGraphicsGetCurrentContext();
-//    CGContextAddRect(context, CGRectMake(x, y, self.passwordNum * self.squareWidth, self.squareWidth));
-    CGContextAddRect(context, CGRectMake(x, 0, self.width - 2 * x, self.height));
-    CGContextSetLineWidth(context, 1);
-    CGContextSetStrokeColorWithColor(context, KAPP_7b7b7b_COLOR.CGColor);
-    CGContextSetFillColorWithColor(context, [UIColor whiteColor].CGColor);
-    
-    //画竖线
-    for (NSInteger i = 0; i < self.passwordNum; i ++) {
-
-        CGContextMoveToPoint(context, x + (i + 1) * self.squareWidth, y);
-        CGContextAddLineToPoint(context, x + (i + 1) * self.squareWidth, y + self.squareWidth);
-        CGContextClosePath(context);
+    CGFloat borderX = 0;
+    for (NSInteger i = 0; i < 6; i++) {
+        
+        borderX = i * (_squareWidth + margin) + leftMargin;
+        CGContextAddRect(context, CGRectMake(borderX, 0, self.squareWidth, self.height));
+        CGContextSetLineWidth(context, 1);
+        CGContextSetStrokeColorWithColor(context, KAPP_7b7b7b_COLOR.CGColor);
+        CGContextSetFillColorWithColor(context, [UIColor whiteColor].CGColor);
     }
     CGContextDrawPath(context, kCGPathFillStroke);
-    CGContextSetFillColorWithColor(context, KAPP_7b7b7b_COLOR.CGColor);
+}
+
+- (void)drawDot{
     
-    //使用填充模式绘制文字
-    CGContextSetTextDrawingMode(context,kCGTextFill);
-    CGContextSetRGBStrokeColor(context, 123 / 255.0, 123 / 255.0, 123 / 255.0, 1);
-    CGContextSetFillColorWithColor(context, [UIColor greenColor].CGColor);
     //画小黑点
+    CGContextRef context = UIGraphicsGetCurrentContext();
     for (NSInteger i = 0; i < self.passwordString.length; i++) {
         
-        CGFloat dotX = x + i * self.squareWidth + self.squareWidth / 2;
+        CGFloat dotX = i * (_squareWidth + margin) + self.squareWidth / 2 + leftMargin;
+        CGFloat dotY = (self.height - self.dotRadius) / 2 + 2;
+        CGContextAddArc(context, dotX , dotY , self.dotRadius, 0, M_PI * 2, YES);
+        CGContextSetFillColorWithColor(context, KAPP_7b7b7b_COLOR.CGColor);
+        CGContextDrawPath(context, kCGPathFill);
+    }
+}
+
+- (void)drawText{
+    
+    for (NSInteger i = 0; i < self.passwordString.length; i++) {
+        
+        CGFloat dotX = i * (_squareWidth + margin) + leftMargin;
         CGFloat dotY = (self.height - self.dotRadius) / 2;
-//        CGContextAddArc(context, dotX , dotY , self.dotRadius, 0, M_PI * 2, YES);
-//        CGContextDrawPath(context, kCGPathFill);
         
         NSString *str = [self.passwordString substringWithRange:NSMakeRange(i, 1)];
         CGFloat strWidth = [str widthForFont:KFitFont(24)];
         CGFloat strHeight = [str heightForFont:KFitFont(24) width:strWidth];
-        CGFloat strX = dotX - strWidth / 2;
-        CGFloat strY = dotY - strHeight / 2;
-        //[str  drawAtPoint:CGPointMake(i * self.squareWidth, 0) withAttributes:@{NSFontAttributeName : KFitFont(24)}];
+        CGFloat strY = dotY - strHeight / 2 + 2;
         
         NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
         style.alignment = NSTextAlignmentCenter;
-        [str drawInRect:CGRectMake(i * self.squareWidth + x, strY, self.squareWidth, self.height) withAttributes:@{NSFontAttributeName : KFitFont(24),NSParagraphStyleAttributeName : style}];
+        [str drawInRect:CGRectMake(dotX, strY, self.squareWidth, self.height) withAttributes:@{NSFontAttributeName : KFitFont(24),NSParagraphStyleAttributeName : style}];
     }
-
 }
 
-#pragma mark ********UIKeyInputDelegate********
+#pragma mark - UIKeyInputDelegate
 - (UIKeyboardType)keyboardType{
     
     return UIKeyboardTypeNumberPad;

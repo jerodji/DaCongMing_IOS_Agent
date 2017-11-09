@@ -44,6 +44,12 @@
     
     HYBindPhoneViewModel *viewModel = [HYBindPhoneViewModel new];
     [_bindView setWithViewModel:viewModel];
+    
+    [viewModel.AuthSuccessSubject subscribeCompleted:^{
+       
+        [JRToast showWithText:@"绑定手机成功" duration:2];
+        [self.navigationController popViewControllerAnimated:YES];
+    }];
 }
 
 #pragma mark - lazyload

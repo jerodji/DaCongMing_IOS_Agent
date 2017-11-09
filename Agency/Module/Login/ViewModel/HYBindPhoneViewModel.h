@@ -10,6 +10,9 @@
 
 @interface HYBindPhoneViewModel : HYBaseViewModel
 
+/** 是否是绑定手机  或者验证手机 */
+@property (nonatomic,assign) BOOL isBindPhone;
+
 @property (nonatomic,copy) NSString *phone;
 @property (nonatomic,copy) NSString *authCode;
 @property (nonatomic,copy) NSString *authBtnTitle;

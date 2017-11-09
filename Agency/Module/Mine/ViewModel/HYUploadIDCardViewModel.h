@@ -16,8 +16,8 @@
 @property (nonatomic,copy) NSString *authNum;
 @property (nonatomic,copy) NSString *authBtnTitle;
 @property (nonatomic,copy) NSString *tipsLabelText;
-
 @property (nonatomic,assign) BOOL isGetAuth;
+@property (nonatomic,strong) RACSubject *uploadInfoSuccessSubject;
 
 - (RACSignal *)getAuthCodeButtonIsValid;
 - (RACSignal *)confirmButtonIsValid;

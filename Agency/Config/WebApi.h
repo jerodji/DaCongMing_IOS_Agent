@@ -32,7 +32,7 @@
 //获取验证码
 #define API_GetAuthCode         @"HAILIN_AGENT_SERVER/getPhoneCode.do"
 
-//验证手机验证码
+//验证手机验证码 绑定手机同一个接口
 #define API_VerifyAuthCode        @"HAILIN_AGENT_SERVER/checkPhoneCode.do"
 
 //设置密码
@@ -40,5 +40,8 @@
 
 //实名认证
 #define API_Certification           @"HAILIN_AGENT_SERVER/userAuth.do"
+
+//设置提现密码
+#define API_SetDepositPassword           @"HAILIN_AGENT_SERVER/setWithdrawCashPwd.do"
 
 #endif /* WebApi_h */

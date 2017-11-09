@@ -20,27 +20,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Agency/Expand/Network/HYUserRequestHandle.m"
-            timestampString = "531835619.549857"
+            timestampString = "531921374.013871"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
-            landmarkName = "+weChatLoginWithProgram:ComplectionBlock:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Agency/Expand/Network/HYUserRequestHandle.m"
-            timestampString = "531835619.550557"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
             landmarkName = "+getAuthCodeWithPhone:ComplectionBlock:"
             landmarkType = "7">
          </BreakpointContent>
@@ -52,12 +36,76 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Agency/Expand/Network/HYUserRequestHandle.m"
-            timestampString = "531835641.420261"
+            timestampString = "531921374.013984"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
-            landmarkName = "+getAuthCodeWithPhone:ComplectionBlock:"
+            startingLineNumber = "223"
+            endingLineNumber = "223"
+            landmarkName = "+uploadIDCardInfoWithName:IDCardNum:bankCardNum:authCode:ComplectionBlock:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "+[HYUserRequestHandle uploadIDCardInfoWithName:IDCardNum:bankCardNum:authCode:ComplectionBlock:]"
+                  moduleName = "Agency"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/huyong/Desktop/DaCongMing/Agency/Agency/Expand/Network/HYUserRequestHandle.m"
+                  timestampString = "531921374.666625"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "223"
+                  endingLineNumber = "223"
+                  offsetFromSymbolStart = "788">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__96+[HYUserRequestHandle uploadIDCardInfoWithName:IDCardNum:bankCardNum:authCode:ComplectionBlock:]_block_invoke"
+                  moduleName = "Agency"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/huyong/Desktop/DaCongMing/Agency/Agency/Expand/Network/HYUserRequestHandle.m"
+                  timestampString = "531921374.668113"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "225"
+                  endingLineNumber = "225"
+                  offsetFromSymbolStart = "48">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Agency/Expand/Network/HYUserRequestHandle.m"
+            timestampString = "531921374.014072"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "225"
+            endingLineNumber = "225"
+            landmarkName = "+uploadIDCardInfoWithName:IDCardNum:bankCardNum:authCode:ComplectionBlock:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Agency/Expand/Network/HYUserRequestHandle.m"
+            timestampString = "531921374.01416"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "159"
+            endingLineNumber = "159"
+            landmarkName = "+bindPhone:authCode:ComplectionBlock:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

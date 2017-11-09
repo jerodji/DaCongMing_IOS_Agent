@@ -7,6 +7,7 @@
 //
 
 #import "HTTPManager.h"
+#import "HYLoginViewController.h"
 
 @implementation HTTPManager
 
@@ -92,7 +93,10 @@
         if (code == -111) {
             
             //token过期了,跳转登录页面
-            
+            [[HYUserModel sharedInstance] clearData];
+            HYLoginViewController *loginVC = [[HYLoginViewController alloc] init];
+            [UIApplication sharedApplication].keyWindow.rootViewController = loginVC;
+            [JRToast showWithText:@"账号登录信息有误，请重新登录" duration:3];
         }
         else{
           

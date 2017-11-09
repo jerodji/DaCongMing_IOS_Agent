@@ -77,7 +77,7 @@
     }
     
     //清除本地缓存
-    
+    [HYPlistTools removeDataWithName:KUserModelData];
 }
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder{

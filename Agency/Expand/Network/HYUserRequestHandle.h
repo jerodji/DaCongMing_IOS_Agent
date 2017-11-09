@@ -23,7 +23,7 @@
 /**
  *  获取手机验证码
  */
-+ (void)getAuthCodeWithPhone:(NSString *)phone ComplectionBlock:(void(^)(NSString *authCode))complection;
++ (void)getAuthCodeWithPhone:(NSString *)phone ComplectionBlock:(void(^)(BOOL isSuccess))complection;
 
 /**
  *  验证手机验证码
@@ -50,5 +50,10 @@
  *  获取账户信息
  */
 + (void)getAccountInfoComplectionBlock:(void(^)(NSDictionary *result))complection;
+
+/**
+ *  设置提现密码
+ */
++ (void)setDepositPassword:(NSString *)password andAuthCode:(NSString *)authCode ComplectionBlock:(void(^)(BOOL isSuccess))complection;
 
 @end

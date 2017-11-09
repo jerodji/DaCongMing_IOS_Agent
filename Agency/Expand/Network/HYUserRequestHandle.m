@@ -27,6 +27,9 @@
                 //归档
                 [HYPlistTools archiveObject:user withName:KUserModelData];
                 complection(dataInfo);
+                
+                [JRToast showWithText:@"微信登录成功" duration:2];
+
             }
             else{
                 
@@ -62,6 +65,8 @@
                 //归档
                 [HYPlistTools archiveObject:user withName:KUserModelData];
                 complection(dataInfo);
+                [JRToast showWithText:@"登录成功" duration:2];
+
             }
             else{
                 
@@ -77,32 +82,34 @@
     }];
 }
 
-+ (void)getAuthCodeWithPhone:(NSString *)phone ComplectionBlock:(void (^)(NSString *))complection{
++ (void)getAuthCodeWithPhone:(NSString *)phone ComplectionBlock:(void (^)(BOOL))complection{
     
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
     [param setValue:phone forKey:@"phoneNum"];
     [param setValue:[HYUserModel sharedInstance].token forKey:@"token"];
 
-    [[HTTPManager shareHTTPManager] postDataFromUrl:API_Login withParameter:param isShowHUD:YES success:^(id returnData) {
+    [[HTTPManager shareHTTPManager] postDataFromUrl:API_GetAuthCode withParameter:param isShowHUD:YES success:^(id returnData) {
         
         if (returnData) {
             
-            NSInteger code =[[returnData objectForKey:@"code"] integerValue];
+            NSInteger code = [[returnData objectForKey:@"code"] integerValue];
             if (code == 000) {
                 
-                complection(nil);
+                complection(YES);
+                //[JRToast showWithText:@"获取验证码成功" duration:2];
+
             }
             else{
                 
-                complection(nil);
-                [JRToast showWithText:[returnData valueForKey:@"message"]];
+                complection(NO);
+                [JRToast showWithText:[returnData valueForKey:@"message"] duration:2];
 
             }
         }
         else{
             
-            complection(nil);
-            [JRToast showWithText:@"获取验证码错误"];
+            complection(NO);
+            [JRToast showWithText:@"获取验证码出现问题" duration:2];
         }
     }];
 }
@@ -114,7 +121,7 @@
     [param setValue:authCode forKey:@"phoneCode"];
     [param setValue:[HYUserModel sharedInstance].token forKey:@"token"];
     
-    [[HTTPManager shareHTTPManager] postDataFromUrl:API_Login withParameter:param isShowHUD:YES success:^(id returnData) {
+    [[HTTPManager shareHTTPManager] postDataFromUrl:API_VerifyAuthCode withParameter:param isShowHUD:YES success:^(id returnData) {
         
         if (returnData) {
             
@@ -122,18 +129,19 @@
             if (code == 000) {
                 
                 complection(YES);
+                [JRToast showWithText:@"校验验证码成功" duration:2];
+
             }
             else{
                 
                 complection(NO);
-                [JRToast showWithText:@"校验验证码失败"];
+                [JRToast showWithText:[returnData valueForKey:@"message"] duration:2];
                 
             }
         }
         else{
-            
             complection(NO);
-            [JRToast showWithText:[returnData valueForKey:@"message"]];
+            [JRToast showWithText:@"校验验证码失败" duration:2];
         }
     }];
 }
@@ -146,7 +154,7 @@
     [param setValue:authCode forKey:@"phoneCode"];
     [param setValue:[HYUserModel sharedInstance].token forKey:@"token"];
     
-    [[HTTPManager shareHTTPManager] postDataFromUrl:API_Login withParameter:param isShowHUD:YES success:^(id returnData) {
+    [[HTTPManager shareHTTPManager] postDataFromUrl:API_VerifyAuthCode withParameter:param isShowHUD:YES success:^(id returnData) {
         
         if (returnData) {
             
@@ -165,7 +173,7 @@
         else{
             
             complection(NO);
-            [JRToast showWithText:[returnData valueForKey:@"message"]];
+            [JRToast showWithText:@"绑定手机失败" duration:2];
         }
     }];
 }
@@ -195,7 +203,7 @@
         else{
             
             complection(nil);
-            [JRToast showWithText:[returnData valueForKey:@"message"]];
+            [JRToast showWithText:[returnData valueForKey:@"message"] duration:2];
         }
     }];
 }
@@ -219,20 +227,54 @@
             NSInteger code = [[returnData objectForKey:@"code"] integerValue];
             if (code == 000) {
                 
-                NSDictionary *dict = [returnData objectForKey:@"data"];
-                complection(dict);
+                //NSDictionary *dict = [returnData objectForKey:@"data"];
+                complection(YES);
             }
             else{
                 
-                complection(nil);
+                complection(NO);
+                [JRToast showWithText:[returnData valueForKey:@"message"] duration:2];
+                
+            }
+        }
+        else{
+            
+            complection(NO);
+            [JRToast showWithText:@"完善信息失败" duration:2];
+        }
+    }];
+}
+
++ (void)setDepositPassword:(NSString *)password andAuthCode:(NSString *)authCode ComplectionBlock:(void (^)(BOOL))complection{
+    
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    [param setValue:password forKey:@"withDrawCashPwd"];
+    [param setValue:password forKey:@"repwithDrawCashPwd"];
+    [param setValue:authCode forKey:@"phoneCode"];
+    [param setValue:[HYUserModel sharedInstance].token forKey:@"token"];
+    [param setValue:[HYUserModel sharedInstance].userInfo.phone forKey:@"phoneNum"];
+    
+    
+    [[HTTPManager shareHTTPManager] postDataFromUrl:API_SetDepositPassword withParameter:param isShowHUD:YES success:^(id returnData) {
+        
+        if (returnData) {
+            
+            NSInteger code =[[returnData objectForKey:@"code"] integerValue];
+            if (code == 000) {
+                
+                complection(YES);
+            }
+            else{
+                
+                complection(NO);
                 [JRToast showWithText:[returnData valueForKey:@"message"]];
                 
             }
         }
         else{
             
-            complection(nil);
-            [JRToast showWithText:[returnData valueForKey:@"message"]];
+            complection(NO);
+            [JRToast showWithText:@"设置提现密码失败" duration:2];
         }
     }];
 }

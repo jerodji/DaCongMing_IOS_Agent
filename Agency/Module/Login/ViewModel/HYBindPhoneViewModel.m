@@ -63,6 +63,7 @@
 
 - (RACSignal *)confirmButtonIsValid{
 
+
     RACSignal *isValid = [RACSignal combineLatest:@[_phoneSignal,_authCodeSignal] reduce:^id{
         
         return @(_phone.length == 11 && _authCode.length == 6);
@@ -78,9 +79,9 @@
         return;
     }
     
-    [HYUserRequestHandle getAuthCodeWithPhone:_phone ComplectionBlock:^(NSString *authCode) {
+    [HYUserRequestHandle getAuthCodeWithPhone:_phone ComplectionBlock:^(BOOL isSuccess) {
         
-        if (authCode) {
+        if (isSuccess) {
             
             [self countDown];
         }
@@ -90,6 +91,13 @@
 
 - (void)verifyAuthCodeAction{
     
+    [HYUserRequestHandle verifyAuthCodeWithPhone:_phone authCode:_authCode ComplectionBlock:^(BOOL isSuccess) {
+       
+        if (isSuccess) {
+            
+            [self.AuthSuccessSubject sendCompleted];
+        }
+    }];
 }
 
 #pragma mark - Private Method

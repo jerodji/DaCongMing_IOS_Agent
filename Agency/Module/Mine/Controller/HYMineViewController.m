@@ -101,6 +101,11 @@
             break;
         case 3:
         {
+            if ([[HYUserModel sharedInstance].userInfo.phone isNotBlank]) {
+                
+                [JRToast showWithText:@"你已经绑定过手机了" duration:2];
+                return;
+            }
             HYBandPhoneVC *bindVC = [HYBandPhoneVC new];
             [self.navigationController pushViewController:bindVC animated:YES];
         }

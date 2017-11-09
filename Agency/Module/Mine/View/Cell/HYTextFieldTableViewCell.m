@@ -116,7 +116,15 @@
     
     if (self.indexPath.row == 2) {
         
+        //银行卡
         _textField.keyboardType = UIKeyboardTypePhonePad;
+        [_textField.rac_textSignal subscribeNext:^(NSString *x) {
+            
+            if (x.length >= 22) {
+                
+                _textField.text = [x substringToIndex:22];
+            }
+        }];
         RAC(viewModel,bankCardNum) = [_textField rac_textSignal];
     }
     

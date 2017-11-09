@@ -37,6 +37,7 @@
     _IDCardSignal = RACObserve(self, IDCard);
     _bankCardNumSignal = RACObserve(self, bankCardNum);
     _authNumSignal = RACObserve(self, authNum);
+    _uploadInfoSuccessSubject = [RACSubject subject];
 }
 
 - (RACSignal *)getAuthCodeButtonIsValid{
@@ -56,9 +57,9 @@
 
 - (void)getAuthCodeAction{
     
-    [HYUserRequestHandle getAuthCodeWithPhone:[HYUserModel sharedInstance].userInfo.phone ComplectionBlock:^(NSString *authCode) {
+    [HYUserRequestHandle getAuthCodeWithPhone:[HYUserModel sharedInstance].userInfo.phone ComplectionBlock:^(BOOL isSuccess) {
         
-        if (authCode) {
+        if (isSuccess) {
             
             [JRToast showWithText:[NSString stringWithFormat:@"验证码已发送至%@",[HYUserModel sharedInstance].userInfo.phone]];
             self.tipsLabelText = [NSString stringWithFormat:@"验证码已发送至%@",[HYUserModel sharedInstance].userInfo.phone];
@@ -74,7 +75,8 @@
         
         if (isSuccess) {
             
-            
+            [JRToast showWithText:@"完善信息成功" duration:2];
+            [self.uploadInfoSuccessSubject sendCompleted];
         }
     }];
 }

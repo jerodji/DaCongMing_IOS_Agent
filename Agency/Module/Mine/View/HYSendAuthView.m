@@ -155,7 +155,7 @@
         _textField.clearButtonMode = UITextFieldViewModeWhileEditing;
         _textField.font = KFitFont(14);
         _textField.textColor = KAPP_7b7b7b_COLOR;
-        _textField.keyboardType = UIKeyboardTypeDefault;
+        _textField.keyboardType = UIKeyboardTypePhonePad;
         _textField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"请输入验证码" attributes:@{NSForegroundColorAttributeName:KAPP_b7b7b7_COLOR,NSFontAttributeName : KFitFont(14)}];
     }
     return _textField;

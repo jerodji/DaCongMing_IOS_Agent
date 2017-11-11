@@ -19,8 +19,8 @@
 @property (nonatomic,copy) NSString *orderNo;
 /** 是否入帐 */
 @property (nonatomic,assign)BOOL isEntry;
-
-
+/** 查询到结果 */
+@property (nonatomic,strong) RACSubject *selectResultSubject;
 
 - (void)showStartValueSelectView;
 

@@ -41,6 +41,7 @@
     [viewModel.AuthSuccessSubject subscribeCompleted:^{
        
         HYSetDispoitPwdVC *setPWdVC = [HYSetDispoitPwdVC new];
+        setPWdVC.authCode = viewModel.authCode;
         [self.navigationController pushViewController:setPWdVC animated:YES];
     }];
 }

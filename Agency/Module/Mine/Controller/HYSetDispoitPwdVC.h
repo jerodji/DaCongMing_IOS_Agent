@@ -10,4 +10,6 @@
 
 @interface HYSetDispoitPwdVC : HYBaseViewController
 
+@property (nonatomic,copy) NSString *authCode;
+
 @end

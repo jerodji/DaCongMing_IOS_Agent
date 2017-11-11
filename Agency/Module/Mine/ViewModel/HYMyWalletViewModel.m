@@ -8,6 +8,13 @@
 
 #import "HYMyWalletViewModel.h"
 
+@interface HYMyWalletViewModel()
+
+/** model */
+@property (nonatomic,strong) HYMyWalletModel *model;
+
+@end
+
 @implementation HYMyWalletViewModel
 
 - (instancetype)init{
@@ -21,8 +28,30 @@
 
 - (void)initializeSignal{
     
-
     _backActionSubject = [RACSubject subject];
+
+}
+
+- (void)getMyWalletInfo{
+    
+    [HYUserRequestHandle getMyWalletComplectionBlock:^(HYMyWalletModel *model) {
+       
+        self.model = model;
+        
+        RAC(self,balance) = RACObserve(model, balance);
+        RAC(self,acc_totalSales) = RACObserve(self.model, acc_totalSales);
+        RAC(self,acc_totalCommission) = RACObserve(self.model, acc_totalCommission);
+        RAC(self,thisMonthSales) = RACObserve(self.model, thisMonthSales);
+        RAC(self,thisMonthCommission) = RACObserve(self.model, thisMonthCommission);
+        RAC(self,todaySales) = RACObserve(self.model, todaySales);
+        
+        DLog(@"-----:%@",self.balance);
+    }];
+}
+
+- (void)setWithModel:(HYMyWalletModel *)model{
+    
+    self.model = model;
     
 }
 

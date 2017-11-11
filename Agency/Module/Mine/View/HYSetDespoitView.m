@@ -18,6 +18,8 @@
 /** autoCodeView */
 @property (nonatomic,strong) HYPasswordView *authCodeView;
 
+@property (nonatomic,strong) HYSetDepositViewModel *viewModel;
+
 @end
 
 @implementation HYSetDespoitView
@@ -66,15 +68,31 @@
     }];
 }
 
-
+#pragma mark - ViewModel
+- (void)setWithViewModel:(HYSetDepositViewModel *)viewModel{
+    
+    self.viewModel = viewModel;
+    RAC(self.confirmBtn,enabled) = [viewModel confirmButtonIsValid];
+    RAC(self.confirmBtn,backgroundColor) = [[viewModel confirmButtonIsValid] map:^id(id value) {
+        
+        return [value boolValue] ? KAPP_THEME_COLOR : KAPP_b7b7b7_COLOR;
+    }];
+    
+    [[self.confirmBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+        
+        [viewModel setDepositPasswordAction];
+    }];
+}
 
 #pragma mark - 输入验证码delegate
 - (void)passwordCompleteInput:(HYPasswordView *)passwordView{
     
     NSString *authCode = passwordView.passwordString;
     DLog(@"%@",authCode);
-    
+    self.viewModel.depositPwd = authCode;
+    [self.viewModel setDepositPasswordAction];
 }
+
 
 #pragma mark - lazyload
 - (UILabel *)titleLabel{

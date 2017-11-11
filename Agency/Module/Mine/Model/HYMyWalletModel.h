@@ -1,20 +1,19 @@
 //
-//  HYMyWalletViewModel.h
+//  HYMyWalletModel.h
 //  Agency
 //
-//  Created by 胡勇 on 2017/11/8.
+//  Created by 胡勇 on 2017/11/10.
 //  Copyright © 2017年 胡勇. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import "HYMyWalletModel.h"
+#import "HYBaseModel.h"
 
-@interface HYMyWalletViewModel : NSObject
+@interface HYMyWalletModel : HYBaseModel
 
 /** 账户余额 */
 @property (nonatomic,strong) NSString *balance;
 /** 销售总额 */
-@property (nonatomic,copy) NSString *acc_totalSales;
+@property (nonatomic,strong) NSString *acc_totalSales;
 /** 累计佣金 */
 @property (nonatomic,copy) NSString *acc_totalCommission;
 /** 本月销售额 */
@@ -24,11 +23,5 @@
 /** 今日销售额 */
 @property (nonatomic,copy) NSString *todaySales;
 
-@property (nonatomic,strong) RACSubject *backActionSubject;
-
-
-- (void)setWithModel:(HYMyWalletModel *)model;
-
-- (void)getMyWalletInfo;
-
 @end
+

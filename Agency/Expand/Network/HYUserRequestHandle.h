@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "HYMyWalletModel.h"
 
 @interface HYUserRequestHandle : NSObject
 
@@ -55,5 +56,20 @@
  *  设置提现密码
  */
 + (void)setDepositPassword:(NSString *)password andAuthCode:(NSString *)authCode ComplectionBlock:(void(^)(BOOL isSuccess))complection;
+
+/**
+ *  查询报表信息
+ */
++ (void)selectReportInfoWithStartTime:(NSString *)startTime endTime:(NSString *)endTime isEntry:(BOOL)isEntry ComplectionBlock:(void(^)(NSArray *datalist))complection;
+
+/**
+ *  获取我的钱包
+ */
++ (void)getMyWalletComplectionBlock:(void(^)(HYMyWalletModel *model))complection;
+
+/**
+ *  提现
+ */
++ (void)DepositWithMoney:(NSString *)money password:(NSString *)password ComplectionBlock:(void(^)(BOOL isSuccess))complection;
 
 @end

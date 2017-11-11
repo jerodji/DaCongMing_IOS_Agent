@@ -8,6 +8,7 @@
 
 #import "HYSetDispoitPwdVC.h"
 #import "HYSetDespoitView.h"
+#import "HYSetDepositViewModel.h"
 
 @interface HYSetDispoitPwdVC ()
 
@@ -22,6 +23,7 @@
     
     [super viewDidLoad];
     [self setupSubviews];
+    [self bindViewModel];
 }
 
 - (void)setupSubviews{
@@ -29,6 +31,21 @@
     self.title = @"提现密码";
     self.view.backgroundColor = KAPP_TableView_BgColor;
     [self.view addSubview:self.setDespoitView];
+}
+
+- (void)bindViewModel{
+    
+    HYSetDepositViewModel *viewModel = [HYSetDepositViewModel new];
+    viewModel.authCode = self.authCode;
+    [self.setDespoitView setWithViewModel:viewModel];
+    
+    [viewModel.setPwdSuccessSubject subscribeCompleted:^{
+       
+//        NSArray *pushVCAry = [self.navigationController viewControllers];
+//        UIViewController *popVC = [pushVCAry objectAtIndex:0];
+//        [self.navigationController popToViewController:popVC animated:YES];
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }];
 }
 
 - (void)viewDidLayoutSubviews{

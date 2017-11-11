@@ -19,7 +19,7 @@
 #import "HYMineViewController.h"
 #import "HYBaseNavController.h"
 #import "HYJoinProtocolVC.h"
-
+#import "HYUploadIDCardViewController.h"
 
 @interface HYHomePageViewController ()
 
@@ -64,9 +64,14 @@
     
     [viewModel.jumpToAuthVC subscribeNext:^(id x) {
        
-        HYAuthViewController *authVC = [HYAuthViewController new];
+//        HYAuthViewController *authVC = [HYAuthViewController new];
+//        HYBaseNavController *nav = [[HYBaseNavController alloc] initWithRootViewController:authVC];
+//        [self presentViewController:nav animated:YES completion:nil];
+        
+        HYUploadIDCardViewController *authVC = [HYUploadIDCardViewController new];
         HYBaseNavController *nav = [[HYBaseNavController alloc] initWithRootViewController:authVC];
         [self presentViewController:nav animated:YES completion:nil];
+
     }];
     
     NSArray *vcArray = @[@"HYWalletViewController",@"HYMineViewController",@"HYAboutUSViewController",@"HYAboutUSViewController"];

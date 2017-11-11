@@ -279,4 +279,102 @@
     }];
 }
 
++ (void)selectReportInfoWithStartTime:(NSString *)startTime endTime:(NSString *)endTime isEntry:(BOOL)isEntry ComplectionBlock:(void (^)(NSArray *))complection{
+    
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    [param setValue:startTime forKey:@"begin_date"];
+    [param setValue:endTime forKey:@"end_date"];
+    [param setValue:@(isEntry) forKey:@"stat"];
+    [param setValue:[HYUserModel sharedInstance].token forKey:@"token"];
+    
+    
+    [[HTTPManager shareHTTPManager] postDataFromUrl:API_SelectReportInfo withParameter:param isShowHUD:YES success:^(id returnData) {
+        
+        if (returnData) {
+            
+            NSInteger code =[[returnData objectForKey:@"code"] integerValue];
+            if (code == 000) {
+                
+                NSArray *datalist = [returnData objectForKey:@"data"][@"dataList"];
+                complection(datalist);
+            }
+            else{
+                
+                complection(nil);
+                [JRToast showWithText:[returnData valueForKey:@"message"]];
+                
+            }
+        }
+        else{
+            
+            complection(nil);
+            [JRToast showWithText:@"查询报表信息失败失败" duration:2];
+        }
+    }];
+}
+
++ (void)getMyWalletComplectionBlock:(void (^)(HYMyWalletModel *))complection{
+    
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    [param setValue:[HYUserModel sharedInstance].token forKey:@"token"];
+    
+    
+    [[HTTPManager shareHTTPManager] postDataFromUrl:API_GetMyWalletInfo withParameter:param isShowHUD:YES success:^(id returnData) {
+        
+        if (returnData) {
+            
+            NSInteger code =[[returnData objectForKey:@"code"] integerValue];
+            if (code == 000) {
+                
+                NSDictionary *dict = [returnData objectForKey:@"data"][@"userAccountInfo"];
+                HYMyWalletModel *model = [HYMyWalletModel modelWithDictionary:dict];
+                complection(model);
+            }
+            else{
+                
+                complection(nil);
+                [JRToast showWithText:[returnData valueForKey:@"message"]];
+                
+            }
+        }
+        else{
+            
+            complection(nil);
+            [JRToast showWithText:@"获取钱包信息失败" duration:2];
+        }
+    }];
+}
+
++ (void)DepositWithMoney:(NSString *)money password:(NSString *)password ComplectionBlock:(void (^)(BOOL))complection{
+    
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    [param setValue:money forKey:@"withDrawCashPwd"];
+    [param setValue:password forKey:@"repwithDrawCashPwd"];
+    [param setValue:[HYUserModel sharedInstance].token forKey:@"token"];
+    
+    
+    [[HTTPManager shareHTTPManager] postDataFromUrl:API_SetDepositPassword withParameter:param isShowHUD:YES success:^(id returnData) {
+        
+        if (returnData) {
+            
+            NSInteger code =[[returnData objectForKey:@"code"] integerValue];
+            if (code == 000) {
+                
+                complection(YES);
+            }
+            else{
+                
+                complection(NO);
+                [JRToast showWithText:[returnData valueForKey:@"message"]];
+                
+            }
+        }
+        else{
+            
+            complection(NO);
+            [JRToast showWithText:@"提现失败" duration:2];
+        }
+    }];
+}
+
 @end

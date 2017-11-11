@@ -10,4 +10,6 @@
 
 @interface HYReportListViewController : HYBaseViewController
 
+@property (nonatomic,strong) NSArray *datalist;
+
 @end

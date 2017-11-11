@@ -60,6 +60,12 @@
        
         [_viewModel confirmAction];
     }];
+    
+    __weak typeof (self)weakSelf = self;
+    [self.viewModel.uploadInfoSuccessSubject subscribeNext:^(id x) {
+        
+        [weakSelf.navigationController popViewControllerAnimated:YES];
+    }];
 }
 
 - (void)viewDidLayoutSubviews{

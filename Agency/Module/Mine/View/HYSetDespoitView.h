@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HYSetDepositViewModel.h"
 
 @interface HYSetDespoitView : UIView
+
+- (void)setWithViewModel:(HYSetDepositViewModel *)viewModel;
 
 @end

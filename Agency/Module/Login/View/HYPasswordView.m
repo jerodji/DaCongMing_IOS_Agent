@@ -39,9 +39,17 @@
         self.passwordString = [NSMutableString string];
         self.passwordNum = 6;
         self.dotRadius = 6;
-        self.squareWidth = (Width - 5 * margin) / 6;
+        self.squareWidth = (Width - 5 * margin - 40 * WIDTH_MULTIPLE) / 6;
+        //self.backgroundColor = KAPP_PRICE_COLOR;
     }
     return self;
+}
+
+
+- (void)layoutSubviews{
+    
+    self.squareWidth = (self.width - 5 * margin - 40 * WIDTH_MULTIPLE) / 6;
+
 }
 
 - (void)drawRect:(CGRect)rect{

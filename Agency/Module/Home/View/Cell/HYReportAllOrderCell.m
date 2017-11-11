@@ -12,12 +12,10 @@
 
 /** 白色背景 */
 @property (nonatomic,strong) UIView *whiteBgView;
-/** 标题 */
-@property (nonatomic,strong) UILabel *titleLabel;
+
 /** 箭头 */
 @property (nonatomic,strong) UIImageView *arrowImgView;
-/** value */
-@property (nonatomic,strong) UILabel *valueLabel;
+
 
 @end
 

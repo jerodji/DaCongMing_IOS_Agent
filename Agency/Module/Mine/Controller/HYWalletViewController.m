@@ -14,6 +14,7 @@
 #import "HYDepositVC.h"
 #import "HYAuthPhoneVC.h"
 #import "HYBaseNavController.h"
+#import "HYMyWalletModel.h"
 
 @interface HYWalletViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -44,13 +45,18 @@
     _iconArray = @[@"deposit",@"bill",@"setting"];
     _titleArray = @[@"提现",@"账单",@"设置提现密码"];
     _headerBtnTitleArray = @[@"本月销售额(元)\n12306",@"本月佣金收入(元)\n12306",@"今日销售额(元)\n12306"];
-    _viewModel = [HYMyWalletViewModel new];
+    
     [self.view addSubview:self.tableView];
 }
 
 - (void)bindViewModel{
     
     __weak typeof (self)weakSelf = self;
+    HYMyWalletModel *model = [HYMyWalletModel new];
+    _viewModel = [HYMyWalletViewModel new];
+    [_viewModel getMyWalletInfo];
+    [_viewModel setWithModel:model];
+    
     [self.viewModel.backActionSubject subscribeNext:^(id x) {
         
         [weakSelf dismissViewControllerAnimated:YES completion:nil];
@@ -79,7 +85,7 @@
                 cell = [[HYMyWalletHeaderCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:myWalletHeaderCellID];
                 cell.selectionStyle = UITableViewCellSelectionStyleNone;
             }
-            cell.titleArray = _headerBtnTitleArray;
+            //cell.titleArray = _headerBtnTitleArray;
             [cell setWithViewModel:self.viewModel];
             return cell;
             
@@ -113,6 +119,7 @@
         {
             HYDepositVC *depositVC = [HYDepositVC new];
             HYBaseNavController *nav = [[HYBaseNavController alloc] initWithRootViewController:depositVC];
+            depositVC.balance = self.viewModel.balance;
             [self presentViewController:nav animated:YES completion:nil];
         }
             break;

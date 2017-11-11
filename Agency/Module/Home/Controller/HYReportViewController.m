@@ -8,7 +8,7 @@
 
 #import "HYReportViewController.h"
 #import "HYReportViewModel.h"
-
+#import "HYReportListViewController.h"
 #import "HYReportSelectCell.h"
 #import "HYReportAllOrderCell.h"
 #import "HYReportAllAmountCell.h"
@@ -21,6 +21,7 @@
 @property (nonatomic,strong) UITableView *tableView;
 @property (nonatomic,strong) HYReportViewModel *viewModel;
 @property (nonatomic,strong) HYReportSelectCellModel *cellModel;
+@property (nonatomic,strong) NSArray *titleArray;
 
 @end
 
@@ -29,6 +30,7 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
+    _titleArray = @[@"总订单量",@"总入账金额",@"未入账金额"];
     [self setupSubviews];
 }
 
@@ -47,6 +49,13 @@
     [self.view addSubview:self.tableView];
     
     _cellModel = [HYReportSelectCellModel new];
+    __weak typeof (self)weakSelf = self;
+    [_cellModel.selectResultSubject subscribeNext:^(id x) {
+        
+        HYReportListViewController *reportListVC = [HYReportListViewController new];
+        reportListVC.datalist = x;
+        [weakSelf.navigationController pushViewController:reportListVC animated:YES];
+    }];
 }
 
 #pragma mark - HYTableViewManagerDelegate
@@ -101,6 +110,7 @@
                 cell = [[HYReportAllOrderCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:allOrderCellID];
                 cell.selectionStyle = UITableViewCellSelectionStyleNone;
             }
+            cell.titleLabel.text = _titleArray[indexPath.row - 1];
             return cell;
         }
             break;
@@ -112,6 +122,7 @@
                 cell = [[HYReportAllAmountCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:allAmountCellID];
                 cell.selectionStyle = UITableViewCellSelectionStyleNone;
             }
+            cell.titleLabel.text = _titleArray[indexPath.row - 1];
             return cell;
         }
             break;

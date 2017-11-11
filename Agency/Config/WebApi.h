@@ -44,4 +44,10 @@
 //设置提现密码
 #define API_SetDepositPassword           @"HAILIN_AGENT_SERVER/setWithdrawCashPwd.do"
 
+//查询报表信息
+#define API_SelectReportInfo           @"HAILIN_AGENT_SERVER/getMyRF.do"
+
+//获取钱包信息
+#define API_GetMyWalletInfo           @"HAILIN_AGENT_SERVER/getUserAccount.do"
+
 #endif /* WebApi_h */

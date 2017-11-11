@@ -10,4 +10,7 @@
 
 @interface HYDepositVC : HYBaseViewController
 
+/** 余额 */
+@property (nonatomic,strong) NSString *balance;
+
 @end

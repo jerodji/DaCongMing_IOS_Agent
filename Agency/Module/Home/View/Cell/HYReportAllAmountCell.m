@@ -10,12 +10,10 @@
 
 @interface HYReportAllAmountCell()
 
-/** 标题 */
-@property (nonatomic,strong) UILabel *titleLabel;
+
 /** 箭头 */
 @property (nonatomic,strong) UIImageView *arrowImgView;
-/** value */
-@property (nonatomic,strong) UILabel *valueLabel;
+
 /** 底部黑线 */
 @property (nonatomic,strong) UIView *bottomLine;
 

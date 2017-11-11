@@ -108,6 +108,33 @@
     }];
 }
 
+#pragma mark - setViewModel
+- (void)setWithViewModel:(HYDepositViewModel *)viewModel{
+    
+    RAC(viewModel,inputBalance) = self.moneyTF.rac_textSignal;
+    RAC(self.depostiBtn,enabled) = [viewModel depositBtnInvalid];
+    RAC(self.depostiBtn,backgroundColor) = [[viewModel depositBtnInvalid] map:^id(id value) {
+        
+        return [value boolValue] ? KAPP_THEME_COLOR : KAPP_b7b7b7_COLOR;
+    }];
+    
+    RAC(self.amountLabel,text) = [RACObserve(viewModel, balance) map:^id(id value) {
+        
+       return [NSString stringWithFormat:@"可提现金额:￥%@",value];
+    }];
+    
+    [[self.depositAllBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+       
+        self.moneyTF.text = viewModel.balance;
+        viewModel.inputBalance = self.moneyTF.text;
+    }];
+    
+    [[self.depostiBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+       
+        [viewModel depositAction];
+    }];
+}
+
 #pragma mark - lazyload
 - (UIView *)whiteBgView{
     

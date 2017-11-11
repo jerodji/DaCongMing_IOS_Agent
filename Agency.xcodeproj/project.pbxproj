@@ -43,6 +43,8 @@
 		3E14D21E1FB0574B006CDF18 /* HYReportListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E14D21D1FB0574B006CDF18 /* HYReportListViewController.m */; };
 		3E14D2211FB05795006CDF18 /* HYReportDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E14D2201FB05795006CDF18 /* HYReportDetailViewController.m */; };
 		3E14D2241FB07596006CDF18 /* HYDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E14D2231FB07596006CDF18 /* HYDatePickerView.m */; };
+		3E3F5D371FB6C5D8002332DD /* HYDepositWaitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E3F5D361FB6C5D8002332DD /* HYDepositWaitViewController.m */; };
+		3E3F5D3A1FB6C6FE002332DD /* HYDepositWaitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E3F5D391FB6C6FE002332DD /* HYDepositWaitView.m */; };
 		3E7FE3B71FB19DEA00498FC2 /* HYSelectIDInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7FE3B61FB19DEA00498FC2 /* HYSelectIDInfoVC.m */; };
 		3E7FE3BA1FB19DFB00498FC2 /* HYJoinProtocolVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7FE3B91FB19DFA00498FC2 /* HYJoinProtocolVC.m */; };
 		3E7FE3BE1FB19E5A00498FC2 /* HYSelectInfoHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7FE3BD1FB19E5A00498FC2 /* HYSelectInfoHeaderView.m */; };
@@ -70,6 +72,12 @@
 		3E7FE43E1FB43C5E00498FC2 /* HYPasswordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7FE43A1FB43C5E00498FC2 /* HYPasswordView.m */; };
 		3E7FE4411FB4408C00498FC2 /* HYSetDespoitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7FE4401FB4408C00498FC2 /* HYSetDespoitView.m */; };
 		3E7FE4441FB4546200498FC2 /* HYSetDepositTipsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7FE4431FB4546200498FC2 /* HYSetDepositTipsView.m */; };
+		3E7FE4471FB53F8D00498FC2 /* HYSetDepositViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7FE4461FB53F8D00498FC2 /* HYSetDepositViewModel.m */; };
+		3E7FE44A1FB5796E00498FC2 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7FE4491FB5796D00498FC2 /* Reachability.m */; };
+		3E7FE44D1FB5799900498FC2 /* HYNetWorkStateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7FE44C1FB5799900498FC2 /* HYNetWorkStateManager.m */; };
+		3E7FE4521FB5A1E900498FC2 /* HYMyWalletModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7FE4511FB5A1E900498FC2 /* HYMyWalletModel.m */; };
+		3E7FE4551FB5BA9D00498FC2 /* HYDepositViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7FE4541FB5BA9D00498FC2 /* HYDepositViewModel.m */; };
+		3E7FE4581FB5C93700498FC2 /* HYInputDepositPwdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7FE4571FB5C93700498FC2 /* HYInputDepositPwdView.m */; };
 		3E95E1E21FA9AD4100995AB2 /* HYBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E95E1E11FA9AD4100995AB2 /* HYBaseViewController.m */; };
 		3E95E1E51FA9ADA600995AB2 /* HYLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E95E1E41FA9ADA600995AB2 /* HYLoginViewController.m */; };
 		3E95E1E81FA9ADCA00995AB2 /* HYBaseNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E95E1E71FA9ADCA00995AB2 /* HYBaseNavController.m */; };
@@ -173,6 +181,10 @@
 		3E14D2201FB05795006CDF18 /* HYReportDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HYReportDetailViewController.m; sourceTree = "<group>"; };
 		3E14D2221FB07596006CDF18 /* HYDatePickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HYDatePickerView.h; sourceTree = "<group>"; };
 		3E14D2231FB07596006CDF18 /* HYDatePickerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HYDatePickerView.m; sourceTree = "<group>"; };
+		3E3F5D351FB6C5D8002332DD /* HYDepositWaitViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HYDepositWaitViewController.h; sourceTree = "<group>"; };
+		3E3F5D361FB6C5D8002332DD /* HYDepositWaitViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HYDepositWaitViewController.m; sourceTree = "<group>"; };
+		3E3F5D381FB6C6FE002332DD /* HYDepositWaitView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HYDepositWaitView.h; sourceTree = "<group>"; };
+		3E3F5D391FB6C6FE002332DD /* HYDepositWaitView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HYDepositWaitView.m; sourceTree = "<group>"; };
 		3E7FE3B61FB19DEA00498FC2 /* HYSelectIDInfoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYSelectIDInfoVC.m; sourceTree = "<group>"; };
 		3E7FE3B81FB19DFA00498FC2 /* HYSelectIDInfoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYSelectIDInfoVC.h; sourceTree = "<group>"; };
 		3E7FE3B91FB19DFA00498FC2 /* HYJoinProtocolVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYJoinProtocolVC.m; sourceTree = "<group>"; };
@@ -227,6 +239,18 @@
 		3E7FE4401FB4408C00498FC2 /* HYSetDespoitView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HYSetDespoitView.m; sourceTree = "<group>"; };
 		3E7FE4421FB4546200498FC2 /* HYSetDepositTipsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HYSetDepositTipsView.h; sourceTree = "<group>"; };
 		3E7FE4431FB4546200498FC2 /* HYSetDepositTipsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HYSetDepositTipsView.m; sourceTree = "<group>"; };
+		3E7FE4451FB53F8D00498FC2 /* HYSetDepositViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HYSetDepositViewModel.h; sourceTree = "<group>"; };
+		3E7FE4461FB53F8D00498FC2 /* HYSetDepositViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HYSetDepositViewModel.m; sourceTree = "<group>"; };
+		3E7FE4481FB5796D00498FC2 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		3E7FE4491FB5796D00498FC2 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		3E7FE44B1FB5799900498FC2 /* HYNetWorkStateManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HYNetWorkStateManager.h; sourceTree = "<group>"; };
+		3E7FE44C1FB5799900498FC2 /* HYNetWorkStateManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HYNetWorkStateManager.m; sourceTree = "<group>"; };
+		3E7FE4501FB5A1E900498FC2 /* HYMyWalletModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HYMyWalletModel.h; sourceTree = "<group>"; };
+		3E7FE4511FB5A1E900498FC2 /* HYMyWalletModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HYMyWalletModel.m; sourceTree = "<group>"; };
+		3E7FE4531FB5BA9D00498FC2 /* HYDepositViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HYDepositViewModel.h; sourceTree = "<group>"; };
+		3E7FE4541FB5BA9D00498FC2 /* HYDepositViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HYDepositViewModel.m; sourceTree = "<group>"; };
+		3E7FE4561FB5C93700498FC2 /* HYInputDepositPwdView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HYInputDepositPwdView.h; sourceTree = "<group>"; };
+		3E7FE4571FB5C93700498FC2 /* HYInputDepositPwdView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HYInputDepositPwdView.m; sourceTree = "<group>"; };
 		3E95E1C81FA9AA4E00995AB2 /* HTTPManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTTPManager.h; sourceTree = "<group>"; };
 		3E95E1C91FA9AA4E00995AB2 /* HTTPManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTTPManager.m; sourceTree = "<group>"; };
 		3E95E1CB1FA9AAF900995AB2 /* SAMTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SAMTextView.h; sourceTree = "<group>"; };
@@ -494,6 +518,8 @@
 				3E0E6E701FAC0A1100F058EB /* HYWalletViewController.m */,
 				3E7FE3DB1FB2D5AB00498FC2 /* HYDepositVC.h */,
 				3E7FE3DC1FB2D5AB00498FC2 /* HYDepositVC.m */,
+				3E3F5D351FB6C5D8002332DD /* HYDepositWaitViewController.h */,
+				3E3F5D361FB6C5D8002332DD /* HYDepositWaitViewController.m */,
 				3E7FE3E41FB2D78D00498FC2 /* HYBillVC.h */,
 				3E7FE3E51FB2D78D00498FC2 /* HYBillVC.m */,
 				3E7FE3E71FB2D7A700498FC2 /* HYSetDispoitPwdVC.h */,
@@ -509,6 +535,8 @@
 		3E0FDF3F1FA996B600F52DC0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3E7FE4501FB5A1E900498FC2 /* HYMyWalletModel.h */,
+				3E7FE4511FB5A1E900498FC2 /* HYMyWalletModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -526,6 +554,10 @@
 				3E7FE4401FB4408C00498FC2 /* HYSetDespoitView.m */,
 				3E7FE4421FB4546200498FC2 /* HYSetDepositTipsView.h */,
 				3E7FE4431FB4546200498FC2 /* HYSetDepositTipsView.m */,
+				3E7FE4561FB5C93700498FC2 /* HYInputDepositPwdView.h */,
+				3E7FE4571FB5C93700498FC2 /* HYInputDepositPwdView.m */,
+				3E3F5D381FB6C6FE002332DD /* HYDepositWaitView.h */,
+				3E3F5D391FB6C6FE002332DD /* HYDepositWaitView.m */,
 				3E7FE3C21FB1A90100498FC2 /* Cell */,
 			);
 			path = View;
@@ -536,8 +568,12 @@
 			children = (
 				3E7FE3D81FB2B31000498FC2 /* HYMyWalletViewModel.h */,
 				3E7FE3D91FB2B31000498FC2 /* HYMyWalletViewModel.m */,
+				3E7FE4531FB5BA9D00498FC2 /* HYDepositViewModel.h */,
+				3E7FE4541FB5BA9D00498FC2 /* HYDepositViewModel.m */,
 				3E7FE3F91FB2FA1A00498FC2 /* HYUploadIDCardViewModel.h */,
 				3E7FE3FA1FB2FA1A00498FC2 /* HYUploadIDCardViewModel.m */,
+				3E7FE4451FB53F8D00498FC2 /* HYSetDepositViewModel.h */,
+				3E7FE4461FB53F8D00498FC2 /* HYSetDepositViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -708,6 +744,10 @@
 		3E95E1C71FA9AA4E00995AB2 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				3E7FE4481FB5796D00498FC2 /* Reachability.h */,
+				3E7FE4491FB5796D00498FC2 /* Reachability.m */,
+				3E7FE44B1FB5799900498FC2 /* HYNetWorkStateManager.h */,
+				3E7FE44C1FB5799900498FC2 /* HYNetWorkStateManager.m */,
 				3E95E1C81FA9AA4E00995AB2 /* HTTPManager.h */,
 				3E95E1C91FA9AA4E00995AB2 /* HTTPManager.m */,
 				3E7FE4081FB31BE500498FC2 /* HYUserRequestHandle.h */,
@@ -919,24 +959,29 @@
 				3E0E6E501FAAFB0C00F058EB /* Macro.h in Sources */,
 				3E7FE3BE1FB19E5A00498FC2 /* HYSelectInfoHeaderView.m in Sources */,
 				3E7FE40A1FB31BE500498FC2 /* HYUserRequestHandle.m in Sources */,
+				3E7FE44A1FB5796E00498FC2 /* Reachability.m in Sources */,
 				3E7FE3F51FB2E96300498FC2 /* HYTextFieldTableViewCell.m in Sources */,
 				3E7FE3CE1FB1AC3100498FC2 /* HYBindPhoneView.m in Sources */,
 				3E0E6E511FAAFB0C00F058EB /* WebApi.h in Sources */,
 				3E95E2141FAACACD00995AB2 /* MBProgressHUD+HYExtension.h in Sources */,
 				3E95E2151FAACACD00995AB2 /* MBProgressHUD+HYExtension.m in Sources */,
 				3E95E2121FAACA7300995AB2 /* HTTPManager.h in Sources */,
+				3E7FE4581FB5C93700498FC2 /* HYInputDepositPwdView.m in Sources */,
 				3E95E2131FAACA7300995AB2 /* HTTPManager.m in Sources */,
 				3E7FE4441FB4546200498FC2 /* HYSetDepositTipsView.m in Sources */,
 				3E0E6E6E1FAC0A0400F058EB /* HYAboutUSViewController.m in Sources */,
 				3E7FE43E1FB43C5E00498FC2 /* HYPasswordView.m in Sources */,
 				3E95E20D1FAAC7F700995AB2 /* Const.h in Sources */,
+				3E3F5D371FB6C5D8002332DD /* HYDepositWaitViewController.m in Sources */,
 				3E14D1F81FB00305006CDF18 /* HYBaseViewModel.m in Sources */,
 				3E7FE3DD1FB2D5AB00498FC2 /* HYDepositVC.m in Sources */,
 				3E0E6E491FAAF49600F058EB /* HYHomeMiddleView.m in Sources */,
 				3E14D2081FB02BD8006CDF18 /* HYReportViewModel.m in Sources */,
 				3E95E20E1FAAC7F700995AB2 /* Const.m in Sources */,
+				3E3F5D3A1FB6C6FE002332DD /* HYDepositWaitView.m in Sources */,
 				3E7FE3B71FB19DEA00498FC2 /* HYSelectIDInfoVC.m in Sources */,
 				3E95E1EF1FA9C98000995AB2 /* JRToast.h in Sources */,
+				3E7FE44D1FB5799900498FC2 /* HYNetWorkStateManager.m in Sources */,
 				3E7FE3F21FB2E3AE00498FC2 /* HYUploadIDCardViewController.m in Sources */,
 				3E95E1F01FA9C98000995AB2 /* JRToast.m in Sources */,
 				3E0E6E401FAAF3D700F058EB /* HYHomePageViewController.m in Sources */,
@@ -951,14 +996,17 @@
 				3E7FE3E61FB2D78D00498FC2 /* HYBillVC.m in Sources */,
 				3E14D1FE1FB00479006CDF18 /* HYBaseCellViewModel.m in Sources */,
 				3E0E6E431FAAF43C00F058EB /* HYHomeView.m in Sources */,
+				3E7FE4551FB5BA9D00498FC2 /* HYDepositViewModel.m in Sources */,
 				3E0E6E461FAAF46700F058EB /* HYHomeHeaderView.m in Sources */,
 				3E0E6E4F1FAAF4D700F058EB /* HYHomeBtnView.m in Sources */,
 				3E0E6E541FAB000400F058EB /* HYUserModel.m in Sources */,
+				3E7FE4471FB53F8D00498FC2 /* HYSetDepositViewModel.m in Sources */,
 				3E0E6E5C1FAB1ADC00F058EB /* HYButton.m in Sources */,
 				3E0E6E771FAC0A8000F058EB /* HYHomeViewModel.m in Sources */,
 				3E7FE3FB1FB2FA1A00498FC2 /* HYUploadIDCardViewModel.m in Sources */,
 				3E7FE4101FB32ED100498FC2 /* HYAuthPhoneVC.m in Sources */,
 				3E7FE3E01FB2D68F00498FC2 /* HYDispoitHeaderView.m in Sources */,
+				3E7FE4521FB5A1E900498FC2 /* HYMyWalletModel.m in Sources */,
 				3E7FE3CB1FB1ABEE00498FC2 /* HYBandPhoneVC.m in Sources */,
 				3E7FE3E91FB2D7A700498FC2 /* HYSetDispoitPwdVC.m in Sources */,
 				3E0FDF291FA9647900F52DC0 /* main.m in Sources */,

@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HYDepositViewModel.h"
 
 @interface HYDispoitView : UIView
+
+
+
+- (void)setWithViewModel:(HYDepositViewModel *)viewModel;
 
 @end

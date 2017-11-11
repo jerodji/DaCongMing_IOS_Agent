@@ -156,7 +156,7 @@
         
         _bgView = [UIView new];
         _bgView.backgroundColor = KAPP_WHITE_COLOR;
-        _bgView.layer.cornerRadius = 4 * WIDTH_MULTIPLE;
+        _bgView.layer.cornerRadius = 6 * WIDTH_MULTIPLE;
         _bgView.clipsToBounds = YES;
     }
     return _bgView;

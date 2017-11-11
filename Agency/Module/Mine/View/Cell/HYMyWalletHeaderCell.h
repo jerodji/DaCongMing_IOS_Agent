@@ -11,8 +11,7 @@
 
 @interface HYMyWalletHeaderCell : UITableViewCell
 
-/** 标题 */
-@property (nonatomic,strong) NSArray *titleArray;
+
 - (void)setWithViewModel:(HYMyWalletViewModel *)viewModel;
 
 @end

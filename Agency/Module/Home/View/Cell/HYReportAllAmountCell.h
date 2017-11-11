@@ -10,4 +10,9 @@
 
 @interface HYReportAllAmountCell : UITableViewCell
 
+/** 标题 */
+@property (nonatomic,strong) UILabel *titleLabel;
+/** value */
+@property (nonatomic,strong) UILabel *valueLabel;
+
 @end

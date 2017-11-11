@@ -11,6 +11,10 @@
 #import "HYDispoitView.h"
 #import "HYSetDepositTipsView.h"
 #import "HYAuthPhoneVC.h"
+#import "HYDepositViewModel.h"
+#import "HYInputDepositPwdView.h"
+#import "HYAuthPhoneVC.h"
+#import "HYDepositWaitViewController.h"
 
 @interface HYDepositVC ()
 
@@ -18,6 +22,10 @@
 @property (nonatomic,strong) HYDispoitView *dispoitView;
 /** 提示设置提现密码 */
 @property (nonatomic,strong) HYSetDepositTipsView *tipsView;
+/** 输入密码 */
+@property (nonatomic,strong) HYInputDepositPwdView *inputPwdView;
+
+@property (nonatomic,strong) HYDepositViewModel *viewModel;
 
 @end
 
@@ -28,7 +36,8 @@
     [super viewDidLoad];
     
     [self setupSubviews];
-    [self showTipsView];
+    [self bindViewModel];
+    //[self showTipsView];
     
 }
 
@@ -40,6 +49,44 @@
     [self.view addSubview:self.dispoitView];
 }
 
+- (void)bindViewModel{
+    
+    HYDepositViewModel *viewModel = [HYDepositViewModel new];
+    viewModel.balance = self.balance;
+    [self.dispoitView setWithViewModel:viewModel];
+    self.viewModel = viewModel;
+    [viewModel.depositSubject subscribeNext:^(id x) {
+       
+        DLog(@"%@",x);
+        [self showInputPwdView];
+    }];
+    
+    [viewModel.depositSuccessSubject subscribeNext:^(id x) {
+       
+        [self.inputPwdView hideInputPwdView];
+        HYDepositWaitViewController *depositWaitVC = [HYDepositWaitViewController new];
+        depositWaitVC.amount = viewModel.inputBalance;
+        [self.navigationController pushViewController:depositWaitVC animated:YES];
+    }];
+}
+
+- (void)showInputPwdView{
+    
+    HYInputDepositPwdView *inputPwdView = [[HYInputDepositPwdView alloc] initWithFrame:CGRectMake(0, 0, KSCREEN_WIDTH, KSCREEN_HEIGHT) WithAmount:self.viewModel.inputBalance];
+    self.inputPwdView = inputPwdView;
+    [KEYWINDOW addSubview:inputPwdView];
+    [inputPwdView setWithViewModel:self.viewModel];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        [inputPwdView showInputPasswordView];
+    });
+    inputPwdView.forgetPwdAction = ^{
+       
+        HYAuthPhoneVC *authPhoneVC = [HYAuthPhoneVC new];
+        [self.navigationController pushViewController:authPhoneVC animated:YES];
+    };
+}
+
 - (void)showTipsView{
     
     [self.view addSubview:self.tipsView];
@@ -47,7 +94,7 @@
        
         make.edges.equalTo(self.view);
     }];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         
         [self.tipsView showTipsView];
     });
@@ -104,6 +151,7 @@
     }
     return _tipsView;
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

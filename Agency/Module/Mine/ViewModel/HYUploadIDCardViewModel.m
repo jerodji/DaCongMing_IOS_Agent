@@ -76,7 +76,7 @@
         if (isSuccess) {
             
             [JRToast showWithText:@"完善信息成功" duration:2];
-            [self.uploadInfoSuccessSubject sendCompleted];
+            [self.uploadInfoSuccessSubject sendNext:@"ok"];
         }
     }];
 }

@@ -104,29 +104,34 @@
         
         [self.headerImgView sd_setImageWithURL:[NSURL URLWithString:headImgUrlStr] placeholderImage:[UIImage imageNamed:@"header"]];
     }];
-
-    [RACObserve(viewModel, state) subscribeNext:^(id x) {
+    
+    RAC(self.drawDownBtn,enabled) = [viewModel drawDownBtnIsInvalid];
+    [RACObserve(viewModel, isReceive) subscribeNext:^(id x) {
        
         if ([x boolValue]) {
             
             [self.drawDownBtn setTitle:@"已领取" forState:UIControlStateNormal];
-            self.drawDownBtn.enabled = NO;
         }
-        else{
+    }];
+    [[viewModel drawDownBtnIsInvalid] subscribeNext:^(id x) {
+       
+        if ([x boolValue]) {
             
             [self.drawDownBtn setTitle:@"领取" forState:UIControlStateNormal];
         }
+        else{
+            
+            [self.drawDownBtn setTitle:@"未入账" forState:UIControlStateNormal];
+        }
         DLog(@"%@",x);
     }];
+
 }
 
 #pragma mark - action
 - (void)drawDownBtnAction{
     
-    if (!self.viewModel.state) {
-        
-        [self.viewModel drawDownTheReport];
-    }
+    [self.viewModel drawDownTheReport];
 }
 
 #pragma mark - lazyload

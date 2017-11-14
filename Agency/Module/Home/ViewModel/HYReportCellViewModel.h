@@ -17,8 +17,10 @@
 @property (nonatomic,copy) NSString *price;
 @property (nonatomic,copy) NSString *orderID;
 @property (nonatomic,assign) BOOL state;
+@property (nonatomic,assign) BOOL isReceive;
 @property (nonatomic,strong) HYReportModel *model;
 
+- (RACSignal *)drawDownBtnIsInvalid;
 
 - (instancetype)initWithModel:(HYReportModel *)model;
 

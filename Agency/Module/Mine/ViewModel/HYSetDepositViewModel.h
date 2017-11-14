@@ -14,6 +14,7 @@
 @property (nonatomic,copy) NSString *depositPwd;
 @property (nonatomic,strong) RACSubject *setPwdSuccessSubject;
 
+
 - (RACSignal *)confirmButtonIsValid;
 
 - (void)setDepositPasswordAction;

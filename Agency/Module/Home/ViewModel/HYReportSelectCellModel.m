@@ -26,6 +26,7 @@
 
         self.startTimeStr = @"点我选择开始时间";
         self.endTimeStr = @"点我选择结束时间";
+        self.isEntry = YES;
         self.selectResultSubject = [RACSubject subject];
     }
     return self;

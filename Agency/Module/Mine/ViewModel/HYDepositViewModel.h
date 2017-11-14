@@ -18,6 +18,8 @@
 @property (nonatomic,strong) NSString *depositPwd;
 /** 提现 */
 @property (nonatomic,strong) RACSubject *depositSubject;
+/** 密码错误 */
+@property (nonatomic,strong) RACSubject *passwordErrorSubject;
 /** 提现成功 */
 @property (nonatomic,strong) RACSubject *depositSuccessSubject;
 

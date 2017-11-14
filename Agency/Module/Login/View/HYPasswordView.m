@@ -35,7 +35,7 @@
     if (self = [super initWithFrame:frame]) {
         
         [self becomeFirstResponder];
-        self.backgroundColor = [UIColor whiteColor];
+        self.backgroundColor = [UIColor clearColor];
         self.passwordString = [NSMutableString string];
         self.passwordNum = 6;
         self.dotRadius = 6;
@@ -80,7 +80,7 @@
         borderX = i * (_squareWidth + margin) + leftMargin;
         CGContextAddRect(context, CGRectMake(borderX, 0, self.squareWidth, self.height - 1));
         CGContextSetLineWidth(context, 1);
-        CGContextSetStrokeColorWithColor(context, KAPP_7b7b7b_COLOR.CGColor);
+        CGContextSetStrokeColorWithColor(context, KAPP_b7b7b7_COLOR.CGColor);
         CGContextSetFillColorWithColor(context, [UIColor whiteColor].CGColor);
     }
     CGContextDrawPath(context, kCGPathFillStroke);
@@ -95,9 +95,17 @@
         CGFloat dotX = i * (_squareWidth + margin) + self.squareWidth / 2 + leftMargin;
         CGFloat dotY = (self.height - self.dotRadius) / 2 + 2;
         CGContextAddArc(context, dotX , dotY , self.dotRadius, 0, M_PI * 2, YES);
-        CGContextSetFillColorWithColor(context, KAPP_7b7b7b_COLOR.CGColor);
+        CGContextSetFillColorWithColor(context, KAPP_b7b7b7_COLOR.CGColor);
         CGContextDrawPath(context, kCGPathFill);
     }
+}
+
+- (void)setPasswordString:(NSMutableString *)passwordString{
+    
+    _passwordString = passwordString;
+    [self becomeFirstResponder];
+    [self setNeedsDisplay];
+    
 }
 
 - (void)drawText{

@@ -347,12 +347,12 @@
 + (void)DepositWithMoney:(NSString *)money password:(NSString *)password ComplectionBlock:(void (^)(BOOL))complection{
     
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
-    [param setValue:money forKey:@"withDrawCashPwd"];
-    [param setValue:password forKey:@"repwithDrawCashPwd"];
+    [param setValue:money forKey:@"drawCashAmount"];
+    [param setValue:password forKey:@"drawCashPwd"];
     [param setValue:[HYUserModel sharedInstance].token forKey:@"token"];
     
     
-    [[HTTPManager shareHTTPManager] postDataFromUrl:API_SetDepositPassword withParameter:param isShowHUD:YES success:^(id returnData) {
+    [[HTTPManager shareHTTPManager] postDataFromUrl:API_Deposit withParameter:param isShowHUD:YES success:^(id returnData) {
         
         if (returnData) {
             

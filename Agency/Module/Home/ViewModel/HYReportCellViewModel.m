@@ -26,11 +26,24 @@
     RAC(self,headImageUrl) = RACObserve(self.model, buyer_head_image);
     RAC(self,timeStr) = RACObserve(self.model, create_time);
     RAC(self,price) = RACObserve(self.model, commission);
-    RAC(self,state) = [RACObserve(self.model, isreceive) map:^id(id value) {
+    RAC(self,state) = [RACObserve(self.model, stat) map:^id(id value) {
       
         return @([value boolValue]);
     }];
+    RAC(self,isReceive) = [RACObserve(self.model, isreceive) map:^id(id value) {
+        
+        return @([value boolValue]);
+    }];
     RAC(self,orderID) = RACObserve(self.model, sorder_id);
+}
+
+- (RACSignal *)drawDownBtnIsInvalid{
+    
+    RACSignal *isValid = [RACSignal combineLatest:@[RACObserve(self,isReceive),RACObserve(self,state)] reduce:^id{
+        
+        return @(_isReceive == 0 && _state == 1);
+    }];
+    return isValid;
 }
 
 - (void)drawDownTheReport{
@@ -39,7 +52,7 @@
        
         if (isSuccess) {
             
-            self.model.stat = @"1";
+            self.model.isreceive = @"1";
             [JRToast showWithText:@"领取成功"];
         }
     }];

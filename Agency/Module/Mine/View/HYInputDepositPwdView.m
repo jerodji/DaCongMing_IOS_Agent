@@ -171,6 +171,21 @@
 - (void)setWithViewModel:(HYDepositViewModel *)viewModel{
     
     self.viewModel = viewModel;
+    [viewModel.passwordErrorSubject subscribeNext:^(id x) {
+        
+        self.passwordView.passwordString = [NSMutableString stringWithFormat:@""];
+        [self shakeThePwdView];
+    }];
+}
+
+- (void)shakeThePwdView{
+    
+    CAKeyframeAnimation *keyAnimation = [CAKeyframeAnimation animationWithKeyPath:@"position.x"];
+    keyAnimation.duration = 0.3;
+    CGFloat x = self.layer.position.x;
+    keyAnimation.values = @[@(x-20),@(x),@(x +20),@(x),@(x -10),@(x),@(x +10),@(x),@(x -5),@(x+5)];
+    keyAnimation.repeatCount = 2;
+    [_passwordView.layer addAnimation:keyAnimation forKey:@"shake"];
 }
 
 #pragma mark - action

@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "HYLoginViewController.h"
 #import "HYHomePageViewController.h"
+#import "HYReachabilityManager.h"
 
 @interface AppDelegate () <WXApiDelegate>
 
@@ -24,7 +25,7 @@
     [self.window makeKeyAndVisible];
     
     [self setRootViewController];
-    
+    [HYReachabilityManager listenNetWorkingStatus];
     [WXApi registerApp:WXAppID];
     
     return YES;

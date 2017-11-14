@@ -16,6 +16,8 @@ typedef void(^ForgetPwdBlock)(void);
 /** 忘记密码 */
 @property (nonatomic,strong) ForgetPwdBlock forgetPwdAction;
 
+
+
 - (instancetype)initWithFrame:(CGRect)frame WithAmount:(NSString *)amount;
 
 - (void)showInputPasswordView;

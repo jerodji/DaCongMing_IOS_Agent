@@ -23,6 +23,8 @@
     
     _depositSubject = [RACSubject subject];
     _depositSuccessSubject = [RACSubject subject];
+    _passwordErrorSubject = [RACSubject subject];
+
 }
 
 - (RACSignal *)depositBtnInvalid{
@@ -50,7 +52,17 @@
 
 - (void)inputPwdComplectionAction{
     
-    [self.depositSuccessSubject sendNext:@"ok"];
+    [HYUserRequestHandle DepositWithMoney:_inputBalance password:_depositPwd ComplectionBlock:^(BOOL isSuccess) {
+       
+        if (isSuccess) {
+            
+            [self.depositSuccessSubject sendNext:@"ok"];
+        }
+        else{
+            
+            [self.passwordErrorSubject sendNext:@"passwordError"];
+        }
+    }];
 }
 
 

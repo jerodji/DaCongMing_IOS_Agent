@@ -15,6 +15,7 @@
 #import "HYAuthPhoneVC.h"
 #import "HYBaseNavController.h"
 #import "HYMyWalletModel.h"
+#import "HYBandPhoneVC.h"
 
 @interface HYWalletViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -132,9 +133,20 @@
             break;
         case 3:
         {
-            HYAuthPhoneVC *authPhoneVC = [HYAuthPhoneVC new];
-            HYBaseNavController *nav = [[HYBaseNavController alloc] initWithRootViewController:authPhoneVC];
-            [self presentViewController:nav animated:YES completion:nil];
+            //如果没绑定手机先绑定手机
+            if ([[HYUserModel sharedInstance].userInfo.phone isNotBlank]) {
+                
+                HYAuthPhoneVC *authPhoneVC = [HYAuthPhoneVC new];
+                HYBaseNavController *nav = [[HYBaseNavController alloc] initWithRootViewController:authPhoneVC];
+                [self presentViewController:nav animated:YES completion:nil];
+            }
+            else{
+                
+                HYBandPhoneVC *bindVC = [HYBandPhoneVC new];
+                HYBaseNavController *nav = [[HYBaseNavController alloc] initWithRootViewController:bindVC];
+                [self presentViewController:nav animated:YES completion:nil];
+            }
+            
         }
             break;
         default:

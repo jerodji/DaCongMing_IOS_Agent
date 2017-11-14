@@ -279,7 +279,7 @@
     }];
 }
 
-+ (void)selectReportInfoWithStartTime:(NSString *)startTime endTime:(NSString *)endTime isEntry:(BOOL)isEntry ComplectionBlock:(void (^)(NSArray *))complection{
++ (void)selectReportInfoWithStartTime:(NSString *)startTime endTime:(NSString *)endTime isEntry:(BOOL)isEntry ComplectionBlock:(void (^)(NSDictionary *))complection{
     
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
     [param setValue:startTime forKey:@"begin_date"];
@@ -295,8 +295,8 @@
             NSInteger code =[[returnData objectForKey:@"code"] integerValue];
             if (code == 000) {
                 
-                NSArray *datalist = [returnData objectForKey:@"data"][@"dataList"];
-                complection(datalist);
+                NSDictionary *dict = [returnData objectForKey:@"data"];
+                complection(dict);
             }
             else{
                 
@@ -317,7 +317,6 @@
     
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
     [param setValue:[HYUserModel sharedInstance].token forKey:@"token"];
-    
     
     [[HTTPManager shareHTTPManager] postDataFromUrl:API_GetMyWalletInfo withParameter:param isShowHUD:YES success:^(id returnData) {
         
@@ -373,6 +372,37 @@
             
             complection(NO);
             [JRToast showWithText:@"提现失败" duration:2];
+        }
+    }];
+}
+
++ (void)drawDownTheReportWithOrderID:(NSString *)orderID ComplectionBlock:(void (^)(BOOL))complection{
+    
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    [param setValue:[HYUserModel sharedInstance].token forKey:@"token"];
+    [param setValue:orderID forKey:@"sorder_ids"];
+
+    [[HTTPManager shareHTTPManager] postDataFromUrl:API_DrawDownReport withParameter:param isShowHUD:YES success:^(id returnData) {
+        
+        if (returnData) {
+            
+            NSInteger code =[[returnData objectForKey:@"code"] integerValue];
+            if (code == 000) {
+                
+            
+                complection(YES);
+            }
+            else{
+                
+                complection(NO);
+                [JRToast showWithText:[returnData valueForKey:@"message"]];
+                
+            }
+        }
+        else{
+            
+            complection(NO);
+            [JRToast showWithText:@"领取失败" duration:2];
         }
     }];
 }

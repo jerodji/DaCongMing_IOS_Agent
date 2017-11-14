@@ -53,7 +53,7 @@
     [_cellModel.selectResultSubject subscribeNext:^(id x) {
         
         HYReportListViewController *reportListVC = [HYReportListViewController new];
-        reportListVC.datalist = x;
+        reportListVC.model = x;
         [weakSelf.navigationController pushViewController:reportListVC animated:YES];
     }];
 }
@@ -61,7 +61,8 @@
 #pragma mark - HYTableViewManagerDelegate
 - (NSInteger)HYTableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    return 4;
+    //return 4;
+    return 1;
 }
 
 - (NSInteger)HYNumberOfSectionsInTableView:(UITableView *)tableView{

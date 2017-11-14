@@ -39,5 +39,6 @@
 #import "HYBaseCellViewModel.h"
 #import "HYTableViewManager.h"
 #import "HYUserRequestHandle.h"
+#import "HYCustomAlert.h"
 
 #endif /* PrefixHeader_pch */

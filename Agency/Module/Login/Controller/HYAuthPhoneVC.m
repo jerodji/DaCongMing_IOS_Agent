@@ -39,6 +39,7 @@
     [self.authPhoneView setWithViewModel:viewModel];
     
     [viewModel.AuthSuccessSubject subscribeCompleted:^{
+        
        
         HYSetDispoitPwdVC *setPWdVC = [HYSetDispoitPwdVC new];
         setPWdVC.authCode = viewModel.authCode;

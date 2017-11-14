@@ -8,6 +8,7 @@
 
 #import "HYReportSelectCellModel.h"
 #import "HYDatePickerView.h"
+#import "HYReportListModel.h"
 
 @interface HYReportSelectCellModel()
 
@@ -74,11 +75,12 @@
         return;
     }
     
-    [HYUserRequestHandle selectReportInfoWithStartTime:_startTimeStr endTime:_endTimeStr isEntry:_isEntry ComplectionBlock:^(NSArray *datalist) {
+    [HYUserRequestHandle selectReportInfoWithStartTime:_startTimeStr endTime:_endTimeStr isEntry:_isEntry ComplectionBlock:^(NSDictionary *dict) {
        
-        if (datalist) {
+        if (dict) {
             
-            [_selectResultSubject sendNext:datalist];
+            HYReportListModel *model = [HYReportListModel modelWithDictionary:dict];
+            [_selectResultSubject sendNext:model];
         }
     }];
 

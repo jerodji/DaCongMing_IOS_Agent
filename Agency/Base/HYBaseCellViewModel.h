@@ -18,6 +18,7 @@
 @property (nonatomic,assign) CGFloat cellHeight;
 
 @property (nonatomic, strong) NSIndexPath *cellIndexPath;
+
 @property (nonatomic, strong) UITableViewCell *cell;
 
 @end

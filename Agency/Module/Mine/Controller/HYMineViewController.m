@@ -110,6 +110,15 @@
             [self.navigationController pushViewController:bindVC animated:YES];
         }
             break;
+        case 4:
+        {
+            HYCustomAlert *alert = [[HYCustomAlert alloc] initWithFrame:CGRectMake(0, 0, KSCREEN_WIDTH, KSCREEN_HEIGHT) WithTitle:@"温馨提示" content:@"是否确认退出登录?" confirmBlock:^{
+                
+                [[HYUserModel sharedInstance] clearData];
+            }];
+            [KEYWINDOW addSubview:alert];
+        }
+            break;
         default:
             break;
     }

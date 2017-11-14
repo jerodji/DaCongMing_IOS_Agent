@@ -146,7 +146,7 @@
         _nickNameLabel = [[UILabel alloc] init];
         _nickNameLabel.font = KFitFont(18);
         _nickNameLabel.textColor = KAPP_WHITE_COLOR;
-        _nickNameLabel.text = @"有钱就是任性";
+        _nickNameLabel.text = @"未登录请登录";
         _nickNameLabel.textAlignment = NSTextAlignmentLeft;
     }
     return _nickNameLabel;

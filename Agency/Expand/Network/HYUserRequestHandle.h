@@ -60,7 +60,7 @@
 /**
  *  查询报表信息
  */
-+ (void)selectReportInfoWithStartTime:(NSString *)startTime endTime:(NSString *)endTime isEntry:(BOOL)isEntry ComplectionBlock:(void(^)(NSArray *datalist))complection;
++ (void)selectReportInfoWithStartTime:(NSString *)startTime endTime:(NSString *)endTime isEntry:(BOOL)isEntry ComplectionBlock:(void(^)(NSDictionary *dict))complection;
 
 /**
  *  获取我的钱包
@@ -71,5 +71,10 @@
  *  提现
  */
 + (void)DepositWithMoney:(NSString *)money password:(NSString *)password ComplectionBlock:(void(^)(BOOL isSuccess))complection;
+
+/**
+ *  领取结算单
+ */
++ (void)drawDownTheReportWithOrderID:(NSString *)orderID ComplectionBlock:(void(^)(BOOL isSuccess))complection;
 
 @end

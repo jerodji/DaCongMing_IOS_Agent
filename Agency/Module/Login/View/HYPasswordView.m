@@ -78,7 +78,7 @@
     for (NSInteger i = 0; i < 6; i++) {
         
         borderX = i * (_squareWidth + margin) + leftMargin;
-        CGContextAddRect(context, CGRectMake(borderX, 0, self.squareWidth, self.height));
+        CGContextAddRect(context, CGRectMake(borderX, 0, self.squareWidth, self.height - 1));
         CGContextSetLineWidth(context, 1);
         CGContextSetStrokeColorWithColor(context, KAPP_7b7b7b_COLOR.CGColor);
         CGContextSetFillColorWithColor(context, [UIColor whiteColor].CGColor);

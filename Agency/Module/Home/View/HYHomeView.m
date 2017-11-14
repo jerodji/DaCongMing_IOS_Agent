@@ -97,7 +97,14 @@
     
     [RACObserve(viewModel, nickName) subscribeNext:^(id x) {
        
-        _headerView.nickNameLabel.text = x;
+        if ([x isNotBlank]) {
+            
+            _headerView.nickNameLabel.text = x;
+        }
+        else{
+            
+            _headerView.nickNameLabel.text = @"未登录";
+        }
     }];
     
     //点击按钮的信号

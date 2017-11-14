@@ -47,8 +47,17 @@
     
     [viewModel.AuthSuccessSubject subscribeCompleted:^{
        
+        if (self.navigationController.viewControllers.count) {
+            
+            [self.navigationController popViewControllerAnimated:YES];
+        }
+        else{
+            
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }
+        
         [JRToast showWithText:@"绑定手机成功" duration:2];
-        [self.navigationController popViewControllerAnimated:YES];
+        [HYUserModel sharedInstance].userInfo.phone = viewModel.phone;
     }];
 }
 

@@ -50,4 +50,7 @@
 //获取钱包信息
 #define API_GetMyWalletInfo           @"HAILIN_AGENT_SERVER/getUserAccount.do"
 
+//领取结算单
+#define API_DrawDownReport            @"HAILIN_AGENT_SERVER/commission2UserAccount.do "
+
 #endif /* WebApi_h */

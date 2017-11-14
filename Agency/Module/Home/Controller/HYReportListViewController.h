@@ -7,9 +7,10 @@
 //
 
 #import "HYBaseViewController.h"
+#import "HYReportListModel.h"
 
 @interface HYReportListViewController : HYBaseViewController
 
-@property (nonatomic,strong) NSArray *datalist;
+@property (nonatomic,strong) HYReportListModel *model;
 
 @end

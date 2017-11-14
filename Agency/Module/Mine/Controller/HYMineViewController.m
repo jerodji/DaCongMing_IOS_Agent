@@ -115,6 +115,7 @@
             HYCustomAlert *alert = [[HYCustomAlert alloc] initWithFrame:CGRectMake(0, 0, KSCREEN_WIDTH, KSCREEN_HEIGHT) WithTitle:@"温馨提示" content:@"是否确认退出登录?" confirmBlock:^{
                 
                 [[HYUserModel sharedInstance] clearData];
+                KRootViewController = [HYLoginViewController new];
             }];
             [KEYWINDOW addSubview:alert];
         }

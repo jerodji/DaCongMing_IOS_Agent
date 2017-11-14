@@ -32,6 +32,7 @@
 #define IS_IPHONE_6PLUS         ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )736 ) < DBL_EPSILON )
 /** 设备的主window */
 #define KEYWINDOW               [[[UIApplication sharedApplication] delegate] window]
+#define KRootViewController     [UIApplication sharedApplication].keyWindow.rootViewController
 
 /** ----------------------------尺寸信息---------------------------------
 --------------------------------------------------------------------*/

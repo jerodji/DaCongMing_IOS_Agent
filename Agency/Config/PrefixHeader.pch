@@ -40,5 +40,6 @@
 #import "HYTableViewManager.h"
 #import "HYUserRequestHandle.h"
 #import "HYCustomAlert.h"
+#import "HYLoginViewController.h"
 
 #endif /* PrefixHeader_pch */

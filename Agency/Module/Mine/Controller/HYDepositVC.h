@@ -12,5 +12,7 @@
 
 /** 余额 */
 @property (nonatomic,strong) NSString *balance;
+/** 是否设置提现密码 */
+@property (nonatomic,assign) BOOL isSetaccountPwd;
 
 @end

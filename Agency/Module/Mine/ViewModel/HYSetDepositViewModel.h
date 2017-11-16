@@ -13,7 +13,8 @@
 @property (nonatomic,copy) NSString *authCode;
 @property (nonatomic,copy) NSString *depositPwd;
 @property (nonatomic,strong) RACSubject *setPwdSuccessSubject;
-
+/** 密码错误 */
+@property (nonatomic,strong) RACSubject *setPasswordErrorSubject;
 
 - (RACSignal *)confirmButtonIsValid;
 

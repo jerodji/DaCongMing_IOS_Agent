@@ -38,8 +38,8 @@
     
     self.title = @"完善信息";
     self.view.backgroundColor = KAPP_TableView_BgColor;
-    _titleArray = @[@"姓名",@"身份证",@"卡号",@"验证码"];
-    _placeholderArray = @[@"本人姓名",@"本人证件号码",@"本人银行卡号",@"请输入验证码"];
+    _titleArray = @[@"姓名",@"身份证",@"卡号"];
+    _placeholderArray = @[@"本人姓名",@"本人证件号码",@"本人银行卡号"];
     [self.view addSubview:self.tableView];
     [self.view addSubview:self.authView];
     [self.view addSubview:self.confirmBtn];
@@ -143,6 +143,7 @@
         _tableView.dataSource = self;
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _tableView.backgroundColor = KAPP_TableView_BgColor;
+        _tableView.bounces = NO;
     }
     return _tableView;
 }

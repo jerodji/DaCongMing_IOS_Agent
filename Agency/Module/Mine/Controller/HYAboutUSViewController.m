@@ -2,7 +2,7 @@
 //  HYAboutUSViewController.m
 //  Agency
 //
-//  Created by 胡勇 on 2017/11/3.
+//  Created by Jack on 2017/11/15.
 //  Copyright © 2017年 胡勇. All rights reserved.
 //
 
@@ -16,11 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setupSubviews];
-}
 
-- (void)setupSubviews{
-    
     self.title = @"关于我们";
 }
 
@@ -29,14 +25,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

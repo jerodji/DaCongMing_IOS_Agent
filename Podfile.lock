@@ -31,6 +31,9 @@ PODS:
   - ReactiveCocoa/no-arc (2.5)
   - ReactiveCocoa/UI (2.5):
     - ReactiveCocoa/Core
+  - RongCloudIM/IMKit (2.8.20):
+    - RongCloudIM/IMLib
+  - RongCloudIM/IMLib (2.8.20)
   - SDCycleScrollView (1.73):
     - SDWebImage (~> 4.0.0)
   - SDWebImage (4.0.0):
@@ -52,6 +55,8 @@ DEPENDENCIES:
   - MBProgressHUD (~> 1.0.0)
   - MJRefresh (~> 3.1.12)
   - ReactiveCocoa (~> 2.4)
+  - RongCloudIM/IMKit (~> 2.8.3)
+  - RongCloudIM/IMLib (~> 2.8.3)
   - SDCycleScrollView (~> 1.65)
   - WechatOpenSDK
   - YYKit (~> 1.0.9)
@@ -67,11 +72,12 @@ SPEC CHECKSUMS:
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   MJRefresh: 238e6a37e2dba12160ee3b79f6d2a2b26abcab42
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
+  RongCloudIM: fbb835e78844cb11f3f279467dea0fc962905002
   SDCycleScrollView: d0fd5fe40a80918371fd8939214eb3be81033d83
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   WechatOpenSDK: 0ee07a8d492299d3e47372a33da5af26524a7576
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: fcdf48fe18626c67ffbd647d66c1c45de880b411
+PODFILE CHECKSUM: 0d783cdfaf9d70da87e212e99736f516011529c9
 
 COCOAPODS: 1.3.1

@@ -25,6 +25,8 @@
 #import <UIScrollView+EmptyDataSet.h>
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import <AlipaySDK/AlipaySDK.h>
+#import <RongIMKit/RongIMKit.h>
+
 
 #import "Const.h"
 #import "Macro.h"

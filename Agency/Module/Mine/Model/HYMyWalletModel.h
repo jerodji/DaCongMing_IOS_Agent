@@ -22,6 +22,8 @@
 @property (nonatomic,copy) NSString *thisMonthCommission;
 /** 今日销售额 */
 @property (nonatomic,copy) NSString *todaySales;
+/** 是否设置提现密码 */
+@property (nonatomic,copy) NSString *isSetaccountPwd;
 
 @end
 

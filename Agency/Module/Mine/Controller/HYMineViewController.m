@@ -42,7 +42,10 @@
 - (void)setupData{
     
     self.datalist = [NSMutableArray arrayWithObjects:@"头像",@"用户名",@"实名认证",@"绑定手机",@"退出登录", nil];
-    self.dataSourceArray = [NSMutableArray arrayWithObjects:[HYUserModel sharedInstance].userInfo.head_image_url,[HYUserModel sharedInstance].userInfo.name,@"",@"",@"",nil];
+    NSString *phone = [HYUserModel sharedInstance].userInfo.phone;
+    phone = [phone stringByReplacingCharactersInRange:NSMakeRange(3, 4) withString:@"****"];
+    phone = [phone isNotBlank] ? phone : @"";
+    self.dataSourceArray = [NSMutableArray arrayWithObjects:[HYUserModel sharedInstance].userInfo.head_image_url,[HYUserModel sharedInstance].userInfo.name,@"",phone,@"",nil];
     
 }
 
@@ -68,16 +71,17 @@
     }
     cell.titleLabel.text = _datalist[indexPath.section];
     cell.nickNameLabel.text = _dataSourceArray[indexPath.section];
-    [cell.headerImgView sd_setImageWithURL:[NSURL URLWithString:_dataSourceArray[indexPath.section]] placeholderImage:[UIImage imageNamed:@"header_placeholder"]];
+    [cell.headerImgView sd_setImageWithURL:[NSURL URLWithString:_dataSourceArray[indexPath.section]] placeholderImage:[UIImage imageNamed:@"header"]];
     
     if (indexPath.section != 0) {
         
         cell.headerImgView.hidden = YES;
     }
+    cell.nickNameLabel.hidden = YES;
     
-    if (indexPath.section != 1) {
+    if (indexPath.section == 1 || indexPath.section == 3) {
         
-        cell.nickNameLabel.hidden = YES;
+        cell.nickNameLabel.hidden = NO;
     }
     
     return cell;
@@ -95,6 +99,13 @@
             break;
         case 2:
         {
+            if (![[HYUserModel sharedInstance].userInfo.phone isNotBlank]) {
+                
+                HYBandPhoneVC *bindVC = [HYBandPhoneVC new];
+                [self.navigationController pushViewController:bindVC animated:YES];
+                [JRToast showWithText:@"请先绑定手机"];
+                return;
+            }
             HYUploadIDCardViewController *uploadIDCardVC = [HYUploadIDCardViewController new];
             [self.navigationController pushViewController:uploadIDCardVC animated:YES];
         }

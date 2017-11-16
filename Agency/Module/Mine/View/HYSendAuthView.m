@@ -116,7 +116,9 @@
         _tipsLabel = [[UILabel alloc] init];
         _tipsLabel.font = KFitFont(14);
         _tipsLabel.textAlignment = NSTextAlignmentLeft;
-        NSString *str = [NSString stringWithFormat:@"我们将发送验证码到:%@",[HYUserModel sharedInstance].userInfo.phone];
+        NSString *phone = [HYUserModel sharedInstance].userInfo.phone;
+        phone = [phone stringByReplacingCharactersInRange:NSMakeRange(3, 4) withString:@"****"];
+        NSString *str = [NSString stringWithFormat:@"我们将发送验证码到:%@",phone];
         _tipsLabel.text = str;
         _tipsLabel.textColor = KAPP_b7b7b7_COLOR;
     }

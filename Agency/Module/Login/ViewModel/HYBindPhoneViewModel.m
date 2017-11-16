@@ -95,7 +95,10 @@
        
         if (isSuccess) {
             
-            [self.AuthSuccessSubject sendCompleted];
+            [self.AuthSuccessSubject sendNext:@"ok"];
+            //归档用户信息
+            [HYPlistTools archiveObject:[HYUserModel sharedInstance] withName:KUserModelData];
+            
         }
     }];
 }

@@ -108,6 +108,8 @@
     }];
     
     //点击按钮的信号
+    [[_headerView.myTeamsBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribe:viewModel.jumpToMyTeam];
+    
     [[_middleView.reportBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribe:viewModel.jumpToReportVC];
     [[_middleView.bankCardBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribe:viewModel.jumpToBankCardVC];
     [[_middleView.authBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribe:viewModel.jumpToAuthVC];

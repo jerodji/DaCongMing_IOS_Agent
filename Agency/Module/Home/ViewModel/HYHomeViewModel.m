@@ -27,6 +27,7 @@
 
 - (void)initializeSignal{
     
+    _jumpToMyTeam = [RACSubject subject];
     _jumpToReportVC = [RACSubject subject];
     _jumpToBankCardVC = [RACSubject subject];
     _jumpToAuthVC = [RACSubject subject];

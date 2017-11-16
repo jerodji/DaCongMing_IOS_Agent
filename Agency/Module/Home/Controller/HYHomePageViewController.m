@@ -20,6 +20,8 @@
 #import "HYBaseNavController.h"
 #import "HYJoinProtocolVC.h"
 #import "HYUploadIDCardViewController.h"
+#import "HYBandPhoneVC.h"
+#import "HYMyTeamViewController.h"
 
 @interface HYHomePageViewController ()
 
@@ -48,6 +50,13 @@
     [_homeView setWithViewModel:viewModel];
     [viewModel setWithUserModel:[HYUserModel sharedInstance]];
     
+    [viewModel.jumpToMyTeam subscribeNext:^(id x) {
+        
+        HYMyTeamViewController *myTeamVC = [HYMyTeamViewController new];
+        HYBaseNavController *nav = [[HYBaseNavController alloc] initWithRootViewController:myTeamVC];
+        [self presentViewController:nav animated:YES completion:nil];
+    }];
+    
     [viewModel.jumpToReportVC subscribeNext:^(id x) {
        
         HYReportViewController *reportVC = [HYReportViewController new];
@@ -67,6 +76,14 @@
 //        HYAuthViewController *authVC = [HYAuthViewController new];
 //        HYBaseNavController *nav = [[HYBaseNavController alloc] initWithRootViewController:authVC];
 //        [self presentViewController:nav animated:YES completion:nil];
+        if (![[HYUserModel sharedInstance].userInfo.phone isNotBlank]) {
+            
+            HYBandPhoneVC *bindVC = [HYBandPhoneVC new];
+            HYBaseNavController *nav = [[HYBaseNavController alloc] initWithRootViewController:bindVC];
+            [self presentViewController:nav animated:YES completion:nil];
+            [JRToast showWithText:@"请先绑定手机"];
+            return;
+        }
         
         HYUploadIDCardViewController *authVC = [HYUploadIDCardViewController new];
         HYBaseNavController *nav = [[HYBaseNavController alloc] initWithRootViewController:authVC];

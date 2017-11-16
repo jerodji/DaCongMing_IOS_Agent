@@ -29,7 +29,7 @@
     
     self.depositPwdSignal = RACObserve(self, depositPwd);
     _setPwdSuccessSubject = [RACSubject subject];
-    
+    _setPasswordErrorSubject = [RACSubject subject];
 }
 
 - (RACSignal *)confirmButtonIsValid{
@@ -53,6 +53,8 @@
         }
         else{
             
+            [self.setPasswordErrorSubject sendNext:@"passwordError"];
+
         }
     }];
 }

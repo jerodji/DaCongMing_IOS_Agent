@@ -44,6 +44,10 @@
         RAC(self,thisMonthSales) = RACObserve(self.model, thisMonthSales);
         RAC(self,thisMonthCommission) = RACObserve(self.model, thisMonthCommission);
         RAC(self,todaySales) = RACObserve(self.model, todaySales);
+        RAC(self,isSetaccountPwd) = [RACObserve(self.model, isSetaccountPwd) map:^id(id value) {
+           
+            return @([value integerValue]);
+        }];
         
         DLog(@"-----:%@",self.balance);
     }];

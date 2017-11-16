@@ -37,7 +37,12 @@
     
     [self setupSubviews];
     [self bindViewModel];
-    //[self showTipsView];
+    
+    //设置提现密码
+    if (!self.isSetaccountPwd) {
+        
+        [self showTipsView];
+    }
     
 }
 
@@ -55,6 +60,7 @@
     viewModel.balance = self.balance;
     [self.dispoitView setWithViewModel:viewModel];
     self.viewModel = viewModel;
+    
     [viewModel.depositSubject subscribeNext:^(id x) {
        
         DLog(@"%@",x);

@@ -10,6 +10,7 @@
 #import "HYLoginViewController.h"
 #import "HYHomePageViewController.h"
 #import "HYReachabilityManager.h"
+#import "AppDelegate+HYRongIM.h"
 
 @interface AppDelegate () <WXApiDelegate>
 
@@ -25,6 +26,7 @@
     [self.window makeKeyAndVisible];
     
     [self setRootViewController];
+    [self setupRongIMWithAPPKey:RONGCLOUD_IM_APPKEY];
     [HYReachabilityManager listenNetWorkingStatus];
     [WXApi registerApp:WXAppID];
     

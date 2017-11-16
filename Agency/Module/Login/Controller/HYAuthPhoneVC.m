@@ -38,9 +38,8 @@
     HYBindPhoneViewModel *viewModel = [HYBindPhoneViewModel new];
     [self.authPhoneView setWithViewModel:viewModel];
     
-    [viewModel.AuthSuccessSubject subscribeCompleted:^{
+    [viewModel.AuthSuccessSubject subscribeNext:^(id x) {
         
-       
         HYSetDispoitPwdVC *setPWdVC = [HYSetDispoitPwdVC new];
         setPWdVC.authCode = viewModel.authCode;
         [self.navigationController pushViewController:setPWdVC animated:YES];

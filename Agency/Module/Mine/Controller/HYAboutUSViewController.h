@@ -2,7 +2,7 @@
 //  HYAboutUSViewController.h
 //  Agency
 //
-//  Created by 胡勇 on 2017/11/3.
+//  Created by Jack on 2017/11/15.
 //  Copyright © 2017年 胡勇. All rights reserved.
 //
 

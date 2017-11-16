@@ -17,6 +17,7 @@
 @property (nonatomic,strong) RACSignal *nickNameSignal;
 @property (nonatomic,strong) RACSignal *headerImgSigal;
 
+@property (nonatomic,strong) RACSubject *jumpToMyTeam;
 @property (nonatomic,strong) RACSubject *jumpToReportVC;
 @property (nonatomic,strong) RACSubject *jumpToBankCardVC;
 @property (nonatomic,strong) RACSubject *jumpToAuthVC;

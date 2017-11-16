@@ -31,7 +31,9 @@
 - (void)initializeSignal{
     
     _authBtnTitle = @"获取验证码";
-    _tipsLabelText = [NSString stringWithFormat:@"我们将发送验证码到:%@",[HYUserModel sharedInstance].userInfo.phone];
+    NSString *phone = [HYUserModel sharedInstance].userInfo.phone;
+    phone = [phone stringByReplacingCharactersInRange:NSMakeRange(3, 4) withString:@"****"];
+    _tipsLabelText = [NSString stringWithFormat:@"我们将发送验证码到:%@",phone];
     _isGetAuth = YES;
     _nameSignal = RACObserve(self, name);
     _IDCardSignal = RACObserve(self, IDCard);

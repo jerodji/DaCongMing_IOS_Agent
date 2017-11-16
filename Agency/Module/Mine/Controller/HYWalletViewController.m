@@ -118,9 +118,16 @@
     switch (indexPath.section) {
         case 1:
         {
+            if ([self.viewModel.balance integerValue] <= 0) {
+                
+                [JRToast showWithText:@"你目前没有余额可以提现"];
+                return;
+            }
+            
             HYDepositVC *depositVC = [HYDepositVC new];
             HYBaseNavController *nav = [[HYBaseNavController alloc] initWithRootViewController:depositVC];
             depositVC.balance = self.viewModel.balance;
+            depositVC.isSetaccountPwd = self.viewModel.isSetaccountPwd;
             [self presentViewController:nav animated:YES completion:nil];
         }
             break;

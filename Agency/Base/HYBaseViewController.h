@@ -14,4 +14,6 @@
 
 - (void)setStatusBarBackgroundColor:(UIColor *)color;
 
+- (void)setupNav;
+
 @end

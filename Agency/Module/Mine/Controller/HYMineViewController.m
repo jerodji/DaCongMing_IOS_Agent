@@ -43,9 +43,17 @@
     
     self.datalist = [NSMutableArray arrayWithObjects:@"头像",@"用户名",@"实名认证",@"绑定手机",@"退出登录", nil];
     NSString *phone = [HYUserModel sharedInstance].userInfo.phone;
-    phone = [phone stringByReplacingCharactersInRange:NSMakeRange(3, 4) withString:@"****"];
-    phone = [phone isNotBlank] ? phone : @"";
-    self.dataSourceArray = [NSMutableArray arrayWithObjects:[HYUserModel sharedInstance].userInfo.head_image_url,[HYUserModel sharedInstance].userInfo.name,@"",phone,@"",nil];
+    
+    if ([phone isNotBlank]) {
+        
+        phone = [phone stringByReplacingCharactersInRange:NSMakeRange(3, 4) withString:@"****"];
+        phone = [phone isNotBlank] ? phone : @"";
+        self.dataSourceArray = [NSMutableArray arrayWithObjects:[HYUserModel sharedInstance].userInfo.head_image_url,[HYUserModel sharedInstance].userInfo.name,@"",phone,@"",nil];
+    }
+    else{
+        self.dataSourceArray = [NSMutableArray arrayWithObjects:[HYUserModel sharedInstance].userInfo.head_image_url,[HYUserModel sharedInstance].userInfo.name,@"",@"",@"",nil];
+    }
+    
     
 }
 

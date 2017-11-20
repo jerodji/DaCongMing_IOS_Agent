@@ -78,6 +78,8 @@
     
     //清除本地缓存
     [HYPlistTools removeDataWithName:KUserModelData];
+    //退出融云
+    [[RCIM sharedRCIM] logout];
 }
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder{

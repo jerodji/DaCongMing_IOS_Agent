@@ -61,7 +61,11 @@
 
     if (isShowHUD) {
         
-        [MBProgressHUD showPregressHUD:KEYWINDOW];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            [MBProgressHUD showPregressHUD:KEYWINDOW];
+        });
+        
     }
     
     NSString *urlString= [NSString stringWithFormat:@"%@/%@",API_DomainStr,url];
@@ -82,11 +86,16 @@
     
     [manager POST:urlString parameters:para progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
-        if (isShowHUD) {
+        dispatch_async(dispatch_get_main_queue(), ^{
             
+            if (isShowHUD) {
+                
+                [MBProgressHUD hidePregressHUD:KEYWINDOW];
+            }
             [MBProgressHUD hidePregressHUD:KEYWINDOW];
-        }
-        [MBProgressHUD hidePregressHUD:KEYWINDOW];
+        });
+        
+        
         
         NSInteger code = [[responseObject objectForKey:@"code"] integerValue];
         

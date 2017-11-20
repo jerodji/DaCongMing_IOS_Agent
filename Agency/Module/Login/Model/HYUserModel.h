@@ -28,6 +28,8 @@
 @property (nonatomic, copy) NSString *head_image_url;
 /** qr */
 @property (nonatomic, copy) NSString *qrpath;
+/** qr */
+@property (nonatomic, copy) NSString *group_id;
 
 /** V0没有权限 */
 @property (nonatomic,copy) NSString *level;
@@ -38,6 +40,8 @@
 
 /** token */
 @property (nonatomic,copy) NSString *token;
+/** 融云token */
+@property (nonatomic,copy) NSString *rong_token;
 /** userinfo */
 @property (nonatomic,strong) HYUserInfo *userInfo;
 

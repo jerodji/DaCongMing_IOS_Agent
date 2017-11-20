@@ -13,7 +13,7 @@
 #define WXAppID                 @"wx7520b242e7e6776c"
 #define TencentBuglyID          @"fee8e3dbb9"
 #define QIYUAPPID               @"c8f8ca70f45342c288cb2e23e0c6b600"
-#define RONGCLOUD_IM_APPKEY     @"n19jmcy59f1q9"
+#define RONGCLOUD_IM_APPKEY     @"bmdehs6pb1jrs"
 
 
 
@@ -59,5 +59,20 @@
 
 //领取结算单
 #define API_DrawDownReport            @"HAILIN_AGENT_SERVER/commission2UserAccount.do"
+
+//获取账单
+#define API_GetBillInfo           @"HAILIN_AGENT_SERVER/queryAccountStream.do"
+
+
+#pragma mark - 融云
+/********************************融云IM*********************************/
+//获取群组成员列表
+#define API_GetTeamMember            @"HAILIN_AGENT_SERVER/queryGroupMember.do"
+
+//根据用户ID获取用户信息
+#define API_GetRCIMUserInfo            @"HAILIN_AGENT_SERVER/getGroupMemberInfo.do"
+
+//获取群信息
+#define API_GetGroupInfo            @"HAILIN_AGENT_SERVER/getGroupInfo.do"
 
 #endif /* WebApi_h */

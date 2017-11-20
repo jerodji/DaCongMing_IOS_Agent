@@ -77,4 +77,9 @@
  */
 + (void)drawDownTheReportWithOrderID:(NSString *)orderID ComplectionBlock:(void(^)(BOOL isSuccess))complection;
 
+/**
+ *  获取团队成员
+ */
++ (void)getTeamMemberWithGroupID:(NSString *)groupID ComplectionBlock:(void(^)(NSDictionary *dict))complection;
+
 @end

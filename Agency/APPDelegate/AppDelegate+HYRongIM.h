@@ -7,9 +7,18 @@
 //
 
 #import "AppDelegate.h"
+#import "HYBaseNavController.h"
+#import "HYMyTeamViewController.h"
+#import "HYChatViewController.h"
 
-@interface AppDelegate (HYRongIM)
+#ifdef NSFoundationVersionNumber_iOS_9_x_Max
+#import <UserNotifications/UserNotifications.h>
+#endif
+
+@interface AppDelegate (HYRongIM) <RCIMConnectionStatusDelegate,RCIMReceiveMessageDelegate,UNUserNotificationCenterDelegate>
 
 - (void)setupRongIMWithAPPKey:(NSString *)key;
+
+- (void)registerAPNSWith:(UIApplication *)application;
 
 @end

@@ -68,6 +68,8 @@
         if (result) {
             
             [self.loginSuccessSubject sendNext:result];
+            
+            
         }
     }];
 }
@@ -95,7 +97,10 @@
     NSDictionary *dict = @{@"code" : weChatCallbackCode};
     [HYUserRequestHandle weChatLoginWithProgram:dict ComplectionBlock:^(NSDictionary *result) {
 
-        [self.loginSuccessSubject sendNext:result];
+        if (result) {
+            
+            [self.loginSuccessSubject sendNext:result];
+        }
     }];
 }
 

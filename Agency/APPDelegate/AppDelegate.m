@@ -29,6 +29,13 @@
     [self setupRongIMWithAPPKey:RONGCLOUD_IM_APPKEY];
     [HYReachabilityManager listenNetWorkingStatus];
     [WXApi registerApp:WXAppID];
+     [self registerAPNSWith:application];
+    
+    //让键盘自适应高度
+    IQKeyboardManager *manager= [IQKeyboardManager sharedManager];
+    manager.enable = YES;
+    manager.shouldResignOnTouchOutside = YES;
+    manager.shouldToolbarUsesTextFieldTintColor = YES;
     
     return YES;
 }
@@ -100,7 +107,38 @@
     }
 }
 
+#pragma mark - apns
+- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings{
+    
+    [application registerForRemoteNotifications];
+}
 
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
+    
+    NSString *token = [[[[deviceToken description] stringByReplacingOccurrencesOfString:@"<" withString:@""] stringByReplacingOccurrencesOfString:@">" withString:@""] stringByReplacingOccurrencesOfString:@" " withString:@""];
+    DLog(@"-------device Token is %@",token);
+    [[RCIMClient sharedRCIMClient] setDeviceToken:token];
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
+    
+    // 远程推送的内容
+    DLog(@"%@",userInfo);
+}
+
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification{
+    
+    DLog(@"收到本地推送");
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandler{
+    
+    DLog(@"收到远程推送消息:%@",userInfo);
+    completionHandler(UIBackgroundFetchResultNewData);
+
+}
+
+#pragma mark - 生命周期
 - (void)applicationWillResignActive:(UIApplication *)application {
     
     
@@ -141,6 +179,8 @@
         HYUserModel *shareModel = [HYUserModel sharedInstance];
         shareModel.token = userModel.token;
         shareModel.userInfo = userModel.userInfo;
+        shareModel.rong_token = userModel.rong_token;
+        
     }
     else{
         

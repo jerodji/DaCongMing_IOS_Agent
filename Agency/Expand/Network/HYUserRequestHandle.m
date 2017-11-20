@@ -29,6 +29,23 @@
                 complection(dataInfo);
                 
                 [JRToast showWithText:@"微信登录成功" duration:2];
+               
+               //登录融云
+               NSString *userId = [HYUserModel sharedInstance].userInfo.id;
+               NSString *name = [HYUserModel sharedInstance].userInfo.name;
+               NSString *portrait = [HYUserModel sharedInstance].userInfo.head_image_url;
+               RCUserInfo *_currentUserInfo = [[RCUserInfo alloc] initWithUserId:userId name:name portrait:portrait];
+               [RCIM sharedRCIM].currentUserInfo = _currentUserInfo;
+               
+               NSString *token = [HYUserModel sharedInstance].rong_token;
+               [[RCIM sharedRCIM] connectWithToken:token     success:^(NSString *userId) {
+                  NSLog(@"登陆成功。当前登录的用户ID：%@", userId);
+               } error:^(RCConnectErrorCode status) {
+                  NSLog(@"登陆的错误码为:%ld", (long)status);
+               } tokenIncorrect:^{
+                  //token过期或者不正确。
+                  NSLog(@"token错误");
+               }];
 
             }
             else{
@@ -66,6 +83,23 @@
                 [HYPlistTools archiveObject:user withName:KUserModelData];
                 complection(dataInfo);
                 [JRToast showWithText:@"登录成功" duration:2];
+               
+               //登录融云
+               NSString *userId = [HYUserModel sharedInstance].userInfo.id;
+               NSString *name = [HYUserModel sharedInstance].userInfo.name;
+               NSString *portrait = [HYUserModel sharedInstance].userInfo.head_image_url;
+               RCUserInfo *_currentUserInfo = [[RCUserInfo alloc] initWithUserId:userId name:name portrait:portrait];
+               [RCIM sharedRCIM].currentUserInfo = _currentUserInfo;
+               
+               NSString *token = [HYUserModel sharedInstance].rong_token;
+               [[RCIM sharedRCIM] connectWithToken:token     success:^(NSString *userId) {
+                  NSLog(@"登陆成功。当前登录的用户ID：%@", userId);
+               } error:^(RCConnectErrorCode status) {
+                  NSLog(@"登陆的错误码为:%ld", (long)status);
+               } tokenIncorrect:^{
+                  //token过期或者不正确。
+                  NSLog(@"token错误");
+               }];
 
             }
             else{
@@ -77,7 +111,7 @@
         else{
             
             complection(nil);
-            [JRToast showWithText:[returnData valueForKey:@"message"]];
+            [JRToast showWithText:@"账号登录失败"];
         }
     }];
 }
@@ -405,6 +439,38 @@
             [JRToast showWithText:@"领取失败" duration:2];
         }
     }];
+}
+
++ (void)getTeamMemberWithGroupID:(NSString *)groupID ComplectionBlock:(void (^)(NSDictionary *dict))complection{
+   
+   NSMutableDictionary *param = [NSMutableDictionary dictionary];
+   [param setValue:[HYUserModel sharedInstance].token forKey:@"token"];
+   [param setValue:groupID forKey:@"group_id"];
+   
+   [[HTTPManager shareHTTPManager] postDataFromUrl:API_GetTeamMember withParameter:param isShowHUD:YES success:^(id returnData) {
+      
+      if (returnData) {
+         
+         NSInteger code =[[returnData objectForKey:@"code"] integerValue];
+         if (code == 000) {
+            
+            
+            NSDictionary *data = [returnData objectForKey:@"data"];
+            complection(data);
+         }
+         else{
+            
+            complection(nil);
+            [JRToast showWithText:[returnData valueForKey:@"message"]];
+            
+         }
+      }
+      else{
+         
+         complection(nil);
+         [JRToast showWithText:@"获取群成员信息失败" duration:2];
+      }
+   }];
 }
 
 @end

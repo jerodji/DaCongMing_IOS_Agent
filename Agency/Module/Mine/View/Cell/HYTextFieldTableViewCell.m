@@ -53,7 +53,7 @@
         
         make.left.equalTo(self).offset(10 * WIDTH_MULTIPLE);
         make.top.bottom.equalTo(self);
-        make.width.mas_equalTo(80 * WIDTH_MULTIPLE);
+        make.width.mas_equalTo(100 * WIDTH_MULTIPLE);
     }];
     
     [_textField mas_makeConstraints:^(MASConstraintMaker *make) {

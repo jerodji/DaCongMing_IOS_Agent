@@ -25,7 +25,6 @@
     
     [self setupNav];
     
-    self.edgesForExtendedLayout = UIRectEdgeNone;
     self.view.backgroundColor = KAPP_TableView_BgColor;
     [self setStatusBarBackgroundColor:[UIColor clearColor]];
     //[self showNoAccessView];
@@ -39,6 +38,7 @@
 
 - (void)setupNav{
     
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     //设置导航栏的颜色
     self.navigationController.navigationBar.barTintColor = KAPP_NAV_COLOR;
     //设置导航栏的字体颜色

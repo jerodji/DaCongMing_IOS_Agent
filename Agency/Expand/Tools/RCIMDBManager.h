@@ -1,14 +1,15 @@
 //
-//  HYDataBaseManager.h
+//  RCIMDBManager.h
 //  Agency
 //
-//  Created by Jack on 2017/11/16.
+//  Created by Jack on 2017/11/17.
 //  Copyright © 2017年 胡勇. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
+#import <FMDB/FMDB.h>
 
-@interface HYDataBaseManager : NSObject
+@interface RCIMDBManager : NSObject
 
 + (instancetype)shareInstance;
 
@@ -17,7 +18,5 @@
 
 /** 删除用户信息 */
 - (RCUserInfo *)removeRCUserById:(NSString *)userId;
-
-
 
 @end

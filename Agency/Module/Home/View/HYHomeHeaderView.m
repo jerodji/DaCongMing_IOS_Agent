@@ -130,8 +130,8 @@
     
     if (!_headerImgView) {
         
-        _headerImgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"header"]];
-        [_headerImgView sd_setImageWithURL:[NSURL URLWithString:[HYUserModel sharedInstance].userInfo.head_image_url] placeholderImage:[UIImage imageNamed:@"header"]];
+        _headerImgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"user_placeholder"]];
+        [_headerImgView sd_setImageWithURL:[NSURL URLWithString:[HYUserModel sharedInstance].userInfo.head_image_url] placeholderImage:[UIImage imageNamed:@"user_placeholder"]];
         _headerImgView.contentMode = UIViewContentModeScaleAspectFill;
         _headerImgView.layer.cornerRadius = 20 * WIDTH_MULTIPLE;
         _headerImgView.clipsToBounds = YES;

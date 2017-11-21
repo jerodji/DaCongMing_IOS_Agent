@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HYRecommendViewModel.h"
 
 @interface HYRecommendLevelCell : UITableViewCell
+
+- (void)setWithRecommendViewModel:(HYRecommendViewModel *)recommendViewModel;
 
 @end

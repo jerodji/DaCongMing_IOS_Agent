@@ -13,7 +13,6 @@
 
 @property (nonatomic,strong) UILabel *bankCardNoLabel;
 @property (nonatomic,strong) UILabel *tipsLabel;
-@property (nonatomic,strong) UIButton *confirmBtn;
 
 @end
 

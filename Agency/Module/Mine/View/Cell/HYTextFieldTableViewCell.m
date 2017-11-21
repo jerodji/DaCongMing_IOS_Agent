@@ -53,14 +53,14 @@
         
         make.left.equalTo(self).offset(10 * WIDTH_MULTIPLE);
         make.top.bottom.equalTo(self);
-        make.width.mas_equalTo(100 * WIDTH_MULTIPLE);
+        make.width.mas_equalTo(80 * WIDTH_MULTIPLE);
     }];
     
     [_textField mas_makeConstraints:^(MASConstraintMaker *make) {
         
         make.top.height.equalTo(_titleLabel);
         make.right.equalTo(self).offset(50 * WIDTH_MULTIPLE);
-        make.left.equalTo(_titleLabel.mas_right);
+        make.left.equalTo(_titleLabel.mas_right).offset(10 * WIDTH_MULTIPLE);
     }];
     
     [_bottomLine mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -68,6 +68,8 @@
         make.left.right.bottom.equalTo(self);
         make.height.equalTo(@1);
     }];
+    
+    
 }
 
 #pragma mark - action
@@ -127,6 +129,52 @@
         }];
         RAC(viewModel,bankCardNum) = [_textField rac_textSignal];
     }
+}
+
+- (void)setWithRecommendViewModel:(HYRecommendViewModel *)recommendViewModel{
+    
+    if (self.indexPath.section == 2) {
+        
+        //被推荐人ID
+        [[_textField rac_textSignal] subscribeNext:^(id x) {
+            
+            recommendViewModel.recommendedID = _textField.text;
+        }];
+        _textField.keyboardType = UIKeyboardTypePhonePad;
+    }
+    
+    if (self.indexPath.section == 3) {
+        
+        //付款人姓名
+        [[_textField rac_textSignal] subscribeNext:^(id x) {
+            
+            recommendViewModel.payerName = _textField.text;
+        }];
+    }
+    
+    if (self.indexPath.section == 4) {
+        
+        //付款账户
+        [[_textField rac_textSignal] subscribeNext:^(id x) {
+            
+            recommendViewModel.payAccount = _textField.text;
+        }];
+        _textField.keyboardType = UIKeyboardTypePhonePad;
+    }
+    
+    if (self.indexPath.section == 5) {
+        
+        //手机号码
+        [_textField.rac_textSignal subscribeNext:^(NSString *x) {
+            
+            if (x.length >= 11) {
+                
+                _textField.text = [x substringToIndex:11];
+                recommendViewModel.phoneNum = _textField.text;
+            }
+        }];
+        _textField.keyboardType = UIKeyboardTypePhonePad;
+    }
     
 }
 
@@ -140,6 +188,7 @@
         _titleLabel.textAlignment = NSTextAlignmentLeft;
         _titleLabel.text = @"用户名";
         _titleLabel.textColor = KAPP_272727_COLOR;
+        _titleLabel.adjustsFontSizeToFitWidth = YES;
     }
     return _titleLabel;
 }

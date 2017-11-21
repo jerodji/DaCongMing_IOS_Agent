@@ -83,7 +83,7 @@
     
     _model = model;
     
-    [_headerImgView sd_setImageWithURL:[NSURL URLWithString:model.head_image_url] placeholderImage:[UIImage imageNamed:@"header"]];
+    [_headerImgView sd_setImageWithURL:[NSURL URLWithString:model.head_image_url] placeholderImage:[UIImage imageNamed:@"user_placeholder"]];
     _nickNameLabel.text = model.name;
     _IDLabel.text = model.id;
 }
@@ -94,7 +94,7 @@
     if (!_headerImgView) {
         
         _headerImgView = [[UIImageView alloc] initWithFrame:CGRectZero];
-        _headerImgView.image = [UIImage imageNamed:@"header"];
+        _headerImgView.image = [UIImage imageNamed:@"groupChat_placeholder"];
         _headerImgView.contentMode = UIViewContentModeScaleAspectFit;
         _headerImgView.layer.cornerRadius = 20 * WIDTH_MULTIPLE;
         _headerImgView.clipsToBounds = YES;

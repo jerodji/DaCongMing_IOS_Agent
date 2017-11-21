@@ -53,6 +53,20 @@
     
 }
 
+#pragma mark - viewModel
+- (void)setWithRecommendViewModel:(HYRecommendViewModel *)recommendViewModel{
+    
+    [RACObserve(recommendViewModel, selectStr) subscribeNext:^(id x) {
+        
+        _selectLabel.text = recommendViewModel.selectStr;
+    }];
+    
+    [RACObserve(recommendViewModel, selectStr) subscribeNext:^(id x) {
+        
+        _tipsLabel.text = recommendViewModel.selectTips;
+    }];
+}
+
 #pragma mark - lazyload
 - (UILabel *)selectLabel{
     

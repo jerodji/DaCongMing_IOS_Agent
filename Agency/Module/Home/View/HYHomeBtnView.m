@@ -45,7 +45,7 @@
     CGFloat itemWidth = (self.width - itemVerMargin * 3) / 2;
     CGFloat itemHeight = (self.height - itemMargin) / 2;
     
-    NSArray *imageArray = @[@"wallet",@"mine",@"about",@"quit"];
+    NSArray *imageArray = @[@"wallet",@"mine",@"about",@"news_button"];
     for (NSInteger i = 0; i < count; i++) {
         
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];

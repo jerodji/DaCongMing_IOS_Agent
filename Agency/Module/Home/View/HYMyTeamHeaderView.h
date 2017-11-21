@@ -16,6 +16,8 @@
 
 @interface HYMyTeamHeaderView : UIView
 
+@property (nonatomic,assign) BOOL isShowBtn;
+
 @property (nonatomic,weak) id<HYTeamHeaderViewBtnClickDelegate> delegate;
 
 @property (nonatomic,copy) NSString *number;

@@ -19,6 +19,8 @@ typedef NS_ENUM(NSUInteger, RecommendLevel) {
 @interface HYRecommendViewModel : NSObject
 
 @property (nonatomic,assign) RecommendLevel RecommendSelectLevel;
+@property (nonatomic,copy) NSString *selectStr;
+@property (nonatomic,copy) NSString *selectTips;
 @property (nonatomic,copy) NSString *recommendedID;
 @property (nonatomic,copy) NSString *payerName;
 @property (nonatomic,copy) NSString *payAccount;

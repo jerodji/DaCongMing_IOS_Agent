@@ -82,4 +82,14 @@
  */
 + (void)getTeamMemberWithGroupID:(NSString *)groupID ComplectionBlock:(void(^)(NSDictionary *dict))complection;
 
+/**
+ *  推荐合伙人
+ */
++ (void)recommendParterWithDict:(NSDictionary *)dict ComplectionBlock:(void(^)(BOOL isSuccess))complection;
+
+/**
+ *  查询订单数据
+ */
++ (void)getBillDataComplectionBlock:(void(^)(NSArray *datalist))complection;
+
 @end

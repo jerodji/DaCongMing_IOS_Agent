@@ -16,4 +16,6 @@
 
 - (void)setupNav;
 
+- (void)backBtnAction;
+
 @end

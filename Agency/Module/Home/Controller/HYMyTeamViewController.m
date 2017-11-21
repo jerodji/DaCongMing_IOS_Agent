@@ -19,6 +19,7 @@
 @property (nonatomic,strong) UITableView *tableView;
 @property (nonatomic,strong) NSMutableArray *datalist;
 @property (nonatomic,strong) HYMyTeamHeaderView *headerView;
+@property (nonatomic,strong) NSDictionary *requestData;
 
 @end
 
@@ -51,6 +52,7 @@
        
         if (dict) {
             
+            self.requestData = dict;
             NSArray *datalist = dict[@"memberList"];
             for (NSDictionary *dict in datalist) {
                 
@@ -60,7 +62,7 @@
             [self.tableView reloadData];
             _headerView.number = [NSString stringWithFormat:@"%lu",(unsigned long)self.datalist.count];
             _headerView.titleLabel.text = dict[@"groupInfo"][@"group_name"];
-            [_headerView.headerImageView sd_setImageWithURL:[NSURL URLWithString:dict[@"groupInfo"][@"group_portraitUri"]] placeholderImage:[UIImage imageNamed:@"header"]];
+            [_headerView.headerImageView sd_setImageWithURL:[NSURL URLWithString:dict[@"groupInfo"][@"group_portraitUri"]] placeholderImage:[UIImage imageNamed:@"user_placeholder"]];
         }
     }];
 }
@@ -155,7 +157,6 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     
     CGFloat offsetY = scrollView.contentOffset.y;
-    DLog(@"%F",offsetY);
     if (offsetY < -64) {
         
         scrollView.scrollEnabled = NO;
@@ -177,8 +178,10 @@
     switch (index) {
         case 0:
         {
+            NSDictionary *dict = @{@"teamName" : self.requestData[@"groupInfo"][@"group_name"],@"num" : [NSString stringWithFormat:@"%lu",(unsigned long)self.datalist.count],@"headImgUrl" : self.requestData[@"groupInfo"][@"group_portraitUri"]};
             HYTeamDetailViewController *teamDetailVC = [HYTeamDetailViewController new];
             [self.navigationController pushViewController:teamDetailVC animated:YES];
+            teamDetailVC.info = dict;
         }
             break;
         case 1:
@@ -222,6 +225,7 @@
         _headerView = [[HYMyTeamHeaderView alloc] initWithFrame:CGRectMake(0, 0, KSCREEN_WIDTH, 330 * WIDTH_MULTIPLE)];
         _headerView.backgroundColor = KAPP_TableView_BgColor;
         _headerView.delegate = self;
+        _headerView.isShowBtn = YES;
     }
     return _headerView;
 }

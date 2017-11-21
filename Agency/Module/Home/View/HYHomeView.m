@@ -92,7 +92,7 @@
     //绑定数据
     [RACObserve(viewModel,headImgUrlStr) subscribeNext:^(NSString *headImgUrlStr) {
         
-        [_headerView.headerImgView sd_setImageWithURL:[NSURL URLWithString:headImgUrlStr] placeholderImage:[UIImage imageNamed:@"header"]];
+        [_headerView.headerImgView sd_setImageWithURL:[NSURL URLWithString:headImgUrlStr] placeholderImage:[UIImage imageNamed:@"user_placeholder"]];
     }];
     
     [RACObserve(viewModel, nickName) subscribeNext:^(id x) {

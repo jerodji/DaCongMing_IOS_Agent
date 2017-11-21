@@ -102,7 +102,7 @@
     }];
     [RACObserve(viewModel,headImageUrl) subscribeNext:^(NSString *headImgUrlStr) {
         
-        [self.headerImgView sd_setImageWithURL:[NSURL URLWithString:headImgUrlStr] placeholderImage:[UIImage imageNamed:@"header"]];
+        [self.headerImgView sd_setImageWithURL:[NSURL URLWithString:headImgUrlStr] placeholderImage:[UIImage imageNamed:@"user_placeholder"]];
     }];
     
     RAC(self.drawDownBtn,enabled) = [viewModel drawDownBtnIsInvalid];
@@ -139,7 +139,7 @@
     
     if (!_headerImgView) {
         
-        _headerImgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"header"]];
+        _headerImgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"user_placeholder"]];
         _headerImgView.contentMode = UIViewContentModeScaleAspectFill;
         _headerImgView.layer.cornerRadius = 20 * WIDTH_MULTIPLE;
         _headerImgView.clipsToBounds = YES;

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "HYUploadIDCardViewModel.h"
+#import "HYRecommendViewModel.h"
 
 @class HYTextFieldTableViewCell;
 
@@ -22,15 +23,18 @@
 
 /** title */
 @property (nonatomic,copy) NSString *title;
+/** 站位显示 */
 @property (nonatomic,copy) NSString *placeholder;
-
 
 /** delegate */
 @property (nonatomic,weak) id<HYTextFieldCellDelegate>delegate;
 
 @property (nonatomic,strong) NSIndexPath *indexPath;
 
-
+/** 上传身份证信息viewModel */
 - (void)setWithViewModel:(HYUploadIDCardViewModel *)viewModel;
+
+/** 推荐用户viewModel */
+- (void)setWithRecommendViewModel:(HYRecommendViewModel *)recommendViewModel;
 
 @end

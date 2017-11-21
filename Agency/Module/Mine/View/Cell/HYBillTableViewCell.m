@@ -11,9 +11,8 @@
 @interface HYBillTableViewCell ()
 
 @property (nonatomic,strong) UILabel *timeLabel;
-@property (nonatomic,strong) UIImageView *iconImgView;
 @property (nonatomic,strong) UILabel *amountLabel;
-@property (nonatomic,strong) UILabel *tipsLabel;
+@property (nonatomic,strong) UILabel *briefLabel;
 @property (nonatomic,strong) UIView *bottomLine;
 
 @end
@@ -34,9 +33,8 @@
 - (void)setupSubviews{
     
     [self addSubview:self.timeLabel];
-    [self addSubview:self.iconImgView];
     [self addSubview:self.amountLabel];
-    [self addSubview:self.tipsLabel];
+    [self addSubview:self.briefLabel];
     [self addSubview:self.bottomLine];
 }
 
@@ -44,31 +42,27 @@
     
     [_timeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
        
-        make.top.bottom.equalTo(self);
+        make.bottom.equalTo(self);
         make.left.equalTo(self).offset(10 * WIDTH_MULTIPLE);
         make.width.mas_equalTo(60 * WIDTH_MULTIPLE);
+        make.height.mas_equalTo(20 * WIDTH_MULTIPLE);
     }];
     
-    [_iconImgView mas_makeConstraints:^(MASConstraintMaker *make) {
-       
-        make.left.equalTo(_timeLabel.mas_right).offset(10 * WIDTH_MULTIPLE);
-        make.size.mas_equalTo(CGSizeMake(40 * WIDTH_MULTIPLE, 40 * WIDTH_MULTIPLE));
-        make.centerY.equalTo(self);
-    }];
-    
+
     [_amountLabel mas_makeConstraints:^(MASConstraintMaker *make) {
        
-        make.left.equalTo(_iconImgView.mas_right).offset(10 * WIDTH_MULTIPLE);
-        make.top.equalTo(self).offset(10 * WIDTH_MULTIPLE);
+        make.top.equalTo(self);
         make.right.equalTo(self);
-        make.height.mas_equalTo(20 * WIDTH_MULTIPLE);
+        make.right.equalTo(self).offset(-10 * WIDTH_MULTIPLE);
+        make.width.mas_equalTo(140 * WIDTH_MULTIPLE);
     }];
     
-    [_tipsLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+    [_briefLabel mas_makeConstraints:^(MASConstraintMaker *make) {
        
         make.bottom.equalTo(self);
-        make.left.right.equalTo(_amountLabel);
-        make.height.mas_equalTo(20 * WIDTH_MULTIPLE);
+        make.left.equalTo(_timeLabel);
+        make.right.equalTo(_timeLabel.mas_left).offset(-20 * WIDTH_MULTIPLE);
+        make.bottom.equalTo(_timeLabel.mas_top).offset(-10 * WIDTH_MULTIPLE);
     }];
     
     [_bottomLine mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -78,25 +72,21 @@
     }];
 }
 
-#pragma mark - lazyload
-- (UIImageView *)iconImgView{
+#pragma mark - setter
+- (void)setModel:(HYBillModel *)model{
     
-    if (!_iconImgView) {
-        
-        _iconImgView = [[UIImageView alloc] initWithFrame:CGRectZero];
-        _iconImgView.image = [UIImage imageNamed:@"icbc_icon"];
-        _iconImgView.contentMode = UIViewContentModeScaleAspectFit;
-        
-    }
-    return _iconImgView;
+    _model = model;
+    _amountLabel.text = [NSString stringWithFormat:@"+%@",model.amount];
 }
+
+#pragma mark - lazyload
 
 - (UILabel *)timeLabel{
     
     if (!_timeLabel) {
         
         _timeLabel = [[UILabel alloc] init];
-        _timeLabel.text = @"今天\n18:03";
+        _timeLabel.text = @"昨天 18:03";
         _timeLabel.font = KFitFont(13);
         _timeLabel.numberOfLines = 0;
         _timeLabel.textColor = KAPP_b7b7b7_COLOR;
@@ -116,24 +106,24 @@
         _amountLabel.numberOfLines = 0;
         _amountLabel.textColor = KAPP_272727_COLOR;
         _amountLabel.backgroundColor = [UIColor whiteColor];
-        _amountLabel.textAlignment = NSTextAlignmentLeft;
+        _amountLabel.textAlignment = NSTextAlignmentRight;
     }
     return _amountLabel;
 }
 
-- (UILabel *)tipsLabel{
+- (UILabel *)briefLabel{
     
-    if (!_tipsLabel) {
+    if (!_briefLabel) {
         
-        _tipsLabel = [[UILabel alloc] init];
-        _tipsLabel.text = @"提现至工商银行";
-        _tipsLabel.font = KFitFont(14);
-        _tipsLabel.numberOfLines = 0;
-        _tipsLabel.textColor = KAPP_272727_COLOR;
-        _tipsLabel.backgroundColor = [UIColor whiteColor];
-        _tipsLabel.textAlignment = NSTextAlignmentLeft;
+        _briefLabel = [[UILabel alloc] init];
+        _briefLabel.text = @"提现至工商银行(闹洞房顺丰速递)";
+        _briefLabel.font = KFitFont(14);
+        _briefLabel.numberOfLines = 0;
+        _briefLabel.textColor = KAPP_272727_COLOR;
+        _briefLabel.backgroundColor = [UIColor whiteColor];
+        _briefLabel.textAlignment = NSTextAlignmentLeft;
     }
-    return _tipsLabel;
+    return _briefLabel;
 }
 
 - (UIView *)bottomLine{

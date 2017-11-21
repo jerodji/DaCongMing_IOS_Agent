@@ -7,6 +7,8 @@
 //
 
 #import "HYBillVC.h"
+#import "HYBillModel.h"
+#import "HYBillTableViewCell.h"
 
 @interface HYBillVC () <UITableViewDelegate,UITableViewDataSource,DZNEmptyDataSetSource>
 
@@ -21,6 +23,7 @@
     
     [super viewDidLoad];
     [self setupSubviews];
+    [self requestBillData];
 }
 
 - (void)setupSubviews{
@@ -28,6 +31,23 @@
     self.title = @"账单";
     self.view.backgroundColor = KAPP_TableView_BgColor;
     [self.view addSubview:self.tableView];
+}
+
+- (void)requestBillData{
+    
+    [self.datalist removeAllObjects];
+    [HYUserRequestHandle getBillDataComplectionBlock:^(NSArray *datalist) {
+       
+        if (datalist) {
+            
+            for (NSDictionary *dict in datalist) {
+                
+                HYBillModel *model = [HYBillModel modelWithDictionary:dict];
+                [self.datalist addObject:model];
+            }
+            [_tableView reloadData];
+        }
+    }];
 }
 
 - (void)viewDidLayoutSubviews{
@@ -51,13 +71,14 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    static NSString *cellID = @"";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
+    static NSString *billCellID = @"billCellID";
+    HYBillTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:billCellID];
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
+        cell = [[HYBillTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:billCellID];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
     }
+    
     return cell;
 }
 

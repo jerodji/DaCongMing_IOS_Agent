@@ -11,6 +11,8 @@
 @interface HYRecommendLevelCell ()
 
 @property (nonatomic,strong) UILabel *recommendLabel;
+@property (nonatomic,strong) UIButton *previousSelectBtn;
+@property (nonatomic,strong) HYRecommendViewModel *viewModel;
 
 @end
 
@@ -56,14 +58,28 @@
         button.tag = 200 + i;
         [button addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:button];
+        
+        if (i == 0) {
+            
+            button.selected = YES;
+            self.previousSelectBtn = button;
+        }
     }
 }
 
 #pragma mark - action
 - (void)buttonClicked:(UIButton *)button{
     
-    button.selected = !button.selected;
+    _previousSelectBtn.selected = NO;
+    button.selected = YES;
+    _previousSelectBtn = button;
     
+    self.viewModel.RecommendSelectLevel = button.tag - 200;
+}
+
+- (void)setWithRecommendViewModel:(HYRecommendViewModel *)recommendViewModel{
+    
+    self.viewModel = recommendViewModel;
 }
 
 #pragma mark - lazyload

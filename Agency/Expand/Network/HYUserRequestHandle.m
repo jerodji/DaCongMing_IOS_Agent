@@ -473,4 +473,64 @@
    }];
 }
 
++ (void)recommendParterWithDict:(NSDictionary *)dict ComplectionBlock:(void (^)(BOOL))complection{
+   
+   NSMutableDictionary *param = [NSMutableDictionary dictionary];
+   [param setValue:[HYUserModel sharedInstance].token forKey:@"token"];
+   [param setValuesForKeysWithDictionary:dict];
+   
+   [[HTTPManager shareHTTPManager] postDataFromUrl:API_RecommendParter withParameter:param isShowHUD:YES success:^(id returnData) {
+      
+      if (returnData) {
+         
+         NSInteger code = [[returnData objectForKey:@"code"] integerValue];
+         if (code == 000) {
+            
+            complection(YES);
+         }
+         else{
+            
+            complection(NO);
+            [JRToast showWithText:[returnData valueForKey:@"message"]];
+            
+         }
+      }
+      else{
+         
+         complection(NO);
+         [JRToast showWithText:@"推荐合伙人失败" duration:2];
+      }
+   }];
+}
+
++ (void)getBillDataComplectionBlock:(void (^)(NSArray *))complection{
+   
+   NSMutableDictionary *param = [NSMutableDictionary dictionary];
+   [param setValue:[HYUserModel sharedInstance].token forKey:@"token"];
+   
+   [[HTTPManager shareHTTPManager] postDataFromUrl:API_GetBillInfo withParameter:param isShowHUD:YES success:^(id returnData) {
+      
+      if (returnData) {
+         
+         NSInteger code = [[returnData objectForKey:@"code"] integerValue];
+         if (code == 000) {
+            
+            NSArray *array = returnData[@"data"][@"dataList"];
+            complection(array);
+         }
+         else{
+            
+            complection(nil);
+            [JRToast showWithText:[returnData valueForKey:@"message"]];
+            
+         }
+      }
+      else{
+         
+         complection(nil);
+         [JRToast showWithText:@"获取账单信息失败" duration:2];
+      }
+   }];
+}
+
 @end

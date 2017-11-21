@@ -36,7 +36,6 @@
 
 - (void)setupSubviews{
     
-    self.title = @"完善信息";
     self.view.backgroundColor = KAPP_TableView_BgColor;
     _titleArray = @[@"姓名",@"身份证",@"卡号"];
     _placeholderArray = @[@"本人姓名",@"本人证件号码",@"本人银行卡号"];
@@ -64,7 +63,15 @@
     __weak typeof (self)weakSelf = self;
     [self.viewModel.uploadInfoSuccessSubject subscribeNext:^(id x) {
         
-        [weakSelf.navigationController popViewControllerAnimated:YES];
+        if (self.navigationController.viewControllers.count > 1) {
+            
+            [weakSelf.navigationController popViewControllerAnimated:YES];
+        }
+        else{
+            
+            [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+        }
+        
     }];
 }
 

@@ -22,6 +22,7 @@
 #import "HYUploadIDCardViewController.h"
 #import "HYBandPhoneVC.h"
 #import "HYMyTeamViewController.h"
+#import "HYInfomationVC.h"
 
 @interface HYHomePageViewController ()
 
@@ -87,11 +88,13 @@
         
         HYUploadIDCardViewController *authVC = [HYUploadIDCardViewController new];
         HYBaseNavController *nav = [[HYBaseNavController alloc] initWithRootViewController:authVC];
+        authVC.title = @"认证";
         [self presentViewController:nav animated:YES completion:nil];
 
     }];
     
-    NSArray *vcArray = @[@"HYWalletViewController",@"HYMineViewController",@"HYAboutUSViewController",@"HYAboutUSViewController"];
+    
+    NSArray *vcArray = @[@"HYWalletViewController",@"HYMineViewController",@"HYAboutUSViewController",@"HYInfomationVC"];
     [viewModel.buttonSubject subscribeNext:^(id x) {
        
         if ([x isKindOfClass:[NSNumber class]]) {

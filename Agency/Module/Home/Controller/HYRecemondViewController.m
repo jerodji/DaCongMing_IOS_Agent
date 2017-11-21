@@ -11,6 +11,8 @@
 #import "HYRecommendLevelCell.h"
 #import "HYTextFieldTableViewCell.h"
 #import "HYRecommendTipsCell.h"
+#import "HYRecommendViewModel.h"
+#import "HYRecommendSuccessVC.h"
 
 @interface HYRecemondViewController () <UITableViewDelegate,UITableViewDataSource>
 
@@ -18,7 +20,7 @@
 @property (nonatomic,strong) UITableView *tableView;
 @property (nonatomic,copy) NSArray *titleArray;
 @property (nonatomic,copy) NSArray *placeholderArray;
-
+@property (nonatomic,strong) HYRecommendViewModel *viewModel;
 
 @end
 
@@ -27,8 +29,8 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    [self setupData];
     [self setupSubviews];
+    [self bindViewModel];
 }
 
 - (void)setupSubviews{
@@ -38,11 +40,44 @@
     [self.view addSubview:self.tableView];
 }
 
-- (void)setupData{
-    
-    _titleArray = @[@"被推荐人ID",@"付款人姓名",@"付款账户",@"手机号码"];
-    _placeholderArray = @[@"请输入被推荐人ID",@"请输入付款人姓名",@"请输入付款账户",@"请输入手机号码"];
 
+- (void)bindViewModel{
+    
+    _viewModel = [HYRecommendViewModel new];
+    
+    [RACObserve(_viewModel, RecommendSelectLevel) subscribeNext:^(id x) {
+       
+        if (_viewModel.RecommendSelectLevel == RecommendLevelPracticeAgent || _viewModel.RecommendSelectLevel == RecommendLevelPractice) {
+            
+            _titleArray = @[@"被推荐人ID"];
+            _placeholderArray = @[@"请输入被推荐人ID"];
+        }
+        else{
+            
+            _titleArray = @[@"被推荐人ID",@"付款人姓名",@"付款账户",@"手机号码"];
+            _placeholderArray = @[@"请输入被推荐人ID",@"请输入付款人姓名",@"请输入付款账户",@"请输入手机号码"];
+        }
+        
+        [_tableView reloadData];
+    }];
+    
+    RAC(_bottomView.confirmBtn,enabled) = [_viewModel confirmButtonIsValid];
+    
+    RAC(_bottomView.confirmBtn, backgroundColor) = [[_viewModel confirmButtonIsValid] map:^id(id value) {
+       
+        return [value boolValue] ? KAPP_THEME_COLOR : KAPP_c2c2c2_COLOR;
+    }];
+    
+    [[_bottomView.confirmBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+        
+        [_viewModel confirmAction];
+    }];
+    
+    [self.viewModel.confirmSuccessSubject subscribeNext:^(id x) {
+       
+        HYRecommendSuccessVC *recommendSuccessVC = [HYRecommendSuccessVC new];
+        [self.navigationController pushViewController:recommendSuccessVC animated:YES];
+    }];
 }
 
 - (void)viewDidLayoutSubviews{
@@ -74,7 +109,7 @@
     [super viewWillDisappear:animated];
     self.navigationController.navigationBar.translucent = YES;
     [self setStatusBarBackgroundColor:KAPP_WHITE_COLOR];
-    [self setNeedsNavigationBackground:0];
+    //[self setNeedsNavigationBackground:0];
 }
 
 //设置状态栏颜色
@@ -114,7 +149,7 @@
 #pragma mark - TableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     
-    return 6;
+    return _titleArray.count + 2;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -134,6 +169,7 @@
                 cell.selectionStyle = UITableViewCellSelectionStyleNone;
                 
             }
+            [cell setWithRecommendViewModel:self.viewModel];
             return cell;
             
         }
@@ -147,6 +183,7 @@
                 cell.selectionStyle = UITableViewCellSelectionStyleNone;
                 
             }
+            [cell setWithRecommendViewModel:self.viewModel];
             return cell;
             
         }
@@ -164,6 +201,8 @@
             }
             cell.title = _titleArray[indexPath.section - 2];
             cell.placeholder = _placeholderArray[indexPath.section - 2];
+            cell.indexPath = indexPath;
+            [cell setWithRecommendViewModel:self.viewModel];
             return cell;
         }
             break;

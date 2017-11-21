@@ -9,6 +9,7 @@
 #import "HYBankCardViewController.h"
 #import "HYBankInfoTableViewCell.h"
 #import "HYUploadIDCardViewController.h"
+#import "HYBandPhoneVC.h"
 
 @interface HYBankCardViewController () <UITableViewDelegate,UITableViewDataSource,DZNEmptyDataSetSource>
 
@@ -51,7 +52,17 @@
 #pragma mark - action
 - (void)addBankCardAction{
     
+    if (![[HYUserModel sharedInstance].userInfo.phone isNotBlank]) {
+        
+        HYBandPhoneVC *bindPhone = [HYBandPhoneVC new];
+        [self.navigationController pushViewController:bindPhone animated:YES];
+        
+        [JRToast showWithText:@"请先绑定手机后在添加银行卡"];
+        return;
+    }
+    
     HYUploadIDCardViewController *uploadVC = [[HYUploadIDCardViewController alloc] init];
+    uploadVC.title = @"添加银行卡";
     [self.navigationController pushViewController:uploadVC animated:YES];
 }
 

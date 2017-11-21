@@ -39,8 +39,8 @@
     
     [super viewWillDisappear:animated];
     self.navigationController.navigationBar.translucent = YES;
-    [self setStatusBarBackgroundColor:KAPP_WHITE_COLOR];
-    [self setNeedsNavigationBackground:0];
+    //[self setStatusBarBackgroundColor:KAPP_WHITE_COLOR];
+    //[self setNeedsNavigationBackground:0];
 }
 
 //设置状态栏颜色

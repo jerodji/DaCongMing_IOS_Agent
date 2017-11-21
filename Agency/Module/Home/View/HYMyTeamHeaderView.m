@@ -34,11 +34,8 @@
     [self addSubview:self.headerImageView];
     [self addSubview:self.titleLabel];
     [self addSubview:self.numberLabel];
-    [self addSubview:self.whiteBgView];
-    [self addSubview:self.teamMemberLabel];
     
-    [self layoutIfNeeded];
-    [self createButton];
+    
 }
 
 - (void)layoutSubviews{
@@ -85,8 +82,20 @@
     }];
 }
 
+- (void)setIsShowBtn:(BOOL)isShowBtn{
+    
+    _isShowBtn = isShowBtn;
+    if (self.isShowBtn) {
+        
+        [self addSubview:self.whiteBgView];
+        [self addSubview:self.teamMemberLabel];
+        [self createButton];
+    }
+}
+
 - (void)createButton{
     
+    [self layoutIfNeeded];
     CGFloat itemWidth = KSCREEN_WIDTH / 3;
     
     NSArray *imageArray = @[@"info",@"group_chat",@"invite"];
@@ -155,7 +164,7 @@
     if (!_headerImageView) {
         
         _headerImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
-        _headerImageView.image = [UIImage imageNamed:@"header"];
+        _headerImageView.image = [UIImage imageNamed:@"user_placeholder"];
         _headerImageView.contentMode = UIViewContentModeScaleAspectFill;
         _headerImageView.layer.cornerRadius = 35 * WIDTH_MULTIPLE;
         _headerImageView.clipsToBounds = YES;

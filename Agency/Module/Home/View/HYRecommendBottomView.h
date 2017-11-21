@@ -10,4 +10,7 @@
 
 @interface HYRecommendBottomView : UIView
 
+@property (nonatomic,strong) UIButton *confirmBtn;
+
+
 @end

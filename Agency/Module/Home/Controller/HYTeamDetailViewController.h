@@ -10,4 +10,7 @@
 
 @interface HYTeamDetailViewController : HYBaseViewController
 
+/** 信息 */
+@property (nonatomic,strong) NSDictionary *info;
+
 @end

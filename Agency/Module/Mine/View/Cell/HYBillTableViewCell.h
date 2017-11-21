@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HYBillModel.h"
 
 @interface HYBillTableViewCell : UITableViewCell
+
+/** model */
+@property (nonatomic,strong) HYBillModel *model;
 
 @end

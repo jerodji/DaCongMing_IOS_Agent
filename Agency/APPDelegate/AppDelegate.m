@@ -31,6 +31,8 @@
     [WXApi registerApp:WXAppID];
      [self registerAPNSWith:application];
     
+    application.applicationIconBadgeNumber = 0;
+    
     //让键盘自适应高度
     IQKeyboardManager *manager= [IQKeyboardManager sharedManager];
     manager.enable = YES;

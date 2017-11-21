@@ -63,6 +63,9 @@
 //获取账单
 #define API_GetBillInfo           @"HAILIN_AGENT_SERVER/queryAccountStream.do"
 
+//推荐合伙人
+#define API_RecommendParter           @"HAILIN_AGENT_SERVER/recomPartner.do"
+
 
 #pragma mark - 融云
 /********************************融云IM*********************************/

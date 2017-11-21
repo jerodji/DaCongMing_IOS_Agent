@@ -79,7 +79,7 @@
     }
     cell.titleLabel.text = _datalist[indexPath.section];
     cell.nickNameLabel.text = _dataSourceArray[indexPath.section];
-    [cell.headerImgView sd_setImageWithURL:[NSURL URLWithString:_dataSourceArray[indexPath.section]] placeholderImage:[UIImage imageNamed:@"header"]];
+    [cell.headerImgView sd_setImageWithURL:[NSURL URLWithString:_dataSourceArray[indexPath.section]] placeholderImage:[UIImage imageNamed:@"user_placeholder"]];
     
     if (indexPath.section != 0) {
         
@@ -115,6 +115,7 @@
                 return;
             }
             HYUploadIDCardViewController *uploadIDCardVC = [HYUploadIDCardViewController new];
+            uploadIDCardVC.title = @"实名认证";
             [self.navigationController pushViewController:uploadIDCardVC animated:YES];
         }
             break;

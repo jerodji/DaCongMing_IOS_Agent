@@ -11,7 +11,7 @@
 #define WebApi_h
 
 #define WXAppID                 @"wx7520b242e7e6776c"
-#define TencentBuglyID          @"fee8e3dbb9"
+#define TencentBuglyID          @"62a0980d1e"
 #define QIYUAPPID               @"c8f8ca70f45342c288cb2e23e0c6b600"
 #define RONGCLOUD_IM_APPKEY     @"bmdehs6pb1jrs"
 

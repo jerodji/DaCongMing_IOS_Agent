@@ -13,6 +13,7 @@
 		0425725E1FC413C70040A10A /* HYInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0425725D1FC413C70040A10A /* HYInfoTableViewCell.m */; };
 		042572611FC416B00040A10A /* HYLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 042572601FC416AF0040A10A /* HYLabel.m */; };
 		042572641FC43C9E0040A10A /* HYDateHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 042572631FC43C9E0040A10A /* HYDateHandle.m */; };
+		042572671FC524B30040A10A /* HYGuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 042572661FC524B30040A10A /* HYGuideViewController.m */; };
 		04375E401FBC4C1F00B39E82 /* HYAboutUSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04375E3E1FBC4C1F00B39E82 /* HYAboutUSViewController.m */; };
 		0468FDA91FBD2E1100ACB4FA /* AppDelegate+HYRongIM.m in Sources */ = {isa = PBXBuildFile; fileRef = 0468FDA81FBD2E1100ACB4FA /* AppDelegate+HYRongIM.m */; };
 		0468FDAC1FBD394A00ACB4FA /* HYMyTeamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0468FDAB1FBD394A00ACB4FA /* HYMyTeamViewController.m */; };
@@ -155,6 +156,8 @@
 		042572601FC416AF0040A10A /* HYLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYLabel.m; sourceTree = "<group>"; };
 		042572621FC43C9E0040A10A /* HYDateHandle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HYDateHandle.h; sourceTree = "<group>"; };
 		042572631FC43C9E0040A10A /* HYDateHandle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HYDateHandle.m; sourceTree = "<group>"; };
+		042572651FC524B30040A10A /* HYGuideViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HYGuideViewController.h; sourceTree = "<group>"; };
+		042572661FC524B30040A10A /* HYGuideViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HYGuideViewController.m; sourceTree = "<group>"; };
 		04375E3D1FBC4C1F00B39E82 /* HYAboutUSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HYAboutUSViewController.h; sourceTree = "<group>"; };
 		04375E3E1FBC4C1F00B39E82 /* HYAboutUSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HYAboutUSViewController.m; sourceTree = "<group>"; };
 		0468FDA71FBD2E1100ACB4FA /* AppDelegate+HYRongIM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+HYRongIM.h"; sourceTree = "<group>"; };
@@ -571,6 +574,8 @@
 				3E7FE3CA1FB1ABEE00498FC2 /* HYBandPhoneVC.m */,
 				3E7FE40E1FB32ED100498FC2 /* HYAuthPhoneVC.h */,
 				3E7FE40F1FB32ED100498FC2 /* HYAuthPhoneVC.m */,
+				042572651FC524B30040A10A /* HYGuideViewController.h */,
+				042572661FC524B30040A10A /* HYGuideViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1168,6 +1173,7 @@
 				04D5F4E51FC2CE18005F868F /* HYRecommendLevelCell.m in Sources */,
 				042572551FC412730040A10A /* HYInfomationVC.m in Sources */,
 				3E7FE4581FB5C93700498FC2 /* HYInputDepositPwdView.m in Sources */,
+				042572671FC524B30040A10A /* HYGuideViewController.m in Sources */,
 				3E95E2131FAACA7300995AB2 /* HTTPManager.m in Sources */,
 				3E7FE4441FB4546200498FC2 /* HYSetDepositTipsView.m in Sources */,
 				04D5F4A01FBFF892005F868F /* HYRCIMGetUserInfoHandle.m in Sources */,

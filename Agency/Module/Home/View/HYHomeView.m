@@ -89,6 +89,8 @@
     
     self.viewModel = viewModel;
     
+    RAC(self.headerView.moneyLabel,text) = RACObserve(viewModel, money);
+    
     //绑定数据
     [RACObserve(viewModel,headImgUrlStr) subscribeNext:^(NSString *headImgUrlStr) {
         

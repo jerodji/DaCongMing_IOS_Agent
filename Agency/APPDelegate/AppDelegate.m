@@ -11,10 +11,13 @@
 #import "HYHomePageViewController.h"
 #import "HYReachabilityManager.h"
 #import "AppDelegate+HYRongIM.h"
+#import "HYGuideViewController.h"
+#import <Bugly/Bugly.h>
 
 @interface AppDelegate () <WXApiDelegate>
 
 @end
+H
 
 @implementation AppDelegate
 
@@ -38,6 +41,9 @@
     manager.enable = YES;
     manager.shouldResignOnTouchOutside = YES;
     manager.shouldToolbarUsesTextFieldTintColor = YES;
+    
+    [Bugly startWithAppId:TencentBuglyID];
+    return YES;
     
     return YES;
 }
@@ -162,6 +168,7 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     
+    application.applicationIconBadgeNumber = 0;
 }
 
 
@@ -172,23 +179,52 @@
 #pragma mark - method
 - (void)setRootViewController{
     
-    if ([HYPlistTools unarchivewithName:KUserModelData]) {
+    //判断是不是第一次使用
+    if (![[NSUserDefaults standardUserDefaults] objectForKey:@"isFirstLaunch"]) {
         
-        HYHomePageViewController *homeVC = [HYHomePageViewController new];
-        self.window.rootViewController = homeVC;
-        
-        HYUserModel *userModel = [HYPlistTools unarchivewithName:KUserModelData];
-        HYUserModel *shareModel = [HYUserModel sharedInstance];
-        shareModel.token = userModel.token;
-        shareModel.userInfo = userModel.userInfo;
-        shareModel.rong_token = userModel.rong_token;
-        
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isFirstLaunch"];
+        HYGuideViewController *guideVC = [[HYGuideViewController alloc] init];
+        self.window.rootViewController = guideVC;
     }
     else{
         
-        HYLoginViewController *loginVC = [[HYLoginViewController alloc] init];
-        self.window.rootViewController = loginVC;
+        if(KUserDefaultsForKey(KUserPhone) && KUserDefaultsForKey(KUserPassword)){
+            
+            [HYUserRequestHandle LoginWithPhone:KUserDefaultsForKey(KUserPhone) password:KUserDefaultsForKey(KUserPassword) ComplectionBlock:^(NSDictionary *result) {
+               
+                if (result) {
+                    
+                    HYHomePageViewController *homeVC = [HYHomePageViewController new];
+                    self.window.rootViewController = homeVC;
+                    return;
+                }
+                
+            }];
+        }
+        
+        if ([HYPlistTools unarchivewithName:KUserModelData]) {
+            
+            
+            HYHomePageViewController *homeVC = [HYHomePageViewController new];
+            self.window.rootViewController = homeVC;
+            
+            HYUserModel *userModel = [HYPlistTools unarchivewithName:KUserModelData];
+            HYUserModel *shareModel = [HYUserModel sharedInstance];
+            shareModel.token = userModel.token;
+            shareModel.userInfo = userModel.userInfo;
+            shareModel.rong_token = userModel.rong_token;
+            
+        }
+        else{
+            
+            HYLoginViewController *loginVC = [[HYLoginViewController alloc] init];
+            self.window.rootViewController = loginVC;
+        }
+       
     }
+    
+    
+    
 }
 
 

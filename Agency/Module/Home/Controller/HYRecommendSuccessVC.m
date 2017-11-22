@@ -21,6 +21,9 @@
     
     [super viewDidLoad];
     [self setupSubviews];
+    [self setStatusBarBackgroundColor:KAPP_NAV_COLOR];
+    self.navigationController.navigationBar.barTintColor = KAPP_NAV_COLOR;
+
 }
 
 - (void)setupSubviews{

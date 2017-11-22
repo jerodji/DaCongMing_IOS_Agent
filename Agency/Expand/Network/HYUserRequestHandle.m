@@ -51,13 +51,13 @@
             else{
                 
                 complection(nil);
-                [JRToast showWithText:@"login error"];
+                [JRToast showWithText:[returnData objectForKey:@"message"] duration:2.0f];
             }
         }
         else{
             
             complection(nil);
-            [JRToast showWithText:@"wechat login error"];
+           [JRToast showWithText:@"微信登录失败" duration:2.0f];
         }
     }];
 }
@@ -78,29 +78,38 @@
                 NSDictionary *dataInfo = [returnData objectForKey:@"data"];
                 HYUserModel *user = [HYUserModel sharedInstance];
                 [user modelSetWithDictionary:dataInfo];
-                
-                //归档
-                [HYPlistTools archiveObject:user withName:KUserModelData];
-                complection(dataInfo);
-                [JRToast showWithText:@"登录成功" duration:2];
                
-               //登录融云
-               NSString *userId = [HYUserModel sharedInstance].userInfo.id;
-               NSString *name = [HYUserModel sharedInstance].userInfo.name;
-               NSString *portrait = [HYUserModel sharedInstance].userInfo.head_image_url;
-               RCUserInfo *_currentUserInfo = [[RCUserInfo alloc] initWithUserId:userId name:name portrait:portrait];
-               [RCIM sharedRCIM].currentUserInfo = _currentUserInfo;
+               //将用户名和密码保存起来
+               [KUSERDEFAULTS setValue:phone forKey:KUserPhone];
+               [KUSERDEFAULTS setValue:password forKey:KUserPassword];
+               [KUSERDEFAULTS setValue:@"phone" forKey:KUserLoginType];
+               [KUSERDEFAULTS synchronize];
                
-               NSString *token = [HYUserModel sharedInstance].rong_token;
-               [[RCIM sharedRCIM] connectWithToken:token     success:^(NSString *userId) {
-                  NSLog(@"登陆成功。当前登录的用户ID：%@", userId);
-               } error:^(RCConnectErrorCode status) {
-                  NSLog(@"登陆的错误码为:%ld", (long)status);
-               } tokenIncorrect:^{
-                  //token过期或者不正确。
-                  NSLog(@"token错误");
-               }];
-
+               if (![HYPlistTools unarchivewithName:KUserModelData]) {
+                  
+                  //登录融云
+                  NSString *userId = [HYUserModel sharedInstance].userInfo.id;
+                  NSString *name = [HYUserModel sharedInstance].userInfo.name;
+                  NSString *portrait = [HYUserModel sharedInstance].userInfo.head_image_url;
+                  RCUserInfo *_currentUserInfo = [[RCUserInfo alloc] initWithUserId:userId name:name portrait:portrait];
+                  [RCIM sharedRCIM].currentUserInfo = _currentUserInfo;
+                  
+                  NSString *token = [HYUserModel sharedInstance].rong_token;
+                  [[RCIM sharedRCIM] connectWithToken:token     success:^(NSString *userId) {
+                     NSLog(@"登陆成功。当前登录的用户ID：%@", userId);
+                  } error:^(RCConnectErrorCode status) {
+                     NSLog(@"登陆的错误码为:%ld", (long)status);
+                  } tokenIncorrect:^{
+                     //token过期或者不正确。
+                     NSLog(@"token错误");
+                  }];
+               }
+               
+               //归档
+               [HYPlistTools archiveObject:user withName:KUserModelData];
+               complection(dataInfo);
+               [JRToast showWithText:@"登录成功" duration:2];
+               
             }
             else{
                 
@@ -503,11 +512,12 @@
    }];
 }
 
-+ (void)getBillDataComplectionBlock:(void (^)(NSArray *))complection{
++ (void)getBillDataWithPageNo:(NSInteger)pageNO ComplectionBlock:(void (^)(NSArray *))complection{
    
    NSMutableDictionary *param = [NSMutableDictionary dictionary];
    [param setValue:[HYUserModel sharedInstance].token forKey:@"token"];
-   
+   [param setValue:@(pageNO) forKey:@"pageNo"];
+
    [[HTTPManager shareHTTPManager] postDataFromUrl:API_GetBillInfo withParameter:param isShowHUD:YES success:^(id returnData) {
       
       if (returnData) {

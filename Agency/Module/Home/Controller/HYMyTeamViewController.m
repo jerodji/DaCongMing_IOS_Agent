@@ -42,6 +42,14 @@
     [super viewWillAppear:animated];
     [self setupNav];
     [self setStatusBarBackgroundColor:[UIColor clearColor]];
+    
+    if (@available(iOS 11.0, *))
+    {
+        [[UIScrollView appearance] setContentInsetAdjustmentBehavior:UIScrollViewContentInsetAdjustmentNever];
+    }
+    else {
+        self.automaticallyAdjustsScrollViewInsets = NO;
+    }
 }
 
 #pragma mark - networkRequest
@@ -207,7 +215,7 @@
     
     if (!_tableView) {
         
-        _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, -64, KSCREEN_WIDTH, KSCREEN_HEIGHT + 64) style:UITableViewStylePlain];
+        _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, KSCREEN_WIDTH, KSCREEN_HEIGHT) style:UITableViewStylePlain];
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;

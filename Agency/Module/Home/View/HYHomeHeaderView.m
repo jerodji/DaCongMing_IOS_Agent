@@ -12,8 +12,7 @@
 
 /** 收益 */
 @property (nonatomic,strong) UILabel *earningLabel;
-/** money */
-@property (nonatomic,strong) UILabel *moneyLabel;
+
 /** 深颜色背景 */
 @property (nonatomic,strong) UIView *deepBgView;
 

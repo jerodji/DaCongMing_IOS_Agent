@@ -90,6 +90,6 @@
 /**
  *  查询订单数据
  */
-+ (void)getBillDataComplectionBlock:(void(^)(NSArray *datalist))complection;
++ (void)getBillDataWithPageNo:(NSInteger)pageNO ComplectionBlock:(void(^)(NSArray *datalist))complection;
 
 @end

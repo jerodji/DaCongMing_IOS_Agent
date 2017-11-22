@@ -36,8 +36,8 @@
 - (void)requestBillData{
     
     [self.datalist removeAllObjects];
-    [HYUserRequestHandle getBillDataComplectionBlock:^(NSArray *datalist) {
-       
+    [HYUserRequestHandle getBillDataWithPageNo:1 ComplectionBlock:^(NSArray *datalist) {
+        
         if (datalist) {
             
             for (NSDictionary *dict in datalist) {
@@ -78,7 +78,7 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
     }
-    
+    cell.model = self.datalist[indexPath.row];
     return cell;
 }
 

@@ -205,6 +205,8 @@
 
 - (void)onRCIMReceiveMessage:(RCMessage *)message left:(int)left{
     
+    return;
+    
    if (@available(iOS 10.0, *)) {
        
        if ([message.content isKindOfClass:[RCTextMessage class]]) {
@@ -248,7 +250,7 @@
 
 - (BOOL)onRCIMCustomAlertSound:(RCMessage *)message{
 
-    return YES;
+    return NO;
 }
 
 @end

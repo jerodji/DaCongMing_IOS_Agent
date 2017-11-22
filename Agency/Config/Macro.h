@@ -116,6 +116,8 @@
 #define KAccountPhone           [[NSUserDefaults standardUserDefaults] objectForKey:@"phone"]
 #define KAccountPassword        [[NSUserDefaults standardUserDefaults] objectForKey:@"password"]
 #define KLoginType              [[NSUserDefaults standardUserDefaults] objectForKey:@"loginType"]
+#define KUserDefaultsForKey(key)                 [[NSUserDefaults standardUserDefaults] objectForKey:key]
+
 
 
 #endif /* Macro_h */

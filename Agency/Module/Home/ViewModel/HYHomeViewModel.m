@@ -41,6 +41,7 @@
     
     RAC(self,nickName) = RACObserve(userModel,userInfo.name);
     RAC(self,headImgUrlStr) = RACObserve(userModel, userInfo.head_image_url);
+    RAC(self,money) = RACObserve(userModel, userInfo.total_incom);
 }
 
 @end

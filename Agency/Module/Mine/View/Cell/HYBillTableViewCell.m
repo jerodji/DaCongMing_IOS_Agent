@@ -7,6 +7,7 @@
 //
 
 #import "HYBillTableViewCell.h"
+#import "HYDateHandle.h"
 
 @interface HYBillTableViewCell ()
 
@@ -42,9 +43,9 @@
     
     [_timeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
        
-        make.bottom.equalTo(self);
+        make.bottom.equalTo(self).offset(-5 * WIDTH_MULTIPLE);
         make.left.equalTo(self).offset(10 * WIDTH_MULTIPLE);
-        make.width.mas_equalTo(60 * WIDTH_MULTIPLE);
+        make.width.mas_equalTo(160 * WIDTH_MULTIPLE);
         make.height.mas_equalTo(20 * WIDTH_MULTIPLE);
     }];
     
@@ -52,17 +53,17 @@
     [_amountLabel mas_makeConstraints:^(MASConstraintMaker *make) {
        
         make.top.equalTo(self);
-        make.right.equalTo(self);
+        make.bottom.equalTo(self);
         make.right.equalTo(self).offset(-10 * WIDTH_MULTIPLE);
         make.width.mas_equalTo(140 * WIDTH_MULTIPLE);
     }];
     
     [_briefLabel mas_makeConstraints:^(MASConstraintMaker *make) {
        
-        make.bottom.equalTo(self);
         make.left.equalTo(_timeLabel);
-        make.right.equalTo(_timeLabel.mas_left).offset(-20 * WIDTH_MULTIPLE);
+        make.right.equalTo(_amountLabel.mas_left).offset(-20 * WIDTH_MULTIPLE);
         make.bottom.equalTo(_timeLabel.mas_top).offset(-10 * WIDTH_MULTIPLE);
+        make.top.equalTo(self).offset(10 * WIDTH_MULTIPLE);
     }];
     
     [_bottomLine mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -76,7 +77,17 @@
 - (void)setModel:(HYBillModel *)model{
     
     _model = model;
-    _amountLabel.text = [NSString stringWithFormat:@"+%@",model.amount];
+    _amountLabel.text = model.amount;
+    _briefLabel.text = model.trade_type;
+    
+    NSString *dateF = [HYDateHandle distanceTimeWithBeforeTime:[model.create_time longValue]];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.timeZone = [NSTimeZone timeZoneWithName:@"shanghai"];
+    [formatter setDateFormat:@"HH:MM"];
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:[model.create_time longValue]];
+    NSString *time = [formatter stringFromDate:date];
+    
+    _timeLabel.text = [NSString stringWithFormat:@"%@  %@",dateF,time];
 }
 
 #pragma mark - lazyload
@@ -90,8 +101,7 @@
         _timeLabel.font = KFitFont(13);
         _timeLabel.numberOfLines = 0;
         _timeLabel.textColor = KAPP_b7b7b7_COLOR;
-        _timeLabel.backgroundColor = [UIColor whiteColor];
-        _timeLabel.textAlignment = NSTextAlignmentCenter;
+        _timeLabel.textAlignment = NSTextAlignmentLeft;
     }
     return _timeLabel;
 }
@@ -105,7 +115,6 @@
         _amountLabel.font = KFitFont(18);
         _amountLabel.numberOfLines = 0;
         _amountLabel.textColor = KAPP_272727_COLOR;
-        _amountLabel.backgroundColor = [UIColor whiteColor];
         _amountLabel.textAlignment = NSTextAlignmentRight;
     }
     return _amountLabel;
@@ -120,7 +129,6 @@
         _briefLabel.font = KFitFont(14);
         _briefLabel.numberOfLines = 0;
         _briefLabel.textColor = KAPP_272727_COLOR;
-        _briefLabel.backgroundColor = [UIColor whiteColor];
         _briefLabel.textAlignment = NSTextAlignmentLeft;
     }
     return _briefLabel;

@@ -16,5 +16,7 @@
 @property (nonatomic,strong) UILabel *nickNameLabel;
 /** 我的团对 */
 @property (nonatomic,strong) UIButton *myTeamsBtn;
+/** money */
+@property (nonatomic,strong) UILabel *moneyLabel;
 
 @end

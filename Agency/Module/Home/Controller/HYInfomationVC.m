@@ -8,6 +8,7 @@
 
 #import "HYInfomationVC.h"
 #import "HYInfoTableViewCell.h"
+#import "HYInformationDetailVC.h"
 
 @interface HYInfomationVC ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -61,7 +62,9 @@
 #pragma mark - tableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    
+    HYInformationDetailVC *detailVC = [HYInformationDetailVC new];
+    detailVC.url = @"http://www.baidu.com";
+    [self.navigationController pushViewController:detailVC animated:YES];
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{

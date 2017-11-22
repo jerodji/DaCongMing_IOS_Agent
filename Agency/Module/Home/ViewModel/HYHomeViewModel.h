@@ -13,6 +13,8 @@
 
 @property (nonatomic,copy) NSString *headImgUrlStr;
 @property (nonatomic,copy) NSString *nickName;
+@property (nonatomic,copy) NSString *money;
+
 
 @property (nonatomic,strong) RACSignal *nickNameSignal;
 @property (nonatomic,strong) RACSignal *headerImgSigal;

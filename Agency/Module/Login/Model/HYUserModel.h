@@ -30,7 +30,8 @@
 @property (nonatomic, copy) NSString *qrpath;
 /** qr */
 @property (nonatomic, copy) NSString *group_id;
-
+/** 我的收益 */
+@property (nonatomic, copy) NSString *total_incom;
 /** V0没有权限 */
 @property (nonatomic,copy) NSString *level;
 

@@ -10,4 +10,7 @@
 
 @interface HYInformationDetailVC : HYBaseViewController
 
+
+@property (nonatomic,copy) NSString *url;
+
 @end

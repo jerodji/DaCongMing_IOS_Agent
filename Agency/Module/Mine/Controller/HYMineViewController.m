@@ -116,6 +116,7 @@
             }
             HYUploadIDCardViewController *uploadIDCardVC = [HYUploadIDCardViewController new];
             uploadIDCardVC.title = @"实名认证";
+            uploadIDCardVC.isBindBankCard = NO;
             [self.navigationController pushViewController:uploadIDCardVC animated:YES];
         }
             break;

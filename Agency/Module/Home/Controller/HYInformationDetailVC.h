@@ -7,10 +7,11 @@
 //
 
 #import "HYBaseViewController.h"
+#import "HYInfomationDetailModel.h"
 
 @interface HYInformationDetailVC : HYBaseViewController
 
-
+@property (nonatomic,strong) HYInfomationDetailModel *model;
 @property (nonatomic,copy) NSString *url;
 
 @end

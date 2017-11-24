@@ -14,6 +14,7 @@
 
 @property (nonatomic,strong) UITableView *tableView;
 @property (nonatomic,strong) NSMutableArray *datalist;
+@property (nonatomic,assign) NSInteger pageNo;
 
 @end
 
@@ -23,10 +24,12 @@
     
     [super viewDidLoad];
     [self setupSubviews];
+    [self requestNetWork];
 }
 
 - (void)setupSubviews{
     
+    self.pageNo = 1;
     self.title = @"资讯";
     [self.view addSubview:self.tableView];
     [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -35,11 +38,45 @@
     }];
 }
 
+- (void)requestNetWork{
+    
+    [self.datalist removeAllObjects];
+    _pageNo = 1;
+    [HYUserRequestHandle getAllArticleListWithPageNo:_pageNo ComplectionBlock:^(NSArray *datalist) {
+       
+        if (datalist) {
+            
+            [self.datalist addObjectsFromArray:datalist];
+            [_tableView reloadData];
+            [_tableView.mj_header endRefreshing];
+            [_tableView.mj_footer endRefreshing];
+        }
+    }];
+}
+
+- (void)requestDataMore{
+    
+    _pageNo += 1;
+    [HYUserRequestHandle getAllArticleListWithPageNo:_pageNo ComplectionBlock:^(NSArray *datalist) {
+        
+        if (datalist.count) {
+            
+            [self.datalist addObjectsFromArray:datalist];
+            [_tableView reloadData];
+            [_tableView.mj_footer endRefreshing];
+        }
+        else{
+            
+            [_tableView.mj_footer endRefreshingWithNoMoreData];
+        }
+    }];
+    
+}
+
 #pragma mark - TableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     
-    return 10;
-    //return self.datalist.count;
+    return self.datalist.count;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -56,6 +93,10 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
     }
+    
+    HYInfomationDetailModel *model = [HYInfomationDetailModel modelWithDictionary:self.datalist[indexPath.section]];
+    cell.model = model;
+    
     return cell;
 }
 
@@ -63,7 +104,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     HYInformationDetailVC *detailVC = [HYInformationDetailVC new];
-    detailVC.url = @"http://www.baidu.com";
+    HYInfomationDetailModel *model = [HYInfomationDetailModel modelWithDictionary:self.datalist[indexPath.section]];
+    detailVC.url = model.url;
+    detailVC.model = model;
     [self.navigationController pushViewController:detailVC animated:YES];
 }
 
@@ -94,6 +137,8 @@
         _tableView.dataSource = self;
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _tableView.backgroundColor = KAPP_TableView_BgColor;
+        _tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(requestNetWork)];
+        _tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(requestDataMore)];
     }
     return _tableView;
 }

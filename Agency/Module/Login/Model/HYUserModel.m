@@ -78,6 +78,9 @@
     
     //清除本地缓存
     [HYPlistTools removeDataWithName:KUserModelData];
+    //删除存储的手机信息
+    [KUSERDEFAULTS removeObjectForKey:KUserPhone];
+    [KUSERDEFAULTS removeObjectForKey:KUserPassword];
     //退出融云
     [[RCIM sharedRCIM] logout];
 }

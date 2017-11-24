@@ -48,6 +48,11 @@
 + (void)uploadIDCardInfoWithName:(NSString *)name IDCardNum:(NSString *)IDCardNum bankCardNum:(NSString *)bankCardNum authCode:(NSString *)authCode ComplectionBlock:(void(^)(BOOL isSuccess))complection;
 
 /**
+ *  绑定银行卡
+ */
++ (void)bindBankCardWithName:(NSString *)name IDCardNum:(NSString *)IDCardNum bankCardNum:(NSString *)bankCardNum authCode:(NSString *)authCode ComplectionBlock:(void(^)(BOOL isSuccess))complection;
+
+/**
  *  获取账户信息
  */
 + (void)getAccountInfoComplectionBlock:(void(^)(NSDictionary *result))complection;
@@ -91,5 +96,15 @@
  *  查询订单数据
  */
 + (void)getBillDataWithPageNo:(NSInteger)pageNO ComplectionBlock:(void(^)(NSArray *datalist))complection;
+
+/**
+ *  获取绑定银行卡列表
+ */
++ (void)getBankCardListComplectionBlock:(void(^)(NSArray *datalist))complection;
+
+/**
+ *  获取所有的文章列表
+ */
++ (void)getAllArticleListWithPageNo:(NSInteger)pageNO ComplectionBlock:(void(^)(NSArray *datalist))complection;
 
 @end

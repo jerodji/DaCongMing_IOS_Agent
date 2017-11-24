@@ -47,6 +47,7 @@
 - (void)bindViewModel{
     
     self.viewModel = [HYUploadIDCardViewModel new];
+    _viewModel.isBindBankCard = self.isBindBankCard;
     [_authView setWithViewModel:_viewModel];
     
     RAC(self.confirmBtn,enabled) = [_viewModel confirmButtonIsValid];

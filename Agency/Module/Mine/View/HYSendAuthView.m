@@ -101,7 +101,7 @@
     [_textField mas_makeConstraints:^(MASConstraintMaker *make) {
         
         make.top.height.equalTo(_whiteBgView);
-        make.right.equalTo(_getAuthBtn.mas_left).offset(10 * WIDTH_MULTIPLE);
+        make.right.equalTo(_getAuthBtn.mas_left).offset(-10 * WIDTH_MULTIPLE);
         make.left.equalTo(_authLabel.mas_right);
     }];
     

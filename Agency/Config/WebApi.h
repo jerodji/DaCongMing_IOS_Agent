@@ -45,6 +45,10 @@
 //实名认证
 #define API_Certification           @"HAILIN_AGENT_SERVER/userAuth.do"
 
+//绑定银行卡
+#define API_BindBankCard           @"HAILIN_AGENT_SERVER/bankCardBundling.do"
+
+
 //设置提现密码
 #define API_SetDepositPassword           @"HAILIN_AGENT_SERVER/setWithdrawCashPwd.do"
 
@@ -65,6 +69,12 @@
 
 //推荐合伙人
 #define API_RecommendParter           @"HAILIN_AGENT_SERVER/recomPartner.do"
+
+//获取绑定银行卡列表
+#define API_GetBankCardList           @"HAILIN_AGENT_SERVER/getBankCardList.do"
+
+//获取文章列表
+#define API_GetArticleList           @"HAILIN_AGENT_SERVER/articleList.do"
 
 
 #pragma mark - 融云

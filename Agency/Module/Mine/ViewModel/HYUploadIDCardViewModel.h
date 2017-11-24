@@ -10,6 +10,8 @@
 
 @interface HYUploadIDCardViewModel : NSObject
 
+/** 1是绑定银行卡  0是完善信息实名认证 */
+@property (nonatomic,assign) BOOL isBindBankCard;
 @property (nonatomic,copy) NSString *name;
 @property (nonatomic,copy) NSString *IDCard;
 @property (nonatomic,copy) NSString *bankCardNum;

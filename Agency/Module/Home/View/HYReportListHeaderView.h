@@ -10,4 +10,7 @@
 
 @interface HYReportListHeaderView : UITableViewHeaderFooterView
 
+@property (nonatomic,strong) UILabel *allOrderLabel;
+@property (nonatomic,strong) UILabel *allAmountLabel;
+
 @end

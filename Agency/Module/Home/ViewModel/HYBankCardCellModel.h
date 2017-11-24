@@ -7,8 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "HYBankCardModel.h"
 
 @interface HYBankCardCellModel : NSObject
+
+@property (nonatomic,copy) NSString *bank_name;
+@property (nonatomic,copy) NSString *bankcard_id;
+
+- (instancetype)initWithModel:(HYBankCardModel *)model;
 
 
 - (void)relieveBind;

@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HYInfomationDetailModel.h"
 
 @interface HYInfoTableViewCell : UITableViewCell
+
+
+@property (nonatomic,strong) HYInfomationDetailModel *model;
 
 @end

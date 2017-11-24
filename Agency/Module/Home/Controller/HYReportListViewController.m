@@ -83,6 +83,8 @@
     if (!headerView) {
         headerView = [[HYReportListHeaderView alloc] initWithReuseIdentifier:headerViewCellID];
     }
+    headerView.allOrderLabel.text = [NSString stringWithFormat:@"订单总量:%@单",_model.orderCount];
+    headerView.allAmountLabel.text = [NSString stringWithFormat:@"总金额:%@",_model.totalAmount];
     return headerView;
 }
 

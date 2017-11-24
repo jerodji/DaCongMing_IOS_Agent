@@ -89,6 +89,7 @@
         HYUploadIDCardViewController *authVC = [HYUploadIDCardViewController new];
         HYBaseNavController *nav = [[HYBaseNavController alloc] initWithRootViewController:authVC];
         authVC.title = @"认证";
+        authVC.isBindBankCard = NO;
         [self presentViewController:nav animated:YES completion:nil];
 
     }];

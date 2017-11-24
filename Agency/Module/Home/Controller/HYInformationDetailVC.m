@@ -8,6 +8,7 @@
 
 #import "HYInformationDetailVC.h"
 #import <WebKit/WebKit.h>
+#import "HYShareView.h"
 
 @interface HYInformationDetailVC ()<WKUIDelegate,WKNavigationDelegate>
 
@@ -41,6 +42,9 @@
     
     [self.webView addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew context:nil];
     [MBProgressHUD showPregressHUDWithLoadingText:@"正在加载中！"];
+    
+    UIBarButtonItem *shareItem = [[UIBarButtonItem alloc] initWithTitle:@"分享" style:UIBarButtonItemStylePlain target:self action:@selector(shareAction)];
+    self.navigationItem.rightBarButtonItem = shareItem;
 }
 
 - (void)backBtnAction{
@@ -53,7 +57,21 @@
         
         [self closeAction];
     }
+}
+
+- (void)shareAction{
     
+    HYShareView *shareView = [[HYShareView alloc] initWithFrame:KEYWINDOW.frame];
+    [KEYWINDOW addSubview:shareView];
+    
+    NSMutableDictionary *shareDict = [NSMutableDictionary dictionary];
+    [shareDict setValue:_model.shareUrl forKey:@"shareUrl"];
+    [shareDict setValue:_model.descriptions forKey:@"shareDesc"];
+    [shareDict setValue:@"大聪明APP" forKey:@"shareTitle"];
+    [shareDict setValue:_model.img forKey:@"imageUrl"];
+    shareView.shareDict = shareDict;
+    [shareView showShareView];
+
 }
 
 - (void)closeAction{
@@ -168,7 +186,7 @@
         //让返回按钮内容继续向左边偏移15，如果不设置的话，就会发现返回按钮离屏幕的左边的距离有点儿大，不美观
         btn.contentEdgeInsets = UIEdgeInsetsMake(0, -4, 0, 0);
         btn.imageEdgeInsets = UIEdgeInsetsMake(0, -4, 0, 4);
-        btn.frame = CGRectMake(0, 0, 40, 40);
+        btn.frame = CGRectMake(0, 0, 50, 50);
         _backItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
     }
     return _backItem;

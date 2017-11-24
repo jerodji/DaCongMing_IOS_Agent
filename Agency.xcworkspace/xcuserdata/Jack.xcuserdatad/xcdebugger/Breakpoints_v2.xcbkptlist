@@ -52,12 +52,12 @@
                   moduleName = "Agency"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/huyong%201/Desktop/DaCongMing/Agency/Agency/Module/Common/Controller/HYChatViewController.m"
-                  timestampString = "533035686.669266"
+                  timestampString = "533186857.703249"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "87"
                   endingLineNumber = "87"
-                  offsetFromSymbolStart = "307">
+                  offsetFromSymbolStart = "308">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -67,12 +67,12 @@
                   moduleName = "Agency"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/huyong%201/Desktop/DaCongMing/Agency/Agency/Module/Common/Controller/HYChatViewController.m"
-                  timestampString = "533035686.670935"
+                  timestampString = "533186857.704691"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "87"
                   endingLineNumber = "87"
-                  offsetFromSymbolStart = "16">
+                  offsetFromSymbolStart = "24">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -100,12 +100,12 @@
                   moduleName = "Agency"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/huyong%201/Desktop/DaCongMing/Agency/Agency/Module/Common/Controller/HYChatViewController.m"
-                  timestampString = "533035686.676102"
+                  timestampString = "533186857.708334"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "113"
                   endingLineNumber = "113"
-                  offsetFromSymbolStart = "95">
+                  offsetFromSymbolStart = "116">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -115,12 +115,12 @@
                   moduleName = "Agency"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/huyong%201/Desktop/DaCongMing/Agency/Agency/Module/Common/Controller/HYChatViewController.m"
-                  timestampString = "533035686.677781"
+                  timestampString = "533186857.709862"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "115"
                   endingLineNumber = "115"
-                  offsetFromSymbolStart = "79">
+                  offsetFromSymbolStart = "84">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -196,11 +196,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Agency/Expand/Network/HYUserRequestHandle.m"
-            timestampString = "533035684.144982"
+            timestampString = "533186857.567218"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "493"
-            endingLineNumber = "493"
+            startingLineNumber = "529"
+            endingLineNumber = "529"
             landmarkName = "+recommendParterWithDict:ComplectionBlock:"
             landmarkType = "7">
          </BreakpointContent>
@@ -227,13 +227,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Agency/APPDelegate/AppDelegate.m"
-            timestampString = "533035684.145593"
+            filePath = "Agency/Expand/Network/HYUserRequestHandle.m"
+            timestampString = "533186857.567348"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "219"
-            endingLineNumber = "219"
-            landmarkName = "-setRootViewController"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "+weChatLoginWithProgram:ComplectionBlock:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Agency/Module/Home/Controller/HYInfomationVC.m"
+            timestampString = "533186857.567457"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "-requestDataMore"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -244,12 +260,44 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Agency/Expand/Network/HYUserRequestHandle.m"
-            timestampString = "533035684.146266"
+            timestampString = "533186857.56754"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
-            landmarkName = "+weChatLoginWithProgram:ComplectionBlock:"
+            startingLineNumber = "621"
+            endingLineNumber = "621"
+            landmarkName = "+getAllArticleListWithPageNo:ComplectionBlock:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Agency/Expand/Network/HYUserRequestHandle.m"
+            timestampString = "533186857.567622"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "619"
+            endingLineNumber = "619"
+            landmarkName = "+getAllArticleListWithPageNo:ComplectionBlock:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Agency/Expand/Network/HYUserRequestHandle.m"
+            timestampString = "533186857.567685"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "372"
+            endingLineNumber = "372"
+            landmarkName = "+selectReportInfoWithStartTime:endTime:isEntry:ComplectionBlock:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

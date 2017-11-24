@@ -95,7 +95,17 @@
 #pragma mark - setViewModel
 - (void)setupWithCellModel:(HYBankCardCellModel *)cellModel{
     
+    RAC(self.bankNameLabel,text) = [RACObserve(cellModel, bank_name) map:^id(id value) {
+       
+        return [NSString stringWithFormat:@"%@\n储蓄卡",cellModel.bank_name];
+    }];
     
+    RAC(self.bankNoLabel,text) = [RACObserve(cellModel, bankcard_id) map:^id(id value) {
+       
+        return [cellModel.bankcard_id stringByReplacingCharactersInRange:NSMakeRange(4, 9) withString:@" **** *** *** "];
+    }];
+    
+    [_bankNoLabel LabelAlightLeftAndRightWithWidth:KSCREEN_WIDTH - 60 * WIDTH_MULTIPLE];
     
     [[_relieveBindBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
        

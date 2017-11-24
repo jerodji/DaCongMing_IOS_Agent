@@ -10,6 +10,8 @@
 #import "HYBankInfoTableViewCell.h"
 #import "HYUploadIDCardViewController.h"
 #import "HYBandPhoneVC.h"
+#import "HYBankCardModel.h"
+#import "HYBankCardCellModel.h"
 
 @interface HYBankCardViewController () <UITableViewDelegate,UITableViewDataSource,DZNEmptyDataSetSource>
 
@@ -24,6 +26,12 @@
     [super viewDidLoad];
     
     [self setupSubviews];
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    
+    [super viewWillAppear:animated];
+    
     [self requestBankInfo];
 }
 
@@ -38,7 +46,18 @@
 
 - (void)requestBankInfo{
     
-    
+    [self.datalist removeAllObjects];
+    [HYUserRequestHandle getBankCardListComplectionBlock:^(NSArray *datalist) {
+        
+        for (NSDictionary *dict in datalist) {
+            
+            HYBankCardModel *model = [HYBankCardModel modelWithDictionary:dict];
+            HYBankCardCellModel *cellModel = [[HYBankCardCellModel alloc] initWithModel:model];
+            [self.datalist addObject:cellModel];
+        }
+        
+        [self.tableView reloadData];
+    }];
 }
 
 - (void)viewDidLayoutSubviews{
@@ -63,14 +82,14 @@
     
     HYUploadIDCardViewController *uploadVC = [[HYUploadIDCardViewController alloc] init];
     uploadVC.title = @"添加银行卡";
+    uploadVC.isBindBankCard = YES;
     [self.navigationController pushViewController:uploadVC animated:YES];
 }
 
 #pragma mark - TableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     
-    return 0;
-    //return self.datalist.count;
+    return self.datalist.count;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -88,8 +107,7 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
     }
-    cell.layer.cornerRadius = 6 * WIDTH_MULTIPLE;
-    cell.layer.masksToBounds = YES;
+    [cell setupWithCellModel:self.datalist[indexPath.section]];
     return cell;
 }
 

@@ -14,6 +14,9 @@
 		042572611FC416B00040A10A /* HYLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 042572601FC416AF0040A10A /* HYLabel.m */; };
 		042572641FC43C9E0040A10A /* HYDateHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 042572631FC43C9E0040A10A /* HYDateHandle.m */; };
 		042572671FC524B30040A10A /* HYGuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 042572661FC524B30040A10A /* HYGuideViewController.m */; };
+		042C22301FC7B06600DFD274 /* HYInfomationDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 042C222F1FC7B06600DFD274 /* HYInfomationDetailModel.m */; };
+		042C22331FC7BF6700DFD274 /* HYShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = 042C22321FC7BF6700DFD274 /* HYShareView.m */; };
+		042C22361FC7BFDC00DFD274 /* HYShareHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 042C22351FC7BFDC00DFD274 /* HYShareHandle.m */; };
 		04375E401FBC4C1F00B39E82 /* HYAboutUSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04375E3E1FBC4C1F00B39E82 /* HYAboutUSViewController.m */; };
 		0468FDA91FBD2E1100ACB4FA /* AppDelegate+HYRongIM.m in Sources */ = {isa = PBXBuildFile; fileRef = 0468FDA81FBD2E1100ACB4FA /* AppDelegate+HYRongIM.m */; };
 		0468FDAC1FBD394A00ACB4FA /* HYMyTeamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0468FDAB1FBD394A00ACB4FA /* HYMyTeamViewController.m */; };
@@ -26,6 +29,7 @@
 		0468FDC41FBD95BA00ACB4FA /* HYBillHeaderVIew.m in Sources */ = {isa = PBXBuildFile; fileRef = 0468FDC31FBD95BA00ACB4FA /* HYBillHeaderVIew.m */; };
 		0468FDC71FBEC45200ACB4FA /* RCIMDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0468FDC61FBEC45100ACB4FA /* RCIMDBManager.m */; };
 		0468FDCA1FBED27C00ACB4FA /* HYMyTeamHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0468FDC91FBED27C00ACB4FA /* HYMyTeamHeaderView.m */; };
+		0470F1FE1FC6ABB3009EDCD2 /* HYBankCardModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0470F1FD1FC6ABB3009EDCD2 /* HYBankCardModel.m */; };
 		04D5F49A1FBFE416005F868F /* HYTeamMemberCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D5F4991FBFE416005F868F /* HYTeamMemberCell.m */; };
 		04D5F49D1FBFE914005F868F /* HYTeamMemberModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D5F49C1FBFE914005F868F /* HYTeamMemberModel.m */; };
 		04D5F4A01FBFF892005F868F /* HYRCIMGetUserInfoHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D5F49F1FBFF892005F868F /* HYRCIMGetUserInfoHandle.m */; };
@@ -158,6 +162,12 @@
 		042572631FC43C9E0040A10A /* HYDateHandle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HYDateHandle.m; sourceTree = "<group>"; };
 		042572651FC524B30040A10A /* HYGuideViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HYGuideViewController.h; sourceTree = "<group>"; };
 		042572661FC524B30040A10A /* HYGuideViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HYGuideViewController.m; sourceTree = "<group>"; };
+		042C222E1FC7B06600DFD274 /* HYInfomationDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HYInfomationDetailModel.h; sourceTree = "<group>"; };
+		042C222F1FC7B06600DFD274 /* HYInfomationDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HYInfomationDetailModel.m; sourceTree = "<group>"; };
+		042C22311FC7BF6700DFD274 /* HYShareView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYShareView.h; sourceTree = "<group>"; };
+		042C22321FC7BF6700DFD274 /* HYShareView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYShareView.m; sourceTree = "<group>"; };
+		042C22341FC7BFDB00DFD274 /* HYShareHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYShareHandle.h; sourceTree = "<group>"; };
+		042C22351FC7BFDC00DFD274 /* HYShareHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYShareHandle.m; sourceTree = "<group>"; };
 		04375E3D1FBC4C1F00B39E82 /* HYAboutUSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HYAboutUSViewController.h; sourceTree = "<group>"; };
 		04375E3E1FBC4C1F00B39E82 /* HYAboutUSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HYAboutUSViewController.m; sourceTree = "<group>"; };
 		0468FDA71FBD2E1100ACB4FA /* AppDelegate+HYRongIM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+HYRongIM.h"; sourceTree = "<group>"; };
@@ -182,6 +192,8 @@
 		0468FDC61FBEC45100ACB4FA /* RCIMDBManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCIMDBManager.m; sourceTree = "<group>"; };
 		0468FDC81FBED27C00ACB4FA /* HYMyTeamHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HYMyTeamHeaderView.h; sourceTree = "<group>"; };
 		0468FDC91FBED27C00ACB4FA /* HYMyTeamHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HYMyTeamHeaderView.m; sourceTree = "<group>"; };
+		0470F1FC1FC6ABB3009EDCD2 /* HYBankCardModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HYBankCardModel.h; sourceTree = "<group>"; };
+		0470F1FD1FC6ABB3009EDCD2 /* HYBankCardModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HYBankCardModel.m; sourceTree = "<group>"; };
 		04D5F4981FBFE416005F868F /* HYTeamMemberCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HYTeamMemberCell.h; sourceTree = "<group>"; };
 		04D5F4991FBFE416005F868F /* HYTeamMemberCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HYTeamMemberCell.m; sourceTree = "<group>"; };
 		04D5F49B1FBFE914005F868F /* HYTeamMemberModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HYTeamMemberModel.h; sourceTree = "<group>"; };
@@ -758,6 +770,10 @@
 				3E76549E1FB9BEBD0041218D /* HYReportListModel.m */,
 				04D5F49B1FBFE914005F868F /* HYTeamMemberModel.h */,
 				04D5F49C1FBFE914005F868F /* HYTeamMemberModel.m */,
+				0470F1FC1FC6ABB3009EDCD2 /* HYBankCardModel.h */,
+				0470F1FD1FC6ABB3009EDCD2 /* HYBankCardModel.m */,
+				042C222E1FC7B06600DFD274 /* HYInfomationDetailModel.h */,
+				042C222F1FC7B06600DFD274 /* HYInfomationDetailModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -855,6 +871,8 @@
 			children = (
 				3E14D2221FB07596006CDF18 /* HYDatePickerView.h */,
 				3E14D2231FB07596006CDF18 /* HYDatePickerView.m */,
+				042C22311FC7BF6700DFD274 /* HYShareView.h */,
+				042C22321FC7BF6700DFD274 /* HYShareView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -871,6 +889,8 @@
 			children = (
 				3E14D1F01FAFFCA2006CDF18 /* HYTableViewManager.h */,
 				3E14D1F11FAFFCA2006CDF18 /* HYTableViewManager.m */,
+				042C22341FC7BFDB00DFD274 /* HYShareHandle.h */,
+				042C22351FC7BFDC00DFD274 /* HYShareHandle.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1157,6 +1177,7 @@
 				3E14D2011FB00492006CDF18 /* HYBaseTableViewModel.m in Sources */,
 				3E14D1F51FB002FA006CDF18 /* HYBaseModel.m in Sources */,
 				0468FDC71FBEC45200ACB4FA /* RCIMDBManager.m in Sources */,
+				042C22301FC7B06600DFD274 /* HYInfomationDetailModel.m in Sources */,
 				0468FDBB1FBD7D8300ACB4FA /* HYBankCardCellModel.m in Sources */,
 				3E0E6E501FAAFB0C00F058EB /* Macro.h in Sources */,
 				3E7FE3BE1FB19E5A00498FC2 /* HYSelectInfoHeaderView.m in Sources */,
@@ -1168,6 +1189,7 @@
 				3E7FE3CE1FB1AC3100498FC2 /* HYBindPhoneView.m in Sources */,
 				3E0E6E511FAAFB0C00F058EB /* WebApi.h in Sources */,
 				3E95E2141FAACACD00995AB2 /* MBProgressHUD+HYExtension.h in Sources */,
+				042C22331FC7BF6700DFD274 /* HYShareView.m in Sources */,
 				3E95E2151FAACACD00995AB2 /* MBProgressHUD+HYExtension.m in Sources */,
 				3E95E2121FAACA7300995AB2 /* HTTPManager.h in Sources */,
 				04D5F4E51FC2CE18005F868F /* HYRecommendLevelCell.m in Sources */,
@@ -1213,6 +1235,7 @@
 				3E95E1EB1FA9B64400995AB2 /* HYLoginView.m in Sources */,
 				0425725E1FC413C70040A10A /* HYInfoTableViewCell.m in Sources */,
 				3E0FDF361FA9954E00F52DC0 /* AppDelegate.m in Sources */,
+				042C22361FC7BFDC00DFD274 /* HYShareHandle.m in Sources */,
 				3E14D2151FB036E0006CDF18 /* HYReportAllAmountCell.m in Sources */,
 				3E7FE3C11FB19E8000498FC2 /* HYSelectInfoBtnView.m in Sources */,
 				042572521FC401D70040A10A /* HYRecommendSuccessVC.m in Sources */,
@@ -1231,6 +1254,7 @@
 				3E7FE3FB1FB2FA1A00498FC2 /* HYUploadIDCardViewModel.m in Sources */,
 				3E7FE4101FB32ED100498FC2 /* HYAuthPhoneVC.m in Sources */,
 				3E7FE3E01FB2D68F00498FC2 /* HYDispoitHeaderView.m in Sources */,
+				0470F1FE1FC6ABB3009EDCD2 /* HYBankCardModel.m in Sources */,
 				3E7FE4521FB5A1E900498FC2 /* HYMyWalletModel.m in Sources */,
 				3E7FE3CB1FB1ABEE00498FC2 /* HYBandPhoneVC.m in Sources */,
 				3E7FE3E91FB2D7A700498FC2 /* HYSetDispoitPwdVC.m in Sources */,

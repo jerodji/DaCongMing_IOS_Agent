@@ -63,6 +63,16 @@
     }];
 }
 
+#pragma mark - setter
+- (void)setModel:(HYInfomationDetailModel *)model{
+    
+    _model = model;
+    
+    _briefLabel.text = model.descriptions;
+    _timeLabel.text = model.createdAt;
+    [_thumbnailImgView sd_setImageWithURL:[NSURL URLWithString:model.img] placeholderImage:[UIImage imageNamed:@"Image_placeholder"]];
+}
+
 #pragma mark - lazyload
 - (HYLabel *)briefLabel{
     

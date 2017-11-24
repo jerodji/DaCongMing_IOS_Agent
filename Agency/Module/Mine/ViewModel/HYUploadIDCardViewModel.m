@@ -73,14 +73,29 @@
 
 - (void)confirmAction{
     
-    [HYUserRequestHandle uploadIDCardInfoWithName:_name IDCardNum:_IDCard bankCardNum:_bankCardNum authCode:_authNum ComplectionBlock:^(BOOL isSuccess) {
+    if (self.isBindBankCard) {
         
-        if (isSuccess) {
+        [HYUserRequestHandle bindBankCardWithName:_name IDCardNum:_IDCard bankCardNum:_bankCardNum authCode:_authNum ComplectionBlock:^(BOOL isSuccess) {
             
-            [JRToast showWithText:@"完善信息成功" duration:2];
-            [self.uploadInfoSuccessSubject sendNext:@"ok"];
-        }
-    }];
+            if (isSuccess) {
+                
+                [JRToast showWithText:@"绑定银行卡成功" duration:2];
+                [self.uploadInfoSuccessSubject sendNext:@"ok"];
+            }
+        }];
+    }
+    else{
+        
+        [HYUserRequestHandle uploadIDCardInfoWithName:_name IDCardNum:_IDCard bankCardNum:_bankCardNum authCode:_authNum ComplectionBlock:^(BOOL isSuccess) {
+            
+            if (isSuccess) {
+                
+                [JRToast showWithText:@"完善信息成功" duration:2];
+                [self.uploadInfoSuccessSubject sendNext:@"ok"];
+            }
+        }];
+    }
+    
 }
 
 #pragma mark - Private Method

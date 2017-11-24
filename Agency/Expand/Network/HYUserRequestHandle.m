@@ -288,6 +288,42 @@
     }];
 }
 
++ (void)bindBankCardWithName:(NSString *)name IDCardNum:(NSString *)IDCardNum bankCardNum:(NSString *)bankCardNum authCode:(NSString *)authCode ComplectionBlock:(void (^)(BOOL))complection{
+   
+   NSMutableDictionary *param = [NSMutableDictionary dictionary];
+   [param setValue:[HYUserModel sharedInstance].token forKey:@"token"];
+   [param setValue:name forKey:@"real_name"];
+   [param setValue:IDCardNum forKey:@"card_id"];
+   [param setValue:bankCardNum forKey:@"bankCard_no"];
+   [param setValue:[HYUserModel sharedInstance].userInfo.phone forKey:@"phoneNum"];
+   [param setValue:authCode forKey:@"phoneCode"];
+   
+   
+   [[HTTPManager shareHTTPManager] postDataFromUrl:API_BindBankCard withParameter:param isShowHUD:YES success:^(id returnData) {
+      
+      if (returnData) {
+         
+         NSInteger code = [[returnData objectForKey:@"code"] integerValue];
+         if (code == 000) {
+            
+            //NSDictionary *dict = [returnData objectForKey:@"data"];
+            complection(YES);
+         }
+         else{
+            
+            complection(NO);
+            [JRToast showWithText:[returnData valueForKey:@"message"] duration:2];
+            
+         }
+      }
+      else{
+         
+         complection(NO);
+         [JRToast showWithText:@"绑定银行卡失败" duration:2];
+      }
+   }];
+}
+
 + (void)setDepositPassword:(NSString *)password andAuthCode:(NSString *)authCode ComplectionBlock:(void (^)(BOOL))complection{
     
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
@@ -542,5 +578,76 @@
       }
    }];
 }
+
++ (void)getBankCardListComplectionBlock:(void (^)(NSArray *))complection{
+   
+   NSMutableDictionary *param = [NSMutableDictionary dictionary];
+   [param setValue:[HYUserModel sharedInstance].token forKey:@"token"];
+   
+   [[HTTPManager shareHTTPManager] postDataFromUrl:API_GetBankCardList withParameter:param isShowHUD:YES success:^(id returnData) {
+      
+      if (returnData) {
+         
+         NSInteger code = [[returnData objectForKey:@"code"] integerValue];
+         if (code == 000) {
+            
+            NSArray *array = returnData[@"data"];
+            complection(array);
+         }
+         else{
+            
+            complection(nil);
+            [JRToast showWithText:[returnData valueForKey:@"message"]];
+            
+         }
+      }
+      else{
+         
+         complection(nil);
+         [JRToast showWithText:@"获取银行卡信息失败" duration:2];
+      }
+   }];
+}
+
++ (void)getAllArticleListWithPageNo:(NSInteger)pageNO ComplectionBlock:(void(^)(NSArray *datalist))complection{
+   
+   NSMutableDictionary *param = [NSMutableDictionary dictionary];
+   [param setValue:[HYUserModel sharedInstance].token forKey:@"token"];
+   [param setValue:@(pageNO) forKey:@"pageNo"];
+
+   
+   [[HTTPManager shareHTTPManager] postDataFromUrl:API_GetArticleList withParameter:param isShowHUD:YES success:^(id returnData) {
+      
+      if (returnData) {
+         
+         NSInteger code = [[returnData objectForKey:@"code"] integerValue];
+         if (code == 000) {
+            
+            NSArray *array = returnData[@"data"][@"list"];
+            if (array.count) {
+               
+               complection(array);
+            }
+            else{
+               
+               complection(array);
+            }
+         }
+         else{
+            
+            complection(nil);
+            [JRToast showWithText:[returnData valueForKey:@"message"]];
+            
+         }
+      }
+      else{
+         
+         complection(nil);
+         [JRToast showWithText:@"获取文章列表失败" duration:2];
+      }
+   }];
+}
+
+
 
 @end

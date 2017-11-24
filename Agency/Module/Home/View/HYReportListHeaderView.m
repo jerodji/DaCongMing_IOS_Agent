@@ -11,8 +11,7 @@
 @interface HYReportListHeaderView ()
 
 @property (nonatomic,strong) UIImageView *bgImgView;
-@property (nonatomic,strong) UILabel *allOrderLabel;
-@property (nonatomic,strong) UILabel *allAmountLabel;
+
 
 @end
 

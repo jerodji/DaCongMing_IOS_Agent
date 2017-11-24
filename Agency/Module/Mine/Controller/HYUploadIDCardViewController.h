@@ -8,6 +8,9 @@
 
 #import "HYBaseViewController.h"
 
+
 @interface HYUploadIDCardViewController : HYBaseViewController
+
+@property (nonatomic,assign) BOOL isBindBankCard;
 
 @end

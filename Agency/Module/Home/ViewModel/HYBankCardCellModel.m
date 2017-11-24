@@ -10,9 +10,25 @@
 
 @implementation HYBankCardCellModel
 
+- (instancetype)initWithModel:(HYBankCardModel *)model{
+    
+    if (self = [super init]) {
+        
+        self.bank_name = model.bank_name;
+        self.bankcard_id = model.bankcard_id;
+    }
+    return self;
+}
+
+
 - (void)relieveBind{
     
+    HYCustomAlert *alert = [[HYCustomAlert alloc] initWithFrame:KEYWINDOW.frame WithTitle:@"温馨提示" content:@"确认要解除绑定吗？" confirmBlock:^{
+       
+        
+    }];
     
+    [KEYWINDOW addSubview:alert];
 }
 
 @end

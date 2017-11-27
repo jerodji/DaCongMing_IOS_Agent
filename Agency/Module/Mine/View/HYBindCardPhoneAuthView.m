@@ -1,28 +1,27 @@
 //
-//  HYSendAuthView.m
+//  HYBindCardPhoneAuthView.m
 //  Agency
 //
-//  Created by 胡勇 on 2017/11/8.
+//  Created by Jack on 2017/11/27.
 //  Copyright © 2017年 胡勇. All rights reserved.
 //
 
-#import "HYSendAuthView.h"
+#import "HYBindCardPhoneAuthView.h"
 
-@interface HYSendAuthView()
+@interface HYBindCardPhoneAuthView()
 
-/** tipsLabel */
-@property (nonatomic,strong) UILabel *tipsLabel;
-/** 背景 */
 @property (nonatomic,strong) UIView *whiteBgView;
-//实名认证
+@property (nonatomic,strong) UILabel *phoneLabel;
+@property (nonatomic,strong) UITextField *phoneField;
+/** 底部黑线 */
+@property (nonatomic,strong) UIView *bottomLine;
 @property (nonatomic,strong) UILabel *authLabel;
 @property (nonatomic,strong) UITextField *textField;
 @property (nonatomic,strong) UIButton *getAuthBtn;
 
-
 @end
 
-@implementation HYSendAuthView
+@implementation HYBindCardPhoneAuthView
 
 - (instancetype)initWithFrame:(CGRect)frame{
     
@@ -35,8 +34,10 @@
 
 - (void)setupSubviews{
     
-    [self addSubview:self.tipsLabel];
     [self addSubview:self.whiteBgView];
+    [self addSubview:self.phoneLabel];
+    [self addSubview:self.phoneField];
+    [self addSubview:self.bottomLine];
     [self addSubview:self.authLabel];
     [self addSubview:self.textField];
     [self addSubview:self.getAuthBtn];
@@ -45,20 +46,28 @@
 #pragma mark - setModel
 - (void)setWithViewModel:(HYUploadIDCardViewModel *)viewModel{
     
+    [_phoneField.rac_textSignal subscribeNext:^(NSString *x) {
+        
+        if (x.length >= 6) {
+            
+            _phoneField.text = [x substringToIndex:6];
+        }
+        viewModel.phoneNum = _phoneField.text;
+    }];
+    
     [_textField.rac_textSignal subscribeNext:^(NSString *x) {
         
         if (x.length >= 6) {
             
             _textField.text = [x substringToIndex:6];
         }
+        viewModel.authNum = _textField.text;
+
     }];
-    
-    RAC(self.tipsLabel,text) = RACObserve(viewModel, tipsLabelText);
-    RAC(viewModel,authNum) = [_textField rac_textSignal];
     
     RAC(self.getAuthBtn,enabled) = [viewModel getAuthCodeButtonIsValid];
     [[_getAuthBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
-       
+        
         [viewModel getAuthCodeAction];
     }];
     
@@ -69,62 +78,64 @@
 }
 
 - (void)layoutSubviews{
+
     
-    [_tipsLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        
-        make.left.equalTo(self).offset(10 * WIDTH_MULTIPLE);
-        make.right.equalTo(self);
-        make.top.equalTo(self).offset(10 * WIDTH_MULTIPLE);
-        make.height.mas_equalTo(30 * WIDTH_MULTIPLE);
-    }];
     
     [_whiteBgView mas_makeConstraints:^(MASConstraintMaker *make) {
-       
+        
         make.left.right.bottom.equalTo(self);
+        make.top.equalTo(self).offset(5 * WIDTH_MULTIPLE);
+    }];
+    
+    [_phoneLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        make.left.equalTo(self).offset(10 * WIDTH_MULTIPLE);
+        make.top.equalTo(_whiteBgView);
+        make.width.mas_equalTo(80 * WIDTH_MULTIPLE);
         make.height.mas_equalTo(50 * WIDTH_MULTIPLE);
+    }];
+    
+    [_phoneField mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        make.top.height.equalTo(_phoneLabel);
+        make.right.equalTo(self).offset(-10 * WIDTH_MULTIPLE);
+        make.left.equalTo(_phoneLabel.mas_right);
+    }];
+    
+    [_bottomLine mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        make.left.right.equalTo(self);
+        make.height.mas_equalTo(1);
+        make.top.equalTo(_phoneLabel.mas_bottom);
     }];
     
     [_authLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         
-        make.left.equalTo(_tipsLabel);
-        make.top.bottom.equalTo(_whiteBgView);
+        make.left.height.equalTo(_phoneLabel);
+        make.top.equalTo(_bottomLine.mas_bottom);
         make.width.mas_equalTo(80 * WIDTH_MULTIPLE);
     }];
     
     [_getAuthBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         
         make.right.equalTo(self).offset(-10 * WIDTH_MULTIPLE);
-        make.top.bottom.equalTo(_whiteBgView);
+        make.top.bottom.equalTo(_authLabel);
         make.width.mas_equalTo(100 * WIDTH_MULTIPLE);
     }];
     
     [_textField mas_makeConstraints:^(MASConstraintMaker *make) {
         
-        make.top.height.equalTo(_whiteBgView);
+        make.top.height.equalTo(_authLabel);
         make.right.equalTo(_getAuthBtn.mas_left).offset(-10 * WIDTH_MULTIPLE);
         make.left.equalTo(_authLabel.mas_right);
     }];
     
     
+    
+    
 }
 
 #pragma mark - lazyload
-- (UILabel *)tipsLabel{
-    
-    if (!_tipsLabel) {
-        
-        _tipsLabel = [[UILabel alloc] init];
-        _tipsLabel.font = KFitFont(14);
-        _tipsLabel.textAlignment = NSTextAlignmentLeft;
-        NSString *phone = [HYUserModel sharedInstance].userInfo.phone;
-        phone = [phone stringByReplacingCharactersInRange:NSMakeRange(3, 4) withString:@"****"];
-        NSString *str = [NSString stringWithFormat:@"我们将发送验证码到:%@",phone];
-        _tipsLabel.text = str;
-        _tipsLabel.textColor = KAPP_b7b7b7_COLOR;
-    }
-    return _tipsLabel;
-}
-
 - (UIView *)whiteBgView{
     
     if (!_whiteBgView) {
@@ -133,6 +144,19 @@
         _whiteBgView.backgroundColor = KAPP_WHITE_COLOR;
     }
     return _whiteBgView;
+}
+
+- (UILabel *)phoneLabel{
+    
+    if (!_phoneLabel) {
+        
+        _phoneLabel = [[UILabel alloc] init];
+        _phoneLabel.font = KFitFont(16);
+        _phoneLabel.textAlignment = NSTextAlignmentLeft;
+        _phoneLabel.text = @"手机号";
+        _phoneLabel.textColor = KAPP_272727_COLOR;
+    }
+    return _phoneLabel;
 }
 
 - (UILabel *)authLabel{
@@ -146,6 +170,31 @@
         _authLabel.textColor = KAPP_272727_COLOR;
     }
     return _authLabel;
+}
+
+- (UITextField *)phoneField{
+    
+    if (!_phoneField) {
+        
+        _phoneField = [[UITextField alloc] initWithFrame:CGRectZero];
+        _phoneField.backgroundColor = [UIColor whiteColor];
+        _phoneField.clearButtonMode = UITextFieldViewModeWhileEditing;
+        _phoneField.font = KFitFont(14);
+        _phoneField.textColor = KAPP_7b7b7b_COLOR;
+        _phoneField.keyboardType = UIKeyboardTypePhonePad;
+        _phoneField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"请输入银行预留手机号" attributes:@{NSForegroundColorAttributeName:KAPP_b7b7b7_COLOR,NSFontAttributeName : KFitFont(14)}];
+    }
+    return _phoneField;
+}
+
+- (UIView *)bottomLine{
+    
+    if (!_bottomLine) {
+        
+        _bottomLine = [UIView new];
+        _bottomLine.backgroundColor = KAPP_SEPERATOR_COLOR;
+    }
+    return _bottomLine;
 }
 
 - (UITextField *)textField{

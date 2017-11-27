@@ -11,6 +11,7 @@
 #import "HYTextFieldTableViewCell.h"
 #import "HYSendAuthView.h"
 #import "HYUploadIDCardViewModel.h"
+#import "HYBindCardPhoneAuthView.h"
 
 @interface HYUploadIDCardViewController () <UITableViewDelegate,UITableViewDataSource>
 
@@ -20,7 +21,10 @@
 @property (nonatomic,strong) NSArray *placeholderArray;
 /** 提交 */
 @property (nonatomic,strong) UIButton *confirmBtn;
+/** 实名认证发送验证码 */
 @property (nonatomic,strong) HYSendAuthView *authView;
+/** 绑定银行卡发送验证码 */
+@property (nonatomic,strong) HYBindCardPhoneAuthView *bindCardAuthView;
 @property (nonatomic,strong) HYUploadIDCardViewModel *viewModel;
 
 @end
@@ -37,18 +41,40 @@
 - (void)setupSubviews{
     
     self.view.backgroundColor = KAPP_TableView_BgColor;
-    _titleArray = @[@"姓名",@"身份证",@"卡号"];
-    _placeholderArray = @[@"本人姓名",@"本人证件号码",@"本人银行卡号"];
+    
+    _titleArray = _isBindBankCard ? @[@"姓名",@"身份证",@"卡号"] : @[@"姓名",@"身份证"];
+    _placeholderArray = _isBindBankCard ? @[@"本人姓名",@"本人证件号码",@"本人银行卡号"] : @[@"本人姓名",@"本人证件号码"];
     [self.view addSubview:self.tableView];
-    [self.view addSubview:self.authView];
+    
+    if (_isBindBankCard) {
+        
+        [self.view addSubview:self.bindCardAuthView];
+        [_bindCardAuthView mas_makeConstraints:^(MASConstraintMaker *make) {
+            
+            make.left.right.equalTo(self.view);
+            make.top.equalTo(_tableView.mas_bottom);
+            make.height.mas_equalTo(105 * WIDTH_MULTIPLE);
+        }];
+    }
+    else{
+        
+        [self.view addSubview:self.authView];
+        [_authView mas_makeConstraints:^(MASConstraintMaker *make) {
+            
+            make.left.right.equalTo(self.view);
+            make.top.equalTo(_tableView.mas_bottom);
+            make.height.mas_equalTo(90 * WIDTH_MULTIPLE);
+        }];
+    }
     [self.view addSubview:self.confirmBtn];
 }
 
 - (void)bindViewModel{
     
     self.viewModel = [HYUploadIDCardViewModel new];
-    _viewModel.isBindBankCard = self.isBindBankCard;
-    [_authView setWithViewModel:_viewModel];
+    self.viewModel.isBindBankCard = self.isBindBankCard;
+    [self.authView setWithViewModel:_viewModel];
+    [self.bindCardAuthView setWithViewModel:_viewModel];
     
     RAC(self.confirmBtn,enabled) = [_viewModel confirmButtonIsValid];
     RAC(self.confirmBtn,backgroundColor) = [[_viewModel confirmButtonIsValid] map:^id(id value) {
@@ -74,6 +100,7 @@
         }
         
     }];
+    
 }
 
 - (void)viewDidLayoutSubviews{
@@ -82,21 +109,22 @@
        
         make.left.right.equalTo(self.view);
         make.top.equalTo(self.view).offset(20 * WIDTH_MULTIPLE);
-        make.height.mas_equalTo(150 * WIDTH_MULTIPLE);
+        make.height.mas_equalTo(50 * WIDTH_MULTIPLE * self.titleArray.count);
     }];
     
-    [_authView mas_makeConstraints:^(MASConstraintMaker *make) {
-        
-        make.left.right.equalTo(self.view);
-        make.top.equalTo(_tableView.mas_bottom);
-        make.height.mas_equalTo(90 * WIDTH_MULTIPLE);
-    }];
     
     [_confirmBtn mas_makeConstraints:^(MASConstraintMaker *make) {
        
         make.left.equalTo(self.view).offset(20 * WIDTH_MULTIPLE);
         make.right.equalTo(self.view).offset(-20 * WIDTH_MULTIPLE);
-        make.top.equalTo(_authView.mas_bottom).offset(40 * WIDTH_MULTIPLE);
+        if (_isBindBankCard) {
+            
+            make.top.equalTo(_bindCardAuthView.mas_bottom).offset(40 * WIDTH_MULTIPLE);
+        }
+        else{
+            
+            make.top.equalTo(_authView.mas_bottom).offset(40 * WIDTH_MULTIPLE);
+        }
         make.height.mas_equalTo(50 * WIDTH_MULTIPLE);
     }];
 }
@@ -176,6 +204,15 @@
         _authView = [HYSendAuthView new];
     }
     return _authView;
+}
+
+- (HYBindCardPhoneAuthView *)bindCardAuthView{
+    
+    if (!_bindCardAuthView) {
+        
+        _bindCardAuthView = [HYBindCardPhoneAuthView new];
+    }
+    return _bindCardAuthView;
 }
 
 - (void)didReceiveMemoryWarning {

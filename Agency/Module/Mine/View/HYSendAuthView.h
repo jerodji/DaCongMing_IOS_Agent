@@ -13,6 +13,9 @@
 
 @interface HYSendAuthView : UIView
 
+/** 是否是绑定银行卡   0为实名认证 */
+@property (nonatomic,assign) BOOL isBindBankCard;
+
 - (void)setWithViewModel:(HYUploadIDCardViewModel *)viewModel;
 
 @end

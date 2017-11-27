@@ -51,7 +51,7 @@
     
     RACSignal *isValid = [RACSignal combineLatest:@[_nameSignal,_IDCardSignal,_bankCardNumSignal,_authNumSignal] reduce:^id{
         
-        return @([_name isNotBlank] && _IDCard.length == 18 && _bankCardNum.length >= 16  && _authNum.length == 6);
+        return @([_name isNotBlank] && _IDCard.length == 18 && _authNum.length == 6);
     }];
     
     return isValid;
@@ -59,12 +59,13 @@
 
 - (void)getAuthCodeAction{
     
-    [HYUserRequestHandle getAuthCodeWithPhone:[HYUserModel sharedInstance].userInfo.phone ComplectionBlock:^(BOOL isSuccess) {
+    NSString *phone = _isBindBankCard ? self.phoneNum : [HYUserModel sharedInstance].userInfo.phone;
+    [HYUserRequestHandle getAuthCodeWithPhone:phone ComplectionBlock:^(BOOL isSuccess) {
         
         if (isSuccess) {
             
-            [JRToast showWithText:[NSString stringWithFormat:@"验证码已发送至%@",[HYUserModel sharedInstance].userInfo.phone]];
-            self.tipsLabelText = [NSString stringWithFormat:@"验证码已发送至%@",[HYUserModel sharedInstance].userInfo.phone];
+            [JRToast showWithText:[NSString stringWithFormat:@"验证码已发送至%@",phone]];
+            self.tipsLabelText = [NSString stringWithFormat:@"验证码已发送至%@",phone];
             [self countDown];
         }
     }];

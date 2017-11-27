@@ -11,6 +11,7 @@
 
 @interface HYUploadIDCardViewController : HYBaseViewController
 
+/** 是否是绑定银行卡   0为实名认证 */
 @property (nonatomic,assign) BOOL isBindBankCard;
 
 @end

@@ -15,6 +15,7 @@
 @property (nonatomic,copy) NSString *name;
 @property (nonatomic,copy) NSString *IDCard;
 @property (nonatomic,copy) NSString *bankCardNum;
+@property (nonatomic,copy) NSString *phoneNum;
 @property (nonatomic,copy) NSString *authNum;
 @property (nonatomic,copy) NSString *authBtnTitle;
 @property (nonatomic,copy) NSString *tipsLabelText;

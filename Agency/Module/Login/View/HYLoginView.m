@@ -148,7 +148,7 @@
         make.size.mas_equalTo(CGSizeMake(50 * WIDTH_MULTIPLE, 50 * WIDTH_MULTIPLE));
     }];
     
-    //[self hideWeChatLoginBtn];
+    [self hideWeChatLoginBtn];
 }
 
 - (void)hideWeChatLoginBtn{

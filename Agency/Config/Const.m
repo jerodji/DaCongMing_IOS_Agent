@@ -38,4 +38,8 @@ NSString * const KHomePageDataModel = @"KHomePageDataModel";
 
 NSString * const KAddShoppingCartsSuccess = @"addShoppingCartsSuccess";
 
+NSString * const KBankCardNum = @"31050 18048 0000000238";
+
+NSString * const KBankName = @"开户机构:中国建设银行股份有限\n公司上海广富林路支行";
+
 @end

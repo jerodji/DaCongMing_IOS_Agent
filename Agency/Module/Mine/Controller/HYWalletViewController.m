@@ -33,16 +33,17 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    [self setupSubviews];
-    [self bindViewModel];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated{
     
     [super viewWillAppear:animated];
+    [self setupSubviews];
+    [self bindViewModel];
     
-    if (@available(iOS 11.0, *))
-    {
+    if (@available(iOS 11.0, *)){
+        
         [[UIScrollView appearance] setContentInsetAdjustmentBehavior:UIScrollViewContentInsetAdjustmentNever];
     }
     else {

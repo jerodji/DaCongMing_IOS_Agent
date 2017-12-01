@@ -78,7 +78,7 @@
         _introLabel.font = KFitFont(16);
         _introLabel.textColor = KAPP_272727_COLOR;
         _introLabel.backgroundColor = [UIColor clearColor];
-        _introLabel.text = @"    2017年1月19日晚间，国际奥林匹克委员会与阿里巴巴集团在瑞士达沃斯联合宣布，双方达成期限直至2028年的长期合作。阿里巴巴将加入奥林匹克全球合作伙伴（The Olympic Partner、“TOP”）赞助计划，成为“云服务”及“电子商务平台服务”的官方合作伙伴，以及奥林匹克频道的创始合作伙伴";
+        _introLabel.text = @"    聪明管理APP 隶属于上海萨拜电子商务有限公司。上海萨拜电子商务有限公司成立于2017年3月，是一家从事互联网平台开发的公司。公司主要致力于大健康产业的平台、员工管理软件、经销商管理软件的开发与运营。致力于将各种健康品牌以更多样化的形式进行推广，将产品以更方便快捷的渠道送达到消费者手中。";
         _introLabel.textAlignment = NSTextAlignmentLeft;
         _introLabel.editable = NO;
     }

@@ -136,7 +136,7 @@
     if (!_agencyLabel) {
         
         _agencyLabel = [[UILabel alloc] init];
-        _agencyLabel.text = @"代理";
+        _agencyLabel.text = @"经销商";
         _agencyLabel.font = KFitFont(13);
         _agencyLabel.textColor = KAPP_WHITE_COLOR;
         _agencyLabel.backgroundColor = KAPP_THEME_COLOR;

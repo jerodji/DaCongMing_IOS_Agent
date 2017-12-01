@@ -41,7 +41,7 @@
        
         make.left.equalTo(self).offset(30 * WIDTH_MULTIPLE);
         make.right.equalTo(self).offset(-30 * WIDTH_MULTIPLE);
-        make.top.equalTo(self).offset(20 * WIDTH_MULTIPLE);
+        make.top.equalTo(self).offset(10 * WIDTH_MULTIPLE);
         make.height.mas_equalTo(30 * WIDTH_MULTIPLE);
     }];
     
@@ -49,7 +49,7 @@
         
         make.left.right.equalTo(self);
         make.top.equalTo(_bankCardNoLabel.mas_bottom).offset(10 * WIDTH_MULTIPLE);
-        make.height.mas_equalTo(20 * WIDTH_MULTIPLE);
+        make.height.mas_equalTo(36 * WIDTH_MULTIPLE);
     }];
     
     [_confirmBtn mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -67,9 +67,9 @@
     if (!_bankCardNoLabel) {
         
         _bankCardNoLabel = [[UILabel alloc] init];
-        _bankCardNoLabel.font = KFitFont(25);
+        _bankCardNoLabel.font = KFitFont(23);
         _bankCardNoLabel.textColor = KAPP_THEME_COLOR;
-        _bankCardNoLabel.text = @"622848 775599 243224";
+        _bankCardNoLabel.text = KBankCardNum;
         _bankCardNoLabel.textAlignment = NSTextAlignmentLeft;
         [_bankCardNoLabel LabelAlightLeftAndRightWithWidth:KSCREEN_WIDTH - 60 * WIDTH_MULTIPLE];
     }
@@ -83,7 +83,8 @@
         _tipsLabel = [[UILabel alloc] init];
         _tipsLabel.font = KFitFont(14);
         _tipsLabel.textColor = KAPP_THEME_COLOR;
-        _tipsLabel.text = @"大聪明官方账户:老巴塔哥里亚快车";
+        _tipsLabel.text = KBankName;
+        _tipsLabel.numberOfLines = 0;
         _tipsLabel.textAlignment = NSTextAlignmentCenter;
     }
     return _tipsLabel;

@@ -186,7 +186,7 @@
     switch (index) {
         case 0:
         {
-            NSDictionary *dict = @{@"teamName" : self.requestData[@"groupInfo"][@"group_name"],@"num" : [NSString stringWithFormat:@"%lu",(unsigned long)self.datalist.count],@"headImgUrl" : self.requestData[@"groupInfo"][@"group_portraitUri"]};
+            NSDictionary *dict = @{@"teamName" : self.requestData[@"groupInfo"][@"group_name"],@"num" : [NSString stringWithFormat:@"%lu",(unsigned long)self.datalist.count],@"headImgUrl" : self.requestData[@"groupInfo"][@"group_portraitUri"],@"intro" : self.requestData[@"groupInfo"][@"synopsis"]};
             HYTeamDetailViewController *teamDetailVC = [HYTeamDetailViewController new];
             [self.navigationController pushViewController:teamDetailVC animated:YES];
             teamDetailVC.info = dict;

@@ -48,25 +48,25 @@
         case RecommendLevelSenior:
         {
             self.selectStr = @"已选择:高级合伙人";
-            self.selectTips = @"高级合伙人是个什么WAN，年费收费的十几分防守打法你知道吗，发什么呆沙比玩意，电话费附加税快递费发酒疯";
+            self.selectTips = @"即拥有大聪明APP最高级别权限，有全部推荐权，可组建自己的专属销售团队。可享有公司合伙人权限最高级别的分红与返利。";
         }
             break;
         case RecommendLevelPractice:
         {
             self.selectStr = @"已选择:实习合伙人";
-            self.selectTips = @"实习合伙人是个什么WAN，年费收费的十几分防守打法你知道吗，发什么呆沙比玩意，电话费附加税快递费发酒疯";
+            self.selectTips = @"即高级合伙人的实习期，拥有全部推荐权，亦可组建专属销售团队。可享有合伙人权限的部分分红与返利，完成实习条件自动升级为高级合伙人";
         }
             break;
         case RecommendLevelSeniorAgent:
         {
-            self.selectStr = @"已选择:高级代理人";
-            self.selectTips = @"高级代理人是个什么WAN，年费收费的十几分防守打法你知道吗，发什么呆沙比玩意，电话费附加税快递费发酒疯";
+            self.selectStr = @"已选择:高级经销商";
+            self.selectTips = @"即是大聪明APP的经销商。拥有部分推荐权，可加入高级合伙人或实习合伙人的团队，不可组建专属销售团队。可享有经销商权限的分红和返利。";
         }
             break;
         case RecommendLevelPracticeAgent:
         {
-            self.selectStr = @"已选择:实习代理人";
-            self.selectTips = @"实习代理人是个什么WAN，年费收费的十几分防守打法你知道吗，发什么呆沙比玩意，电话费附加税快递费发酒疯";
+            self.selectStr = @"已选择:实习经销商";
+            self.selectTips = @"即是高级经销商的实习期，拥有部分部分推荐权。可加入高级合伙人或实习合伙人的团队，不可组建专属销售团队。可享有经销商权限的部分分红和返利，完成实习条件自动升级为高级经销商";
         }
             break;
         default:

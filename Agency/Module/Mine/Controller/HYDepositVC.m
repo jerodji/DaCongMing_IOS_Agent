@@ -15,6 +15,7 @@
 #import "HYInputDepositPwdView.h"
 #import "HYAuthPhoneVC.h"
 #import "HYDepositWaitViewController.h"
+#import "HYBankCardViewController.h"
 
 @interface HYDepositVC ()
 
@@ -136,6 +137,18 @@
     if (!_headerView) {
         
         _headerView = [HYDispoitHeaderView new];
+        _headerView.userInteractionEnabled = YES;
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithActionBlock:^(id  _Nonnull sender) {
+            
+            HYBankCardViewController *bankCardVC = [HYBankCardViewController new];
+            bankCardVC.isSelectBankCard = YES;
+            bankCardVC.selectCardBlock = ^(NSString *bankCardID) {
+              
+                DLog(@"选择的银行卡是:%@",bankCardID);
+            };
+            [self.navigationController pushViewController:bankCardVC animated:YES];
+        }];
+        [_headerView addGestureRecognizer:tap];
     }
     return _headerView;
 }

@@ -23,7 +23,7 @@
     [self setupSubviews];
     [self setStatusBarBackgroundColor:KAPP_NAV_COLOR];
     self.navigationController.navigationBar.barTintColor = KAPP_NAV_COLOR;
-
+    [self setupNav];
 }
 
 - (void)setupSubviews{
@@ -33,6 +33,49 @@
     [self.view addSubview:self.iconImageView];
     [self.view addSubview:self.tipsLabel];
 }
+
+#pragma mark - nav
+- (void)setupNav{
+    
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    //设置导航栏的颜色
+    self.navigationController.navigationBar.barTintColor = KAPP_NAV_COLOR;
+    //设置导航栏的字体颜色
+    [self.navigationController.navigationBar setTitleTextAttributes:
+     @{NSForegroundColorAttributeName:KAPP_WHITE_COLOR}];
+    self.navigationController.navigationBar.translucent = NO;
+    
+    //设置返回按钮的颜色为白色
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor]};
+    
+    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back"] style:UIBarButtonItemStylePlain target:self action:@selector(backBtnAction)];
+    self.navigationItem.leftBarButtonItem = backItem;
+    //[self setNeedsNavigationBackground:0];
+}
+
+- (void)setNeedsNavigationBackground:(CGFloat)alpha {
+    
+    // 导航栏背景透明度设置
+    UIView *barBackgroundView = [[self.navigationController.navigationBar subviews] objectAtIndex:0];// _UIBarBackground
+    UIImageView *backgroundImageView = [[barBackgroundView subviews] objectAtIndex:0];// UIImageView
+    if (self.navigationController.navigationBar.isTranslucent) {
+        if (backgroundImageView != nil && backgroundImageView.image != nil) {
+            barBackgroundView.alpha = alpha;
+        }
+        else {
+            UIView *backgroundEffectView = [[barBackgroundView subviews] objectAtIndex:1];// UIVisualEffectView
+            if (backgroundEffectView != nil) {
+                backgroundEffectView.alpha = alpha;
+            }
+        }
+    }
+    else {
+        barBackgroundView.alpha = alpha;
+    }
+    self.navigationController.navigationBar.clipsToBounds = YES;
+}
+
 
 - (void)backBtnAction{
     

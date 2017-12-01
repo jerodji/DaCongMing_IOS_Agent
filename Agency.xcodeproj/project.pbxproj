@@ -18,6 +18,7 @@
 		042C22331FC7BF6700DFD274 /* HYShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = 042C22321FC7BF6700DFD274 /* HYShareView.m */; };
 		042C22361FC7BFDC00DFD274 /* HYShareHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 042C22351FC7BFDC00DFD274 /* HYShareHandle.m */; };
 		042C225F1FCBFB6200DFD274 /* HYBindCardPhoneAuthView.m in Sources */ = {isa = PBXBuildFile; fileRef = 042C225E1FCBFB6200DFD274 /* HYBindCardPhoneAuthView.m */; };
+		042C22F41FD14E3000DFD274 /* UILabel+HYCopy.m in Sources */ = {isa = PBXBuildFile; fileRef = 042C22F31FD14E3000DFD274 /* UILabel+HYCopy.m */; };
 		04375E401FBC4C1F00B39E82 /* HYAboutUSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04375E3E1FBC4C1F00B39E82 /* HYAboutUSViewController.m */; };
 		0468FDA91FBD2E1100ACB4FA /* AppDelegate+HYRongIM.m in Sources */ = {isa = PBXBuildFile; fileRef = 0468FDA81FBD2E1100ACB4FA /* AppDelegate+HYRongIM.m */; };
 		0468FDAC1FBD394A00ACB4FA /* HYMyTeamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0468FDAB1FBD394A00ACB4FA /* HYMyTeamViewController.m */; };
@@ -171,6 +172,8 @@
 		042C22351FC7BFDC00DFD274 /* HYShareHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYShareHandle.m; sourceTree = "<group>"; };
 		042C225D1FCBFB6200DFD274 /* HYBindCardPhoneAuthView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HYBindCardPhoneAuthView.h; sourceTree = "<group>"; };
 		042C225E1FCBFB6200DFD274 /* HYBindCardPhoneAuthView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HYBindCardPhoneAuthView.m; sourceTree = "<group>"; };
+		042C22F21FD14E3000DFD274 /* UILabel+HYCopy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+HYCopy.h"; sourceTree = "<group>"; };
+		042C22F31FD14E3000DFD274 /* UILabel+HYCopy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+HYCopy.m"; sourceTree = "<group>"; };
 		04375E3D1FBC4C1F00B39E82 /* HYAboutUSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HYAboutUSViewController.h; sourceTree = "<group>"; };
 		04375E3E1FBC4C1F00B39E82 /* HYAboutUSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HYAboutUSViewController.m; sourceTree = "<group>"; };
 		0468FDA71FBD2E1100ACB4FA /* AppDelegate+HYRongIM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+HYRongIM.h"; sourceTree = "<group>"; };
@@ -878,6 +881,8 @@
 				3E14D2231FB07596006CDF18 /* HYDatePickerView.m */,
 				042C22311FC7BF6700DFD274 /* HYShareView.h */,
 				042C22321FC7BF6700DFD274 /* HYShareView.m */,
+				042C22F21FD14E3000DFD274 /* UILabel+HYCopy.h */,
+				042C22F31FD14E3000DFD274 /* UILabel+HYCopy.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1262,6 +1267,7 @@
 				0470F1FE1FC6ABB3009EDCD2 /* HYBankCardModel.m in Sources */,
 				3E7FE4521FB5A1E900498FC2 /* HYMyWalletModel.m in Sources */,
 				3E7FE3CB1FB1ABEE00498FC2 /* HYBandPhoneVC.m in Sources */,
+				042C22F41FD14E3000DFD274 /* UILabel+HYCopy.m in Sources */,
 				3E7FE3E91FB2D7A700498FC2 /* HYSetDispoitPwdVC.m in Sources */,
 				3E0FDF291FA9647900F52DC0 /* main.m in Sources */,
 				3E7FE4041FB306FE00498FC2 /* HYSendAuthView.m in Sources */,

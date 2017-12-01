@@ -163,7 +163,7 @@
     if (!_introTextView) {
         
         _introTextView = [UITextView new];
-        _introTextView.text = @"消息的远程推送您在开发者后台配置好远程推送的证书，且在代码中申请好权限，并将 deviceToken 传给融云服务器，当接收者不在线的时候，融云服务器会自动通过远程推送将消息发过去。注： 推送的内容由发送消息接口的 pushContent 字段决定，内置消息发送的时候如果该字段没有值，将使用默认内容推送；自定义消息必须设置该字段，否则将不会推送。";
+        _introTextView.text = _info[@"intro"];
         _introTextView.editable = NO;
         _introTextView.textColor = KAPP_272727_COLOR;
         _introTextView.font = KFitFont(15);

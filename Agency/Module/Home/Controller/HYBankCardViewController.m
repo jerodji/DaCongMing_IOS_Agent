@@ -128,7 +128,15 @@
 #pragma mark - tableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    
+    if (self.isSelectBankCard) {
+        
+        if (self.selectCardBlock) {
+            
+            HYBankCardCellModel *cellModel = self.datalist[indexPath.section];
+            self.selectCardBlock(cellModel.bankcard_id);
+            [self.navigationController popViewControllerAnimated:YES];
+        }
+    }
 }
 
 

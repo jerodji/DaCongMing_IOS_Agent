@@ -11,6 +11,7 @@
 #import "HYSetUserNameVC.h"
 #import "HYBandPhoneVC.h"
 #import "HYUploadIDCardViewController.h"
+#import "UILabel+HYCopy.h"
 
 @interface HYMineViewController () <UITableViewDelegate,UITableViewDataSource>
 
@@ -41,17 +42,17 @@
 
 - (void)setupData{
     
-    self.datalist = [NSMutableArray arrayWithObjects:@"头像",@"用户名",@"实名认证",@"绑定手机",@"退出登录", nil];
+    self.datalist = [NSMutableArray arrayWithObjects:@"头像",@"用户名",@"我的ID",@"实名认证",@"绑定手机",@"退出登录", nil];
     NSString *phone = [HYUserModel sharedInstance].userInfo.phone;
     
     if ([phone isNotBlank]) {
         
         phone = [phone stringByReplacingCharactersInRange:NSMakeRange(3, 4) withString:@"****"];
         phone = [phone isNotBlank] ? phone : @"";
-        self.dataSourceArray = [NSMutableArray arrayWithObjects:[HYUserModel sharedInstance].userInfo.head_image_url,[HYUserModel sharedInstance].userInfo.name,@"",phone,@"",nil];
+        self.dataSourceArray = [NSMutableArray arrayWithObjects:[HYUserModel sharedInstance].userInfo.head_image_url,[HYUserModel sharedInstance].userInfo.name,[HYUserModel sharedInstance].userInfo.id,@"",phone,@"",nil];
     }
     else{
-        self.dataSourceArray = [NSMutableArray arrayWithObjects:[HYUserModel sharedInstance].userInfo.head_image_url,[HYUserModel sharedInstance].userInfo.name,@"",@"",@"",nil];
+        self.dataSourceArray = [NSMutableArray arrayWithObjects:[HYUserModel sharedInstance].userInfo.head_image_url,[HYUserModel sharedInstance].userInfo.name,[HYUserModel sharedInstance].userInfo.id,@"",@"",@"",nil];
     }
     
     
@@ -87,10 +88,12 @@
     }
     cell.nickNameLabel.hidden = YES;
     
-    if (indexPath.section == 1 || indexPath.section == 3) {
+    if (indexPath.section == 1 || indexPath.section == 4 || indexPath.section == 2) {
         
         cell.nickNameLabel.hidden = NO;
     }
+    cell.nickNameLabel.isCopyable = YES;
+    
     
     return cell;
 }
@@ -105,7 +108,7 @@
             [self.navigationController pushViewController:setNameVC animated:YES];
         }
             break;
-        case 2:
+        case 3:
         {
             if (![[HYUserModel sharedInstance].userInfo.phone isNotBlank]) {
                 
@@ -120,7 +123,7 @@
             [self.navigationController pushViewController:uploadIDCardVC animated:YES];
         }
             break;
-        case 3:
+        case 4:
         {
             if ([[HYUserModel sharedInstance].userInfo.phone isNotBlank]) {
                 
@@ -131,7 +134,7 @@
             [self.navigationController pushViewController:bindVC animated:YES];
         }
             break;
-        case 4:
+        case 5:
         {
             HYCustomAlert *alert = [[HYCustomAlert alloc] initWithFrame:CGRectMake(0, 0, KSCREEN_WIDTH, KSCREEN_HEIGHT) WithTitle:@"温馨提示" content:@"是否确认退出登录?" confirmBlock:^{
                 

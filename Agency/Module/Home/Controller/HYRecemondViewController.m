@@ -31,6 +31,12 @@
     [super viewDidLoad];
     [self setupSubviews];
     [self bindViewModel];
+    
+    //让键盘自适应高度
+    IQKeyboardManager *manager= [IQKeyboardManager sharedManager];
+    manager.enable = YES;
+    manager.shouldResignOnTouchOutside = YES;
+    manager.shouldToolbarUsesTextFieldTintColor = YES;
 }
 
 - (void)setupSubviews{

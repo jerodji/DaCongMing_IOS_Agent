@@ -52,4 +52,10 @@ extern NSString * const KHomePageDataModel;
 /** 添加购物车成功 */
 extern NSString * const KAddShoppingCartsSuccess;
 
+/** 大聪明账号 */
+extern NSString * const KBankCardNum;
+
+/** 大聪明开户行 */
+extern NSString * const KBankName;
+
 @end

@@ -96,7 +96,7 @@
         _earningLabel = [[UILabel alloc] init];
         _earningLabel.font = KFitFont(25);
         _earningLabel.textColor = KAPP_WHITE_COLOR;
-        _earningLabel.text = @"我的收益";
+        _earningLabel.text = @"我的工资";
         _earningLabel.textAlignment = NSTextAlignmentLeft;
     }
     return _earningLabel;

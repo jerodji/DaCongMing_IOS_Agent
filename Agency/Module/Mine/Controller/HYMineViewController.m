@@ -117,6 +117,11 @@
                 [JRToast showWithText:@"请先绑定手机"];
                 return;
             }
+            if ([[HYUserModel sharedInstance].userInfo.isauth boolValue]) {
+                
+                [JRToast showWithText:@"你已经实名认证过了"];
+                return;
+            }
             HYUploadIDCardViewController *uploadIDCardVC = [HYUploadIDCardViewController new];
             uploadIDCardVC.title = @"实名认证";
             uploadIDCardVC.isBindBankCard = NO;

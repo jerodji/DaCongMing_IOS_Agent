@@ -115,6 +115,9 @@
                 
                 complection(nil);
                 [JRToast showWithText:[returnData valueForKey:@"message"]];
+               KEYWINDOW.rootViewController = [[HYLoginViewController alloc] init];
+               [[RCIMClient sharedRCIMClient] logout];
+               [[HYUserModel sharedInstance] clearData];
             }
         }
         else{

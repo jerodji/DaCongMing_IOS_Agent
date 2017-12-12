@@ -34,6 +34,8 @@
 @property (nonatomic, copy) NSString *total_incom;
 /** V0没有权限 */
 @property (nonatomic,copy) NSString *level;
+/** 是否已经实名认证 */
+@property (nonatomic,copy) NSString *isauth;
 
 @end
 

@@ -86,6 +86,12 @@
             return;
         }
         
+        if ([[HYUserModel sharedInstance].userInfo.isauth boolValue]) {
+            
+            [JRToast showWithText:@"你已经实名认证过了"];
+            return;
+        }
+        
         HYUploadIDCardViewController *authVC = [HYUploadIDCardViewController new];
         HYBaseNavController *nav = [[HYBaseNavController alloc] initWithRootViewController:authVC];
         authVC.title = @"认证";

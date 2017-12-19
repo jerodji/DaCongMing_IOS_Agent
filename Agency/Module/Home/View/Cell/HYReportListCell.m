@@ -93,28 +93,21 @@
     
     viewModel.cellIndexPath = self.indexPath;
     self.viewModel = viewModel;
-    
-    RAC(self.titleLabel,text) = RACObserve(viewModel, title);
-    RAC(self,timeLabel.text) = RACObserve(viewModel, timeStr);
-    RAC(self,priceLabel.text) = [RACObserve(viewModel, price) map:^id(id value) {
-        
+    RAC(self.titleLabel,text) = [RACObserve(viewModel, title) takeUntil:self.rac_prepareForReuseSignal];
+    RAC(self.timeLabel,text) = [RACObserve(viewModel, timeStr) takeUntil:self.rac_prepareForReuseSignal];
+    RAC(self.priceLabel,text) = [[RACObserve(viewModel, price) takeUntil:self.rac_prepareForReuseSignal] map:^id(id value) {
+
         return [NSString stringWithFormat:@"￥%@",value];
     }];
-    [RACObserve(viewModel,headImageUrl) subscribeNext:^(NSString *headImgUrlStr) {
-        
+    [RACObserve(viewModel,headImageUrl)  subscribeNext:^(NSString *headImgUrlStr) {
+
         [self.headerImgView sd_setImageWithURL:[NSURL URLWithString:headImgUrlStr] placeholderImage:[UIImage imageNamed:@"user_placeholder"]];
     }];
     
-    RAC(self.drawDownBtn,enabled) = [viewModel drawDownBtnIsInvalid];
-    [RACObserve(viewModel, isReceive) subscribeNext:^(id x) {
-       
-        if ([x boolValue]) {
-            
-            [self.drawDownBtn setTitle:@"已领取" forState:UIControlStateNormal];
-        }
-    }];
+    RAC(self.drawDownBtn,enabled) = [[viewModel drawDownBtnIsInvalid] takeUntil:self.rac_prepareForReuseSignal];
     [[viewModel drawDownBtnIsInvalid] subscribeNext:^(id x) {
        
+//        DLog(@"state %@",x);
         if ([x boolValue]) {
             
             [self.drawDownBtn setTitle:@"领取" forState:UIControlStateNormal];
@@ -123,7 +116,15 @@
             
             [self.drawDownBtn setTitle:@"未入账" forState:UIControlStateNormal];
         }
-        DLog(@"%@",x);
+    }];
+    
+    [RACObserve(viewModel, isReceive) subscribeNext:^(id x) {
+        
+//        DLog(@"the isReceive is %@",x);
+        if ([x boolValue]) {
+            
+            [self.drawDownBtn setTitle:@"已领取" forState:UIControlStateNormal];
+        }
     }];
 
 }

@@ -19,7 +19,7 @@ pod 'FMDB', '~> 2.6.2'
 pod 'FDFullscreenPopGesture', '~> 1.1'
 pod 'DZNEmptyDataSet', '~> 1.8.1'
 pod 'Bugly'
-pod 'ReactiveCocoa','~>2.4'
+pod 'ReactiveCocoa', :git => 'https://github.com/zhao0/ReactiveCocoa.git', :tag => '2.5.2'
 pod 'RongCloudIM/IMKit', '~> 2.8.3'
 
 end

@@ -22,6 +22,11 @@
 + (void)LoginWithPhone:(NSString *)phone password:(NSString *)password ComplectionBlock:(void(^)(NSDictionary *result))complection;
 
 /**
+ *  刷新用户数据
+ */
++ (void)refreshUserInfo;
+
+/**
  *  获取手机验证码
  */
 + (void)getAuthCodeWithPhone:(NSString *)phone ComplectionBlock:(void(^)(BOOL isSuccess))complection;

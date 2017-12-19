@@ -24,12 +24,12 @@ PODS:
   - Masonry (1.0.2)
   - MBProgressHUD (1.0.0)
   - MJRefresh (3.1.14.1)
-  - ReactiveCocoa (2.5):
-    - ReactiveCocoa/UI (= 2.5)
-  - ReactiveCocoa/Core (2.5):
+  - ReactiveCocoa (2.5.2):
+    - ReactiveCocoa/UI (= 2.5.2)
+  - ReactiveCocoa/Core (2.5.2):
     - ReactiveCocoa/no-arc
-  - ReactiveCocoa/no-arc (2.5)
-  - ReactiveCocoa/UI (2.5):
+  - ReactiveCocoa/no-arc (2.5.2)
+  - ReactiveCocoa/UI (2.5.2):
     - ReactiveCocoa/Core
   - RongCloudIM/IMKit (2.8.20):
     - RongCloudIM/IMLib
@@ -54,12 +54,21 @@ DEPENDENCIES:
   - Masonry (~> 1.0.2)
   - MBProgressHUD (~> 1.0.0)
   - MJRefresh (~> 3.1.12)
-  - ReactiveCocoa (~> 2.4)
+  - ReactiveCocoa (from `https://github.com/zhao0/ReactiveCocoa.git`, tag `2.5.2`)
   - RongCloudIM/IMKit (~> 2.8.3)
-  - RongCloudIM/IMLib (~> 2.8.3)
   - SDCycleScrollView (~> 1.65)
   - WechatOpenSDK
   - YYKit (~> 1.0.9)
+
+EXTERNAL SOURCES:
+  ReactiveCocoa:
+    :git: https://github.com/zhao0/ReactiveCocoa.git
+    :tag: 2.5.2
+
+CHECKOUT OPTIONS:
+  ReactiveCocoa:
+    :git: https://github.com/zhao0/ReactiveCocoa.git
+    :tag: 2.5.2
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
@@ -71,13 +80,13 @@ SPEC CHECKSUMS:
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   MJRefresh: 238e6a37e2dba12160ee3b79f6d2a2b26abcab42
-  ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
+  ReactiveCocoa: 3ff25b1bd992ac79c5c79b26b6c0c1713b715bb2
   RongCloudIM: fbb835e78844cb11f3f279467dea0fc962905002
   SDCycleScrollView: d0fd5fe40a80918371fd8939214eb3be81033d83
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   WechatOpenSDK: 0ee07a8d492299d3e47372a33da5af26524a7576
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 0d783cdfaf9d70da87e212e99736f516011529c9
+PODFILE CHECKSUM: 2497db242410a75f98d37390d196a4989f029f71
 
 COCOAPODS: 1.3.1

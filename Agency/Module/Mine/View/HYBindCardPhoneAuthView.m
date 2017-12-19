@@ -48,9 +48,9 @@
     
     [_phoneField.rac_textSignal subscribeNext:^(NSString *x) {
         
-        if (x.length >= 6) {
+        if (x.length >= 11) {
             
-            _phoneField.text = [x substringToIndex:6];
+            _phoneField.text = [x substringToIndex:11];
         }
         viewModel.phoneNum = _phoneField.text;
     }];
@@ -224,5 +224,7 @@
     }
     return _getAuthBtn;
 }
+
+
 
 @end

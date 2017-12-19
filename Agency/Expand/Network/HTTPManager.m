@@ -54,6 +54,8 @@
             
             [MBProgressHUD hidePregressHUD:KEYWINDOW];
         }
+        [JRToast showWithText:@"服务器云游四方去了"];
+        successBlock(nil);
     }];
 }
 
@@ -118,6 +120,7 @@
             
             [MBProgressHUD hidePregressHUD:KEYWINDOW];
         }
+        [JRToast showWithText:@"服务器云游四方去了"];
         successBlock(nil);
     }];
 }

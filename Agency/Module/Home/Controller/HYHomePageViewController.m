@@ -39,6 +39,13 @@
     [self bindViewModel];
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    
+    [super viewWillAppear:animated];
+    [HYUserRequestHandle refreshUserInfo];
+    
+}
+
 - (void)setupSubviews{
     
     [self.view addSubview:self.homeView];

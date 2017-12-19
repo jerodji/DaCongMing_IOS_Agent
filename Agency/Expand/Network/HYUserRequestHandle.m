@@ -62,6 +62,39 @@
     }];
 }
 
++ (void)refreshUserInfo{
+   
+   NSMutableDictionary *param = [NSMutableDictionary dictionary];
+   [param setValue:[HYUserModel sharedInstance].token forKey:@"token"];
+   
+   [[HTTPManager shareHTTPManager] postDataFromUrl:API_GetUserInfo withParameter:param isShowHUD:YES success:^(id returnData) {
+      
+      if (returnData) {
+         
+         NSInteger code = [[returnData objectForKey:@"code"] integerValue];
+         if (code == 000) {
+            
+            NSString *token = [HYUserModel sharedInstance].token;
+            NSString *rong_token = [HYUserModel sharedInstance].rong_token;
+            NSDictionary *data = [returnData objectForKey:@"data"];
+            HYUserModel *user = [HYUserModel sharedInstance];
+            [user modelSetWithDictionary:data];
+            user.token = token;
+            user.rong_token = rong_token;
+         }
+         else{
+            
+            [JRToast showWithText:[returnData valueForKey:@"message"] duration:2];
+            
+         }
+      }
+      else{
+         
+         [JRToast showWithText:@"获取用户信息出现问题" duration:2];
+      }
+   }];
+}
+
 + (void)LoginWithPhone:(NSString *)phone password:(NSString *)password ComplectionBlock:(void (^)(NSDictionary *))complection{
     
     NSMutableDictionary *param = [NSMutableDictionary dictionary];

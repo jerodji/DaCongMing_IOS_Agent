@@ -30,6 +30,9 @@
 //退出登录
 #define API_Logout               @"HAILIN_AGENT_SERVER/userLoginOut.do"
 
+//获取用户信息
+#define API_GetUserInfo          @"HAILIN_AGENT_SERVER/getUserInfo.do"
+
 //微信登录
 #define API_WeChatLogin         @"HAILIN_AGENT_SERVER/wechatLogin.do"
 

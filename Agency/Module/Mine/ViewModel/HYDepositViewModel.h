@@ -12,10 +12,12 @@
 
 /** 账户余额 */
 @property (nonatomic,copy) NSString *balance;
-/** 收入的余额 */
+/** 输入的余额 */
 @property (nonatomic,copy) NSString *inputBalance;
+/** 提现银行卡ID */
+@property (nonatomic,copy) NSString *depositBankID;
 /** 提现密码 */
-@property (nonatomic,strong) NSString *depositPwd;
+@property (nonatomic,copy) NSString *depositPwd;
 /** 提现 */
 @property (nonatomic,strong) RACSubject *depositSubject;
 /** 密码错误 */

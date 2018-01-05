@@ -15,5 +15,6 @@
 @property (nonatomic,copy) NSString *url;
 @property (nonatomic,copy) NSString *shareUrl;
 @property (nonatomic,copy) NSString *descriptions;
+@property (nonatomic,copy) NSString *title;
 
 @end

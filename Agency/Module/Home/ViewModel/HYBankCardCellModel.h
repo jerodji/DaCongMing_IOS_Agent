@@ -13,6 +13,7 @@
 
 @property (nonatomic,copy) NSString *bank_name;
 @property (nonatomic,copy) NSString *bankcard_id;
+@property (nonatomic,strong) HYBankCardModel *model;
 
 - (instancetype)initWithModel:(HYBankCardModel *)model;
 

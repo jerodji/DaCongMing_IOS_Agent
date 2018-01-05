@@ -12,7 +12,6 @@
 
 /** 收益 */
 @property (nonatomic,strong) UILabel *earningLabel;
-
 /** 深颜色背景 */
 @property (nonatomic,strong) UIView *deepBgView;
 
@@ -37,6 +36,7 @@
     [self addSubview:self.deepBgView];
     [self addSubview:self.headerImgView];
     [self addSubview:self.nickNameLabel];
+    [self addSubview:self.clientNumLabel];
     [self addSubview:self.myTeamsBtn];
 }
 
@@ -64,8 +64,6 @@
         make.bottom.equalTo(_deepBgView.mas_top).offset(-5 * WIDTH_MULTIPLE);
     }];
     
-   
-    
     [_headerImgView mas_makeConstraints:^(MASConstraintMaker *make) {
        
         make.left.equalTo(_earningLabel);
@@ -80,11 +78,18 @@
         make.centerY.equalTo(_deepBgView);
     }];
     
+    [_clientNumLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+       
+        make.right.equalTo(_myTeamsBtn.mas_left).offset(-12 * WIDTH_MULTIPLE);
+        make.top.bottom.equalTo(_deepBgView);
+        make.width.mas_equalTo(40 * WIDTH_MULTIPLE);
+    }];
+    
     [_nickNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
        
         make.left.equalTo(_headerImgView.mas_right).offset(8 * WIDTH_MULTIPLE);
         make.top.bottom.equalTo(_deepBgView);
-        make.right.equalTo(_myTeamsBtn.mas_left).offset(8 * WIDTH_MULTIPLE);
+        make.right.equalTo(_clientNumLabel.mas_left).offset(-8 * WIDTH_MULTIPLE);
     }];
 }
 
@@ -143,12 +148,26 @@
     if (!_nickNameLabel) {
         
         _nickNameLabel = [[UILabel alloc] init];
-        _nickNameLabel.font = KFitFont(18);
+        _nickNameLabel.font = KFitFont(16);
         _nickNameLabel.textColor = KAPP_WHITE_COLOR;
         _nickNameLabel.text = @"未登录请登录";
         _nickNameLabel.textAlignment = NSTextAlignmentLeft;
     }
     return _nickNameLabel;
+}
+
+- (UILabel *)clientNumLabel{
+    
+    if (!_clientNumLabel) {
+        
+        _clientNumLabel = [[UILabel alloc] init];
+        _clientNumLabel.font = KFitFont(11);
+        _clientNumLabel.textColor = KAPP_WHITE_COLOR;
+        _clientNumLabel.text = @"客户数\n+00";
+        _clientNumLabel.numberOfLines = 0;
+        _clientNumLabel.textAlignment = NSTextAlignmentCenter;
+    }
+    return _clientNumLabel;
 }
 
 - (UIButton *)myTeamsBtn{

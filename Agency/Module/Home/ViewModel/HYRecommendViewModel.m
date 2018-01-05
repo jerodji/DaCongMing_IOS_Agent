@@ -8,6 +8,7 @@
 //
 
 #import "HYRecommendViewModel.h"
+#import "HYRecommendInfoModel.h"
 
 @interface HYRecommendViewModel()
 
@@ -26,6 +27,7 @@
     if (self = [super init]) {
         
         [self initializeSignal];
+        [self requestRecommendData];
     }
     return self;
 }
@@ -38,6 +40,19 @@
     _payAccountSignal = RACObserve(self, payAccount);
     _phoneNumSignal = RACObserve(self, phoneNum);
     _confirmSuccessSubject = [RACSubject subject];
+    _recommendModelArray = [NSMutableArray array];
+}
+
+- (void)requestRecommendData{
+    
+    [HYUserRequestHandle getRecommendDataComplectionBlock:^(NSArray *datalist) {
+       
+        [datalist enumerateObjectsUsingBlock:^(NSDictionary *dict, NSUInteger idx, BOOL * _Nonnull stop) {
+           
+            HYRecommendInfoModel *model = [HYRecommendInfoModel modelWithDictionary:dict];
+            [self.recommendModelArray addObject:model];
+        }];
+    }];
 }
 
 #pragma mark - setter
@@ -79,7 +94,7 @@
     
     RACSignal *isValid = [_recommendedSignal map:^id(id value) {
         
-        return @(_recommendedID.length >= 3);
+        return @(_recommendedID.length >= 1);
     }];
     
     return isValid;

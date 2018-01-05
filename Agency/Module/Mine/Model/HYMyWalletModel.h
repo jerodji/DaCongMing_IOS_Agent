@@ -7,6 +7,7 @@
 //
 
 #import "HYBaseModel.h"
+#import "HYBankCardModel.h"
 
 @interface HYMyWalletModel : HYBaseModel
 
@@ -24,6 +25,8 @@
 @property (nonatomic,copy) NSString *todaySales;
 /** 是否设置提现密码 */
 @property (nonatomic,copy) NSString *isSetaccountPwd;
+/** 银行卡信息 */
+@property (nonatomic,strong) HYBankCardModel *userBankCardInfo;
 
 @end
 

@@ -35,7 +35,7 @@
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
     // 设置超时时间
     [manager.requestSerializer willChangeValueForKey:@"timeoutInterval"];
-    manager.requestSerializer.timeoutInterval = 30.0f;
+    manager.requestSerializer.timeoutInterval = 10.0f;
     [manager.requestSerializer didChangeValueForKey:@"timeoutInterval"];
     manager.securityPolicy.allowInvalidCertificates = YES;
 
@@ -77,13 +77,14 @@
 
     
     manager.requestSerializer = [AFHTTPRequestSerializer serializer];
-    manager.requestSerializer.timeoutInterval = 10.0f;
+//    manager.requestSerializer.timeoutInterval = 10.0f;
 
     //采用JSON的方式来解析数据
 //    manager.responseSerializer = [AFJSONResponseSerializer serializer];
     // 设置超时时间
-//    [manager.requestSerializer willChangeValueForKey:@"timeoutInterval"];
-//    [manager.requestSerializer didChangeValueForKey:@"timeoutInterval"];
+    [manager.requestSerializer willChangeValueForKey:@"timeoutInterval"];
+    manager.requestSerializer.timeoutInterval = 10.0f;
+    [manager.requestSerializer didChangeValueForKey:@"timeoutInterval"];
     
     
     [manager POST:urlString parameters:para progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {

@@ -7,8 +7,9 @@
 //
 
 #import "HYBaseViewController.h"
+#import "HYBankCardModel.h"
 
-typedef void(^HYSelectBankCard)(NSString *bankCardID);
+typedef void(^HYSelectBankCard)(HYBankCardModel *bankCardModel);
 
 @interface HYBankCardViewController : HYBaseViewController
 

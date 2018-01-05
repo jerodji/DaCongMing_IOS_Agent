@@ -68,7 +68,7 @@
     [_backBtn mas_makeConstraints:^(MASConstraintMaker *make) {
        
         make.left.equalTo(self);
-        make.top.equalTo(self).offset(20 * WIDTH_MULTIPLE);
+        make.top.equalTo(self).offset(KSTATUSBAR_HEIGHT);
         make.size.mas_equalTo(CGSizeMake(30 * WIDTH_MULTIPLE, 30 * WIDTH_MULTIPLE));
     }];
     

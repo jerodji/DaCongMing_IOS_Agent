@@ -36,6 +36,7 @@
 - (void)bindViewModel{
     
     HYBindPhoneViewModel *viewModel = [HYBindPhoneViewModel new];
+    viewModel.isBindPhone = NO;
     [self.authPhoneView setWithViewModel:viewModel];
     
     [viewModel.AuthSuccessSubject subscribeNext:^(id x) {

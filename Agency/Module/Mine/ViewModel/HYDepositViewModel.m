@@ -52,7 +52,7 @@
 
 - (void)inputPwdComplectionAction{
     
-    [HYUserRequestHandle DepositWithMoney:_inputBalance password:_depositPwd ComplectionBlock:^(BOOL isSuccess) {
+    [HYUserRequestHandle DepositWithMoney:_inputBalance password:_depositPwd bandCardID:self.depositBankID ComplectionBlock:^(BOOL isSuccess) {
        
         if (isSuccess) {
             

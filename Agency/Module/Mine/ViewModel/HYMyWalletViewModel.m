@@ -10,9 +10,6 @@
 
 @interface HYMyWalletViewModel()
 
-/** model */
-@property (nonatomic,strong) HYMyWalletModel *model;
-
 @end
 
 @implementation HYMyWalletViewModel

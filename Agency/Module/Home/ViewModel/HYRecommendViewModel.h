@@ -26,6 +26,7 @@ typedef NS_ENUM(NSUInteger, RecommendLevel) {
 @property (nonatomic,copy) NSString *payAccount;
 @property (nonatomic,copy) NSString *phoneNum;
 @property (nonatomic,copy) NSString *authBtnTitle;
+@property (nonatomic,strong) NSMutableArray *recommendModelArray;
 @property (nonatomic,strong) RACSubject *confirmSuccessSubject;
 
 - (RACSignal *)confirmButtonIsValid;

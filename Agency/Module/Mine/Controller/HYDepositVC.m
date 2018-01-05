@@ -62,6 +62,7 @@
     [self.dispoitView setWithViewModel:viewModel];
     self.viewModel = viewModel;
     
+    RAC(self.viewModel,depositBankID) = RACObserve(self.headerView.backCardModel, id);
     [viewModel.depositSubject subscribeNext:^(id x) {
        
         DLog(@"%@",x);
@@ -138,13 +139,15 @@
         
         _headerView = [HYDispoitHeaderView new];
         _headerView.userInteractionEnabled = YES;
+        _headerView.backCardModel = self.defaultBankCardModel;
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithActionBlock:^(id  _Nonnull sender) {
             
             HYBankCardViewController *bankCardVC = [HYBankCardViewController new];
             bankCardVC.isSelectBankCard = YES;
-            bankCardVC.selectCardBlock = ^(NSString *bankCardID) {
+            bankCardVC.selectCardBlock = ^(HYBankCardModel *bankCardModel) {
               
-                DLog(@"选择的银行卡是:%@",bankCardID);
+                DLog(@"选择的银行卡是:%@",bankCardModel.bankcard_id);
+                self.headerView.backCardModel = bankCardModel;
             };
             [self.navigationController pushViewController:bankCardVC animated:YES];
         }];

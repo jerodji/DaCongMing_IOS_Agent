@@ -147,8 +147,8 @@
             else{
                 
                 complection(nil);
-                [JRToast showWithText:[returnData valueForKey:@"message"]];
-               KEYWINDOW.rootViewController = [[HYLoginViewController alloc] init];
+               [JRToast showWithText:[returnData valueForKey:@"message"] duration:2.0];
+//               KEYWINDOW.rootViewController = [[HYLoginViewController alloc] init];
                [[RCIMClient sharedRCIMClient] logout];
                [[HYUserModel sharedInstance] clearData];
             }
@@ -193,12 +193,13 @@
     }];
 }
 
-+ (void)verifyAuthCodeWithPhone:(NSString *)phone authCode:(NSString *)authCode ComplectionBlock:(void (^)(BOOL))complection{
++ (void)verifyAuthCodeWithPhone:(NSString *)phone authCode:(NSString *)authCode  ComplectionBlock:(void (^)(BOOL))complection{
     
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
     [param setValue:phone forKey:@"phoneNum"];
     [param setValue:authCode forKey:@"phoneCode"];
     [param setValue:[HYUserModel sharedInstance].token forKey:@"token"];
+   [param setValue:@"" forKey:@""];
     
     [[HTTPManager shareHTTPManager] postDataFromUrl:API_VerifyAuthCode withParameter:param isShowHUD:YES success:^(id returnData) {
         
@@ -459,13 +460,14 @@
     }];
 }
 
-+ (void)DepositWithMoney:(NSString *)money password:(NSString *)password ComplectionBlock:(void (^)(BOOL))complection{
++ (void)DepositWithMoney:(NSString *)money password:(NSString *)password bandCardID:(NSString *)bankCardID ComplectionBlock:(void (^)(BOOL))complection{
     
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
     [param setValue:money forKey:@"drawCashAmount"];
     [param setValue:password forKey:@"drawCashPwd"];
     [param setValue:[HYUserModel sharedInstance].token forKey:@"token"];
-    
+    [param setValue:bankCardID forKey:@"bankCard_id"];
+
     
     [[HTTPManager shareHTTPManager] postDataFromUrl:API_Deposit withParameter:param isShowHUD:YES success:^(id returnData) {
         
@@ -486,7 +488,6 @@
         else{
             
             complection(NO);
-            [JRToast showWithText:@"提现失败" duration:2];
         }
     }];
 }
@@ -684,6 +685,70 @@
    }];
 }
 
++ (void)setPasswordWithPhone:(NSString *)phone password:(NSString *)password authCode:(NSString *)authCode ComplectionBlock:(void (^)(BOOL))complection{
+   
+   NSMutableDictionary *param = [NSMutableDictionary dictionary];
+   [param setValue:[HYUserModel sharedInstance].token forKey:@"token"];
+   [param setValue:phone forKey:@"phoneNum"];
+   [param setValue:authCode forKey:@"phoneCode"];
+   [param setValue:password forKey:@"user_pwd"];
 
+   [[HTTPManager shareHTTPManager] postDataFromUrl:API_SetPassword withParameter:param isShowHUD:YES success:^(id returnData) {
+      
+      if (returnData) {
+         
+         NSInteger code = [[returnData objectForKey:@"code"] integerValue];
+         if (code == 000) {
+            
+            complection(YES);
+            [JRToast showWithText:@"设置成功"];
+         }
+         else{
+            
+            complection(NO);
+            [JRToast showWithText:[returnData valueForKey:@"message"]];
+            
+         }
+      }
+      else{
+         
+         complection(NO);
+      }
+   }];
+}
+
++ (void)getRecommendDataComplectionBlock:(void (^)(NSArray *))complection{
+   
+   [[HTTPManager shareHTTPManager] postDataFromUrl:API_RecommendData withParameter:nil isShowHUD:YES success:^(id returnData) {
+      
+      if (returnData) {
+         
+         NSInteger code = [[returnData objectForKey:@"code"] integerValue];
+         if (code == 000) {
+            
+            NSArray *array = returnData[@"data"];
+            if (array.count) {
+               
+               complection(array);
+            }
+            else{
+               
+               complection(array);
+            }
+         }
+         else{
+            
+            complection(nil);
+            [JRToast showWithText:[returnData valueForKey:@"message"]];
+            
+         }
+      }
+      else{
+         
+         complection(nil);
+         [JRToast showWithText:@"获取推荐信息失败" duration:2];
+      }
+   }];
+}
 
 @end

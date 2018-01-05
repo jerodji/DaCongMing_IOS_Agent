@@ -14,6 +14,8 @@
 @property (nonatomic,strong) UIImageView *headerImgView;
 /** 昵称 */
 @property (nonatomic,strong) UILabel *nickNameLabel;
+/** 客户数 */
+@property (nonatomic,strong) UILabel *clientNumLabel;
 /** 我的团对 */
 @property (nonatomic,strong) UIButton *myTeamsBtn;
 /** money */

@@ -37,19 +37,30 @@
 
 - (void)layoutSubviews{
     
-    [_iconImgView mas_makeConstraints:^(MASConstraintMaker *make) {
-        
-        make.left.equalTo(self).offset(10 * WIDTH_MULTIPLE);
-        make.centerY.equalTo(self);
-        make.size.mas_equalTo(CGSizeMake(40 * WIDTH_MULTIPLE, 40 * WIDTH_MULTIPLE));
-    }];
+//    [_iconImgView mas_makeConstraints:^(MASConstraintMaker *make) {
+//
+//        make.left.equalTo(self).offset(10 * WIDTH_MULTIPLE);
+//        make.centerY.equalTo(self);
+//        make.size.mas_equalTo(CGSizeMake(40 * WIDTH_MULTIPLE, 40 * WIDTH_MULTIPLE));
+//    }];
     
     [_tipsLabel mas_makeConstraints:^(MASConstraintMaker *make) {
        
-        make.left.equalTo(_iconImgView.mas_right).offset(10 * WIDTH_MULTIPLE);
+        make.left.equalTo(self).offset(10 * WIDTH_MULTIPLE);
         make.centerY.equalTo(self);
         make.size.mas_equalTo(CGSizeMake(200 * WIDTH_MULTIPLE, 40 * WIDTH_MULTIPLE));
     }];
+}
+
+- (void)setBackCardModel:(HYBankCardModel *)backCardModel{
+    
+    _backCardModel = backCardModel;
+    NSString *bankCard = [self.backCardModel.bankcard_id substringFromIndex:self.backCardModel.bankcard_id.length - 4];
+    NSMutableAttributedString *attributeStr = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"提现至银行卡\n(银行卡 尾号:%@)",bankCard]];
+    [attributeStr addAttributes:@{NSFontAttributeName : KFitFont(14),NSForegroundColorAttributeName : KAPP_272727_COLOR} range:NSMakeRange(0, attributeStr.length)];
+    [attributeStr addAttributes:@{NSFontAttributeName : KFitFont(14),NSForegroundColorAttributeName : KAPP_7b7b7b_COLOR} range:NSMakeRange(6, attributeStr.length - 6)];
+    _tipsLabel.numberOfLines = 0;
+    _tipsLabel.attributedText = attributeStr;
 }
 
 #pragma mark - lazyload
@@ -71,7 +82,8 @@
         _tipsLabel = [[UILabel alloc] init];
         _tipsLabel.font = KFitFont(14);
         _tipsLabel.textAlignment = NSTextAlignmentLeft;
-        NSMutableAttributedString *attributeStr = [[NSMutableAttributedString alloc] initWithString:@"提现至微信\n(微信登录账户)"];
+        NSString *bankCard = [self.backCardModel.bankcard_id substringFromIndex:self.backCardModel.bankcard_id.length - 4];
+        NSMutableAttributedString *attributeStr = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"提现至银行卡\n(账户默认银行卡 尾号:%@)",bankCard]];
         [attributeStr addAttributes:@{NSFontAttributeName : KFitFont(14),NSForegroundColorAttributeName : KAPP_272727_COLOR} range:NSMakeRange(0, attributeStr.length)];
         [attributeStr addAttributes:@{NSFontAttributeName : KFitFont(14),NSForegroundColorAttributeName : KAPP_7b7b7b_COLOR} range:NSMakeRange(5, attributeStr.length - 5)];
         _tipsLabel.numberOfLines = 0;

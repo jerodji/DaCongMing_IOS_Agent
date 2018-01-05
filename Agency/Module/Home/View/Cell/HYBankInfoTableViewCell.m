@@ -95,12 +95,12 @@
 #pragma mark - setViewModel
 - (void)setupWithCellModel:(HYBankCardCellModel *)cellModel{
     
-    RAC(self.bankNameLabel,text) = [RACObserve(cellModel, bank_name) map:^id(id value) {
+    RAC(self.bankNameLabel,text) = [[RACObserve(cellModel, bank_name) takeUntil:self.rac_prepareForReuseSignal] map:^id(id value) {
        
         return [NSString stringWithFormat:@"%@\n储蓄卡",cellModel.bank_name];
     }];
     
-    RAC(self.bankNoLabel,text) = [RACObserve(cellModel, bankcard_id) map:^id(id value) {
+    RAC(self.bankNoLabel,text) = [[RACObserve(cellModel, bankcard_id) takeUntil:self.rac_prepareForReuseSignal] map:^id(id value) {
        
         return [cellModel.bankcard_id stringByReplacingCharactersInRange:NSMakeRange(4, 9) withString:@" **** *** *** "];
     }];

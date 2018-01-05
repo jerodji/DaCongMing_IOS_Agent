@@ -16,6 +16,7 @@
         
         self.bank_name = model.bank_name;
         self.bankcard_id = model.bankcard_id;
+        self.model = model;
     }
     return self;
 }

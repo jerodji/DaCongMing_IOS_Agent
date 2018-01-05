@@ -116,6 +116,11 @@
             
             [self.drawDownBtn setTitle:@"未入账" forState:UIControlStateNormal];
         }
+        
+        if (viewModel.isReceive) {
+            
+            [self.drawDownBtn setTitle:@"已领取" forState:UIControlStateNormal];
+        }
     }];
     
     [RACObserve(viewModel, isReceive) subscribeNext:^(id x) {

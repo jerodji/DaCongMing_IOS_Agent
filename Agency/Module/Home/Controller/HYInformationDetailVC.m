@@ -9,6 +9,7 @@
 #import "HYInformationDetailVC.h"
 #import <WebKit/WebKit.h>
 #import "HYShareView.h"
+#import "HYShareModel.h"
 
 @interface HYInformationDetailVC ()<WKUIDelegate,WKNavigationDelegate>
 
@@ -64,14 +65,14 @@
     HYShareView *shareView = [[HYShareView alloc] initWithFrame:KEYWINDOW.frame];
     [KEYWINDOW addSubview:shareView];
     
-    NSMutableDictionary *shareDict = [NSMutableDictionary dictionary];
-    [shareDict setValue:_model.shareUrl forKey:@"shareUrl"];
-    [shareDict setValue:_model.descriptions forKey:@"shareDesc"];
-    [shareDict setValue:@"大聪明APP" forKey:@"shareTitle"];
-    [shareDict setValue:_model.img forKey:@"imageUrl"];
-    shareView.shareDict = shareDict;
+    HYShareModel *shareModel = [[HYShareModel alloc] init];
+    shareModel.shareType = HYShareTypeWebUrl;
+    shareModel.shareTitle = self.model.title;
+    shareModel.shareDescription = self.model.descriptions;
+    shareModel.shareWebUrl = self.model.shareUrl;
+    shareModel.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:self.model.img]]];
     [shareView showShareView];
-
+    shareView.shareModel = shareModel;
 }
 
 - (void)closeAction{

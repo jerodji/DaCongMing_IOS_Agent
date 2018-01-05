@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HYBankCardModel.h"
 
 @interface HYDispoitHeaderView : UIView
+
+/** 银行卡 */
+@property (nonatomic,strong) HYBankCardModel *backCardModel;
 
 @end

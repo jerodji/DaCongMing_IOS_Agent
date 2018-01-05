@@ -43,7 +43,6 @@
     
     [super viewWillAppear:animated];
     [HYUserRequestHandle refreshUserInfo];
-    
 }
 
 - (void)setupSubviews{

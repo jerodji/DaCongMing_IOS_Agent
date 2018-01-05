@@ -91,16 +91,32 @@
 
 - (void)verifyAuthCodeAction{
     
-    [HYUserRequestHandle verifyAuthCodeWithPhone:_phone authCode:_authCode ComplectionBlock:^(BOOL isSuccess) {
-       
-        if (isSuccess) {
+    if (self.isBindPhone) {
+        
+        [HYUserRequestHandle bindPhone:_phone authCode:_authCode ComplectionBlock:^(BOOL isSuccess) {
             
-            [self.AuthSuccessSubject sendNext:@"ok"];
-            //归档用户信息
-            [HYPlistTools archiveObject:[HYUserModel sharedInstance] withName:KUserModelData];
+            if (isSuccess) {
+                
+                [self.AuthSuccessSubject sendNext:@"ok"];
+                //归档用户信息
+                [HYPlistTools archiveObject:[HYUserModel sharedInstance] withName:KUserModelData];
+            }
+        }];
+    }
+    else{
+        
+        [HYUserRequestHandle verifyAuthCodeWithPhone:_phone authCode:_authCode ComplectionBlock:^(BOOL isSuccess) {
             
-        }
-    }];
+            if (isSuccess) {
+                
+                [self.AuthSuccessSubject sendNext:@"ok"];
+                //归档用户信息
+                [HYPlistTools archiveObject:[HYUserModel sharedInstance] withName:KUserModelData];
+            }
+        }];
+    }
+    
+    
 }
 
 #pragma mark - Private Method

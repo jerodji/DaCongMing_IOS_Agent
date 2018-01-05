@@ -39,7 +39,7 @@
 /**
  *  绑定手机
  */
-+ (void)bindPhone:(NSString *)phone authCode:(NSString *)authCode ComplectionBlock:(void(^)(BOOL isSuccess))complection;
++ (void)bindPhone:(NSString *)phone authCode:(NSString *)authCode  ComplectionBlock:(void(^)(BOOL isSuccess))complection;
 
 
 /**
@@ -80,7 +80,7 @@
 /**
  *  提现
  */
-+ (void)DepositWithMoney:(NSString *)money password:(NSString *)password ComplectionBlock:(void(^)(BOOL isSuccess))complection;
++ (void)DepositWithMoney:(NSString *)money password:(NSString *)password bandCardID:(NSString *)bankCardID ComplectionBlock:(void(^)(BOOL isSuccess))complection;
 
 /**
  *  领取结算单
@@ -111,5 +111,15 @@
  *  获取所有的文章列表
  */
 + (void)getAllArticleListWithPageNo:(NSInteger)pageNO ComplectionBlock:(void(^)(NSArray *datalist))complection;
+
+/**
+ *  设置登录密码
+ */
++ (void)setPasswordWithPhone:(NSString *)phone password:(NSString *)password authCode:(NSString *)authCode ComplectionBlock:(void(^)(BOOL isSuccess))complection;
+
+/**
+ *  获取推荐信息
+ */
++ (void)getRecommendDataComplectionBlock:(void(^)(NSArray *datalist))complection;
 
 @end

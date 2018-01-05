@@ -170,8 +170,8 @@
             if (x.length >= 11) {
                 
                 _textField.text = [x substringToIndex:11];
-                recommendViewModel.phoneNum = _textField.text;
             }
+            recommendViewModel.phoneNum = _textField.text;
         }];
         _textField.keyboardType = UIKeyboardTypePhonePad;
     }

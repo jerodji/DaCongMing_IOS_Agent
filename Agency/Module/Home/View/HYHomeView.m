@@ -58,7 +58,7 @@
        
         make.left.equalTo(self).offset(15 * WIDTH_MULTIPLE);
         make.right.equalTo(self).offset(-15 * WIDTH_MULTIPLE);
-        make.top.equalTo(self).offset(40 * WIDTH_MULTIPLE);
+        make.top.equalTo(self).offset(KSTATUSBAR_HEIGHT + 20 * WIDTH_MULTIPLE);
         make.height.mas_equalTo(170 * WIDTH_MULTIPLE);
     }];
     
@@ -89,7 +89,10 @@
     
     self.viewModel = viewModel;
     
-    RAC(self.headerView.moneyLabel,text) = RACObserve(viewModel, money);
+    RAC(self.headerView.moneyLabel,text) = [RACObserve(viewModel, money) map:^id(id value) {
+        
+        return [NSString stringWithFormat:@"￥%@",value];
+    }];
     
     //绑定数据
     [RACObserve(viewModel,headImgUrlStr) subscribeNext:^(NSString *headImgUrlStr) {

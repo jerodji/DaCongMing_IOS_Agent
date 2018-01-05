@@ -19,8 +19,11 @@
 
 
 /** ------------------------------网络接口------------------------------- */
-//接口总域名
-#define API_DomainStr           @"https://www.laopdr.cn"
+//正式服务器
+//#define API_DomainStr           @"https://www.laopdr.cn"
+
+//测试服务器
+#define API_DomainStr           @"http://116.62.118.249"
 
 /********************************用户相关*********************************/
 #pragma mark - 用户相关
@@ -78,6 +81,9 @@
 
 //获取文章列表
 #define API_GetArticleList           @"HAILIN_AGENT_SERVER/articleList.do"
+
+//获取推荐信息
+#define API_RecommendData           @"HAILIN_AGENT_SERVER/getAgentInfo.do"
 
 
 #pragma mark - 融云

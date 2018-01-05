@@ -14,6 +14,8 @@
 
 @property (nonatomic,copy) NSString *bank_name;
 @property (nonatomic,copy) NSString *bankcard_id;
+@property (nonatomic,copy) NSString *id;
+@property (nonatomic,copy) NSString *create_time;
 
 
 @end

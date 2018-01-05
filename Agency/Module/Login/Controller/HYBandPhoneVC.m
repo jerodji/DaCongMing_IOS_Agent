@@ -43,10 +43,11 @@
 - (void)bindViewModel{
     
     HYBindPhoneViewModel *viewModel = [HYBindPhoneViewModel new];
+    viewModel.isBindPhone = YES;
     [_bindView setWithViewModel:viewModel];
     
-    [viewModel.AuthSuccessSubject subscribeCompleted:^{
-       
+    [viewModel.AuthSuccessSubject subscribeNext:^(id x) {
+        
         if (self.navigationController.viewControllers.count > 1) {
             
             [self.navigationController popViewControllerAnimated:YES];

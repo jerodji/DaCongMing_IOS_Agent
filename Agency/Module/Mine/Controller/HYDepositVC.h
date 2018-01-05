@@ -7,6 +7,7 @@
 //
 
 #import "HYBaseViewController.h"
+#import "HYBankCardModel.h"
 
 @interface HYDepositVC : HYBaseViewController
 
@@ -14,5 +15,7 @@
 @property (nonatomic,strong) NSString *balance;
 /** 是否设置提现密码 */
 @property (nonatomic,assign) BOOL isSetaccountPwd;
+/** 默认银行卡信息 */
+@property (nonatomic,strong) HYBankCardModel *defaultBankCardModel;
 
 @end

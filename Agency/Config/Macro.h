@@ -54,11 +54,11 @@ _Pragma("clang diagnostic pop") \
 /** 屏幕宽度比 */
 #define WIDTH_MULTIPLE      KSCREEN_WIDTH / 375
 /** 导航栏高度 */
-#define KNAV_HEIGHT         self.navigationController.navigationBar.frame.size.height
+#define KNAV_HEIGHT         [[UIApplication sharedApplication] statusBarFrame].size.height + 44
 /** 状态栏高度 */
 #define KSTATUSBAR_HEIGHT   [[UIApplication sharedApplication] statusBarFrame].size.height
 /** tabBar高度 */
-#define KTABBAR_HEIGHT      self.tabBarController.tabBar.frame.size.height
+#define KTABBAR_HEIGHT      [[UIApplication sharedApplication] statusBarFrame].size.height > 20 ? 83 : 49
 
 /** ----------------------------颜色信息---------------------------------
  --------------------------------------------------------------------*/

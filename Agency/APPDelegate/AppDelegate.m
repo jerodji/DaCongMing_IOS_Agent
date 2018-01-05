@@ -202,18 +202,16 @@
             }];
         }
         
-        if ([HYPlistTools unarchivewithName:KUserModelData]) {
+        HYUserModel *userModel = [HYPlistTools unarchivewithName:KUserModelData];
+        if (userModel) {
             
-            
-            HYHomePageViewController *homeVC = [HYHomePageViewController new];
-            self.window.rootViewController = homeVC;
-            
-            HYUserModel *userModel = [HYPlistTools unarchivewithName:KUserModelData];
             HYUserModel *shareModel = [HYUserModel sharedInstance];
             shareModel.token = userModel.token;
             shareModel.userInfo = userModel.userInfo;
             shareModel.rong_token = userModel.rong_token;
             
+            HYHomePageViewController *homeVC = [HYHomePageViewController new];
+            self.window.rootViewController = homeVC;
         }
         else{
             

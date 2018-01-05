@@ -12,6 +12,7 @@
 #import "HYBandPhoneVC.h"
 #import "HYUploadIDCardViewController.h"
 #import "UILabel+HYCopy.h"
+#import "HYSetLoginPwdViewController.h"
 
 @interface HYMineViewController () <UITableViewDelegate,UITableViewDataSource>
 
@@ -42,17 +43,17 @@
 
 - (void)setupData{
     
-    self.datalist = [NSMutableArray arrayWithObjects:@"头像",@"用户名",@"我的ID",@"实名认证",@"绑定手机",@"退出登录", nil];
+    self.datalist = [NSMutableArray arrayWithObjects:@"头像",@"用户名",@"我的ID",@"实名认证",@"绑定手机",@"设置登录密码",@"退出登录", nil];
     NSString *phone = [HYUserModel sharedInstance].userInfo.phone;
     
     if ([phone isNotBlank]) {
         
         phone = [phone stringByReplacingCharactersInRange:NSMakeRange(3, 4) withString:@"****"];
         phone = [phone isNotBlank] ? phone : @"";
-        self.dataSourceArray = [NSMutableArray arrayWithObjects:[HYUserModel sharedInstance].userInfo.head_image_url,[HYUserModel sharedInstance].userInfo.name,[HYUserModel sharedInstance].userInfo.id,@"",phone,@"",nil];
+        self.dataSourceArray = [NSMutableArray arrayWithObjects:[HYUserModel sharedInstance].userInfo.head_image_url,[HYUserModel sharedInstance].userInfo.name,[HYUserModel sharedInstance].userInfo.id,@"",phone,@"",@"",nil];
     }
     else{
-        self.dataSourceArray = [NSMutableArray arrayWithObjects:[HYUserModel sharedInstance].userInfo.head_image_url,[HYUserModel sharedInstance].userInfo.name,[HYUserModel sharedInstance].userInfo.id,@"",@"",@"",nil];
+        self.dataSourceArray = [NSMutableArray arrayWithObjects:[HYUserModel sharedInstance].userInfo.head_image_url,[HYUserModel sharedInstance].userInfo.name,[HYUserModel sharedInstance].userInfo.id,@"",@"",@"",@"",nil];
     }
     
     
@@ -139,7 +140,13 @@
             [self.navigationController pushViewController:bindVC animated:YES];
         }
             break;
-        case 5:
+        case 5:{
+            
+            HYSetLoginPwdViewController *setPwdVC = [HYSetLoginPwdViewController new];
+            [self.navigationController pushViewController:setPwdVC animated:YES];
+            break;
+        }
+        case 6:
         {
             HYCustomAlert *alert = [[HYCustomAlert alloc] initWithFrame:CGRectMake(0, 0, KSCREEN_WIDTH, KSCREEN_HEIGHT) WithTitle:@"温馨提示" content:@"是否确认退出登录?" confirmBlock:^{
                 

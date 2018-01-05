@@ -25,6 +25,8 @@
 @property (nonatomic,copy) NSString *todaySales;
 /** 是否设置提现密码 */
 @property (nonatomic,assign) BOOL isSetaccountPwd;
+/** model */
+@property (nonatomic,strong) HYMyWalletModel *model;
 
 @property (nonatomic,strong) RACSubject *backActionSubject;
 

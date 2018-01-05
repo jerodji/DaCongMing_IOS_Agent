@@ -10,7 +10,6 @@
 #import "HYBankInfoTableViewCell.h"
 #import "HYUploadIDCardViewController.h"
 #import "HYBandPhoneVC.h"
-#import "HYBankCardModel.h"
 #import "HYBankCardCellModel.h"
 
 @interface HYBankCardViewController () <UITableViewDelegate,UITableViewDataSource,DZNEmptyDataSetSource>
@@ -133,7 +132,7 @@
         if (self.selectCardBlock) {
             
             HYBankCardCellModel *cellModel = self.datalist[indexPath.section];
-            self.selectCardBlock(cellModel.bankcard_id);
+            self.selectCardBlock(cellModel.model);
             [self.navigationController popViewControllerAnimated:YES];
         }
     }

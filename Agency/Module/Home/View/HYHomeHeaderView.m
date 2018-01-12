@@ -38,6 +38,8 @@
     [self addSubview:self.nickNameLabel];
     [self addSubview:self.clientNumLabel];
     [self addSubview:self.myTeamsBtn];
+    
+    self.clientNumLabel.hidden = YES;
 }
 
 - (void)layoutSubviews{

@@ -44,8 +44,6 @@
     
     [Bugly startWithAppId:TencentBuglyID];
     return YES;
-    
-    return YES;
 }
 
 

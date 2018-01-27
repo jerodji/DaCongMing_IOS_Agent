@@ -20,10 +20,10 @@
 
 /** ------------------------------网络接口------------------------------- */
 //正式服务器
-#define API_DomainStr           @"https://www.laopdr.cn"
+//#define API_DomainStr           @"https://www.laopdr.cn"
 
 //测试服务器
-//#define API_DomainStr           @"http://116.62.118.249"
+#define API_DomainStr           @"http://116.62.118.249"
 
 /********************************用户相关*********************************/
 #pragma mark - 用户相关

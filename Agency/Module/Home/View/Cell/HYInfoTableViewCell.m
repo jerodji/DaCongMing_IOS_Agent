@@ -68,7 +68,7 @@
     
     _model = model;
     
-    _briefLabel.text = model.descriptions;
+    _briefLabel.text = model.title;
     _timeLabel.text = model.createdAt;
     [_thumbnailImgView sd_setImageWithURL:[NSURL URLWithString:model.img] placeholderImage:[UIImage imageNamed:@"Image_placeholder"]];
 }

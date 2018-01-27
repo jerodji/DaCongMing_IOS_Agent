@@ -12,10 +12,8 @@
 #import "HYJoinProtocolVC.h"
 
 @interface HYBaseViewController ()
-
 /** 无权限 */
 @property (nonatomic,strong) HYNoAccessView *noAccessView;
-
 @end
 
 @implementation HYBaseViewController

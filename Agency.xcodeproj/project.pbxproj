@@ -47,6 +47,141 @@
 		04D5F4EB1FC2CED5005F868F /* HYRecommendBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D5F4EA1FC2CED5005F868F /* HYRecommendBottomView.m */; };
 		04D5F4EE1FC2E624005F868F /* HYRecommendTipsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D5F4ED1FC2E624005F868F /* HYRecommendTipsCell.m */; };
 		04D5F4F11FC2F4E3005F868F /* HYRecommendViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D5F4F01FC2F4E3005F868F /* HYRecommendViewModel.m */; };
+		386FBD3B201C4D9000944CDF /* HYBaseCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBC14201C4D8F00944CDF /* HYBaseCellViewModel.m */; };
+		386FBD3C201C4D9000944CDF /* HYBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBC16201C4D8F00944CDF /* HYBaseModel.m */; };
+		386FBD3D201C4D9000944CDF /* HYBaseNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBC18201C4D8F00944CDF /* HYBaseNavController.m */; };
+		386FBD3E201C4D9000944CDF /* HYBaseTableViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBC1A201C4D8F00944CDF /* HYBaseTableViewModel.m */; };
+		386FBD3F201C4D9000944CDF /* HYBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBC1C201C4D8F00944CDF /* HYBaseViewController.m */; };
+		386FBD40201C4D9000944CDF /* HYBaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBC1E201C4D8F00944CDF /* HYBaseViewModel.m */; };
+		386FBD41201C4D9000944CDF /* HYTableViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBC20201C4D8F00944CDF /* HYTableViewModel.m */; };
+		386FBD42201C4D9000944CDF /* AppDelegate+HYRongIM.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBC23201C4D8F00944CDF /* AppDelegate+HYRongIM.m */; };
+		386FBD43201C4D9000944CDF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBC25201C4D8F00944CDF /* AppDelegate.m */; };
+		386FBD44201C4D9000944CDF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 386FBC26201C4D8F00944CDF /* Info.plist */; };
+		386FBD45201C4D9000944CDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 386FBC27201C4D8F00944CDF /* Assets.xcassets */; };
+		386FBD46201C4D9000944CDF /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 386FBC29201C4D9000944CDF /* AlipaySDK.bundle */; };
+		386FBD47201C4D9000944CDF /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 386FBC2A201C4D9000944CDF /* AlipaySDK.framework */; };
+		386FBD48201C4D9000944CDF /* NSArray+HYBUnicodeReadable.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBC2D201C4D9000944CDF /* NSArray+HYBUnicodeReadable.m */; };
+		386FBD49201C4D9000944CDF /* NSDictionary+HYBUnicodeReadable.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBC2F201C4D9000944CDF /* NSDictionary+HYBUnicodeReadable.m */; };
+		386FBD4A201C4D9000944CDF /* NSSet+HYBUnicodeReadable.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBC31201C4D9000944CDF /* NSSet+HYBUnicodeReadable.m */; };
+		386FBD4B201C4D9000944CDF /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBC33201C4D9000944CDF /* Foundation+Log.m */; };
+		386FBD4C201C4D9000944CDF /* HYChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBC38201C4D9000944CDF /* HYChatViewController.m */; };
+		386FBD4D201C4D9000944CDF /* HYDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBC3B201C4D9000944CDF /* HYDatePickerView.m */; };
+		386FBD4E201C4D9000944CDF /* HYShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBC3D201C4D9000944CDF /* HYShareView.m */; };
+		386FBD4F201C4D9000944CDF /* UILabel+HYCopy.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBC3F201C4D9000944CDF /* UILabel+HYCopy.m */; };
+		386FBD50201C4D9000944CDF /* HYShareHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBC42201C4D9000944CDF /* HYShareHandle.m */; };
+		386FBD51201C4D9000944CDF /* HYShareModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBC44201C4D9000944CDF /* HYShareModel.m */; };
+		386FBD52201C4D9000944CDF /* HYTableViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBC46201C4D9000944CDF /* HYTableViewManager.m */; };
+		386FBD53201C4D9000944CDF /* HYAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBC4A201C4D9000944CDF /* HYAuthViewController.m */; };
+		386FBD54201C4D9000944CDF /* HYBankCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBC4C201C4D9000944CDF /* HYBankCardViewController.m */; };
+		386FBD55201C4D9000944CDF /* HYHomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBC4E201C4D9000944CDF /* HYHomePageViewController.m */; };
+		386FBD56201C4D9000944CDF /* HYInfomationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBC50201C4D9000944CDF /* HYInfomationVC.m */; };
+		386FBD57201C4D9000944CDF /* HYInformationDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBC52201C4D9000944CDF /* HYInformationDetailVC.m */; };
+		386FBD58201C4D9000944CDF /* HYMyTeamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBC54201C4D9000944CDF /* HYMyTeamViewController.m */; };
+		386FBD59201C4D9000944CDF /* HYRecemondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBC56201C4D9000944CDF /* HYRecemondViewController.m */; };
+		386FBD5A201C4D9000944CDF /* HYRecommendSuccessVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBC58201C4D9000944CDF /* HYRecommendSuccessVC.m */; };
+		386FBD5B201C4D9000944CDF /* HYReportDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBC5A201C4D9000944CDF /* HYReportDetailViewController.m */; };
+		386FBD5C201C4D9000944CDF /* HYReportListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBC5C201C4D9000944CDF /* HYReportListViewController.m */; };
+		386FBD5D201C4D9000944CDF /* HYReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBC5E201C4D9000944CDF /* HYReportViewController.m */; };
+		386FBD5E201C4D9000944CDF /* HYTeamDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBC60201C4D9000944CDF /* HYTeamDetailViewController.m */; };
+		386FBD5F201C4D9000944CDF /* HYBankCardModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBC63201C4D9000944CDF /* HYBankCardModel.m */; };
+		386FBD60201C4D9000944CDF /* HYInfomationDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBC65201C4D9000944CDF /* HYInfomationDetailModel.m */; };
+		386FBD61201C4D9000944CDF /* HYRecommendInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBC67201C4D9000944CDF /* HYRecommendInfoModel.m */; };
+		386FBD62201C4D9000944CDF /* HYReportListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBC69201C4D9000944CDF /* HYReportListModel.m */; };
+		386FBD63201C4D9000944CDF /* HYReportModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBC6B201C4D9000944CDF /* HYReportModel.m */; };
+		386FBD64201C4D9000944CDF /* HYTeamMemberModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBC6D201C4D9000944CDF /* HYTeamMemberModel.m */; };
+		386FBD65201C4D9000944CDF /* HYBankInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBC71201C4D9000944CDF /* HYBankInfoTableViewCell.m */; };
+		386FBD66201C4D9000944CDF /* HYBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBC73201C4D9000944CDF /* HYBaseTableViewCell.m */; };
+		386FBD67201C4D9000944CDF /* HYInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBC75201C4D9000944CDF /* HYInfoTableViewCell.m */; };
+		386FBD68201C4D9000944CDF /* HYRecommendLevelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBC77201C4D9000944CDF /* HYRecommendLevelCell.m */; };
+		386FBD69201C4D9000944CDF /* HYRecommendTipsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBC79201C4D9000944CDF /* HYRecommendTipsCell.m */; };
+		386FBD6A201C4D9000944CDF /* HYReportAllAmountCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBC7B201C4D9000944CDF /* HYReportAllAmountCell.m */; };
+		386FBD6B201C4D9000944CDF /* HYReportAllOrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBC7D201C4D9000944CDF /* HYReportAllOrderCell.m */; };
+		386FBD6C201C4D9000944CDF /* HYReportListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBC7F201C4D9000944CDF /* HYReportListCell.m */; };
+		386FBD6D201C4D9000944CDF /* HYReportSelectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBC81201C4D9000944CDF /* HYReportSelectCell.m */; };
+		386FBD6E201C4D9000944CDF /* HYTeamMemberCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBC83201C4D9000944CDF /* HYTeamMemberCell.m */; };
+		386FBD6F201C4D9000944CDF /* HYHomeBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBC85201C4D9000944CDF /* HYHomeBottomView.m */; };
+		386FBD70201C4D9000944CDF /* HYHomeBtnView.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBC87201C4D9000944CDF /* HYHomeBtnView.m */; };
+		386FBD71201C4D9000944CDF /* HYHomeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBC89201C4D9000944CDF /* HYHomeHeaderView.m */; };
+		386FBD72201C4D9000944CDF /* HYHomeMiddleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBC8B201C4D9000944CDF /* HYHomeMiddleView.m */; };
+		386FBD73201C4D9000944CDF /* HYHomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBC8D201C4D9000944CDF /* HYHomeView.m */; };
+		386FBD74201C4D9000944CDF /* HYMyTeamHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBC8F201C4D9000944CDF /* HYMyTeamHeaderView.m */; };
+		386FBD75201C4D9000944CDF /* HYNoAccessView.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBC91201C4D9000944CDF /* HYNoAccessView.m */; };
+		386FBD76201C4D9000944CDF /* HYRecommendBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBC93201C4D9000944CDF /* HYRecommendBottomView.m */; };
+		386FBD77201C4D9000944CDF /* HYReportListHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBC95201C4D9000944CDF /* HYReportListHeaderView.m */; };
+		386FBD78201C4D9000944CDF /* HYBankCardCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBC98201C4D9000944CDF /* HYBankCardCellModel.m */; };
+		386FBD79201C4D9000944CDF /* HYHomeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBC9A201C4D9000944CDF /* HYHomeViewModel.m */; };
+		386FBD7A201C4D9000944CDF /* HYRecommendViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBC9C201C4D9000944CDF /* HYRecommendViewModel.m */; };
+		386FBD7B201C4D9000944CDF /* HYReportCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBC9E201C4D9000944CDF /* HYReportCellViewModel.m */; };
+		386FBD7C201C4D9000944CDF /* HYReportSelectCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBCA0201C4D9000944CDF /* HYReportSelectCellModel.m */; };
+		386FBD7D201C4D9000944CDF /* HYReportViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBCA2201C4D9000944CDF /* HYReportViewModel.m */; };
+		386FBD7E201C4D9000944CDF /* HYAuthPhoneVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBCA6201C4D9000944CDF /* HYAuthPhoneVC.m */; };
+		386FBD7F201C4D9000944CDF /* HYBandPhoneVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBCA8201C4D9000944CDF /* HYBandPhoneVC.m */; };
+		386FBD80201C4D9000944CDF /* HYGuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBCAA201C4D9000944CDF /* HYGuideViewController.m */; };
+		386FBD81201C4D9000944CDF /* HYJoinProtocolVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBCAC201C4D9000944CDF /* HYJoinProtocolVC.m */; };
+		386FBD82201C4D9000944CDF /* HYLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBCAE201C4D9000944CDF /* HYLoginViewController.m */; };
+		386FBD83201C4D9000944CDF /* HYSelectIDInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBCB0201C4D9000944CDF /* HYSelectIDInfoVC.m */; };
+		386FBD84201C4D9000944CDF /* HYUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBCB3201C4D9000944CDF /* HYUserModel.m */; };
+		386FBD85201C4D9000944CDF /* HYAuthPhoneView.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBCB6201C4D9000944CDF /* HYAuthPhoneView.m */; };
+		386FBD86201C4D9000944CDF /* HYBindPhoneView.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBCB8201C4D9000944CDF /* HYBindPhoneView.m */; };
+		386FBD87201C4D9000944CDF /* HYLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBCBA201C4D9000944CDF /* HYLoginView.m */; };
+		386FBD88201C4D9000944CDF /* HYLogoutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBCBC201C4D9000944CDF /* HYLogoutView.m */; };
+		386FBD89201C4D9000944CDF /* HYPasswordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBCBE201C4D9000944CDF /* HYPasswordView.m */; };
+		386FBD8A201C4D9000944CDF /* HYSelectInfoBtnView.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBCC0201C4D9000944CDF /* HYSelectInfoBtnView.m */; };
+		386FBD8B201C4D9000944CDF /* HYSelectInfoHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBCC2201C4D9000944CDF /* HYSelectInfoHeaderView.m */; };
+		386FBD8C201C4D9000944CDF /* HYBindPhoneViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBCC5201C4D9000944CDF /* HYBindPhoneViewModel.m */; };
+		386FBD8D201C4D9000944CDF /* HYLoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBCC7201C4D9000944CDF /* HYLoginViewModel.m */; };
+		386FBD8E201C4D9000944CDF /* HYAboutUSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBCCB201C4D9000944CDF /* HYAboutUSViewController.m */; };
+		386FBD8F201C4D9000944CDF /* HYBillVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBCCD201C4D9000944CDF /* HYBillVC.m */; };
+		386FBD90201C4D9000944CDF /* HYDepositVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBCCF201C4D9000944CDF /* HYDepositVC.m */; };
+		386FBD91201C4D9000944CDF /* HYDepositWaitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBCD1201C4D9000944CDF /* HYDepositWaitViewController.m */; };
+		386FBD92201C4D9000944CDF /* HYMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBCD3201C4D9000944CDF /* HYMineViewController.m */; };
+		386FBD93201C4D9000944CDF /* HYSetDispoitPwdVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBCD5201C4D9000944CDF /* HYSetDispoitPwdVC.m */; };
+		386FBD94201C4D9000944CDF /* HYSetLoginPwdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBCD7201C4D9000944CDF /* HYSetLoginPwdViewController.m */; };
+		386FBD95201C4D9000944CDF /* HYSetPwdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBCD9201C4D9000944CDF /* HYSetPwdViewController.m */; };
+		386FBD96201C4D9000944CDF /* HYSetUserNameVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBCDB201C4D9000944CDF /* HYSetUserNameVC.m */; };
+		386FBD97201C4D9000944CDF /* HYUploadIDCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBCDD201C4D9000944CDF /* HYUploadIDCardViewController.m */; };
+		386FBD98201C4D9000944CDF /* HYWalletViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBCDF201C4D9000944CDF /* HYWalletViewController.m */; };
+		386FBD99201C4D9000944CDF /* HYBillModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBCE2201C4D9000944CDF /* HYBillModel.m */; };
+		386FBD9A201C4D9000944CDF /* HYMyWalletModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBCE4201C4D9000944CDF /* HYMyWalletModel.m */; };
+		386FBD9B201C4D9000944CDF /* HYBillTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBCE8201C4D9000944CDF /* HYBillTableViewCell.m */; };
+		386FBD9C201C4D9000944CDF /* HYIconTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBCEA201C4D9000944CDF /* HYIconTitleCell.m */; };
+		386FBD9D201C4D9000944CDF /* HYMyAccountTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBCEC201C4D9000944CDF /* HYMyAccountTableViewCell.m */; };
+		386FBD9E201C4D9000944CDF /* HYMyWalletHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBCEE201C4D9000944CDF /* HYMyWalletHeaderCell.m */; };
+		386FBD9F201C4D9000944CDF /* HYTextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBCF0201C4D9000944CDF /* HYTextFieldTableViewCell.m */; };
+		386FBDA0201C4D9000944CDF /* HYBillHeaderVIew.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBCF2201C4D9000944CDF /* HYBillHeaderVIew.m */; };
+		386FBDA1201C4D9000944CDF /* HYBindCardPhoneAuthView.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBCF4201C4D9000944CDF /* HYBindCardPhoneAuthView.m */; };
+		386FBDA2201C4D9000944CDF /* HYDepositWaitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBCF6201C4D9000944CDF /* HYDepositWaitView.m */; };
+		386FBDA3201C4D9000944CDF /* HYDispoitHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBCF8201C4D9000944CDF /* HYDispoitHeaderView.m */; };
+		386FBDA4201C4D9000944CDF /* HYDispoitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBCFA201C4D9000944CDF /* HYDispoitView.m */; };
+		386FBDA5201C4D9000944CDF /* HYInputDepositPwdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBCFC201C4D9000944CDF /* HYInputDepositPwdView.m */; };
+		386FBDA6201C4D9000944CDF /* HYSendAuthCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBCFE201C4D9000944CDF /* HYSendAuthCodeView.m */; };
+		386FBDA7201C4D9000944CDF /* HYSendAuthView.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBD00201C4D9000944CDF /* HYSendAuthView.m */; };
+		386FBDA8201C4D9000944CDF /* HYSetDepositTipsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBD02201C4D9000944CDF /* HYSetDepositTipsView.m */; };
+		386FBDA9201C4D9000944CDF /* HYSetDespoitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBD04201C4D9000944CDF /* HYSetDespoitView.m */; };
+		386FBDAA201C4D9000944CDF /* HYDepositViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBD07201C4D9000944CDF /* HYDepositViewModel.m */; };
+		386FBDAB201C4D9000944CDF /* HYMyWalletViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBD09201C4D9000944CDF /* HYMyWalletViewModel.m */; };
+		386FBDAC201C4D9000944CDF /* HYSetDepositViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBD0B201C4D9000944CDF /* HYSetDepositViewModel.m */; };
+		386FBDAD201C4D9000944CDF /* HYUploadIDCardViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBD0D201C4D9000944CDF /* HYUploadIDCardViewModel.m */; };
+		386FBDAE201C4D9000944CDF /* HTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBD11201C4D9000944CDF /* HTTPManager.m */; };
+		386FBDAF201C4D9000944CDF /* HYNetWorkStateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBD13201C4D9000944CDF /* HYNetWorkStateManager.m */; };
+		386FBDB0201C4D9000944CDF /* HYRCIMGetUserInfoHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBD15201C4D9000944CDF /* HYRCIMGetUserInfoHandle.m */; };
+		386FBDB1201C4D9000944CDF /* HYUserRequestHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBD17201C4D9000944CDF /* HYUserRequestHandle.m */; };
+		386FBDB2201C4D9000944CDF /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBD19201C4D9000944CDF /* Reachability.m */; };
+		386FBDB3201C4D9000944CDF /* sms-received.caf in Resources */ = {isa = PBXBuildFile; fileRef = 386FBD1B201C4D9000944CDF /* sms-received.caf */; };
+		386FBDB4201C4D9000944CDF /* DESECB.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBD1E201C4D9000944CDF /* DESECB.m */; };
+		386FBDB5201C4D9000944CDF /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBD20201C4D9000944CDF /* GTMBase64.m */; };
+		386FBDB6201C4D9000944CDF /* HYButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBD24201C4D9000944CDF /* HYButton.m */; };
+		386FBDB7201C4D9000944CDF /* HYCustomAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBD26201C4D9000944CDF /* HYCustomAlert.m */; };
+		386FBDB8201C4D9000944CDF /* HYDateHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBD28201C4D9000944CDF /* HYDateHandle.m */; };
+		386FBDB9201C4D9000944CDF /* HYLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBD2A201C4D9000944CDF /* HYLabel.m */; };
+		386FBDBA201C4D9000944CDF /* HYPhoneInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBD2C201C4D9000944CDF /* HYPhoneInfo.m */; };
+		386FBDBB201C4D9000944CDF /* HYPlistTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBD2E201C4D9000944CDF /* HYPlistTools.m */; };
+		386FBDBC201C4D9000944CDF /* HYReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBD30201C4D9000944CDF /* HYReachabilityManager.m */; };
+		386FBDBD201C4D9000944CDF /* JRToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBD32201C4D9000944CDF /* JRToast.m */; };
+		386FBDBE201C4D9000944CDF /* MBProgressHUD+HYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBD34201C4D9000944CDF /* MBProgressHUD+HYExtension.m */; };
+		386FBDBF201C4D9000944CDF /* RCIMDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBD36201C4D9000944CDF /* RCIMDBManager.m */; };
+		386FBDC0201C4D9000944CDF /* SAMTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBD38201C4D9000944CDF /* SAMTextView.m */; };
+		386FBDC1201C4D9000944CDF /* UILabel+HYJustifyAlign.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBD3A201C4D9000944CDF /* UILabel+HYJustifyAlign.m */; };
 		3E0E6E401FAAF3D700F058EB /* HYHomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E0E6E3F1FAAF3D700F058EB /* HYHomePageViewController.m */; };
 		3E0E6E431FAAF43C00F058EB /* HYHomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E0E6E421FAAF43C00F058EB /* HYHomeView.m */; };
 		3E0E6E461FAAF46700F058EB /* HYHomeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E0E6E451FAAF46700F058EB /* HYHomeHeaderView.m */; };
@@ -238,6 +373,271 @@
 		04D5F4EF1FC2F4E3005F868F /* HYRecommendViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HYRecommendViewModel.h; sourceTree = "<group>"; };
 		04D5F4F01FC2F4E3005F868F /* HYRecommendViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HYRecommendViewModel.m; sourceTree = "<group>"; };
 		20B531B14B9717DA796BB8D4 /* libPods-Agency.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Agency.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		386FBC13201C4D8F00944CDF /* HYBaseCellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYBaseCellViewModel.h; sourceTree = "<group>"; };
+		386FBC14201C4D8F00944CDF /* HYBaseCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYBaseCellViewModel.m; sourceTree = "<group>"; };
+		386FBC15201C4D8F00944CDF /* HYBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYBaseModel.h; sourceTree = "<group>"; };
+		386FBC16201C4D8F00944CDF /* HYBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYBaseModel.m; sourceTree = "<group>"; };
+		386FBC17201C4D8F00944CDF /* HYBaseNavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYBaseNavController.h; sourceTree = "<group>"; };
+		386FBC18201C4D8F00944CDF /* HYBaseNavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYBaseNavController.m; sourceTree = "<group>"; };
+		386FBC19201C4D8F00944CDF /* HYBaseTableViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYBaseTableViewModel.h; sourceTree = "<group>"; };
+		386FBC1A201C4D8F00944CDF /* HYBaseTableViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYBaseTableViewModel.m; sourceTree = "<group>"; };
+		386FBC1B201C4D8F00944CDF /* HYBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYBaseViewController.h; sourceTree = "<group>"; };
+		386FBC1C201C4D8F00944CDF /* HYBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYBaseViewController.m; sourceTree = "<group>"; };
+		386FBC1D201C4D8F00944CDF /* HYBaseViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYBaseViewModel.h; sourceTree = "<group>"; };
+		386FBC1E201C4D8F00944CDF /* HYBaseViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYBaseViewModel.m; sourceTree = "<group>"; };
+		386FBC1F201C4D8F00944CDF /* HYTableViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYTableViewModel.h; sourceTree = "<group>"; };
+		386FBC20201C4D8F00944CDF /* HYTableViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYTableViewModel.m; sourceTree = "<group>"; };
+		386FBC22201C4D8F00944CDF /* AppDelegate+HYRongIM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+HYRongIM.h"; sourceTree = "<group>"; };
+		386FBC23201C4D8F00944CDF /* AppDelegate+HYRongIM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+HYRongIM.m"; sourceTree = "<group>"; };
+		386FBC24201C4D8F00944CDF /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		386FBC25201C4D8F00944CDF /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		386FBC26201C4D8F00944CDF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		386FBC27201C4D8F00944CDF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		386FBC29201C4D9000944CDF /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
+		386FBC2A201C4D9000944CDF /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
+		386FBC2C201C4D9000944CDF /* NSArray+HYBUnicodeReadable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+HYBUnicodeReadable.h"; sourceTree = "<group>"; };
+		386FBC2D201C4D9000944CDF /* NSArray+HYBUnicodeReadable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+HYBUnicodeReadable.m"; sourceTree = "<group>"; };
+		386FBC2E201C4D9000944CDF /* NSDictionary+HYBUnicodeReadable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+HYBUnicodeReadable.h"; sourceTree = "<group>"; };
+		386FBC2F201C4D9000944CDF /* NSDictionary+HYBUnicodeReadable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+HYBUnicodeReadable.m"; sourceTree = "<group>"; };
+		386FBC30201C4D9000944CDF /* NSSet+HYBUnicodeReadable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSSet+HYBUnicodeReadable.h"; sourceTree = "<group>"; };
+		386FBC31201C4D9000944CDF /* NSSet+HYBUnicodeReadable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSSet+HYBUnicodeReadable.m"; sourceTree = "<group>"; };
+		386FBC33201C4D9000944CDF /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
+		386FBC37201C4D9000944CDF /* HYChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYChatViewController.h; sourceTree = "<group>"; };
+		386FBC38201C4D9000944CDF /* HYChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYChatViewController.m; sourceTree = "<group>"; };
+		386FBC3A201C4D9000944CDF /* HYDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYDatePickerView.h; sourceTree = "<group>"; };
+		386FBC3B201C4D9000944CDF /* HYDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYDatePickerView.m; sourceTree = "<group>"; };
+		386FBC3C201C4D9000944CDF /* HYShareView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYShareView.h; sourceTree = "<group>"; };
+		386FBC3D201C4D9000944CDF /* HYShareView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYShareView.m; sourceTree = "<group>"; };
+		386FBC3E201C4D9000944CDF /* UILabel+HYCopy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+HYCopy.h"; sourceTree = "<group>"; };
+		386FBC3F201C4D9000944CDF /* UILabel+HYCopy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+HYCopy.m"; sourceTree = "<group>"; };
+		386FBC41201C4D9000944CDF /* HYShareHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYShareHandle.h; sourceTree = "<group>"; };
+		386FBC42201C4D9000944CDF /* HYShareHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYShareHandle.m; sourceTree = "<group>"; };
+		386FBC43201C4D9000944CDF /* HYShareModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYShareModel.h; sourceTree = "<group>"; };
+		386FBC44201C4D9000944CDF /* HYShareModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYShareModel.m; sourceTree = "<group>"; };
+		386FBC45201C4D9000944CDF /* HYTableViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYTableViewManager.h; sourceTree = "<group>"; };
+		386FBC46201C4D9000944CDF /* HYTableViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYTableViewManager.m; sourceTree = "<group>"; };
+		386FBC49201C4D9000944CDF /* HYAuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYAuthViewController.h; sourceTree = "<group>"; };
+		386FBC4A201C4D9000944CDF /* HYAuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYAuthViewController.m; sourceTree = "<group>"; };
+		386FBC4B201C4D9000944CDF /* HYBankCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYBankCardViewController.h; sourceTree = "<group>"; };
+		386FBC4C201C4D9000944CDF /* HYBankCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYBankCardViewController.m; sourceTree = "<group>"; };
+		386FBC4D201C4D9000944CDF /* HYHomePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYHomePageViewController.h; sourceTree = "<group>"; };
+		386FBC4E201C4D9000944CDF /* HYHomePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYHomePageViewController.m; sourceTree = "<group>"; };
+		386FBC4F201C4D9000944CDF /* HYInfomationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYInfomationVC.h; sourceTree = "<group>"; };
+		386FBC50201C4D9000944CDF /* HYInfomationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYInfomationVC.m; sourceTree = "<group>"; };
+		386FBC51201C4D9000944CDF /* HYInformationDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYInformationDetailVC.h; sourceTree = "<group>"; };
+		386FBC52201C4D9000944CDF /* HYInformationDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYInformationDetailVC.m; sourceTree = "<group>"; };
+		386FBC53201C4D9000944CDF /* HYMyTeamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYMyTeamViewController.h; sourceTree = "<group>"; };
+		386FBC54201C4D9000944CDF /* HYMyTeamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYMyTeamViewController.m; sourceTree = "<group>"; };
+		386FBC55201C4D9000944CDF /* HYRecemondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYRecemondViewController.h; sourceTree = "<group>"; };
+		386FBC56201C4D9000944CDF /* HYRecemondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYRecemondViewController.m; sourceTree = "<group>"; };
+		386FBC57201C4D9000944CDF /* HYRecommendSuccessVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYRecommendSuccessVC.h; sourceTree = "<group>"; };
+		386FBC58201C4D9000944CDF /* HYRecommendSuccessVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYRecommendSuccessVC.m; sourceTree = "<group>"; };
+		386FBC59201C4D9000944CDF /* HYReportDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYReportDetailViewController.h; sourceTree = "<group>"; };
+		386FBC5A201C4D9000944CDF /* HYReportDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYReportDetailViewController.m; sourceTree = "<group>"; };
+		386FBC5B201C4D9000944CDF /* HYReportListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYReportListViewController.h; sourceTree = "<group>"; };
+		386FBC5C201C4D9000944CDF /* HYReportListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYReportListViewController.m; sourceTree = "<group>"; };
+		386FBC5D201C4D9000944CDF /* HYReportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYReportViewController.h; sourceTree = "<group>"; };
+		386FBC5E201C4D9000944CDF /* HYReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYReportViewController.m; sourceTree = "<group>"; };
+		386FBC5F201C4D9000944CDF /* HYTeamDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYTeamDetailViewController.h; sourceTree = "<group>"; };
+		386FBC60201C4D9000944CDF /* HYTeamDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYTeamDetailViewController.m; sourceTree = "<group>"; };
+		386FBC62201C4D9000944CDF /* HYBankCardModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYBankCardModel.h; sourceTree = "<group>"; };
+		386FBC63201C4D9000944CDF /* HYBankCardModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYBankCardModel.m; sourceTree = "<group>"; };
+		386FBC64201C4D9000944CDF /* HYInfomationDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYInfomationDetailModel.h; sourceTree = "<group>"; };
+		386FBC65201C4D9000944CDF /* HYInfomationDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYInfomationDetailModel.m; sourceTree = "<group>"; };
+		386FBC66201C4D9000944CDF /* HYRecommendInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYRecommendInfoModel.h; sourceTree = "<group>"; };
+		386FBC67201C4D9000944CDF /* HYRecommendInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYRecommendInfoModel.m; sourceTree = "<group>"; };
+		386FBC68201C4D9000944CDF /* HYReportListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYReportListModel.h; sourceTree = "<group>"; };
+		386FBC69201C4D9000944CDF /* HYReportListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYReportListModel.m; sourceTree = "<group>"; };
+		386FBC6A201C4D9000944CDF /* HYReportModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYReportModel.h; sourceTree = "<group>"; };
+		386FBC6B201C4D9000944CDF /* HYReportModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYReportModel.m; sourceTree = "<group>"; };
+		386FBC6C201C4D9000944CDF /* HYTeamMemberModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYTeamMemberModel.h; sourceTree = "<group>"; };
+		386FBC6D201C4D9000944CDF /* HYTeamMemberModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYTeamMemberModel.m; sourceTree = "<group>"; };
+		386FBC70201C4D9000944CDF /* HYBankInfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYBankInfoTableViewCell.h; sourceTree = "<group>"; };
+		386FBC71201C4D9000944CDF /* HYBankInfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYBankInfoTableViewCell.m; sourceTree = "<group>"; };
+		386FBC72201C4D9000944CDF /* HYBaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYBaseTableViewCell.h; sourceTree = "<group>"; };
+		386FBC73201C4D9000944CDF /* HYBaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYBaseTableViewCell.m; sourceTree = "<group>"; };
+		386FBC74201C4D9000944CDF /* HYInfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYInfoTableViewCell.h; sourceTree = "<group>"; };
+		386FBC75201C4D9000944CDF /* HYInfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYInfoTableViewCell.m; sourceTree = "<group>"; };
+		386FBC76201C4D9000944CDF /* HYRecommendLevelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYRecommendLevelCell.h; sourceTree = "<group>"; };
+		386FBC77201C4D9000944CDF /* HYRecommendLevelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYRecommendLevelCell.m; sourceTree = "<group>"; };
+		386FBC78201C4D9000944CDF /* HYRecommendTipsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYRecommendTipsCell.h; sourceTree = "<group>"; };
+		386FBC79201C4D9000944CDF /* HYRecommendTipsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYRecommendTipsCell.m; sourceTree = "<group>"; };
+		386FBC7A201C4D9000944CDF /* HYReportAllAmountCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYReportAllAmountCell.h; sourceTree = "<group>"; };
+		386FBC7B201C4D9000944CDF /* HYReportAllAmountCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYReportAllAmountCell.m; sourceTree = "<group>"; };
+		386FBC7C201C4D9000944CDF /* HYReportAllOrderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYReportAllOrderCell.h; sourceTree = "<group>"; };
+		386FBC7D201C4D9000944CDF /* HYReportAllOrderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYReportAllOrderCell.m; sourceTree = "<group>"; };
+		386FBC7E201C4D9000944CDF /* HYReportListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYReportListCell.h; sourceTree = "<group>"; };
+		386FBC7F201C4D9000944CDF /* HYReportListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYReportListCell.m; sourceTree = "<group>"; };
+		386FBC80201C4D9000944CDF /* HYReportSelectCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYReportSelectCell.h; sourceTree = "<group>"; };
+		386FBC81201C4D9000944CDF /* HYReportSelectCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYReportSelectCell.m; sourceTree = "<group>"; };
+		386FBC82201C4D9000944CDF /* HYTeamMemberCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYTeamMemberCell.h; sourceTree = "<group>"; };
+		386FBC83201C4D9000944CDF /* HYTeamMemberCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYTeamMemberCell.m; sourceTree = "<group>"; };
+		386FBC84201C4D9000944CDF /* HYHomeBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYHomeBottomView.h; sourceTree = "<group>"; };
+		386FBC85201C4D9000944CDF /* HYHomeBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYHomeBottomView.m; sourceTree = "<group>"; };
+		386FBC86201C4D9000944CDF /* HYHomeBtnView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYHomeBtnView.h; sourceTree = "<group>"; };
+		386FBC87201C4D9000944CDF /* HYHomeBtnView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYHomeBtnView.m; sourceTree = "<group>"; };
+		386FBC88201C4D9000944CDF /* HYHomeHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYHomeHeaderView.h; sourceTree = "<group>"; };
+		386FBC89201C4D9000944CDF /* HYHomeHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYHomeHeaderView.m; sourceTree = "<group>"; };
+		386FBC8A201C4D9000944CDF /* HYHomeMiddleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYHomeMiddleView.h; sourceTree = "<group>"; };
+		386FBC8B201C4D9000944CDF /* HYHomeMiddleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYHomeMiddleView.m; sourceTree = "<group>"; };
+		386FBC8C201C4D9000944CDF /* HYHomeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYHomeView.h; sourceTree = "<group>"; };
+		386FBC8D201C4D9000944CDF /* HYHomeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYHomeView.m; sourceTree = "<group>"; };
+		386FBC8E201C4D9000944CDF /* HYMyTeamHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYMyTeamHeaderView.h; sourceTree = "<group>"; };
+		386FBC8F201C4D9000944CDF /* HYMyTeamHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYMyTeamHeaderView.m; sourceTree = "<group>"; };
+		386FBC90201C4D9000944CDF /* HYNoAccessView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYNoAccessView.h; sourceTree = "<group>"; };
+		386FBC91201C4D9000944CDF /* HYNoAccessView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYNoAccessView.m; sourceTree = "<group>"; };
+		386FBC92201C4D9000944CDF /* HYRecommendBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYRecommendBottomView.h; sourceTree = "<group>"; };
+		386FBC93201C4D9000944CDF /* HYRecommendBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYRecommendBottomView.m; sourceTree = "<group>"; };
+		386FBC94201C4D9000944CDF /* HYReportListHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYReportListHeaderView.h; sourceTree = "<group>"; };
+		386FBC95201C4D9000944CDF /* HYReportListHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYReportListHeaderView.m; sourceTree = "<group>"; };
+		386FBC97201C4D9000944CDF /* HYBankCardCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYBankCardCellModel.h; sourceTree = "<group>"; };
+		386FBC98201C4D9000944CDF /* HYBankCardCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYBankCardCellModel.m; sourceTree = "<group>"; };
+		386FBC99201C4D9000944CDF /* HYHomeViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYHomeViewModel.h; sourceTree = "<group>"; };
+		386FBC9A201C4D9000944CDF /* HYHomeViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYHomeViewModel.m; sourceTree = "<group>"; };
+		386FBC9B201C4D9000944CDF /* HYRecommendViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYRecommendViewModel.h; sourceTree = "<group>"; };
+		386FBC9C201C4D9000944CDF /* HYRecommendViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYRecommendViewModel.m; sourceTree = "<group>"; };
+		386FBC9D201C4D9000944CDF /* HYReportCellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYReportCellViewModel.h; sourceTree = "<group>"; };
+		386FBC9E201C4D9000944CDF /* HYReportCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYReportCellViewModel.m; sourceTree = "<group>"; };
+		386FBC9F201C4D9000944CDF /* HYReportSelectCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYReportSelectCellModel.h; sourceTree = "<group>"; };
+		386FBCA0201C4D9000944CDF /* HYReportSelectCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYReportSelectCellModel.m; sourceTree = "<group>"; };
+		386FBCA1201C4D9000944CDF /* HYReportViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYReportViewModel.h; sourceTree = "<group>"; };
+		386FBCA2201C4D9000944CDF /* HYReportViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYReportViewModel.m; sourceTree = "<group>"; };
+		386FBCA5201C4D9000944CDF /* HYAuthPhoneVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYAuthPhoneVC.h; sourceTree = "<group>"; };
+		386FBCA6201C4D9000944CDF /* HYAuthPhoneVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYAuthPhoneVC.m; sourceTree = "<group>"; };
+		386FBCA7201C4D9000944CDF /* HYBandPhoneVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYBandPhoneVC.h; sourceTree = "<group>"; };
+		386FBCA8201C4D9000944CDF /* HYBandPhoneVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYBandPhoneVC.m; sourceTree = "<group>"; };
+		386FBCA9201C4D9000944CDF /* HYGuideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYGuideViewController.h; sourceTree = "<group>"; };
+		386FBCAA201C4D9000944CDF /* HYGuideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYGuideViewController.m; sourceTree = "<group>"; };
+		386FBCAB201C4D9000944CDF /* HYJoinProtocolVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYJoinProtocolVC.h; sourceTree = "<group>"; };
+		386FBCAC201C4D9000944CDF /* HYJoinProtocolVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYJoinProtocolVC.m; sourceTree = "<group>"; };
+		386FBCAD201C4D9000944CDF /* HYLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYLoginViewController.h; sourceTree = "<group>"; };
+		386FBCAE201C4D9000944CDF /* HYLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYLoginViewController.m; sourceTree = "<group>"; };
+		386FBCAF201C4D9000944CDF /* HYSelectIDInfoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYSelectIDInfoVC.h; sourceTree = "<group>"; };
+		386FBCB0201C4D9000944CDF /* HYSelectIDInfoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYSelectIDInfoVC.m; sourceTree = "<group>"; };
+		386FBCB2201C4D9000944CDF /* HYUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYUserModel.h; sourceTree = "<group>"; };
+		386FBCB3201C4D9000944CDF /* HYUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYUserModel.m; sourceTree = "<group>"; };
+		386FBCB5201C4D9000944CDF /* HYAuthPhoneView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYAuthPhoneView.h; sourceTree = "<group>"; };
+		386FBCB6201C4D9000944CDF /* HYAuthPhoneView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYAuthPhoneView.m; sourceTree = "<group>"; };
+		386FBCB7201C4D9000944CDF /* HYBindPhoneView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYBindPhoneView.h; sourceTree = "<group>"; };
+		386FBCB8201C4D9000944CDF /* HYBindPhoneView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYBindPhoneView.m; sourceTree = "<group>"; };
+		386FBCB9201C4D9000944CDF /* HYLoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYLoginView.h; sourceTree = "<group>"; };
+		386FBCBA201C4D9000944CDF /* HYLoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYLoginView.m; sourceTree = "<group>"; };
+		386FBCBB201C4D9000944CDF /* HYLogoutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYLogoutView.h; sourceTree = "<group>"; };
+		386FBCBC201C4D9000944CDF /* HYLogoutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYLogoutView.m; sourceTree = "<group>"; };
+		386FBCBD201C4D9000944CDF /* HYPasswordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYPasswordView.h; sourceTree = "<group>"; };
+		386FBCBE201C4D9000944CDF /* HYPasswordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYPasswordView.m; sourceTree = "<group>"; };
+		386FBCBF201C4D9000944CDF /* HYSelectInfoBtnView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYSelectInfoBtnView.h; sourceTree = "<group>"; };
+		386FBCC0201C4D9000944CDF /* HYSelectInfoBtnView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYSelectInfoBtnView.m; sourceTree = "<group>"; };
+		386FBCC1201C4D9000944CDF /* HYSelectInfoHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYSelectInfoHeaderView.h; sourceTree = "<group>"; };
+		386FBCC2201C4D9000944CDF /* HYSelectInfoHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYSelectInfoHeaderView.m; sourceTree = "<group>"; };
+		386FBCC4201C4D9000944CDF /* HYBindPhoneViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYBindPhoneViewModel.h; sourceTree = "<group>"; };
+		386FBCC5201C4D9000944CDF /* HYBindPhoneViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYBindPhoneViewModel.m; sourceTree = "<group>"; };
+		386FBCC6201C4D9000944CDF /* HYLoginViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYLoginViewModel.h; sourceTree = "<group>"; };
+		386FBCC7201C4D9000944CDF /* HYLoginViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYLoginViewModel.m; sourceTree = "<group>"; };
+		386FBCCA201C4D9000944CDF /* HYAboutUSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYAboutUSViewController.h; sourceTree = "<group>"; };
+		386FBCCB201C4D9000944CDF /* HYAboutUSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYAboutUSViewController.m; sourceTree = "<group>"; };
+		386FBCCC201C4D9000944CDF /* HYBillVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYBillVC.h; sourceTree = "<group>"; };
+		386FBCCD201C4D9000944CDF /* HYBillVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYBillVC.m; sourceTree = "<group>"; };
+		386FBCCE201C4D9000944CDF /* HYDepositVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYDepositVC.h; sourceTree = "<group>"; };
+		386FBCCF201C4D9000944CDF /* HYDepositVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYDepositVC.m; sourceTree = "<group>"; };
+		386FBCD0201C4D9000944CDF /* HYDepositWaitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYDepositWaitViewController.h; sourceTree = "<group>"; };
+		386FBCD1201C4D9000944CDF /* HYDepositWaitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYDepositWaitViewController.m; sourceTree = "<group>"; };
+		386FBCD2201C4D9000944CDF /* HYMineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYMineViewController.h; sourceTree = "<group>"; };
+		386FBCD3201C4D9000944CDF /* HYMineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYMineViewController.m; sourceTree = "<group>"; };
+		386FBCD4201C4D9000944CDF /* HYSetDispoitPwdVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYSetDispoitPwdVC.h; sourceTree = "<group>"; };
+		386FBCD5201C4D9000944CDF /* HYSetDispoitPwdVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYSetDispoitPwdVC.m; sourceTree = "<group>"; };
+		386FBCD6201C4D9000944CDF /* HYSetLoginPwdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYSetLoginPwdViewController.h; sourceTree = "<group>"; };
+		386FBCD7201C4D9000944CDF /* HYSetLoginPwdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYSetLoginPwdViewController.m; sourceTree = "<group>"; };
+		386FBCD8201C4D9000944CDF /* HYSetPwdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYSetPwdViewController.h; sourceTree = "<group>"; };
+		386FBCD9201C4D9000944CDF /* HYSetPwdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYSetPwdViewController.m; sourceTree = "<group>"; };
+		386FBCDA201C4D9000944CDF /* HYSetUserNameVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYSetUserNameVC.h; sourceTree = "<group>"; };
+		386FBCDB201C4D9000944CDF /* HYSetUserNameVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYSetUserNameVC.m; sourceTree = "<group>"; };
+		386FBCDC201C4D9000944CDF /* HYUploadIDCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYUploadIDCardViewController.h; sourceTree = "<group>"; };
+		386FBCDD201C4D9000944CDF /* HYUploadIDCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYUploadIDCardViewController.m; sourceTree = "<group>"; };
+		386FBCDE201C4D9000944CDF /* HYWalletViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYWalletViewController.h; sourceTree = "<group>"; };
+		386FBCDF201C4D9000944CDF /* HYWalletViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYWalletViewController.m; sourceTree = "<group>"; };
+		386FBCE1201C4D9000944CDF /* HYBillModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYBillModel.h; sourceTree = "<group>"; };
+		386FBCE2201C4D9000944CDF /* HYBillModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYBillModel.m; sourceTree = "<group>"; };
+		386FBCE3201C4D9000944CDF /* HYMyWalletModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYMyWalletModel.h; sourceTree = "<group>"; };
+		386FBCE4201C4D9000944CDF /* HYMyWalletModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYMyWalletModel.m; sourceTree = "<group>"; };
+		386FBCE7201C4D9000944CDF /* HYBillTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYBillTableViewCell.h; sourceTree = "<group>"; };
+		386FBCE8201C4D9000944CDF /* HYBillTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYBillTableViewCell.m; sourceTree = "<group>"; };
+		386FBCE9201C4D9000944CDF /* HYIconTitleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYIconTitleCell.h; sourceTree = "<group>"; };
+		386FBCEA201C4D9000944CDF /* HYIconTitleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYIconTitleCell.m; sourceTree = "<group>"; };
+		386FBCEB201C4D9000944CDF /* HYMyAccountTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYMyAccountTableViewCell.h; sourceTree = "<group>"; };
+		386FBCEC201C4D9000944CDF /* HYMyAccountTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYMyAccountTableViewCell.m; sourceTree = "<group>"; };
+		386FBCED201C4D9000944CDF /* HYMyWalletHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYMyWalletHeaderCell.h; sourceTree = "<group>"; };
+		386FBCEE201C4D9000944CDF /* HYMyWalletHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYMyWalletHeaderCell.m; sourceTree = "<group>"; };
+		386FBCEF201C4D9000944CDF /* HYTextFieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYTextFieldTableViewCell.h; sourceTree = "<group>"; };
+		386FBCF0201C4D9000944CDF /* HYTextFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYTextFieldTableViewCell.m; sourceTree = "<group>"; };
+		386FBCF1201C4D9000944CDF /* HYBillHeaderVIew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYBillHeaderVIew.h; sourceTree = "<group>"; };
+		386FBCF2201C4D9000944CDF /* HYBillHeaderVIew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYBillHeaderVIew.m; sourceTree = "<group>"; };
+		386FBCF3201C4D9000944CDF /* HYBindCardPhoneAuthView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYBindCardPhoneAuthView.h; sourceTree = "<group>"; };
+		386FBCF4201C4D9000944CDF /* HYBindCardPhoneAuthView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYBindCardPhoneAuthView.m; sourceTree = "<group>"; };
+		386FBCF5201C4D9000944CDF /* HYDepositWaitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYDepositWaitView.h; sourceTree = "<group>"; };
+		386FBCF6201C4D9000944CDF /* HYDepositWaitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYDepositWaitView.m; sourceTree = "<group>"; };
+		386FBCF7201C4D9000944CDF /* HYDispoitHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYDispoitHeaderView.h; sourceTree = "<group>"; };
+		386FBCF8201C4D9000944CDF /* HYDispoitHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYDispoitHeaderView.m; sourceTree = "<group>"; };
+		386FBCF9201C4D9000944CDF /* HYDispoitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYDispoitView.h; sourceTree = "<group>"; };
+		386FBCFA201C4D9000944CDF /* HYDispoitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYDispoitView.m; sourceTree = "<group>"; };
+		386FBCFB201C4D9000944CDF /* HYInputDepositPwdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYInputDepositPwdView.h; sourceTree = "<group>"; };
+		386FBCFC201C4D9000944CDF /* HYInputDepositPwdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYInputDepositPwdView.m; sourceTree = "<group>"; };
+		386FBCFD201C4D9000944CDF /* HYSendAuthCodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYSendAuthCodeView.h; sourceTree = "<group>"; };
+		386FBCFE201C4D9000944CDF /* HYSendAuthCodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYSendAuthCodeView.m; sourceTree = "<group>"; };
+		386FBCFF201C4D9000944CDF /* HYSendAuthView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYSendAuthView.h; sourceTree = "<group>"; };
+		386FBD00201C4D9000944CDF /* HYSendAuthView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYSendAuthView.m; sourceTree = "<group>"; };
+		386FBD01201C4D9000944CDF /* HYSetDepositTipsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYSetDepositTipsView.h; sourceTree = "<group>"; };
+		386FBD02201C4D9000944CDF /* HYSetDepositTipsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYSetDepositTipsView.m; sourceTree = "<group>"; };
+		386FBD03201C4D9000944CDF /* HYSetDespoitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYSetDespoitView.h; sourceTree = "<group>"; };
+		386FBD04201C4D9000944CDF /* HYSetDespoitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYSetDespoitView.m; sourceTree = "<group>"; };
+		386FBD06201C4D9000944CDF /* HYDepositViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYDepositViewModel.h; sourceTree = "<group>"; };
+		386FBD07201C4D9000944CDF /* HYDepositViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYDepositViewModel.m; sourceTree = "<group>"; };
+		386FBD08201C4D9000944CDF /* HYMyWalletViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYMyWalletViewModel.h; sourceTree = "<group>"; };
+		386FBD09201C4D9000944CDF /* HYMyWalletViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYMyWalletViewModel.m; sourceTree = "<group>"; };
+		386FBD0A201C4D9000944CDF /* HYSetDepositViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYSetDepositViewModel.h; sourceTree = "<group>"; };
+		386FBD0B201C4D9000944CDF /* HYSetDepositViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYSetDepositViewModel.m; sourceTree = "<group>"; };
+		386FBD0C201C4D9000944CDF /* HYUploadIDCardViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYUploadIDCardViewModel.h; sourceTree = "<group>"; };
+		386FBD0D201C4D9000944CDF /* HYUploadIDCardViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYUploadIDCardViewModel.m; sourceTree = "<group>"; };
+		386FBD10201C4D9000944CDF /* HTTPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPManager.h; sourceTree = "<group>"; };
+		386FBD11201C4D9000944CDF /* HTTPManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPManager.m; sourceTree = "<group>"; };
+		386FBD12201C4D9000944CDF /* HYNetWorkStateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYNetWorkStateManager.h; sourceTree = "<group>"; };
+		386FBD13201C4D9000944CDF /* HYNetWorkStateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYNetWorkStateManager.m; sourceTree = "<group>"; };
+		386FBD14201C4D9000944CDF /* HYRCIMGetUserInfoHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYRCIMGetUserInfoHandle.h; sourceTree = "<group>"; };
+		386FBD15201C4D9000944CDF /* HYRCIMGetUserInfoHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYRCIMGetUserInfoHandle.m; sourceTree = "<group>"; };
+		386FBD16201C4D9000944CDF /* HYUserRequestHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYUserRequestHandle.h; sourceTree = "<group>"; };
+		386FBD17201C4D9000944CDF /* HYUserRequestHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYUserRequestHandle.m; sourceTree = "<group>"; };
+		386FBD18201C4D9000944CDF /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		386FBD19201C4D9000944CDF /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		386FBD1B201C4D9000944CDF /* sms-received.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "sms-received.caf"; sourceTree = "<group>"; };
+		386FBD1D201C4D9000944CDF /* DESECB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DESECB.h; sourceTree = "<group>"; };
+		386FBD1E201C4D9000944CDF /* DESECB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DESECB.m; sourceTree = "<group>"; };
+		386FBD1F201C4D9000944CDF /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
+		386FBD20201C4D9000944CDF /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
+		386FBD21201C4D9000944CDF /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
+		386FBD23201C4D9000944CDF /* HYButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYButton.h; sourceTree = "<group>"; };
+		386FBD24201C4D9000944CDF /* HYButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYButton.m; sourceTree = "<group>"; };
+		386FBD25201C4D9000944CDF /* HYCustomAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYCustomAlert.h; sourceTree = "<group>"; };
+		386FBD26201C4D9000944CDF /* HYCustomAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYCustomAlert.m; sourceTree = "<group>"; };
+		386FBD27201C4D9000944CDF /* HYDateHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYDateHandle.h; sourceTree = "<group>"; };
+		386FBD28201C4D9000944CDF /* HYDateHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYDateHandle.m; sourceTree = "<group>"; };
+		386FBD29201C4D9000944CDF /* HYLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYLabel.h; sourceTree = "<group>"; };
+		386FBD2A201C4D9000944CDF /* HYLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYLabel.m; sourceTree = "<group>"; };
+		386FBD2B201C4D9000944CDF /* HYPhoneInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYPhoneInfo.h; sourceTree = "<group>"; };
+		386FBD2C201C4D9000944CDF /* HYPhoneInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYPhoneInfo.m; sourceTree = "<group>"; };
+		386FBD2D201C4D9000944CDF /* HYPlistTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYPlistTools.h; sourceTree = "<group>"; };
+		386FBD2E201C4D9000944CDF /* HYPlistTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYPlistTools.m; sourceTree = "<group>"; };
+		386FBD2F201C4D9000944CDF /* HYReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYReachabilityManager.h; sourceTree = "<group>"; };
+		386FBD30201C4D9000944CDF /* HYReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYReachabilityManager.m; sourceTree = "<group>"; };
+		386FBD31201C4D9000944CDF /* JRToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRToast.h; sourceTree = "<group>"; };
+		386FBD32201C4D9000944CDF /* JRToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRToast.m; sourceTree = "<group>"; };
+		386FBD33201C4D9000944CDF /* MBProgressHUD+HYExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+HYExtension.h"; sourceTree = "<group>"; };
+		386FBD34201C4D9000944CDF /* MBProgressHUD+HYExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+HYExtension.m"; sourceTree = "<group>"; };
+		386FBD35201C4D9000944CDF /* RCIMDBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCIMDBManager.h; sourceTree = "<group>"; };
+		386FBD36201C4D9000944CDF /* RCIMDBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCIMDBManager.m; sourceTree = "<group>"; };
+		386FBD37201C4D9000944CDF /* SAMTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAMTextView.h; sourceTree = "<group>"; };
+		386FBD38201C4D9000944CDF /* SAMTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAMTextView.m; sourceTree = "<group>"; };
+		386FBD39201C4D9000944CDF /* UILabel+HYJustifyAlign.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+HYJustifyAlign.h"; sourceTree = "<group>"; };
+		386FBD3A201C4D9000944CDF /* UILabel+HYJustifyAlign.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+HYJustifyAlign.m"; sourceTree = "<group>"; };
 		3E0E6E3D1FAAF1AA00F058EB /* Agency.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Agency.entitlements; sourceTree = "<group>"; };
 		3E0E6E3E1FAAF3D700F058EB /* HYHomePageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HYHomePageViewController.h; sourceTree = "<group>"; };
 		3E0E6E3F1FAAF3D700F058EB /* HYHomePageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HYHomePageViewController.m; sourceTree = "<group>"; };
@@ -458,6 +858,7 @@
 				3E95E1FC1FAAC45E00995AB2 /* SystemConfiguration.framework in Frameworks */,
 				3E95E1FA1FAAC45500995AB2 /* libc++.tbd in Frameworks */,
 				3E95E1F81FAAC44C00995AB2 /* libz.tbd in Frameworks */,
+				386FBD47201C4D9000944CDF /* AlipaySDK.framework in Frameworks */,
 				3E95E1F31FAAC36800995AB2 /* AlipaySDK.bundle in Frameworks */,
 				3E95E1F41FAAC36800995AB2 /* AlipaySDK.framework in Frameworks */,
 				D794A536FF2A4EDED92DBF52 /* libPods-Agency.a in Frameworks */,
@@ -496,6 +897,521 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
+		386FBC12201C4D8F00944CDF /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				386FBC13201C4D8F00944CDF /* HYBaseCellViewModel.h */,
+				386FBC14201C4D8F00944CDF /* HYBaseCellViewModel.m */,
+				386FBC15201C4D8F00944CDF /* HYBaseModel.h */,
+				386FBC16201C4D8F00944CDF /* HYBaseModel.m */,
+				386FBC17201C4D8F00944CDF /* HYBaseNavController.h */,
+				386FBC18201C4D8F00944CDF /* HYBaseNavController.m */,
+				386FBC19201C4D8F00944CDF /* HYBaseTableViewModel.h */,
+				386FBC1A201C4D8F00944CDF /* HYBaseTableViewModel.m */,
+				386FBC1B201C4D8F00944CDF /* HYBaseViewController.h */,
+				386FBC1C201C4D8F00944CDF /* HYBaseViewController.m */,
+				386FBC1D201C4D8F00944CDF /* HYBaseViewModel.h */,
+				386FBC1E201C4D8F00944CDF /* HYBaseViewModel.m */,
+				386FBC1F201C4D8F00944CDF /* HYTableViewModel.h */,
+				386FBC20201C4D8F00944CDF /* HYTableViewModel.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		386FBC21201C4D8F00944CDF /* APPDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				386FBC22201C4D8F00944CDF /* AppDelegate+HYRongIM.h */,
+				386FBC23201C4D8F00944CDF /* AppDelegate+HYRongIM.m */,
+				386FBC24201C4D8F00944CDF /* AppDelegate.h */,
+				386FBC25201C4D8F00944CDF /* AppDelegate.m */,
+				386FBC26201C4D8F00944CDF /* Info.plist */,
+			);
+			path = APPDelegate;
+			sourceTree = "<group>";
+		};
+		386FBC28201C4D9000944CDF /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				386FBC29201C4D9000944CDF /* AlipaySDK.bundle */,
+				386FBC2A201C4D9000944CDF /* AlipaySDK.framework */,
+				386FBC2B201C4D9000944CDF /* HYBUnicodeReadable */,
+				386FBC32201C4D9000944CDF /* ShowChinese */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		386FBC2B201C4D9000944CDF /* HYBUnicodeReadable */ = {
+			isa = PBXGroup;
+			children = (
+				386FBC2C201C4D9000944CDF /* NSArray+HYBUnicodeReadable.h */,
+				386FBC2D201C4D9000944CDF /* NSArray+HYBUnicodeReadable.m */,
+				386FBC2E201C4D9000944CDF /* NSDictionary+HYBUnicodeReadable.h */,
+				386FBC2F201C4D9000944CDF /* NSDictionary+HYBUnicodeReadable.m */,
+				386FBC30201C4D9000944CDF /* NSSet+HYBUnicodeReadable.h */,
+				386FBC31201C4D9000944CDF /* NSSet+HYBUnicodeReadable.m */,
+			);
+			path = HYBUnicodeReadable;
+			sourceTree = "<group>";
+		};
+		386FBC32201C4D9000944CDF /* ShowChinese */ = {
+			isa = PBXGroup;
+			children = (
+				386FBC33201C4D9000944CDF /* Foundation+Log.m */,
+			);
+			path = ShowChinese;
+			sourceTree = "<group>";
+		};
+		386FBC34201C4D9000944CDF /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				386FBC35201C4D9000944CDF /* Common */,
+				386FBC47201C4D9000944CDF /* Home */,
+				386FBCA3201C4D9000944CDF /* Login */,
+				386FBCC8201C4D9000944CDF /* Mine */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		386FBC35201C4D9000944CDF /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				386FBC36201C4D9000944CDF /* Controller */,
+				386FBC39201C4D9000944CDF /* View */,
+				386FBC40201C4D9000944CDF /* ViewModel */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		386FBC36201C4D9000944CDF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				386FBC37201C4D9000944CDF /* HYChatViewController.h */,
+				386FBC38201C4D9000944CDF /* HYChatViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		386FBC39201C4D9000944CDF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				386FBC3A201C4D9000944CDF /* HYDatePickerView.h */,
+				386FBC3B201C4D9000944CDF /* HYDatePickerView.m */,
+				386FBC3C201C4D9000944CDF /* HYShareView.h */,
+				386FBC3D201C4D9000944CDF /* HYShareView.m */,
+				386FBC3E201C4D9000944CDF /* UILabel+HYCopy.h */,
+				386FBC3F201C4D9000944CDF /* UILabel+HYCopy.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		386FBC40201C4D9000944CDF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				386FBC41201C4D9000944CDF /* HYShareHandle.h */,
+				386FBC42201C4D9000944CDF /* HYShareHandle.m */,
+				386FBC43201C4D9000944CDF /* HYShareModel.h */,
+				386FBC44201C4D9000944CDF /* HYShareModel.m */,
+				386FBC45201C4D9000944CDF /* HYTableViewManager.h */,
+				386FBC46201C4D9000944CDF /* HYTableViewManager.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		386FBC47201C4D9000944CDF /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				386FBC48201C4D9000944CDF /* Controller */,
+				386FBC61201C4D9000944CDF /* Model */,
+				386FBC6E201C4D9000944CDF /* View */,
+				386FBC96201C4D9000944CDF /* ViewModel */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		386FBC48201C4D9000944CDF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				386FBC49201C4D9000944CDF /* HYAuthViewController.h */,
+				386FBC4A201C4D9000944CDF /* HYAuthViewController.m */,
+				386FBC4B201C4D9000944CDF /* HYBankCardViewController.h */,
+				386FBC4C201C4D9000944CDF /* HYBankCardViewController.m */,
+				386FBC4D201C4D9000944CDF /* HYHomePageViewController.h */,
+				386FBC4E201C4D9000944CDF /* HYHomePageViewController.m */,
+				386FBC4F201C4D9000944CDF /* HYInfomationVC.h */,
+				386FBC50201C4D9000944CDF /* HYInfomationVC.m */,
+				386FBC51201C4D9000944CDF /* HYInformationDetailVC.h */,
+				386FBC52201C4D9000944CDF /* HYInformationDetailVC.m */,
+				386FBC53201C4D9000944CDF /* HYMyTeamViewController.h */,
+				386FBC54201C4D9000944CDF /* HYMyTeamViewController.m */,
+				386FBC55201C4D9000944CDF /* HYRecemondViewController.h */,
+				386FBC56201C4D9000944CDF /* HYRecemondViewController.m */,
+				386FBC57201C4D9000944CDF /* HYRecommendSuccessVC.h */,
+				386FBC58201C4D9000944CDF /* HYRecommendSuccessVC.m */,
+				386FBC59201C4D9000944CDF /* HYReportDetailViewController.h */,
+				386FBC5A201C4D9000944CDF /* HYReportDetailViewController.m */,
+				386FBC5B201C4D9000944CDF /* HYReportListViewController.h */,
+				386FBC5C201C4D9000944CDF /* HYReportListViewController.m */,
+				386FBC5D201C4D9000944CDF /* HYReportViewController.h */,
+				386FBC5E201C4D9000944CDF /* HYReportViewController.m */,
+				386FBC5F201C4D9000944CDF /* HYTeamDetailViewController.h */,
+				386FBC60201C4D9000944CDF /* HYTeamDetailViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		386FBC61201C4D9000944CDF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				386FBC62201C4D9000944CDF /* HYBankCardModel.h */,
+				386FBC63201C4D9000944CDF /* HYBankCardModel.m */,
+				386FBC64201C4D9000944CDF /* HYInfomationDetailModel.h */,
+				386FBC65201C4D9000944CDF /* HYInfomationDetailModel.m */,
+				386FBC66201C4D9000944CDF /* HYRecommendInfoModel.h */,
+				386FBC67201C4D9000944CDF /* HYRecommendInfoModel.m */,
+				386FBC68201C4D9000944CDF /* HYReportListModel.h */,
+				386FBC69201C4D9000944CDF /* HYReportListModel.m */,
+				386FBC6A201C4D9000944CDF /* HYReportModel.h */,
+				386FBC6B201C4D9000944CDF /* HYReportModel.m */,
+				386FBC6C201C4D9000944CDF /* HYTeamMemberModel.h */,
+				386FBC6D201C4D9000944CDF /* HYTeamMemberModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		386FBC6E201C4D9000944CDF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				386FBC6F201C4D9000944CDF /* Cell */,
+				386FBC84201C4D9000944CDF /* HYHomeBottomView.h */,
+				386FBC85201C4D9000944CDF /* HYHomeBottomView.m */,
+				386FBC86201C4D9000944CDF /* HYHomeBtnView.h */,
+				386FBC87201C4D9000944CDF /* HYHomeBtnView.m */,
+				386FBC88201C4D9000944CDF /* HYHomeHeaderView.h */,
+				386FBC89201C4D9000944CDF /* HYHomeHeaderView.m */,
+				386FBC8A201C4D9000944CDF /* HYHomeMiddleView.h */,
+				386FBC8B201C4D9000944CDF /* HYHomeMiddleView.m */,
+				386FBC8C201C4D9000944CDF /* HYHomeView.h */,
+				386FBC8D201C4D9000944CDF /* HYHomeView.m */,
+				386FBC8E201C4D9000944CDF /* HYMyTeamHeaderView.h */,
+				386FBC8F201C4D9000944CDF /* HYMyTeamHeaderView.m */,
+				386FBC90201C4D9000944CDF /* HYNoAccessView.h */,
+				386FBC91201C4D9000944CDF /* HYNoAccessView.m */,
+				386FBC92201C4D9000944CDF /* HYRecommendBottomView.h */,
+				386FBC93201C4D9000944CDF /* HYRecommendBottomView.m */,
+				386FBC94201C4D9000944CDF /* HYReportListHeaderView.h */,
+				386FBC95201C4D9000944CDF /* HYReportListHeaderView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		386FBC6F201C4D9000944CDF /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				386FBC70201C4D9000944CDF /* HYBankInfoTableViewCell.h */,
+				386FBC71201C4D9000944CDF /* HYBankInfoTableViewCell.m */,
+				386FBC72201C4D9000944CDF /* HYBaseTableViewCell.h */,
+				386FBC73201C4D9000944CDF /* HYBaseTableViewCell.m */,
+				386FBC74201C4D9000944CDF /* HYInfoTableViewCell.h */,
+				386FBC75201C4D9000944CDF /* HYInfoTableViewCell.m */,
+				386FBC76201C4D9000944CDF /* HYRecommendLevelCell.h */,
+				386FBC77201C4D9000944CDF /* HYRecommendLevelCell.m */,
+				386FBC78201C4D9000944CDF /* HYRecommendTipsCell.h */,
+				386FBC79201C4D9000944CDF /* HYRecommendTipsCell.m */,
+				386FBC7A201C4D9000944CDF /* HYReportAllAmountCell.h */,
+				386FBC7B201C4D9000944CDF /* HYReportAllAmountCell.m */,
+				386FBC7C201C4D9000944CDF /* HYReportAllOrderCell.h */,
+				386FBC7D201C4D9000944CDF /* HYReportAllOrderCell.m */,
+				386FBC7E201C4D9000944CDF /* HYReportListCell.h */,
+				386FBC7F201C4D9000944CDF /* HYReportListCell.m */,
+				386FBC80201C4D9000944CDF /* HYReportSelectCell.h */,
+				386FBC81201C4D9000944CDF /* HYReportSelectCell.m */,
+				386FBC82201C4D9000944CDF /* HYTeamMemberCell.h */,
+				386FBC83201C4D9000944CDF /* HYTeamMemberCell.m */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		386FBC96201C4D9000944CDF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				386FBC97201C4D9000944CDF /* HYBankCardCellModel.h */,
+				386FBC98201C4D9000944CDF /* HYBankCardCellModel.m */,
+				386FBC99201C4D9000944CDF /* HYHomeViewModel.h */,
+				386FBC9A201C4D9000944CDF /* HYHomeViewModel.m */,
+				386FBC9B201C4D9000944CDF /* HYRecommendViewModel.h */,
+				386FBC9C201C4D9000944CDF /* HYRecommendViewModel.m */,
+				386FBC9D201C4D9000944CDF /* HYReportCellViewModel.h */,
+				386FBC9E201C4D9000944CDF /* HYReportCellViewModel.m */,
+				386FBC9F201C4D9000944CDF /* HYReportSelectCellModel.h */,
+				386FBCA0201C4D9000944CDF /* HYReportSelectCellModel.m */,
+				386FBCA1201C4D9000944CDF /* HYReportViewModel.h */,
+				386FBCA2201C4D9000944CDF /* HYReportViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		386FBCA3201C4D9000944CDF /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				386FBCA4201C4D9000944CDF /* Controller */,
+				386FBCB1201C4D9000944CDF /* Model */,
+				386FBCB4201C4D9000944CDF /* View */,
+				386FBCC3201C4D9000944CDF /* ViewModel */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		386FBCA4201C4D9000944CDF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				386FBCA5201C4D9000944CDF /* HYAuthPhoneVC.h */,
+				386FBCA6201C4D9000944CDF /* HYAuthPhoneVC.m */,
+				386FBCA7201C4D9000944CDF /* HYBandPhoneVC.h */,
+				386FBCA8201C4D9000944CDF /* HYBandPhoneVC.m */,
+				386FBCA9201C4D9000944CDF /* HYGuideViewController.h */,
+				386FBCAA201C4D9000944CDF /* HYGuideViewController.m */,
+				386FBCAB201C4D9000944CDF /* HYJoinProtocolVC.h */,
+				386FBCAC201C4D9000944CDF /* HYJoinProtocolVC.m */,
+				386FBCAD201C4D9000944CDF /* HYLoginViewController.h */,
+				386FBCAE201C4D9000944CDF /* HYLoginViewController.m */,
+				386FBCAF201C4D9000944CDF /* HYSelectIDInfoVC.h */,
+				386FBCB0201C4D9000944CDF /* HYSelectIDInfoVC.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		386FBCB1201C4D9000944CDF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				386FBCB2201C4D9000944CDF /* HYUserModel.h */,
+				386FBCB3201C4D9000944CDF /* HYUserModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		386FBCB4201C4D9000944CDF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				386FBCB5201C4D9000944CDF /* HYAuthPhoneView.h */,
+				386FBCB6201C4D9000944CDF /* HYAuthPhoneView.m */,
+				386FBCB7201C4D9000944CDF /* HYBindPhoneView.h */,
+				386FBCB8201C4D9000944CDF /* HYBindPhoneView.m */,
+				386FBCB9201C4D9000944CDF /* HYLoginView.h */,
+				386FBCBA201C4D9000944CDF /* HYLoginView.m */,
+				386FBCBB201C4D9000944CDF /* HYLogoutView.h */,
+				386FBCBC201C4D9000944CDF /* HYLogoutView.m */,
+				386FBCBD201C4D9000944CDF /* HYPasswordView.h */,
+				386FBCBE201C4D9000944CDF /* HYPasswordView.m */,
+				386FBCBF201C4D9000944CDF /* HYSelectInfoBtnView.h */,
+				386FBCC0201C4D9000944CDF /* HYSelectInfoBtnView.m */,
+				386FBCC1201C4D9000944CDF /* HYSelectInfoHeaderView.h */,
+				386FBCC2201C4D9000944CDF /* HYSelectInfoHeaderView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		386FBCC3201C4D9000944CDF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				386FBCC4201C4D9000944CDF /* HYBindPhoneViewModel.h */,
+				386FBCC5201C4D9000944CDF /* HYBindPhoneViewModel.m */,
+				386FBCC6201C4D9000944CDF /* HYLoginViewModel.h */,
+				386FBCC7201C4D9000944CDF /* HYLoginViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		386FBCC8201C4D9000944CDF /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				386FBCC9201C4D9000944CDF /* Controller */,
+				386FBCE0201C4D9000944CDF /* Model */,
+				386FBCE5201C4D9000944CDF /* View */,
+				386FBD05201C4D9000944CDF /* ViewModel */,
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
+		386FBCC9201C4D9000944CDF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				386FBCCA201C4D9000944CDF /* HYAboutUSViewController.h */,
+				386FBCCB201C4D9000944CDF /* HYAboutUSViewController.m */,
+				386FBCCC201C4D9000944CDF /* HYBillVC.h */,
+				386FBCCD201C4D9000944CDF /* HYBillVC.m */,
+				386FBCCE201C4D9000944CDF /* HYDepositVC.h */,
+				386FBCCF201C4D9000944CDF /* HYDepositVC.m */,
+				386FBCD0201C4D9000944CDF /* HYDepositWaitViewController.h */,
+				386FBCD1201C4D9000944CDF /* HYDepositWaitViewController.m */,
+				386FBCD2201C4D9000944CDF /* HYMineViewController.h */,
+				386FBCD3201C4D9000944CDF /* HYMineViewController.m */,
+				386FBCD4201C4D9000944CDF /* HYSetDispoitPwdVC.h */,
+				386FBCD5201C4D9000944CDF /* HYSetDispoitPwdVC.m */,
+				386FBCD6201C4D9000944CDF /* HYSetLoginPwdViewController.h */,
+				386FBCD7201C4D9000944CDF /* HYSetLoginPwdViewController.m */,
+				386FBCD8201C4D9000944CDF /* HYSetPwdViewController.h */,
+				386FBCD9201C4D9000944CDF /* HYSetPwdViewController.m */,
+				386FBCDA201C4D9000944CDF /* HYSetUserNameVC.h */,
+				386FBCDB201C4D9000944CDF /* HYSetUserNameVC.m */,
+				386FBCDC201C4D9000944CDF /* HYUploadIDCardViewController.h */,
+				386FBCDD201C4D9000944CDF /* HYUploadIDCardViewController.m */,
+				386FBCDE201C4D9000944CDF /* HYWalletViewController.h */,
+				386FBCDF201C4D9000944CDF /* HYWalletViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		386FBCE0201C4D9000944CDF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				386FBCE1201C4D9000944CDF /* HYBillModel.h */,
+				386FBCE2201C4D9000944CDF /* HYBillModel.m */,
+				386FBCE3201C4D9000944CDF /* HYMyWalletModel.h */,
+				386FBCE4201C4D9000944CDF /* HYMyWalletModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		386FBCE5201C4D9000944CDF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				386FBCE6201C4D9000944CDF /* Cell */,
+				386FBCF1201C4D9000944CDF /* HYBillHeaderVIew.h */,
+				386FBCF2201C4D9000944CDF /* HYBillHeaderVIew.m */,
+				386FBCF3201C4D9000944CDF /* HYBindCardPhoneAuthView.h */,
+				386FBCF4201C4D9000944CDF /* HYBindCardPhoneAuthView.m */,
+				386FBCF5201C4D9000944CDF /* HYDepositWaitView.h */,
+				386FBCF6201C4D9000944CDF /* HYDepositWaitView.m */,
+				386FBCF7201C4D9000944CDF /* HYDispoitHeaderView.h */,
+				386FBCF8201C4D9000944CDF /* HYDispoitHeaderView.m */,
+				386FBCF9201C4D9000944CDF /* HYDispoitView.h */,
+				386FBCFA201C4D9000944CDF /* HYDispoitView.m */,
+				386FBCFB201C4D9000944CDF /* HYInputDepositPwdView.h */,
+				386FBCFC201C4D9000944CDF /* HYInputDepositPwdView.m */,
+				386FBCFD201C4D9000944CDF /* HYSendAuthCodeView.h */,
+				386FBCFE201C4D9000944CDF /* HYSendAuthCodeView.m */,
+				386FBCFF201C4D9000944CDF /* HYSendAuthView.h */,
+				386FBD00201C4D9000944CDF /* HYSendAuthView.m */,
+				386FBD01201C4D9000944CDF /* HYSetDepositTipsView.h */,
+				386FBD02201C4D9000944CDF /* HYSetDepositTipsView.m */,
+				386FBD03201C4D9000944CDF /* HYSetDespoitView.h */,
+				386FBD04201C4D9000944CDF /* HYSetDespoitView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		386FBCE6201C4D9000944CDF /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				386FBCE7201C4D9000944CDF /* HYBillTableViewCell.h */,
+				386FBCE8201C4D9000944CDF /* HYBillTableViewCell.m */,
+				386FBCE9201C4D9000944CDF /* HYIconTitleCell.h */,
+				386FBCEA201C4D9000944CDF /* HYIconTitleCell.m */,
+				386FBCEB201C4D9000944CDF /* HYMyAccountTableViewCell.h */,
+				386FBCEC201C4D9000944CDF /* HYMyAccountTableViewCell.m */,
+				386FBCED201C4D9000944CDF /* HYMyWalletHeaderCell.h */,
+				386FBCEE201C4D9000944CDF /* HYMyWalletHeaderCell.m */,
+				386FBCEF201C4D9000944CDF /* HYTextFieldTableViewCell.h */,
+				386FBCF0201C4D9000944CDF /* HYTextFieldTableViewCell.m */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		386FBD05201C4D9000944CDF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				386FBD06201C4D9000944CDF /* HYDepositViewModel.h */,
+				386FBD07201C4D9000944CDF /* HYDepositViewModel.m */,
+				386FBD08201C4D9000944CDF /* HYMyWalletViewModel.h */,
+				386FBD09201C4D9000944CDF /* HYMyWalletViewModel.m */,
+				386FBD0A201C4D9000944CDF /* HYSetDepositViewModel.h */,
+				386FBD0B201C4D9000944CDF /* HYSetDepositViewModel.m */,
+				386FBD0C201C4D9000944CDF /* HYUploadIDCardViewModel.h */,
+				386FBD0D201C4D9000944CDF /* HYUploadIDCardViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		386FBD0E201C4D9000944CDF /* Expand */ = {
+			isa = PBXGroup;
+			children = (
+				386FBD0F201C4D9000944CDF /* Network */,
+				386FBD1A201C4D9000944CDF /* Resource */,
+				386FBD1C201C4D9000944CDF /* Security */,
+				386FBD22201C4D9000944CDF /* Tools */,
+			);
+			path = Expand;
+			sourceTree = "<group>";
+		};
+		386FBD0F201C4D9000944CDF /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				386FBD10201C4D9000944CDF /* HTTPManager.h */,
+				386FBD11201C4D9000944CDF /* HTTPManager.m */,
+				386FBD12201C4D9000944CDF /* HYNetWorkStateManager.h */,
+				386FBD13201C4D9000944CDF /* HYNetWorkStateManager.m */,
+				386FBD14201C4D9000944CDF /* HYRCIMGetUserInfoHandle.h */,
+				386FBD15201C4D9000944CDF /* HYRCIMGetUserInfoHandle.m */,
+				386FBD16201C4D9000944CDF /* HYUserRequestHandle.h */,
+				386FBD17201C4D9000944CDF /* HYUserRequestHandle.m */,
+				386FBD18201C4D9000944CDF /* Reachability.h */,
+				386FBD19201C4D9000944CDF /* Reachability.m */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		386FBD1A201C4D9000944CDF /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				386FBD1B201C4D9000944CDF /* sms-received.caf */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		386FBD1C201C4D9000944CDF /* Security */ = {
+			isa = PBXGroup;
+			children = (
+				386FBD1D201C4D9000944CDF /* DESECB.h */,
+				386FBD1E201C4D9000944CDF /* DESECB.m */,
+				386FBD1F201C4D9000944CDF /* GTMBase64.h */,
+				386FBD20201C4D9000944CDF /* GTMBase64.m */,
+				386FBD21201C4D9000944CDF /* GTMDefines.h */,
+			);
+			path = Security;
+			sourceTree = "<group>";
+		};
+		386FBD22201C4D9000944CDF /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				386FBD23201C4D9000944CDF /* HYButton.h */,
+				386FBD24201C4D9000944CDF /* HYButton.m */,
+				386FBD25201C4D9000944CDF /* HYCustomAlert.h */,
+				386FBD26201C4D9000944CDF /* HYCustomAlert.m */,
+				386FBD27201C4D9000944CDF /* HYDateHandle.h */,
+				386FBD28201C4D9000944CDF /* HYDateHandle.m */,
+				386FBD29201C4D9000944CDF /* HYLabel.h */,
+				386FBD2A201C4D9000944CDF /* HYLabel.m */,
+				386FBD2B201C4D9000944CDF /* HYPhoneInfo.h */,
+				386FBD2C201C4D9000944CDF /* HYPhoneInfo.m */,
+				386FBD2D201C4D9000944CDF /* HYPlistTools.h */,
+				386FBD2E201C4D9000944CDF /* HYPlistTools.m */,
+				386FBD2F201C4D9000944CDF /* HYReachabilityManager.h */,
+				386FBD30201C4D9000944CDF /* HYReachabilityManager.m */,
+				386FBD31201C4D9000944CDF /* JRToast.h */,
+				386FBD32201C4D9000944CDF /* JRToast.m */,
+				386FBD33201C4D9000944CDF /* MBProgressHUD+HYExtension.h */,
+				386FBD34201C4D9000944CDF /* MBProgressHUD+HYExtension.m */,
+				386FBD35201C4D9000944CDF /* RCIMDBManager.h */,
+				386FBD36201C4D9000944CDF /* RCIMDBManager.m */,
+				386FBD37201C4D9000944CDF /* SAMTextView.h */,
+				386FBD38201C4D9000944CDF /* SAMTextView.m */,
+				386FBD39201C4D9000944CDF /* UILabel+HYJustifyAlign.h */,
+				386FBD3A201C4D9000944CDF /* UILabel+HYJustifyAlign.m */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
 		3E0FDF0D1FA9647400F52DC0 = {
 			isa = PBXGroup;
 			children = (
@@ -517,6 +1433,12 @@
 		3E0FDF181FA9647500F52DC0 /* Agency */ = {
 			isa = PBXGroup;
 			children = (
+				386FBC21201C4D8F00944CDF /* APPDelegate */,
+				386FBC27201C4D8F00944CDF /* Assets.xcassets */,
+				386FBC12201C4D8F00944CDF /* Base */,
+				386FBD0E201C4D9000944CDF /* Expand */,
+				386FBC34201C4D9000944CDF /* Module */,
+				386FBC28201C4D9000944CDF /* Vendor */,
 				3E0E6E3D1FAAF1AA00F058EB /* Agency.entitlements */,
 				3E0FDF341FA9954D00F52DC0 /* Base */,
 				3E0FDF331FA9954D00F52DC0 /* Module */,
@@ -1132,8 +2054,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				386FBD46201C4D9000944CDF /* AlipaySDK.bundle in Resources */,
+				386FBDB3201C4D9000944CDF /* sms-received.caf in Resources */,
 				3E0FDF371FA9954E00F52DC0 /* Info.plist in Resources */,
 				3E0FDF231FA9647800F52DC0 /* Assets.xcassets in Resources */,
+				386FBD45201C4D9000944CDF /* Assets.xcassets in Resources */,
+				386FBD44201C4D9000944CDF /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1205,59 +2131,120 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E7FE3DA1FB2B31000498FC2 /* HYMyWalletViewModel.m in Sources */,
+				386FBDA5201C4D9000944CDF /* HYInputDepositPwdView.m in Sources */,
 				3E0E6E621FAC09CF00F058EB /* HYReportViewController.m in Sources */,
+				386FBD7E201C4D9000944CDF /* HYAuthPhoneVC.m in Sources */,
+				386FBDBE201C4D9000944CDF /* MBProgressHUD+HYExtension.m in Sources */,
+				386FBD68201C4D9000944CDF /* HYRecommendLevelCell.m in Sources */,
+				386FBDA8201C4D9000944CDF /* HYSetDepositTipsView.m in Sources */,
 				044520A01FF6385E001181A0 /* HYSetLoginPwdViewController.m in Sources */,
+				386FBD53201C4D9000944CDF /* HYAuthViewController.m in Sources */,
 				3E7FE3BA1FB19DFB00498FC2 /* HYJoinProtocolVC.m in Sources */,
 				3E7FE3D71FB2A7BB00498FC2 /* HYIconTitleCell.m in Sources */,
+				386FBD86201C4D9000944CDF /* HYBindPhoneView.m in Sources */,
 				3E14D2241FB07596006CDF18 /* HYDatePickerView.m in Sources */,
+				386FBD9C201C4D9000944CDF /* HYIconTitleCell.m in Sources */,
 				3E14D2011FB00492006CDF18 /* HYBaseTableViewModel.m in Sources */,
+				386FBD74201C4D9000944CDF /* HYMyTeamHeaderView.m in Sources */,
 				3E14D1F51FB002FA006CDF18 /* HYBaseModel.m in Sources */,
+				386FBD85201C4D9000944CDF /* HYAuthPhoneView.m in Sources */,
 				0468FDC71FBEC45200ACB4FA /* RCIMDBManager.m in Sources */,
+				386FBD54201C4D9000944CDF /* HYBankCardViewController.m in Sources */,
 				042C22301FC7B06600DFD274 /* HYInfomationDetailModel.m in Sources */,
+				386FBD66201C4D9000944CDF /* HYBaseTableViewCell.m in Sources */,
 				0468FDBB1FBD7D8300ACB4FA /* HYBankCardCellModel.m in Sources */,
+				386FBD8D201C4D9000944CDF /* HYLoginViewModel.m in Sources */,
+				386FBD64201C4D9000944CDF /* HYTeamMemberModel.m in Sources */,
+				386FBD4E201C4D9000944CDF /* HYShareView.m in Sources */,
 				3E0E6E501FAAFB0C00F058EB /* Macro.h in Sources */,
 				3E7FE3BE1FB19E5A00498FC2 /* HYSelectInfoHeaderView.m in Sources */,
+				386FBD9E201C4D9000944CDF /* HYMyWalletHeaderCell.m in Sources */,
 				3E7FE40A1FB31BE500498FC2 /* HYUserRequestHandle.m in Sources */,
+				386FBD9B201C4D9000944CDF /* HYBillTableViewCell.m in Sources */,
 				3E7FE44A1FB5796E00498FC2 /* Reachability.m in Sources */,
+				386FBD72201C4D9000944CDF /* HYHomeMiddleView.m in Sources */,
 				3E7FE3F51FB2E96300498FC2 /* HYTextFieldTableViewCell.m in Sources */,
 				042572641FC43C9E0040A10A /* HYDateHandle.m in Sources */,
 				3E76549F1FB9BEBD0041218D /* HYReportListModel.m in Sources */,
+				386FBD57201C4D9000944CDF /* HYInformationDetailVC.m in Sources */,
 				3E7FE3CE1FB1AC3100498FC2 /* HYBindPhoneView.m in Sources */,
+				386FBDA9201C4D9000944CDF /* HYSetDespoitView.m in Sources */,
+				386FBD84201C4D9000944CDF /* HYUserModel.m in Sources */,
+				386FBD91201C4D9000944CDF /* HYDepositWaitViewController.m in Sources */,
 				3E0E6E511FAAFB0C00F058EB /* WebApi.h in Sources */,
+				386FBD92201C4D9000944CDF /* HYMineViewController.m in Sources */,
 				3E95E2141FAACACD00995AB2 /* MBProgressHUD+HYExtension.h in Sources */,
+				386FBD4D201C4D9000944CDF /* HYDatePickerView.m in Sources */,
 				042C22331FC7BF6700DFD274 /* HYShareView.m in Sources */,
+				386FBDC1201C4D9000944CDF /* UILabel+HYJustifyAlign.m in Sources */,
 				3E95E2151FAACACD00995AB2 /* MBProgressHUD+HYExtension.m in Sources */,
+				386FBD6F201C4D9000944CDF /* HYHomeBottomView.m in Sources */,
+				386FBDA2201C4D9000944CDF /* HYDepositWaitView.m in Sources */,
+				386FBDA3201C4D9000944CDF /* HYDispoitHeaderView.m in Sources */,
+				386FBDBB201C4D9000944CDF /* HYPlistTools.m in Sources */,
+				386FBDBD201C4D9000944CDF /* JRToast.m in Sources */,
+				386FBD67201C4D9000944CDF /* HYInfoTableViewCell.m in Sources */,
 				3E95E2121FAACA7300995AB2 /* HTTPManager.h in Sources */,
 				04D5F4E51FC2CE18005F868F /* HYRecommendLevelCell.m in Sources */,
+				386FBD83201C4D9000944CDF /* HYSelectIDInfoVC.m in Sources */,
 				042572551FC412730040A10A /* HYInfomationVC.m in Sources */,
+				386FBD65201C4D9000944CDF /* HYBankInfoTableViewCell.m in Sources */,
 				3E7FE4581FB5C93700498FC2 /* HYInputDepositPwdView.m in Sources */,
+				386FBD3E201C4D9000944CDF /* HYBaseTableViewModel.m in Sources */,
+				386FBD7C201C4D9000944CDF /* HYReportSelectCellModel.m in Sources */,
+				386FBD7A201C4D9000944CDF /* HYRecommendViewModel.m in Sources */,
 				042572671FC524B30040A10A /* HYGuideViewController.m in Sources */,
+				386FBD6E201C4D9000944CDF /* HYTeamMemberCell.m in Sources */,
 				3E95E2131FAACA7300995AB2 /* HTTPManager.m in Sources */,
+				386FBD7F201C4D9000944CDF /* HYBandPhoneVC.m in Sources */,
+				386FBD5A201C4D9000944CDF /* HYRecommendSuccessVC.m in Sources */,
 				3E7FE4441FB4546200498FC2 /* HYSetDepositTipsView.m in Sources */,
 				04D5F4A01FBFF892005F868F /* HYRCIMGetUserInfoHandle.m in Sources */,
 				0468FDB81FBD79B400ACB4FA /* UILabel+HYJustifyAlign.m in Sources */,
 				0468FDCA1FBED27C00ACB4FA /* HYMyTeamHeaderView.m in Sources */,
 				0468FDAF1FBD3AAB00ACB4FA /* HYChatViewController.m in Sources */,
+				386FBDB4201C4D9000944CDF /* DESECB.m in Sources */,
+				386FBD70201C4D9000944CDF /* HYHomeBtnView.m in Sources */,
 				3E7FE43E1FB43C5E00498FC2 /* HYPasswordView.m in Sources */,
 				04D5F4DC1FC2C868005F868F /* HYPhoneInfo.m in Sources */,
 				3E7654AD1FBA9BF00041218D /* HYReachabilityManager.m in Sources */,
+				386FBDB6201C4D9000944CDF /* HYButton.m in Sources */,
 				3ECF11F11FB96AA400534544 /* HYReportListCell.m in Sources */,
+				386FBD8F201C4D9000944CDF /* HYBillVC.m in Sources */,
 				0468FDAC1FBD394A00ACB4FA /* HYMyTeamViewController.m in Sources */,
+				386FBD3F201C4D9000944CDF /* HYBaseViewController.m in Sources */,
+				386FBD82201C4D9000944CDF /* HYLoginViewController.m in Sources */,
+				386FBD89201C4D9000944CDF /* HYPasswordView.m in Sources */,
 				0468FDBE1FBD91AC00ACB4FA /* HYBillTableViewCell.m in Sources */,
 				044520A31FF6388F001181A0 /* HYSendAuthCodeView.m in Sources */,
 				3E95E20D1FAAC7F700995AB2 /* Const.h in Sources */,
+				386FBD9D201C4D9000944CDF /* HYMyAccountTableViewCell.m in Sources */,
+				386FBD80201C4D9000944CDF /* HYGuideViewController.m in Sources */,
 				044520A61FF63E72001181A0 /* HYSetPwdViewController.m in Sources */,
 				3E3F5D371FB6C5D8002332DD /* HYDepositWaitViewController.m in Sources */,
+				386FBD76201C4D9000944CDF /* HYRecommendBottomView.m in Sources */,
 				3E14D1F81FB00305006CDF18 /* HYBaseViewModel.m in Sources */,
 				0468FDC41FBD95BA00ACB4FA /* HYBillHeaderVIew.m in Sources */,
+				386FBDBA201C4D9000944CDF /* HYPhoneInfo.m in Sources */,
+				386FBDBC201C4D9000944CDF /* HYReachabilityManager.m in Sources */,
 				0411FBB51FFF1188006725FC /* HYShareModel.m in Sources */,
+				386FBDAC201C4D9000944CDF /* HYSetDepositViewModel.m in Sources */,
 				3E7FE3DD1FB2D5AB00498FC2 /* HYDepositVC.m in Sources */,
+				386FBD5B201C4D9000944CDF /* HYReportDetailViewController.m in Sources */,
 				3E0E6E491FAAF49600F058EB /* HYHomeMiddleView.m in Sources */,
+				386FBDB2201C4D9000944CDF /* Reachability.m in Sources */,
+				386FBD69201C4D9000944CDF /* HYRecommendTipsCell.m in Sources */,
 				3E14D2081FB02BD8006CDF18 /* HYReportViewModel.m in Sources */,
+				386FBD40201C4D9000944CDF /* HYBaseViewModel.m in Sources */,
 				3E95E20E1FAAC7F700995AB2 /* Const.m in Sources */,
 				3E3F5D3A1FB6C6FE002332DD /* HYDepositWaitView.m in Sources */,
+				386FBDA0201C4D9000944CDF /* HYBillHeaderVIew.m in Sources */,
 				3E7FE3B71FB19DEA00498FC2 /* HYSelectIDInfoVC.m in Sources */,
+				386FBD8C201C4D9000944CDF /* HYBindPhoneViewModel.m in Sources */,
+				386FBD3D201C4D9000944CDF /* HYBaseNavController.m in Sources */,
+				386FBD90201C4D9000944CDF /* HYDepositVC.m in Sources */,
 				3E95E1EF1FA9C98000995AB2 /* JRToast.h in Sources */,
+				386FBD5C201C4D9000944CDF /* HYReportListViewController.m in Sources */,
 				3E7FE44D1FB5799900498FC2 /* HYNetWorkStateManager.m in Sources */,
 				3E7FE3F21FB2E3AE00498FC2 /* HYUploadIDCardViewController.m in Sources */,
 				3E95E1F01FA9C98000995AB2 /* JRToast.m in Sources */,
@@ -1267,72 +2254,141 @@
 				04D5F4DF1FC2CCC6005F868F /* HYRecemondViewController.m in Sources */,
 				04D5F4E21FC2CD51005F868F /* HYTeamDetailViewController.m in Sources */,
 				3E14D1F21FAFFCA2006CDF18 /* HYTableViewManager.m in Sources */,
+				386FBD62201C4D9000944CDF /* HYReportListModel.m in Sources */,
 				3E14D20F1FB036A9006CDF18 /* HYReportSelectCell.m in Sources */,
 				0468FDA91FBD2E1100ACB4FA /* AppDelegate+HYRongIM.m in Sources */,
+				386FBD59201C4D9000944CDF /* HYRecemondViewController.m in Sources */,
 				04D5F4EE1FC2E624005F868F /* HYRecommendTipsCell.m in Sources */,
+				386FBD5D201C4D9000944CDF /* HYReportViewController.m in Sources */,
+				386FBD8E201C4D9000944CDF /* HYAboutUSViewController.m in Sources */,
+				386FBD60201C4D9000944CDF /* HYInfomationDetailModel.m in Sources */,
+				386FBD79201C4D9000944CDF /* HYHomeViewModel.m in Sources */,
+				386FBDAA201C4D9000944CDF /* HYDepositViewModel.m in Sources */,
 				3E7FE3D11FB1ACF400498FC2 /* HYBindPhoneViewModel.m in Sources */,
+				386FBD78201C4D9000944CDF /* HYBankCardCellModel.m in Sources */,
+				386FBDA7201C4D9000944CDF /* HYSendAuthView.m in Sources */,
+				386FBDA4201C4D9000944CDF /* HYDispoitView.m in Sources */,
+				386FBD55201C4D9000944CDF /* HYHomePageViewController.m in Sources */,
+				386FBD4C201C4D9000944CDF /* HYChatViewController.m in Sources */,
 				3E95E1EB1FA9B64400995AB2 /* HYLoginView.m in Sources */,
 				0425725E1FC413C70040A10A /* HYInfoTableViewCell.m in Sources */,
 				3E0FDF361FA9954E00F52DC0 /* AppDelegate.m in Sources */,
+				386FBDBF201C4D9000944CDF /* RCIMDBManager.m in Sources */,
 				3E14D2151FB036E0006CDF18 /* HYReportAllAmountCell.m in Sources */,
 				3E7FE3C11FB19E8000498FC2 /* HYSelectInfoBtnView.m in Sources */,
+				386FBD49201C4D9000944CDF /* NSDictionary+HYBUnicodeReadable.m in Sources */,
 				042572521FC401D70040A10A /* HYRecommendSuccessVC.m in Sources */,
 				3E7FE3E61FB2D78D00498FC2 /* HYBillVC.m in Sources */,
+				386FBD97201C4D9000944CDF /* HYUploadIDCardViewController.m in Sources */,
 				0425725B1FC413B50040A10A /* HYInformationDetailVC.m in Sources */,
+				386FBD7B201C4D9000944CDF /* HYReportCellViewModel.m in Sources */,
+				386FBD50201C4D9000944CDF /* HYShareHandle.m in Sources */,
 				3E14D1FE1FB00479006CDF18 /* HYBaseCellViewModel.m in Sources */,
+				386FBD4B201C4D9000944CDF /* Foundation+Log.m in Sources */,
+				386FBD6B201C4D9000944CDF /* HYReportAllOrderCell.m in Sources */,
+				386FBD51201C4D9000944CDF /* HYShareModel.m in Sources */,
 				3E0E6E431FAAF43C00F058EB /* HYHomeView.m in Sources */,
+				386FBD77201C4D9000944CDF /* HYReportListHeaderView.m in Sources */,
 				3E7FE4551FB5BA9D00498FC2 /* HYDepositViewModel.m in Sources */,
 				3E0E6E461FAAF46700F058EB /* HYHomeHeaderView.m in Sources */,
+				386FBDB5201C4D9000944CDF /* GTMBase64.m in Sources */,
+				386FBDA6201C4D9000944CDF /* HYSendAuthCodeView.m in Sources */,
 				3E0E6E4F1FAAF4D700F058EB /* HYHomeBtnView.m in Sources */,
 				3E0E6E541FAB000400F058EB /* HYUserModel.m in Sources */,
+				386FBD42201C4D9000944CDF /* AppDelegate+HYRongIM.m in Sources */,
+				386FBD88201C4D9000944CDF /* HYLogoutView.m in Sources */,
 				04D5F49A1FBFE416005F868F /* HYTeamMemberCell.m in Sources */,
+				386FBD93201C4D9000944CDF /* HYSetDispoitPwdVC.m in Sources */,
 				3E7FE4471FB53F8D00498FC2 /* HYSetDepositViewModel.m in Sources */,
+				386FBD63201C4D9000944CDF /* HYReportModel.m in Sources */,
+				386FBD5E201C4D9000944CDF /* HYTeamDetailViewController.m in Sources */,
 				3E0E6E5C1FAB1ADC00F058EB /* HYButton.m in Sources */,
+				386FBD4A201C4D9000944CDF /* NSSet+HYBUnicodeReadable.m in Sources */,
 				3E0E6E771FAC0A8000F058EB /* HYHomeViewModel.m in Sources */,
+				386FBD99201C4D9000944CDF /* HYBillModel.m in Sources */,
 				3E7FE3FB1FB2FA1A00498FC2 /* HYUploadIDCardViewModel.m in Sources */,
+				386FBD41201C4D9000944CDF /* HYTableViewModel.m in Sources */,
+				386FBDAE201C4D9000944CDF /* HTTPManager.m in Sources */,
+				386FBD52201C4D9000944CDF /* HYTableViewManager.m in Sources */,
+				386FBD75201C4D9000944CDF /* HYNoAccessView.m in Sources */,
+				386FBD43201C4D9000944CDF /* AppDelegate.m in Sources */,
+				386FBD3B201C4D9000944CDF /* HYBaseCellViewModel.m in Sources */,
+				386FBD4F201C4D9000944CDF /* UILabel+HYCopy.m in Sources */,
+				386FBD6D201C4D9000944CDF /* HYReportSelectCell.m in Sources */,
+				386FBDAD201C4D9000944CDF /* HYUploadIDCardViewModel.m in Sources */,
+				386FBD3C201C4D9000944CDF /* HYBaseModel.m in Sources */,
 				3E7FE4101FB32ED100498FC2 /* HYAuthPhoneVC.m in Sources */,
 				3E7FE3E01FB2D68F00498FC2 /* HYDispoitHeaderView.m in Sources */,
+				386FBD71201C4D9000944CDF /* HYHomeHeaderView.m in Sources */,
+				386FBDB0201C4D9000944CDF /* HYRCIMGetUserInfoHandle.m in Sources */,
+				386FBDB8201C4D9000944CDF /* HYDateHandle.m in Sources */,
 				0470F1FE1FC6ABB3009EDCD2 /* HYBankCardModel.m in Sources */,
 				3E7FE4521FB5A1E900498FC2 /* HYMyWalletModel.m in Sources */,
+				386FBD95201C4D9000944CDF /* HYSetPwdViewController.m in Sources */,
 				3E7FE3CB1FB1ABEE00498FC2 /* HYBandPhoneVC.m in Sources */,
 				042C22F41FD14E3000DFD274 /* UILabel+HYCopy.m in Sources */,
+				386FBD58201C4D9000944CDF /* HYMyTeamViewController.m in Sources */,
 				3E7FE3E91FB2D7A700498FC2 /* HYSetDispoitPwdVC.m in Sources */,
+				386FBD98201C4D9000944CDF /* HYWalletViewController.m in Sources */,
 				3E0FDF291FA9647900F52DC0 /* main.m in Sources */,
 				3E7FE4041FB306FE00498FC2 /* HYSendAuthView.m in Sources */,
+				386FBD81201C4D9000944CDF /* HYJoinProtocolVC.m in Sources */,
 				3E7FE4411FB4408C00498FC2 /* HYSetDespoitView.m in Sources */,
+				386FBD7D201C4D9000944CDF /* HYReportViewModel.m in Sources */,
+				386FBD5F201C4D9000944CDF /* HYBankCardModel.m in Sources */,
+				386FBD9F201C4D9000944CDF /* HYTextFieldTableViewCell.m in Sources */,
 				3E7FE43D1FB43C5E00498FC2 /* HYAuthPhoneView.m in Sources */,
+				386FBDA1201C4D9000944CDF /* HYBindCardPhoneAuthView.m in Sources */,
 				042C225F1FCBFB6200DFD274 /* HYBindCardPhoneAuthView.m in Sources */,
 				3E0E6E591FAB06A600F058EB /* HYPlistTools.m in Sources */,
 				0468FDB51FBD63A400ACB4FA /* HYBankInfoTableViewCell.m in Sources */,
 				3E0E6E681FAC09EB00F058EB /* HYAuthViewController.m in Sources */,
 				3E0E6E5F1FABFC4F00F058EB /* HYNoAccessView.m in Sources */,
 				3E7654A71FBA8A0E0041218D /* HYCustomAlert.m in Sources */,
+				386FBDB9201C4D9000944CDF /* HYLabel.m in Sources */,
+				386FBD9A201C4D9000944CDF /* HYMyWalletModel.m in Sources */,
+				386FBD73201C4D9000944CDF /* HYHomeView.m in Sources */,
 				3E7FE3C51FB1A90A00498FC2 /* HYMyAccountTableViewCell.m in Sources */,
 				3E14D21E1FB0574B006CDF18 /* HYReportListViewController.m in Sources */,
 				0441DC6E1FFDD84C00944402 /* HYRecommendInfoModel.m in Sources */,
 				3E7654A21FBA89420041218D /* HYLogoutView.m in Sources */,
+				386FBD6C201C4D9000944CDF /* HYReportListCell.m in Sources */,
 				3E0E6E6B1FAC09F900F058EB /* HYMineViewController.m in Sources */,
 				0468FDC11FBD951B00ACB4FA /* HYBillModel.m in Sources */,
+				386FBD48201C4D9000944CDF /* NSArray+HYBUnicodeReadable.m in Sources */,
 				3E0E6E711FAC0A1100F058EB /* HYWalletViewController.m in Sources */,
 				0411FBB61FFF1188006725FC /* HYShareHandle.m in Sources */,
+				386FBD56201C4D9000944CDF /* HYInfomationVC.m in Sources */,
 				3E14D2211FB05795006CDF18 /* HYReportDetailViewController.m in Sources */,
+				386FBDC0201C4D9000944CDF /* SAMTextView.m in Sources */,
 				3E0E6E4C1FAAF4AD00F058EB /* HYHomeBottomView.m in Sources */,
 				04D5F49D1FBFE914005F868F /* HYTeamMemberModel.m in Sources */,
 				3E14D21B1FB04831006CDF18 /* HYReportSelectCellModel.m in Sources */,
 				04D5F4F11FC2F4E3005F868F /* HYRecommendViewModel.m in Sources */,
+				386FBD8B201C4D9000944CDF /* HYSelectInfoHeaderView.m in Sources */,
+				386FBD94201C4D9000944CDF /* HYSetLoginPwdViewController.m in Sources */,
 				3ECF11EE1FB94E6100534544 /* HYReportListHeaderView.m in Sources */,
 				3E7FE3C81FB1A93A00498FC2 /* HYSetUserNameVC.m in Sources */,
+				386FBD6A201C4D9000944CDF /* HYReportAllAmountCell.m in Sources */,
 				042572611FC416B00040A10A /* HYLabel.m in Sources */,
+				386FBD61201C4D9000944CDF /* HYRecommendInfoModel.m in Sources */,
+				386FBDAF201C4D9000944CDF /* HYNetWorkStateManager.m in Sources */,
 				3E95E1EE1FA9BF1900995AB2 /* HYLoginViewModel.m in Sources */,
 				3E95E1E81FA9ADCA00995AB2 /* HYBaseNavController.m in Sources */,
+				386FBD8A201C4D9000944CDF /* HYSelectInfoBtnView.m in Sources */,
 				3E7654991FB9B4CF0041218D /* HYReportModel.m in Sources */,
+				386FBDB1201C4D9000944CDF /* HYUserRequestHandle.m in Sources */,
 				3E7FE3D41FB2A64400498FC2 /* HYMyWalletHeaderCell.m in Sources */,
 				3E76549C1FB9BA340041218D /* HYReportCellViewModel.m in Sources */,
 				3E7FE3E31FB2D6AA00498FC2 /* HYDispoitView.m in Sources */,
+				386FBD96201C4D9000944CDF /* HYSetUserNameVC.m in Sources */,
 				3E95E1E51FA9ADA600995AB2 /* HYLoginViewController.m in Sources */,
+				386FBDB7201C4D9000944CDF /* HYCustomAlert.m in Sources */,
 				04D5F4EB1FC2CED5005F868F /* HYRecommendBottomView.m in Sources */,
+				386FBDAB201C4D9000944CDF /* HYMyWalletViewModel.m in Sources */,
 				3E0E6E651FAC09E000F058EB /* HYBankCardViewController.m in Sources */,
 				3E14D2121FB036CF006CDF18 /* HYReportAllOrderCell.m in Sources */,
+				386FBD87201C4D9000944CDF /* HYLoginView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

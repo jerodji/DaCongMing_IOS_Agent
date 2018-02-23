@@ -565,7 +565,7 @@
       }
    }];
 }
-
+//推荐合伙人
 + (void)recommendParterWithDict:(NSDictionary *)dict ComplectionBlock:(void (^)(BOOL))complection{
    
    NSMutableDictionary *param = [NSMutableDictionary dictionary];

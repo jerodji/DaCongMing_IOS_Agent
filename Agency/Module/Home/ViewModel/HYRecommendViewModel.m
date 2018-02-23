@@ -129,7 +129,7 @@
         [dict setValue:_phoneNum forKey:@"payer_phoneNum"];
 
     }
-    
+    //推荐合伙人
     [HYUserRequestHandle recommendParterWithDict:dict ComplectionBlock:^(BOOL isSuccess) {
        
         if (isSuccess) {

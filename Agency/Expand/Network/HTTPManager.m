@@ -123,7 +123,7 @@
             
             [MBProgressHUD hidePregressHUD:KEYWINDOW];
         }
-        [JRToast showWithText:@"服务器云游四方去了"];
+//        [JRToast showWithText:@"服务器云游四方去了"];
         //successBlock(nil);
     }];
 }

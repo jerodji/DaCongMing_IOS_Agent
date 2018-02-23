@@ -10,7 +10,7 @@
 
 @interface HYHomeHeaderView : UIView
 
-/** 图像 */
+/** 头像图像 */
 @property (nonatomic,strong) UIImageView *headerImgView;
 /** 昵称 */
 @property (nonatomic,strong) UILabel *nickNameLabel;
@@ -20,5 +20,7 @@
 @property (nonatomic,strong) UIButton *myTeamsBtn;
 /** money */
 @property (nonatomic,strong) UILabel *moneyLabel;
+/* 身份认证 图片 */
+@property (nonatomic,strong) UIImageView * roleImgView;
 
 @end

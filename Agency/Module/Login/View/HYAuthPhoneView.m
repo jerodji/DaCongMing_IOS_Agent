@@ -94,7 +94,7 @@
 - (void)passwordCompleteInput:(HYPasswordView *)passwordView{
     
     NSString *authCode = passwordView.passwordString;
-    DLog(@"%@",authCode);
+    NSLog(@"%@",authCode);
     self.viewModel.authCode = authCode;
     [self.viewModel verifyAuthCodeAction];
 }

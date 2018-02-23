@@ -55,7 +55,7 @@
         req.scene = WXSceneTimeline;
     }
     [WXApi sendReq:req];
-    DLog(@"%d",[WXApi sendReq:req]);
+    NSLog(@"%d",[WXApi sendReq:req]);
 }
 
 @end

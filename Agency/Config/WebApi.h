@@ -13,17 +13,17 @@
 #define WXAppID                 @"wx7520b242e7e6776c"
 #define TencentBuglyID          @"62a0980d1e"
 #define QIYUAPPID               @"c8f8ca70f45342c288cb2e23e0c6b600"
-#define RONGCLOUD_IM_APPKEY     @"bmdehs6pb1jrs"
+#define RONGCLOUD_IM_APPKEY     @"pkfcgjstp2yo8" //bmdehs6pb1jrs
 
 
 
 
 /** ------------------------------网络接口------------------------------- */
 //正式服务器
-//#define API_DomainStr           @"https://www.laopdr.cn"
+#define API_DomainStr           @"https://www.laopdr.cn"
 
 //测试服务器
-#define API_DomainStr           @"http://116.62.118.249"
+//#define API_DomainStr           @"http://116.62.118.249"
 
 /********************************用户相关*********************************/
 #pragma mark - 用户相关
@@ -54,6 +54,7 @@
 //绑定银行卡
 #define API_BindBankCard           @"HAILIN_AGENT_SERVER/bankCardBundling.do"
 
+#define API_bankCardUnbund   @"HAILIN_AGENT_SERVER/bankCardUnbund.do"
 
 //设置提现密码
 #define API_SetDepositPassword           @"HAILIN_AGENT_SERVER/setWithdrawCashPwd.do"
@@ -84,6 +85,7 @@
 
 //获取推荐信息
 #define API_RecommendData           @"HAILIN_AGENT_SERVER/getAgentInfo.do"
+
 
 
 #pragma mark - 融云

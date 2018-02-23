@@ -29,18 +29,18 @@
         switch (status) {
             case AFNetworkReachabilityStatusUnknown:
                 
-                DLog(@"未知网络");
+                NSLog(@"未知网络");
                 break;
             case AFNetworkReachabilityStatusNotReachable:
-                DLog(@"--------没有网络-------");
+                NSLog(@"--------没有网络-------");
                 [JRToast showWithText:@"无网络连接"];
                 break;
             case AFNetworkReachabilityStatusReachableViaWWAN:
-                DLog(@"--------移动数据-------");
+                NSLog(@"--------移动数据-------");
                 [JRToast showWithText:@"网络状态发生变化，切换到移动数据"];
                 break;
             case AFNetworkReachabilityStatusReachableViaWiFi:
-                DLog(@"--------WiFi环境-------");
+                NSLog(@"--------WiFi环境-------");
                 break;
             default:
                 break;

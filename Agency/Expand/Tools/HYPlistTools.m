@@ -17,10 +17,10 @@
     
     BOOL isWrite = [dataArray writeToFile:filePath atomically:YES];
     if (isWrite) {
-        DLog(@"%@写入成功",plistName);
+        NSLog(@"%@写入成功",plistName);
     }
     else{
-        DLog(@"%@写入失败",plistName);
+        NSLog(@"%@写入失败",plistName);
     }
 }
 
@@ -30,10 +30,10 @@
     NSString *filePath = [KCACHE_PATH stringByAppendingPathComponent:namePath];
     BOOL isSuccess = [NSKeyedArchiver archiveRootObject:object toFile:filePath];
     if (isSuccess) {
-        DLog(@"%@归档成功",name);
+        NSLog(@"%@归档成功",name);
     }
     else{
-        DLog(@"%@归档失败",name);
+        NSLog(@"%@归档失败",name);
     }
 }
 
@@ -87,11 +87,11 @@
     NSError *error;
     if ([manager removeItemAtPath:filePath error:&error]) {
         
-        DLog(@"删除信息成功");
+        NSLog(@"删除信息成功");
     }
     else{
         
-        DLog(@"删除失败:%@",error.description);
+        NSLog(@"删除失败:%@",error.description);
     }
     
 }

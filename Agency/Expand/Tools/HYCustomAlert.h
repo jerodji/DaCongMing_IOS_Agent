@@ -19,4 +19,6 @@ typedef void(^confirmActionBlcok)(void);
 
 - (void)showCustomAlert;
 
++ (void)removeAlert:(HYCustomAlert*)Alert;
+
 @end

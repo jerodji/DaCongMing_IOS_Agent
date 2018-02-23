@@ -60,8 +60,8 @@
         }
         else{
             
-            _titleArray = @[@"被推荐人ID",@"付款人姓名",@"付款账户",@"手机号码"];
-            _placeholderArray = @[@"请输入被推荐人ID",@"请输入付款人姓名",@"请输入付款账户",@"请输入手机号码"];
+            _titleArray = @[@"被推荐人ID"];//@[@"被推荐人ID",@"付款人姓名",@"付款账户",@"手机号码"];
+            _placeholderArray = @[@"请输入被推荐人ID"];//@[@"请输入被推荐人ID",@"请输入付款人姓名",@"请输入付款账户",@"请输入手机号码"];
         }
         
         [_tableView reloadData];
@@ -91,7 +91,7 @@
     [_bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
         
         make.left.right.bottom.equalTo(self.view);
-        make.height.mas_equalTo(170 * WIDTH_MULTIPLE);
+        make.height.mas_equalTo(90 * WIDTH_MULTIPLE); //170
     }];
     
     [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {

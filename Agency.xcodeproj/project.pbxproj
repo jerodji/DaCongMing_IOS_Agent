@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3811E1F520298C740008298D /* JJAlbumManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3811E1F420298C740008298D /* JJAlbumManager.m */; };
+		3811E1FD202995460008298D /* JJAlbumVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3811E1FC202995460008298D /* JJAlbumVC.m */; };
+		3811E20D2029BC4E0008298D /* JJTailorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3811E20C2029BC4D0008298D /* JJTailorManager.m */; };
+		3811E2102029BC7C0008298D /* JJTailorImgVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3811E20E2029BC7B0008298D /* JJTailorImgVC.m */; };
+		3811E2142029C9680008298D /* JJAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 3811E2132029C9680008298D /* JJAlert.m */; };
+		383EBB7A201F4E8100D1BAAA /* BusinessCardVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 383EBB79201F4E8100D1BAAA /* BusinessCardVC.m */; };
+		383EBB7D201F50F600D1BAAA /* BusinessCardModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 383EBB7C201F50F600D1BAAA /* BusinessCardModel.m */; };
+		383EBB8A201F57D800D1BAAA /* UIView+control.m in Sources */ = {isa = PBXBuildFile; fileRef = 383EBB81201F57D700D1BAAA /* UIView+control.m */; };
+		383EBB8B201F57D800D1BAAA /* UIView+viewFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 383EBB83201F57D700D1BAAA /* UIView+viewFrame.m */; };
+		383EBB8C201F57D800D1BAAA /* UIButton+parameter.m in Sources */ = {isa = PBXBuildFile; fileRef = 383EBB86201F57D700D1BAAA /* UIButton+parameter.m */; };
+		383EBB8D201F57D800D1BAAA /* NSObject+isNull.m in Sources */ = {isa = PBXBuildFile; fileRef = 383EBB89201F57D800D1BAAA /* NSObject+isNull.m */; };
+		3860546F2020066C0045D014 /* JJPublicDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = 3860546E2020066C0045D014 /* JJPublicDefine.m */; };
+		38605474202019A00045D014 /* CreateCardVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 38605473202019A00045D014 /* CreateCardVC.m */; };
 		386FBEF3201C4F7800944CDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 386FBDC2201C4F7800944CDF /* Assets.xcassets */; };
 		386FBEF4201C4F7800944CDF /* HTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBDC6201C4F7800944CDF /* HTTPManager.m */; };
 		386FBEF5201C4F7800944CDF /* HYNetWorkStateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBDC8201C4F7800944CDF /* HYNetWorkStateManager.m */; };
@@ -144,6 +157,12 @@
 		386FBF79201C4F7800944CDF /* NSDictionary+HYBUnicodeReadable.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBEEE201C4F7800944CDF /* NSDictionary+HYBUnicodeReadable.m */; };
 		386FBF7A201C4F7800944CDF /* NSSet+HYBUnicodeReadable.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBEF0201C4F7800944CDF /* NSSet+HYBUnicodeReadable.m */; };
 		386FBF7B201C4F7800944CDF /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBEF2201C4F7800944CDF /* Foundation+Log.m */; };
+		387C9ED420288C840038B15B /* BusinessCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 387C9ED320288C840038B15B /* BusinessCardView.m */; };
+		387C9EDE202891B70038B15B /* UIViewController+XIB.m in Sources */ = {isa = PBXBuildFile; fileRef = 387C9EDD202891B70038B15B /* UIViewController+XIB.m */; };
+		387C9EE1202892290038B15B /* UIView+loadXIB.m in Sources */ = {isa = PBXBuildFile; fileRef = 387C9EE0202892290038B15B /* UIView+loadXIB.m */; };
+		38A0CC542029430E007596FE /* UploadQrcodeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A0CC522029430E007596FE /* UploadQrcodeVC.m */; };
+		38A0CC552029430E007596FE /* UploadQrcodeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38A0CC532029430E007596FE /* UploadQrcodeVC.xib */; };
+		38A0CC5820294BBB007596FE /* QrButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A0CC5720294BBB007596FE /* QrButton.m */; };
 		3E95E1F81FAAC44C00995AB2 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E95E1F71FAAC44B00995AB2 /* libz.tbd */; };
 		3E95E1FA1FAAC45500995AB2 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E95E1F91FAAC45500995AB2 /* libc++.tbd */; };
 		3E95E1FC1FAAC45E00995AB2 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E95E1FB1FAAC45E00995AB2 /* SystemConfiguration.framework */; };
@@ -161,6 +180,32 @@
 /* Begin PBXFileReference section */
 		04D5F4A11FBFFE5D005F868F /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		20B531B14B9717DA796BB8D4 /* libPods-Agency.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Agency.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3811E1F320298C740008298D /* JJAlbumManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JJAlbumManager.h; sourceTree = "<group>"; };
+		3811E1F420298C740008298D /* JJAlbumManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JJAlbumManager.m; sourceTree = "<group>"; };
+		3811E1FB202995460008298D /* JJAlbumVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JJAlbumVC.h; sourceTree = "<group>"; };
+		3811E1FC202995460008298D /* JJAlbumVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JJAlbumVC.m; sourceTree = "<group>"; };
+		3811E20B2029BC4C0008298D /* JJTailorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJTailorManager.h; sourceTree = "<group>"; };
+		3811E20C2029BC4D0008298D /* JJTailorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJTailorManager.m; sourceTree = "<group>"; };
+		3811E20E2029BC7B0008298D /* JJTailorImgVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJTailorImgVC.m; sourceTree = "<group>"; };
+		3811E20F2029BC7C0008298D /* JJTailorImgVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJTailorImgVC.h; sourceTree = "<group>"; };
+		3811E2122029C9680008298D /* JJAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJAlert.h; sourceTree = "<group>"; };
+		3811E2132029C9680008298D /* JJAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJAlert.m; sourceTree = "<group>"; };
+		383EBB78201F4E8100D1BAAA /* BusinessCardVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BusinessCardVC.h; sourceTree = "<group>"; };
+		383EBB79201F4E8100D1BAAA /* BusinessCardVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BusinessCardVC.m; sourceTree = "<group>"; };
+		383EBB7B201F50F600D1BAAA /* BusinessCardModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BusinessCardModel.h; sourceTree = "<group>"; };
+		383EBB7C201F50F600D1BAAA /* BusinessCardModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BusinessCardModel.m; sourceTree = "<group>"; };
+		383EBB80201F57D700D1BAAA /* UIView+control.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+control.h"; sourceTree = "<group>"; };
+		383EBB81201F57D700D1BAAA /* UIView+control.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+control.m"; sourceTree = "<group>"; };
+		383EBB82201F57D700D1BAAA /* UIView+viewFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+viewFrame.h"; sourceTree = "<group>"; };
+		383EBB83201F57D700D1BAAA /* UIView+viewFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+viewFrame.m"; sourceTree = "<group>"; };
+		383EBB85201F57D700D1BAAA /* UIButton+parameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+parameter.h"; sourceTree = "<group>"; };
+		383EBB86201F57D700D1BAAA /* UIButton+parameter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+parameter.m"; sourceTree = "<group>"; };
+		383EBB88201F57D800D1BAAA /* NSObject+isNull.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+isNull.h"; sourceTree = "<group>"; };
+		383EBB89201F57D800D1BAAA /* NSObject+isNull.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+isNull.m"; sourceTree = "<group>"; };
+		3860546D2020066C0045D014 /* JJPublicDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JJPublicDefine.h; sourceTree = "<group>"; };
+		3860546E2020066C0045D014 /* JJPublicDefine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JJPublicDefine.m; sourceTree = "<group>"; };
+		38605472202019A00045D014 /* CreateCardVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CreateCardVC.h; sourceTree = "<group>"; };
+		38605473202019A00045D014 /* CreateCardVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CreateCardVC.m; sourceTree = "<group>"; };
 		386FBDC2201C4F7800944CDF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		386FBDC5201C4F7800944CDF /* HTTPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPManager.h; sourceTree = "<group>"; };
 		386FBDC6201C4F7800944CDF /* HTTPManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPManager.m; sourceTree = "<group>"; };
@@ -433,6 +478,17 @@
 		386FBEEF201C4F7800944CDF /* NSSet+HYBUnicodeReadable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSSet+HYBUnicodeReadable.h"; sourceTree = "<group>"; };
 		386FBEF0201C4F7800944CDF /* NSSet+HYBUnicodeReadable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSSet+HYBUnicodeReadable.m"; sourceTree = "<group>"; };
 		386FBEF2201C4F7800944CDF /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
+		387C9ED220288C840038B15B /* BusinessCardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BusinessCardView.h; sourceTree = "<group>"; };
+		387C9ED320288C840038B15B /* BusinessCardView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BusinessCardView.m; sourceTree = "<group>"; };
+		387C9EDC202891B70038B15B /* UIViewController+XIB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+XIB.h"; sourceTree = "<group>"; };
+		387C9EDD202891B70038B15B /* UIViewController+XIB.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+XIB.m"; sourceTree = "<group>"; };
+		387C9EDF202892280038B15B /* UIView+loadXIB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+loadXIB.h"; sourceTree = "<group>"; };
+		387C9EE0202892290038B15B /* UIView+loadXIB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+loadXIB.m"; sourceTree = "<group>"; };
+		38A0CC512029430E007596FE /* UploadQrcodeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UploadQrcodeVC.h; sourceTree = "<group>"; };
+		38A0CC522029430E007596FE /* UploadQrcodeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UploadQrcodeVC.m; sourceTree = "<group>"; };
+		38A0CC532029430E007596FE /* UploadQrcodeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UploadQrcodeVC.xib; sourceTree = "<group>"; };
+		38A0CC5620294BBB007596FE /* QrButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QrButton.h; sourceTree = "<group>"; };
+		38A0CC5720294BBB007596FE /* QrButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QrButton.m; sourceTree = "<group>"; };
 		3E0FDF161FA9647500F52DC0 /* Agency.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Agency.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E95E1F51FAAC43D00995AB2 /* libc++.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.1.tbd"; path = "usr/lib/libc++.1.tbd"; sourceTree = SDKROOT; };
 		3E95E1F71FAAC44B00995AB2 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
@@ -495,9 +551,161 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		3811E1F2202984FB0008298D /* photo(相册) */ = {
+			isa = PBXGroup;
+			children = (
+				3811E1FB202995460008298D /* JJAlbumVC.h */,
+				3811E1FC202995460008298D /* JJAlbumVC.m */,
+				3811E1F320298C740008298D /* JJAlbumManager.h */,
+				3811E1F420298C740008298D /* JJAlbumManager.m */,
+			);
+			path = "photo(相册)";
+			sourceTree = "<group>";
+		};
+		3811E20A2029AC5D0008298D /* Tailor(裁剪) */ = {
+			isa = PBXGroup;
+			children = (
+				3811E20F2029BC7C0008298D /* JJTailorImgVC.h */,
+				3811E20E2029BC7B0008298D /* JJTailorImgVC.m */,
+				3811E20B2029BC4C0008298D /* JJTailorManager.h */,
+				3811E20C2029BC4D0008298D /* JJTailorManager.m */,
+			);
+			path = "Tailor(裁剪)";
+			sourceTree = "<group>";
+		};
+		3811E2112029BEBC0008298D /* Adapter */ = {
+			isa = PBXGroup;
+			children = (
+				38A0CC5620294BBB007596FE /* QrButton.h */,
+				38A0CC5720294BBB007596FE /* QrButton.m */,
+			);
+			path = Adapter;
+			sourceTree = "<group>";
+		};
+		3811E215202A940D0008298D /* BankCard(银行卡) */ = {
+			isa = PBXGroup;
+			children = (
+				386FBE24201C4F7800944CDF /* HYBankCardViewController.h */,
+				386FBE25201C4F7800944CDF /* HYBankCardViewController.m */,
+				386FBE49201C4F7800944CDF /* HYBankInfoTableViewCell.h */,
+				386FBE4A201C4F7800944CDF /* HYBankInfoTableViewCell.m */,
+				386FBE70201C4F7800944CDF /* HYBankCardCellModel.h */,
+				386FBE71201C4F7800944CDF /* HYBankCardCellModel.m */,
+				386FBE3B201C4F7800944CDF /* HYBankCardModel.h */,
+				386FBE3C201C4F7800944CDF /* HYBankCardModel.m */,
+			);
+			path = "BankCard(银行卡)";
+			sourceTree = "<group>";
+		};
+		3811E217202A9A4B0008298D /* 实名认证(添加银行卡) */ = {
+			isa = PBXGroup;
+			children = (
+				386FBEB5201C4F7800944CDF /* HYUploadIDCardViewController.h */,
+				386FBEB6201C4F7800944CDF /* HYUploadIDCardViewController.m */,
+				386FBEC8201C4F7800944CDF /* HYTextFieldTableViewCell.h */,
+				386FBEC9201C4F7800944CDF /* HYTextFieldTableViewCell.m */,
+				386FBEE5201C4F7800944CDF /* HYUploadIDCardViewModel.h */,
+				386FBEE6201C4F7800944CDF /* HYUploadIDCardViewModel.m */,
+				386FBECC201C4F7800944CDF /* HYBindCardPhoneAuthView.h */,
+				386FBECD201C4F7800944CDF /* HYBindCardPhoneAuthView.m */,
+				386FBE22201C4F7800944CDF /* HYAuthViewController.h */,
+				386FBE23201C4F7800944CDF /* HYAuthViewController.m */,
+			);
+			path = "实名认证(添加银行卡)";
+			sourceTree = "<group>";
+		};
+		3811E218202AA3810008298D /* Wallet(钱包) */ = {
+			isa = PBXGroup;
+			children = (
+				386FBEB7201C4F7800944CDF /* HYWalletViewController.h */,
+				386FBEB8201C4F7800944CDF /* HYWalletViewController.m */,
+				386FBEE1201C4F7800944CDF /* HYMyWalletViewModel.h */,
+				386FBEE2201C4F7800944CDF /* HYMyWalletViewModel.m */,
+				386FBEBC201C4F7800944CDF /* HYMyWalletModel.h */,
+				386FBEBD201C4F7800944CDF /* HYMyWalletModel.m */,
+				38E0E255202D4C23003266FA /* Deposit(提现) */,
+			);
+			path = "Wallet(钱包)";
+			sourceTree = "<group>";
+		};
+		383EBB77201F4D1D00D1BAAA /* BusinessCard(名片) */ = {
+			isa = PBXGroup;
+			children = (
+				387C9ED520288E040038B15B /* 上传二维码 */,
+				38605471202018380045D014 /* 生成名片 */,
+				38605470202018240045D014 /* 名片 */,
+			);
+			path = "BusinessCard(名片)";
+			sourceTree = "<group>";
+		};
+		383EBB7E201F57AC00D1BAAA /* category */ = {
+			isa = PBXGroup;
+			children = (
+				387C9EDB2028918C0038B15B /* viewController */,
+				383EBB84201F57D700D1BAAA /* ButtonParams */,
+				383EBB87201F57D800D1BAAA /* Object */,
+				383EBB7F201F57D700D1BAAA /* View */,
+			);
+			path = category;
+			sourceTree = "<group>";
+		};
+		383EBB7F201F57D700D1BAAA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				387C9EDF202892280038B15B /* UIView+loadXIB.h */,
+				387C9EE0202892290038B15B /* UIView+loadXIB.m */,
+				383EBB80201F57D700D1BAAA /* UIView+control.h */,
+				383EBB81201F57D700D1BAAA /* UIView+control.m */,
+				383EBB82201F57D700D1BAAA /* UIView+viewFrame.h */,
+				383EBB83201F57D700D1BAAA /* UIView+viewFrame.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		383EBB84201F57D700D1BAAA /* ButtonParams */ = {
+			isa = PBXGroup;
+			children = (
+				383EBB85201F57D700D1BAAA /* UIButton+parameter.h */,
+				383EBB86201F57D700D1BAAA /* UIButton+parameter.m */,
+			);
+			path = ButtonParams;
+			sourceTree = "<group>";
+		};
+		383EBB87201F57D800D1BAAA /* Object */ = {
+			isa = PBXGroup;
+			children = (
+				383EBB88201F57D800D1BAAA /* NSObject+isNull.h */,
+				383EBB89201F57D800D1BAAA /* NSObject+isNull.m */,
+			);
+			path = Object;
+			sourceTree = "<group>";
+		};
+		38605470202018240045D014 /* 名片 */ = {
+			isa = PBXGroup;
+			children = (
+				383EBB78201F4E8100D1BAAA /* BusinessCardVC.h */,
+				383EBB79201F4E8100D1BAAA /* BusinessCardVC.m */,
+				383EBB7B201F50F600D1BAAA /* BusinessCardModel.h */,
+				383EBB7C201F50F600D1BAAA /* BusinessCardModel.m */,
+				387C9ED220288C840038B15B /* BusinessCardView.h */,
+				387C9ED320288C840038B15B /* BusinessCardView.m */,
+			);
+			path = "名片";
+			sourceTree = "<group>";
+		};
+		38605471202018380045D014 /* 生成名片 */ = {
+			isa = PBXGroup;
+			children = (
+				38605472202019A00045D014 /* CreateCardVC.h */,
+				38605473202019A00045D014 /* CreateCardVC.m */,
+			);
+			path = "生成名片";
+			sourceTree = "<group>";
+		};
 		386FBDC3201C4F7800944CDF /* Expand */ = {
 			isa = PBXGroup;
 			children = (
+				383EBB7E201F57AC00D1BAAA /* category */,
 				386FBDC4201C4F7800944CDF /* Network */,
 				386FBDCF201C4F7800944CDF /* Resource */,
 				386FBDD1201C4F7800944CDF /* Security */,
@@ -546,6 +754,8 @@
 		386FBDD7201C4F7800944CDF /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				3811E2122029C9680008298D /* JJAlert.h */,
+				3811E2132029C9680008298D /* JJAlert.m */,
 				386FBDD8201C4F7800944CDF /* HYButton.h */,
 				386FBDD9201C4F7800944CDF /* HYButton.m */,
 				386FBDDA201C4F7800944CDF /* HYCustomAlert.h */,
@@ -610,11 +820,13 @@
 		386FBE07201C4F7800944CDF /* Config */ = {
 			isa = PBXGroup;
 			children = (
+				386FBE0B201C4F7800944CDF /* PrefixHeader.pch */,
 				386FBE08201C4F7800944CDF /* Const.h */,
 				386FBE09201C4F7800944CDF /* Const.m */,
 				386FBE0A201C4F7800944CDF /* Macro.h */,
-				386FBE0B201C4F7800944CDF /* PrefixHeader.pch */,
 				386FBE0C201C4F7800944CDF /* WebApi.h */,
+				3860546D2020066C0045D014 /* JJPublicDefine.h */,
+				3860546E2020066C0045D014 /* JJPublicDefine.m */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -622,6 +834,7 @@
 		386FBE0D201C4F7800944CDF /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				383EBB77201F4D1D00D1BAAA /* BusinessCard(名片) */,
 				386FBE0E201C4F7800944CDF /* Common */,
 				386FBE20201C4F7800944CDF /* Home */,
 				386FBE7C201C4F7800944CDF /* Login */,
@@ -678,6 +891,9 @@
 		386FBE20201C4F7800944CDF /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				3811E218202AA3810008298D /* Wallet(钱包) */,
+				3811E215202A940D0008298D /* BankCard(银行卡) */,
+				3811E217202A9A4B0008298D /* 实名认证(添加银行卡) */,
 				386FBE21201C4F7800944CDF /* Controller */,
 				386FBE3A201C4F7800944CDF /* Model */,
 				386FBE47201C4F7800944CDF /* View */,
@@ -689,10 +905,6 @@
 		386FBE21201C4F7800944CDF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				386FBE22201C4F7800944CDF /* HYAuthViewController.h */,
-				386FBE23201C4F7800944CDF /* HYAuthViewController.m */,
-				386FBE24201C4F7800944CDF /* HYBankCardViewController.h */,
-				386FBE25201C4F7800944CDF /* HYBankCardViewController.m */,
 				386FBE26201C4F7800944CDF /* HYHomePageViewController.h */,
 				386FBE27201C4F7800944CDF /* HYHomePageViewController.m */,
 				386FBE28201C4F7800944CDF /* HYInfomationVC.h */,
@@ -720,8 +932,6 @@
 		386FBE3A201C4F7800944CDF /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				386FBE3B201C4F7800944CDF /* HYBankCardModel.h */,
-				386FBE3C201C4F7800944CDF /* HYBankCardModel.m */,
 				386FBE3D201C4F7800944CDF /* HYInfomationDetailModel.h */,
 				386FBE3E201C4F7800944CDF /* HYInfomationDetailModel.m */,
 				386FBE3F201C4F7800944CDF /* HYRecommendInfoModel.h */,
@@ -740,16 +950,16 @@
 			isa = PBXGroup;
 			children = (
 				386FBE48201C4F7800944CDF /* Cell */,
-				386FBE5D201C4F7800944CDF /* HYHomeBottomView.h */,
-				386FBE5E201C4F7800944CDF /* HYHomeBottomView.m */,
-				386FBE5F201C4F7800944CDF /* HYHomeBtnView.h */,
-				386FBE60201C4F7800944CDF /* HYHomeBtnView.m */,
-				386FBE61201C4F7800944CDF /* HYHomeHeaderView.h */,
-				386FBE62201C4F7800944CDF /* HYHomeHeaderView.m */,
-				386FBE63201C4F7800944CDF /* HYHomeMiddleView.h */,
-				386FBE64201C4F7800944CDF /* HYHomeMiddleView.m */,
 				386FBE65201C4F7800944CDF /* HYHomeView.h */,
 				386FBE66201C4F7800944CDF /* HYHomeView.m */,
+				386FBE61201C4F7800944CDF /* HYHomeHeaderView.h */,
+				386FBE62201C4F7800944CDF /* HYHomeHeaderView.m */,
+				386FBE5F201C4F7800944CDF /* HYHomeBtnView.h */,
+				386FBE60201C4F7800944CDF /* HYHomeBtnView.m */,
+				386FBE5D201C4F7800944CDF /* HYHomeBottomView.h */,
+				386FBE5E201C4F7800944CDF /* HYHomeBottomView.m */,
+				386FBE63201C4F7800944CDF /* HYHomeMiddleView.h */,
+				386FBE64201C4F7800944CDF /* HYHomeMiddleView.m */,
 				386FBE67201C4F7800944CDF /* HYMyTeamHeaderView.h */,
 				386FBE68201C4F7800944CDF /* HYMyTeamHeaderView.m */,
 				386FBE69201C4F7800944CDF /* HYNoAccessView.h */,
@@ -765,8 +975,6 @@
 		386FBE48201C4F7800944CDF /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				386FBE49201C4F7800944CDF /* HYBankInfoTableViewCell.h */,
-				386FBE4A201C4F7800944CDF /* HYBankInfoTableViewCell.m */,
 				386FBE4B201C4F7800944CDF /* HYBaseTableViewCell.h */,
 				386FBE4C201C4F7800944CDF /* HYBaseTableViewCell.m */,
 				386FBE4D201C4F7800944CDF /* HYInfoTableViewCell.h */,
@@ -792,8 +1000,6 @@
 		386FBE6F201C4F7800944CDF /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				386FBE70201C4F7800944CDF /* HYBankCardCellModel.h */,
-				386FBE71201C4F7800944CDF /* HYBankCardCellModel.m */,
 				386FBE72201C4F7800944CDF /* HYHomeViewModel.h */,
 				386FBE73201C4F7800944CDF /* HYHomeViewModel.m */,
 				386FBE74201C4F7800944CDF /* HYRecommendViewModel.h */,
@@ -897,24 +1103,14 @@
 				386FBEA4201C4F7800944CDF /* HYAboutUSViewController.m */,
 				386FBEA5201C4F7800944CDF /* HYBillVC.h */,
 				386FBEA6201C4F7800944CDF /* HYBillVC.m */,
-				386FBEA7201C4F7800944CDF /* HYDepositVC.h */,
-				386FBEA8201C4F7800944CDF /* HYDepositVC.m */,
-				386FBEA9201C4F7800944CDF /* HYDepositWaitViewController.h */,
-				386FBEAA201C4F7800944CDF /* HYDepositWaitViewController.m */,
 				386FBEAB201C4F7800944CDF /* HYMineViewController.h */,
 				386FBEAC201C4F7800944CDF /* HYMineViewController.m */,
-				386FBEAD201C4F7800944CDF /* HYSetDispoitPwdVC.h */,
-				386FBEAE201C4F7800944CDF /* HYSetDispoitPwdVC.m */,
 				386FBEAF201C4F7800944CDF /* HYSetLoginPwdViewController.h */,
 				386FBEB0201C4F7800944CDF /* HYSetLoginPwdViewController.m */,
 				386FBEB1201C4F7800944CDF /* HYSetPwdViewController.h */,
 				386FBEB2201C4F7800944CDF /* HYSetPwdViewController.m */,
 				386FBEB3201C4F7800944CDF /* HYSetUserNameVC.h */,
 				386FBEB4201C4F7800944CDF /* HYSetUserNameVC.m */,
-				386FBEB5201C4F7800944CDF /* HYUploadIDCardViewController.h */,
-				386FBEB6201C4F7800944CDF /* HYUploadIDCardViewController.m */,
-				386FBEB7201C4F7800944CDF /* HYWalletViewController.h */,
-				386FBEB8201C4F7800944CDF /* HYWalletViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -924,8 +1120,6 @@
 			children = (
 				386FBEBA201C4F7800944CDF /* HYBillModel.h */,
 				386FBEBB201C4F7800944CDF /* HYBillModel.m */,
-				386FBEBC201C4F7800944CDF /* HYMyWalletModel.h */,
-				386FBEBD201C4F7800944CDF /* HYMyWalletModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -936,24 +1130,10 @@
 				386FBEBF201C4F7800944CDF /* Cell */,
 				386FBECA201C4F7800944CDF /* HYBillHeaderVIew.h */,
 				386FBECB201C4F7800944CDF /* HYBillHeaderVIew.m */,
-				386FBECC201C4F7800944CDF /* HYBindCardPhoneAuthView.h */,
-				386FBECD201C4F7800944CDF /* HYBindCardPhoneAuthView.m */,
-				386FBECE201C4F7800944CDF /* HYDepositWaitView.h */,
-				386FBECF201C4F7800944CDF /* HYDepositWaitView.m */,
-				386FBED0201C4F7800944CDF /* HYDispoitHeaderView.h */,
-				386FBED1201C4F7800944CDF /* HYDispoitHeaderView.m */,
-				386FBED2201C4F7800944CDF /* HYDispoitView.h */,
-				386FBED3201C4F7800944CDF /* HYDispoitView.m */,
-				386FBED4201C4F7800944CDF /* HYInputDepositPwdView.h */,
-				386FBED5201C4F7800944CDF /* HYInputDepositPwdView.m */,
 				386FBED6201C4F7800944CDF /* HYSendAuthCodeView.h */,
 				386FBED7201C4F7800944CDF /* HYSendAuthCodeView.m */,
 				386FBED8201C4F7800944CDF /* HYSendAuthView.h */,
 				386FBED9201C4F7800944CDF /* HYSendAuthView.m */,
-				386FBEDA201C4F7800944CDF /* HYSetDepositTipsView.h */,
-				386FBEDB201C4F7800944CDF /* HYSetDepositTipsView.m */,
-				386FBEDC201C4F7800944CDF /* HYSetDespoitView.h */,
-				386FBEDD201C4F7800944CDF /* HYSetDespoitView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -969,8 +1149,6 @@
 				386FBEC5201C4F7800944CDF /* HYMyAccountTableViewCell.m */,
 				386FBEC6201C4F7800944CDF /* HYMyWalletHeaderCell.h */,
 				386FBEC7201C4F7800944CDF /* HYMyWalletHeaderCell.m */,
-				386FBEC8201C4F7800944CDF /* HYTextFieldTableViewCell.h */,
-				386FBEC9201C4F7800944CDF /* HYTextFieldTableViewCell.m */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -978,14 +1156,6 @@
 		386FBEDE201C4F7800944CDF /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				386FBEDF201C4F7800944CDF /* HYDepositViewModel.h */,
-				386FBEE0201C4F7800944CDF /* HYDepositViewModel.m */,
-				386FBEE1201C4F7800944CDF /* HYMyWalletViewModel.h */,
-				386FBEE2201C4F7800944CDF /* HYMyWalletViewModel.m */,
-				386FBEE3201C4F7800944CDF /* HYSetDepositViewModel.h */,
-				386FBEE4201C4F7800944CDF /* HYSetDepositViewModel.m */,
-				386FBEE5201C4F7800944CDF /* HYUploadIDCardViewModel.h */,
-				386FBEE6201C4F7800944CDF /* HYUploadIDCardViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1022,10 +1192,86 @@
 			path = ShowChinese;
 			sourceTree = "<group>";
 		};
+		387C9ED520288E040038B15B /* 上传二维码 */ = {
+			isa = PBXGroup;
+			children = (
+				38A0CC512029430E007596FE /* UploadQrcodeVC.h */,
+				38A0CC522029430E007596FE /* UploadQrcodeVC.m */,
+				38A0CC532029430E007596FE /* UploadQrcodeVC.xib */,
+				3811E1F2202984FB0008298D /* photo(相册) */,
+				3811E20A2029AC5D0008298D /* Tailor(裁剪) */,
+				3811E2112029BEBC0008298D /* Adapter */,
+			);
+			path = "上传二维码";
+			sourceTree = "<group>";
+		};
+		387C9EDB2028918C0038B15B /* viewController */ = {
+			isa = PBXGroup;
+			children = (
+				387C9EDC202891B70038B15B /* UIViewController+XIB.h */,
+				387C9EDD202891B70038B15B /* UIViewController+XIB.m */,
+			);
+			path = viewController;
+			sourceTree = "<group>";
+		};
+		38981E93202D7EEF0056B369 /* Deposit */ = {
+			isa = PBXGroup;
+			children = (
+				386FBEA7201C4F7800944CDF /* HYDepositVC.h */,
+				386FBEA8201C4F7800944CDF /* HYDepositVC.m */,
+				386FBEA9201C4F7800944CDF /* HYDepositWaitViewController.h */,
+				386FBEAA201C4F7800944CDF /* HYDepositWaitViewController.m */,
+				386FBEDF201C4F7800944CDF /* HYDepositViewModel.h */,
+				386FBEE0201C4F7800944CDF /* HYDepositViewModel.m */,
+				386FBED2201C4F7800944CDF /* HYDispoitView.h */,
+				386FBED3201C4F7800944CDF /* HYDispoitView.m */,
+				386FBED0201C4F7800944CDF /* HYDispoitHeaderView.h */,
+				386FBED1201C4F7800944CDF /* HYDispoitHeaderView.m */,
+				386FBECE201C4F7800944CDF /* HYDepositWaitView.h */,
+				386FBECF201C4F7800944CDF /* HYDepositWaitView.m */,
+			);
+			path = Deposit;
+			sourceTree = "<group>";
+		};
+		38981E94202D812A0056B369 /* 输入密码 */ = {
+			isa = PBXGroup;
+			children = (
+				386FBED4201C4F7800944CDF /* HYInputDepositPwdView.h */,
+				386FBED5201C4F7800944CDF /* HYInputDepositPwdView.m */,
+			);
+			path = "输入密码";
+			sourceTree = "<group>";
+		};
+		38981E95202D81490056B369 /* SetDeposit(提现密码) */ = {
+			isa = PBXGroup;
+			children = (
+				386FBEAD201C4F7800944CDF /* HYSetDispoitPwdVC.h */,
+				386FBEAE201C4F7800944CDF /* HYSetDispoitPwdVC.m */,
+				386FBEDC201C4F7800944CDF /* HYSetDespoitView.h */,
+				386FBEDD201C4F7800944CDF /* HYSetDespoitView.m */,
+				386FBEE3201C4F7800944CDF /* HYSetDepositViewModel.h */,
+				386FBEE4201C4F7800944CDF /* HYSetDepositViewModel.m */,
+				386FBEDA201C4F7800944CDF /* HYSetDepositTipsView.h */,
+				386FBEDB201C4F7800944CDF /* HYSetDepositTipsView.m */,
+			);
+			path = "SetDeposit(提现密码)";
+			sourceTree = "<group>";
+		};
+		38E0E255202D4C23003266FA /* Deposit(提现) */ = {
+			isa = PBXGroup;
+			children = (
+				38981E93202D7EEF0056B369 /* Deposit */,
+				38981E94202D812A0056B369 /* 输入密码 */,
+				38981E95202D81490056B369 /* SetDeposit(提现密码) */,
+			);
+			path = "Deposit(提现)";
+			sourceTree = "<group>";
+		};
 		3E0FDF0D1FA9647400F52DC0 = {
 			isa = PBXGroup;
 			children = (
 				3E0FDF181FA9647500F52DC0 /* Agency */,
+				386FBE05201C4F7800944CDF /* main.m */,
 				3E0FDF171FA9647500F52DC0 /* Products */,
 				F75F3A5EF34243711C68A545 /* Pods */,
 				035B01D900B62BC3D76DC81D /* Frameworks */,
@@ -1049,7 +1295,6 @@
 				386FBDF0201C4F7800944CDF /* Base */,
 				386FBE07201C4F7800944CDF /* Config */,
 				386FBDC3201C4F7800944CDF /* Expand */,
-				386FBE05201C4F7800944CDF /* main.m */,
 				386FBE0D201C4F7800944CDF /* Module */,
 				386FBEE7201C4F7800944CDF /* Vendor */,
 			);
@@ -1094,9 +1339,9 @@
 		3E0FDF0E1FA9647400F52DC0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = HY;
+				CLASSPREFIX = "";
 				LastUpgradeCheck = 0900;
-				ORGANIZATIONNAME = "胡勇";
+				ORGANIZATIONNAME = Jerod;
 				TargetAttributes = {
 					3E0FDF151FA9647500F52DC0 = {
 						CreatedOnToolsVersion = 9.0;
@@ -1136,6 +1381,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				386FBEF3201C4F7800944CDF /* Assets.xcassets in Resources */,
+				38A0CC552029430E007596FE /* UploadQrcodeVC.xib in Resources */,
 				386FBEF9201C4F7800944CDF /* sms-received.caf in Resources */,
 				386FBF76201C4F7800944CDF /* AlipaySDK.bundle in Resources */,
 				386FBF11201C4F7800944CDF /* Info.plist in Resources */,
@@ -1209,10 +1455,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				383EBB7A201F4E8100D1BAAA /* BusinessCardVC.m in Sources */,
 				386FBEF4201C4F7800944CDF /* HTTPManager.m in Sources */,
 				386FBF48201C4F7800944CDF /* HYGuideViewController.m in Sources */,
 				386FBEF7201C4F7800944CDF /* HYUserRequestHandle.m in Sources */,
 				386FBF09201C4F7800944CDF /* HYBaseModel.m in Sources */,
+				3811E2102029BC7C0008298D /* JJTailorImgVC.m in Sources */,
 				386FBF78201C4F7800944CDF /* NSArray+HYBUnicodeReadable.m in Sources */,
 				386FBEFC201C4F7800944CDF /* HYButton.m in Sources */,
 				386FBF79201C4F7800944CDF /* NSDictionary+HYBUnicodeReadable.m in Sources */,
@@ -1227,9 +1475,12 @@
 				386FBF58201C4F7800944CDF /* HYDepositVC.m in Sources */,
 				386FBF66201C4F7800944CDF /* HYMyWalletHeaderCell.m in Sources */,
 				386FBF3C201C4F7800944CDF /* HYMyTeamHeaderView.m in Sources */,
+				3811E1FD202995460008298D /* JJAlbumVC.m in Sources */,
 				386FBF17201C4F7800944CDF /* UILabel+HYCopy.m in Sources */,
 				386FBF6D201C4F7800944CDF /* HYInputDepositPwdView.m in Sources */,
+				383EBB7D201F50F600D1BAAA /* BusinessCardModel.m in Sources */,
 				386FBF4A201C4F7800944CDF /* HYLoginViewController.m in Sources */,
+				38A0CC542029430E007596FE /* UploadQrcodeVC.m in Sources */,
 				386FBF47201C4F7800944CDF /* HYBandPhoneVC.m in Sources */,
 				386FBF1E201C4F7800944CDF /* HYInfomationVC.m in Sources */,
 				386FBF40201C4F7800944CDF /* HYBankCardCellModel.m in Sources */,
@@ -1254,14 +1505,18 @@
 				386FBF28201C4F7800944CDF /* HYInfomationDetailModel.m in Sources */,
 				386FBF0F201C4F7800944CDF /* AppDelegate+HYRongIM.m in Sources */,
 				386FBF64201C4F7800944CDF /* HYIconTitleCell.m in Sources */,
+				38A0CC5820294BBB007596FE /* QrButton.m in Sources */,
+				387C9ED420288C840038B15B /* BusinessCardView.m in Sources */,
 				386FBF50201C4F7800944CDF /* HYLogoutView.m in Sources */,
 				386FBF3B201C4F7800944CDF /* HYHomeView.m in Sources */,
 				386FBF69201C4F7800944CDF /* HYBindCardPhoneAuthView.m in Sources */,
+				3811E20D2029BC4E0008298D /* JJTailorManager.m in Sources */,
 				386FBF7A201C4F7800944CDF /* NSSet+HYBUnicodeReadable.m in Sources */,
 				386FBF03201C4F7800944CDF /* JRToast.m in Sources */,
 				386FBF57201C4F7800944CDF /* HYBillVC.m in Sources */,
 				386FBF46201C4F7800944CDF /* HYAuthPhoneVC.m in Sources */,
 				386FBF2F201C4F7800944CDF /* HYInfoTableViewCell.m in Sources */,
+				383EBB8B201F57D800D1BAAA /* UIView+viewFrame.m in Sources */,
 				386FBF53201C4F7800944CDF /* HYSelectInfoHeaderView.m in Sources */,
 				386FBF52201C4F7800944CDF /* HYSelectInfoBtnView.m in Sources */,
 				386FBF1D201C4F7800944CDF /* HYHomePageViewController.m in Sources */,
@@ -1276,6 +1531,7 @@
 				386FBF6B201C4F7800944CDF /* HYDispoitHeaderView.m in Sources */,
 				386FBF2C201C4F7800944CDF /* HYTeamMemberModel.m in Sources */,
 				386FBF49201C4F7800944CDF /* HYJoinProtocolVC.m in Sources */,
+				3811E1F520298C740008298D /* JJAlbumManager.m in Sources */,
 				386FBF4C201C4F7800944CDF /* HYUserModel.m in Sources */,
 				386FBF39201C4F7800944CDF /* HYHomeHeaderView.m in Sources */,
 				386FBF05201C4F7800944CDF /* RCIMDBManager.m in Sources */,
@@ -1283,20 +1539,25 @@
 				386FBF7B201C4F7800944CDF /* Foundation+Log.m in Sources */,
 				386FBF0D201C4F7800944CDF /* HYBaseViewModel.m in Sources */,
 				386FBF38201C4F7800944CDF /* HYHomeBtnView.m in Sources */,
+				3860546F2020066C0045D014 /* JJPublicDefine.m in Sources */,
 				386FBF42201C4F7800944CDF /* HYRecommendViewModel.m in Sources */,
 				386FBF71201C4F7800944CDF /* HYSetDespoitView.m in Sources */,
 				386FBF26201C4F7800944CDF /* HYTeamDetailViewController.m in Sources */,
 				386FBF51201C4F7800944CDF /* HYPasswordView.m in Sources */,
 				386FBF27201C4F7800944CDF /* HYBankCardModel.m in Sources */,
+				383EBB8A201F57D800D1BAAA /* UIView+control.m in Sources */,
 				386FBF5A201C4F7800944CDF /* HYMineViewController.m in Sources */,
 				386FBF2D201C4F7800944CDF /* HYBankInfoTableViewCell.m in Sources */,
 				386FBF75201C4F7800944CDF /* HYUploadIDCardViewModel.m in Sources */,
 				386FBF13201C4F7800944CDF /* Const.m in Sources */,
 				386FBF0C201C4F7800944CDF /* HYBaseViewController.m in Sources */,
+				383EBB8C201F57D800D1BAAA /* UIButton+parameter.m in Sources */,
+				387C9EDE202891B70038B15B /* UIViewController+XIB.m in Sources */,
 				386FBEFE201C4F7800944CDF /* HYDateHandle.m in Sources */,
 				386FBEF5201C4F7800944CDF /* HYNetWorkStateManager.m in Sources */,
 				386FBF43201C4F7800944CDF /* HYReportCellViewModel.m in Sources */,
 				386FBF0E201C4F7800944CDF /* HYTableViewModel.m in Sources */,
+				3811E2142029C9680008298D /* JJAlert.m in Sources */,
 				386FBF00201C4F7800944CDF /* HYPhoneInfo.m in Sources */,
 				386FBF6C201C4F7800944CDF /* HYDispoitView.m in Sources */,
 				386FBF22201C4F7800944CDF /* HYRecommendSuccessVC.m in Sources */,
@@ -1310,14 +1571,17 @@
 				386FBEFA201C4F7800944CDF /* DESECB.m in Sources */,
 				386FBF6F201C4F7800944CDF /* HYSendAuthView.m in Sources */,
 				386FBF10201C4F7800944CDF /* AppDelegate.m in Sources */,
+				383EBB8D201F57D800D1BAAA /* NSObject+isNull.m in Sources */,
 				386FBF24201C4F7800944CDF /* HYReportListViewController.m in Sources */,
 				386FBF72201C4F7800944CDF /* HYDepositViewModel.m in Sources */,
 				386FBF30201C4F7800944CDF /* HYRecommendLevelCell.m in Sources */,
 				386FBEF6201C4F7800944CDF /* HYRCIMGetUserInfoHandle.m in Sources */,
+				387C9EE1202892290038B15B /* UIView+loadXIB.m in Sources */,
 				386FBF36201C4F7800944CDF /* HYTeamMemberCell.m in Sources */,
 				386FBF1C201C4F7800944CDF /* HYBankCardViewController.m in Sources */,
 				386FBF1F201C4F7800944CDF /* HYInformationDetailVC.m in Sources */,
 				386FBF06201C4F7800944CDF /* SAMTextView.m in Sources */,
+				38605474202019A00045D014 /* CreateCardVC.m in Sources */,
 				386FBF62201C4F7800944CDF /* HYMyWalletModel.m in Sources */,
 				386FBF70201C4F7800944CDF /* HYSetDepositTipsView.m in Sources */,
 				386FBF67201C4F7800944CDF /* HYTextFieldTableViewCell.m in Sources */,

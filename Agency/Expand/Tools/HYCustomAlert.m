@@ -58,7 +58,6 @@
 }
 
 - (void)setupSubviews{
-    
     [self addSubview:self.blackBgView];
     [self addSubview:self.bgView];
     [self addSubview:self.titleLabel];
@@ -67,7 +66,28 @@
     [self addSubview:self.confirmBtn];
     [self addSubview:self.line];
     [self addSubview:self.horLine];
+}
+
++ (void)removeAlert:(HYCustomAlert*)Alert {
+    [Alert.blackBgView removeFromSuperview];
+    [Alert.bgView removeFromSuperview];
+    [Alert.titleLabel removeFromSuperview];
+    [Alert.contentLabel removeFromSuperview];
+    [Alert.cancelBtn removeFromSuperview];
+    [Alert.confirmBtn removeFromSuperview];
+    [Alert.line removeFromSuperview];
+    [Alert.horLine removeFromSuperview];
+    Alert.blackBgView = nil;
+    Alert.bgView = nil;
+    Alert.titleLabel = nil;
+    Alert.contentLabel = nil;
+    Alert.cancelBtn = nil;
+    Alert.confirmBtn = nil;
+    Alert.line = nil;
+    Alert.horLine = nil;
     
+    [Alert removeFromSuperview];
+    Alert  = nil;
 }
 
 - (void)layoutSubviews{

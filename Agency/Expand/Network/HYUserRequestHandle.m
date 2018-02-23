@@ -66,8 +66,8 @@
    
    NSMutableDictionary *param = [NSMutableDictionary dictionary];
    [param setValue:[HYUserModel sharedInstance].token forKey:@"token"];
-   
-   [[HTTPManager shareHTTPManager] postDataFromUrl:API_GetUserInfo withParameter:param isShowHUD:YES success:^(id returnData) {
+   //获取用户信息
+   [[HTTPManager shareHTTPManager] postDataFromUrl:API_GetUserInfo withParameter:param isShowHUD:NO success:^(id returnData) {
       
       if (returnData) {
          
@@ -289,14 +289,19 @@
 }
 
 
-+ (void)uploadIDCardInfoWithName:(NSString *)name IDCardNum:(NSString *)IDCardNum bankCardNum:(NSString *)bankCardNum authCode:(NSString *)authCode ComplectionBlock:(void (^)(BOOL))complection{
-    
++ (void)uploadIDCardInfoWithName:(NSString *)name
+                       IDCardNum:(NSString *)IDCardNum
+                     bankCardNum:(NSString *)bankCardNum
+                        phoneNum:(NSString *)phone
+                        authCode:(NSString *)authCode
+                ComplectionBlock:(void (^)(BOOL))complection
+{
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
     [param setValue:[HYUserModel sharedInstance].token forKey:@"token"];
     [param setValue:name forKey:@"real_name"];
     [param setValue:IDCardNum forKey:@"card_id"];
     [param setValue:bankCardNum forKey:@"bankCard_no"];
-    [param setValue:[HYUserModel sharedInstance].userInfo.phone forKey:@"phoneNum"];
+    [param setValue:phone forKey:@"phoneNum"];
     [param setValue:authCode forKey:@"phoneCode"];
 
     
@@ -325,14 +330,19 @@
     }];
 }
 
-+ (void)bindBankCardWithName:(NSString *)name IDCardNum:(NSString *)IDCardNum bankCardNum:(NSString *)bankCardNum authCode:(NSString *)authCode ComplectionBlock:(void (^)(BOOL))complection{
++ (void)bindBankCardWithName:(NSString *)name
+                   IDCardNum:(NSString *)IDCardNum
+                 bankCardNum:(NSString *)bankCardNum
+                    pboneNum:(NSString *)phone
+                    authCode:(NSString *)authCode
+            ComplectionBlock:(void (^)(BOOL))complection{
    
    NSMutableDictionary *param = [NSMutableDictionary dictionary];
    [param setValue:[HYUserModel sharedInstance].token forKey:@"token"];
    [param setValue:name forKey:@"real_name"];
    [param setValue:IDCardNum forKey:@"card_id"];
    [param setValue:bankCardNum forKey:@"bankCard_no"];
-   [param setValue:[HYUserModel sharedInstance].userInfo.phone forKey:@"phoneNum"];
+   [param setValue:phone forKey:@"phoneNum"];
    [param setValue:authCode forKey:@"phoneCode"];
    
    
@@ -429,7 +439,8 @@
     }];
 }
 
-+ (void)getMyWalletComplectionBlock:(void (^)(HYMyWalletModel *))complection{
+////获取钱包信息
++ (void)getMyWalletWithViewWillAppear:(BOOL)isViewWillAppear ComplectionBlock:(void(^)(HYMyWalletModel *model))complection {
     
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
     [param setValue:[HYUserModel sharedInstance].token forKey:@"token"];
@@ -446,15 +457,15 @@
                 complection(model);
             }
             else{
-                
-                complection(nil);
-                [JRToast showWithText:[returnData valueForKey:@"message"]];
-                
+                if (!isViewWillAppear) {
+                    complection(nil);
+                    [JRToast showWithText:[returnData valueForKey:@"message"]];
+                }
             }
         }
         else{
             
-            complection(nil);
+            //complection(nil);
             [JRToast showWithText:@"获取钱包信息失败" duration:2];
         }
     }];
@@ -615,13 +626,13 @@
       }
    }];
 }
-
+//获取绑定银行卡列表
 + (void)getBankCardListComplectionBlock:(void (^)(NSArray *))complection{
    
    NSMutableDictionary *param = [NSMutableDictionary dictionary];
    [param setValue:[HYUserModel sharedInstance].token forKey:@"token"];
    
-   [[HTTPManager shareHTTPManager] postDataFromUrl:API_GetBankCardList withParameter:param isShowHUD:YES success:^(id returnData) {
+   [[HTTPManager shareHTTPManager] postDataFromUrl:API_GetBankCardList withParameter:param isShowHUD:NO success:^(id returnData) {
       
       if (returnData) {
          

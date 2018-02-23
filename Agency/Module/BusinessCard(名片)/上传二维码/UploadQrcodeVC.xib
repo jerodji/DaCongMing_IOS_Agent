@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UploadQrcodeVC">
+            <connections>
+                <outlet property="backView" destination="LXY-fc-KH0" id="bZD-5V-nix"/>
+                <outlet property="headIconImgView" destination="Y4l-25-evm" id="CKI-bd-4GM"/>
+                <outlet property="infoLabel" destination="FOw-fH-EBr" id="P76-lP-uxk"/>
+                <outlet property="qrbtn" destination="ybH-jR-t6s" id="M8d-9W-fko"/>
+                <outlet property="sexImgView" destination="N60-gt-QwT" id="32h-2q-CZs"/>
+                <outlet property="sureBtn" destination="DKW-DV-yS1" id="fFW-MF-nG0"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DKW-DV-yS1">
+                    <rect key="frame" x="15" y="607" width="345" height="40"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="So5-Bm-92c"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="确认">
+                        <color key="titleColor" red="0.2196078431372549" green="0.2196078431372549" blue="0.2196078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LXY-fc-KH0">
+                    <rect key="frame" x="15" y="159" width="345" height="433"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请上传正确的微信二维码" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eg6-MT-4m4">
+                            <rect key="frame" x="25" y="393" width="295" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="EQo-nd-scR"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                            <color key="textColor" red="0.2196078431372549" green="0.2196078431372549" blue="0.2196078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ybH-jR-t6s" customClass="QrButton">
+                            <rect key="frame" x="25" y="98" width="295" height="295"/>
+                            <color key="backgroundColor" red="0.2196078431372549" green="0.2196078431372549" blue="0.2196078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="ybH-jR-t6s" secondAttribute="height" multiplier="1:1" id="9lb-Yw-1CE"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                            <state key="normal" title="点击上传二维码"/>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请上传正确的微信二维码" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FOw-fH-EBr">
+                            <rect key="frame" x="25" y="68" width="295" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="dUl-Om-kbN"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <color key="textColor" red="0.21960784310000001" green="0.21960784310000001" blue="0.21960784310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Y4l-25-evm">
+                            <rect key="frame" x="122.5" y="-47" width="100" height="100"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="100" id="U1m-Qo-SS0"/>
+                                <constraint firstAttribute="width" constant="100" id="tyl-6w-ogH"/>
+                            </constraints>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="N60-gt-QwT">
+                            <rect key="frame" x="160" y="38" width="25" height="25"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="25" id="APK-bu-Oth"/>
+                                <constraint firstAttribute="height" constant="25" id="IBV-2Y-BHs"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="ybH-jR-t6s" secondAttribute="trailing" constant="25" id="1L8-1j-kSR"/>
+                        <constraint firstItem="ybH-jR-t6s" firstAttribute="leading" secondItem="LXY-fc-KH0" secondAttribute="leading" constant="25" id="8JR-wB-hK9"/>
+                        <constraint firstItem="N60-gt-QwT" firstAttribute="centerX" secondItem="Y4l-25-evm" secondAttribute="centerX" id="90I-Bd-c5y"/>
+                        <constraint firstAttribute="bottom" secondItem="Eg6-MT-4m4" secondAttribute="bottom" id="BUW-xs-MIG"/>
+                        <constraint firstItem="N60-gt-QwT" firstAttribute="bottom" secondItem="Y4l-25-evm" secondAttribute="bottom" constant="10" id="Ebi-yl-x41"/>
+                        <constraint firstItem="ybH-jR-t6s" firstAttribute="top" secondItem="FOw-fH-EBr" secondAttribute="bottom" constant="10" id="GcS-kG-BQg"/>
+                        <constraint firstItem="FOw-fH-EBr" firstAttribute="top" secondItem="Y4l-25-evm" secondAttribute="bottom" constant="15" id="IPq-Wf-PG4"/>
+                        <constraint firstItem="Eg6-MT-4m4" firstAttribute="top" secondItem="ybH-jR-t6s" secondAttribute="bottom" id="Klk-4E-0BJ"/>
+                        <constraint firstItem="FOw-fH-EBr" firstAttribute="leading" secondItem="LXY-fc-KH0" secondAttribute="leading" constant="25" id="Y6f-za-yEi"/>
+                        <constraint firstItem="ybH-jR-t6s" firstAttribute="top" secondItem="LXY-fc-KH0" secondAttribute="top" constant="98" id="gPS-ZW-Why"/>
+                        <constraint firstAttribute="trailing" secondItem="Eg6-MT-4m4" secondAttribute="trailing" constant="25" id="lTX-0W-lmr"/>
+                        <constraint firstItem="Eg6-MT-4m4" firstAttribute="leading" secondItem="LXY-fc-KH0" secondAttribute="leading" constant="25" id="m9E-kT-gDl"/>
+                        <constraint firstAttribute="trailing" secondItem="FOw-fH-EBr" secondAttribute="trailing" constant="25" id="yLB-c7-td6"/>
+                        <constraint firstItem="Y4l-25-evm" firstAttribute="centerX" secondItem="LXY-fc-KH0" secondAttribute="centerX" id="yQM-QI-sIZ"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.3529411764705882" green="0.3529411764705882" blue="0.3529411764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="DKW-DV-yS1" firstAttribute="top" secondItem="LXY-fc-KH0" secondAttribute="bottom" constant="15" id="IWP-5A-kAJ"/>
+                <constraint firstAttribute="trailing" secondItem="DKW-DV-yS1" secondAttribute="trailing" constant="15" id="ayQ-Zw-q9D"/>
+                <constraint firstAttribute="trailing" secondItem="LXY-fc-KH0" secondAttribute="trailing" constant="15" id="fhJ-Hc-1xs"/>
+                <constraint firstItem="DKW-DV-yS1" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="w3Z-ee-O1R"/>
+                <constraint firstAttribute="bottom" secondItem="DKW-DV-yS1" secondAttribute="bottom" constant="20" id="xgi-vs-47v"/>
+                <constraint firstItem="LXY-fc-KH0" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="zlO-eY-RdC"/>
+            </constraints>
+            <point key="canvasLocation" x="16" y="76"/>
+        </view>
+    </objects>
+</document>

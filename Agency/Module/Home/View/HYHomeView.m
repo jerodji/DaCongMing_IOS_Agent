@@ -142,7 +142,7 @@
         _headerView = [HYHomeHeaderView new];
         _headerView.backgroundColor = KCOLOR(@"45d0b7");
         _headerView.layer.cornerRadius = 4 * WIDTH_MULTIPLE;
-        
+//        _headerView.roleImgView.image =
     }
     return _headerView;
 }

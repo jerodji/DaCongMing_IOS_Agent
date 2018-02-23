@@ -68,7 +68,7 @@
         _titleLabel = [[UILabel alloc] init];
         _titleLabel.font = KFitFont(12);
         _titleLabel.textColor = KAPP_WHITE_COLOR;
-        _titleLabel.text = @"温馨提示:体现到银行卡的到账一般为三个工作日";
+        _titleLabel.text = @"温馨提示:提现到银行卡的到账一般为三个工作日";
         _titleLabel.textAlignment = NSTextAlignmentCenter;
     }
     return _titleLabel;

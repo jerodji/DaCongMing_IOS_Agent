@@ -44,4 +44,13 @@
 #import "HYCustomAlert.h"
 #import "HYLoginViewController.h"
 
+#import "JJPublicDefine.h"
+#import "UIButton+parameter.h"
+#import "NSObject+isNull.h"
+#import "UIView+control.h"
+#import "UIView+viewFrame.h"
+#import "UIView+loadXIB.h"
+#import "UIViewController+XIB.h"
+#import "JJAlert.h"
+
 #endif /* PrefixHeader_pch */

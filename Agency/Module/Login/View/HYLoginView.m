@@ -168,10 +168,14 @@
     
     [_phoneTextField.rac_textSignal subscribeNext:^(NSString *x) {
        
-        if (x.length > 11) {
-            
-            _phoneTextField.text = [x substringToIndex:11];
+        if (x) {
+            _phoneTextField.text = x;
         }
+        
+//        if (x.length > 11) {
+//
+//            _phoneTextField.text = [x substringToIndex:11];
+//        }
     }];
     
     RAC(self.loginBtn,enabled) = [viewModel loginButtonIsValid];

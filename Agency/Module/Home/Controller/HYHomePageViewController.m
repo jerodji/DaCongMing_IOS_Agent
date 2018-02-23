@@ -94,7 +94,7 @@
         
         if ([[HYUserModel sharedInstance].userInfo.isauth boolValue]) {
             
-            [JRToast showWithText:@"你已经实名认证过了"];
+            [JRToast showWithText:@"您已完成实名认证"];
             return;
         }
         

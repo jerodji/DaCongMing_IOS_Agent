@@ -11,11 +11,6 @@
 #ifndef Macro_h
 #define Macro_h
 
-#ifdef DEBUG
-#define DLog(format, ...) NSLog(@"%s():%d " format, __func__, __LINE__, ##__VA_ARGS__)
-#else
-#define DLog(...)
-#endif
 
 #define  KAdjustsScrollViewInsets_NO(scrollView,vc)\
 _Pragma("clang diagnostic push") \
@@ -53,12 +48,16 @@ _Pragma("clang diagnostic pop") \
 #define KSCREEN_HEIGHT      [UIScreen mainScreen].bounds.size.height
 /** 屏幕宽度比 */
 #define WIDTH_MULTIPLE      KSCREEN_WIDTH / 375
-/** 导航栏高度 */
-#define KNAV_HEIGHT         [[UIApplication sharedApplication] statusBarFrame].size.height + 44
+/** 导航栏 + 状态栏 高度 */
+#define KNAV_HEIGHT         ([[UIApplication sharedApplication] statusBarFrame].size.height + 44)
 /** 状态栏高度 */
 #define KSTATUSBAR_HEIGHT   [[UIApplication sharedApplication] statusBarFrame].size.height
 /** tabBar高度 */
-#define KTABBAR_HEIGHT      [[UIApplication sharedApplication] statusBarFrame].size.height > 20 ? 83 : 49
+#define KTABBAR_HEIGHT      ([[UIApplication sharedApplication] statusBarFrame].size.height > 20 ? 83 : 49)
+
+
+
+
 
 /** ----------------------------颜色信息---------------------------------
  --------------------------------------------------------------------*/
@@ -97,6 +96,8 @@ _Pragma("clang diagnostic pop") \
 #define RGBAColor(r, g, b ,a)              [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:a]
 /** 随机颜色 */
 #define KAPP_RANDOM_COLOR                  RGBColor(arc4random_uniform(255), arc4random_uniform(255), arc4random_uniform(255))
+
+
 
 /** ----------------------------字体设置---------------------------------
  --------------------------------------------------------------------*/

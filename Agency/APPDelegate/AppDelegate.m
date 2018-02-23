@@ -85,7 +85,7 @@
  */
 - (void)onResp:(BaseResp *)resp{
     
-    DLog(@"WeChat login callBack errorCode %@",resp.errStr);
+    NSLog(@"WeChat login callBack errorCode %@",resp.errStr);
     if ([resp isKindOfClass:[SendAuthResp class]]) {
         //微信登录授权
         if (resp.errCode == 0) {
@@ -102,11 +102,11 @@
         switch(response.errCode){
             case WXSuccess:
                 //服务器端查询支付通知或查询API返回的结果再提示成功
-                DLog(@"支付成功");
+                NSLog(@"支付成功");
                 [[NSNotificationCenter defaultCenter] postNotificationName:KWeChatPaySuccessNotification object:@"YES"];
                 break;
             default:
-                DLog(@"支付失败，retcode=%d",resp.errCode);
+                NSLog(@"支付失败，retcode=%d",resp.errCode);
                 [[NSNotificationCenter defaultCenter] postNotificationName:KWeChatPaySuccessNotification object:@"NO"];
                 break;
         }
@@ -122,24 +122,24 @@
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
     
     NSString *token = [[[[deviceToken description] stringByReplacingOccurrencesOfString:@"<" withString:@""] stringByReplacingOccurrencesOfString:@">" withString:@""] stringByReplacingOccurrencesOfString:@" " withString:@""];
-    DLog(@"-------device Token is %@",token);
+    NSLog(@"-------device Token is %@",token);
     [[RCIMClient sharedRCIMClient] setDeviceToken:token];
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
     
     // 远程推送的内容
-    DLog(@"%@",userInfo);
+    NSLog(@"%@",userInfo);
 }
 
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification{
     
-    DLog(@"收到本地推送");
+    NSLog(@"收到本地推送");
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandler{
     
-    DLog(@"收到远程推送消息:%@",userInfo);
+    NSLog(@"收到远程推送消息:%@",userInfo);
     completionHandler(UIBackgroundFetchResultNewData);
 
 }

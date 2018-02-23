@@ -107,7 +107,7 @@
     RAC(self.drawDownBtn,enabled) = [[viewModel drawDownBtnIsInvalid] takeUntil:self.rac_prepareForReuseSignal];
     [[viewModel drawDownBtnIsInvalid] subscribeNext:^(id x) {
        
-//        DLog(@"state %@",x);
+//        NSLog(@"state %@",x);
         if ([x boolValue]) {
             
             [self.drawDownBtn setTitle:@"领取" forState:UIControlStateNormal];
@@ -125,7 +125,7 @@
     
     [RACObserve(viewModel, isReceive) subscribeNext:^(id x) {
         
-//        DLog(@"the isReceive is %@",x);
+//        NSLog(@"the isReceive is %@",x);
         if ([x boolValue]) {
             
             [self.drawDownBtn setTitle:@"已领取" forState:UIControlStateNormal];

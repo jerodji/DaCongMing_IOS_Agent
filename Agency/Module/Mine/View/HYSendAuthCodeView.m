@@ -82,8 +82,10 @@
 - (void)setPhone:(NSString *)phone{
     
     _phone = phone;
-    NSString *phoneStr = [phone stringByReplacingCharactersInRange:NSMakeRange(3, 4) withString:@"****"];
-    _phoneLabel.text = phoneStr;
+    if (phone && (phone.length>7)) {
+        NSString *phoneStr = [phone stringByReplacingCharactersInRange:NSMakeRange(3, 4) withString:@"****"];
+        _phoneLabel.text = phoneStr;
+    }
 }
 
 #pragma mark - action
@@ -153,7 +155,7 @@
 - (void)passwordCompleteInput:(HYPasswordView *)passwordView{
     
     NSString *authCode = passwordView.passwordString;
-    DLog(@"%@",authCode);
+    NSLog(@"%@",authCode);
     [HYUserRequestHandle verifyAuthCodeWithPhone:_phone authCode:authCode ComplectionBlock:^(BOOL isSuccess) {
         
         if (isSuccess) {
@@ -188,8 +190,10 @@
         _phoneLabel.font = KFitFont(18);
         _phoneLabel.textColor = KAPP_THEME_COLOR;
         _phoneLabel.textAlignment = NSTextAlignmentCenter;
-        NSString *phone = [[HYUserModel sharedInstance].userInfo.phone stringByReplacingCharactersInRange:NSMakeRange(3, 4) withString:@"****"];
-        _phoneLabel.text = phone;
+        if ([HYUserModel sharedInstance].userInfo.phone && ([HYUserModel sharedInstance].userInfo.phone.length>7)) {
+            NSString *phone = [[HYUserModel sharedInstance].userInfo.phone stringByReplacingCharactersInRange:NSMakeRange(3, 4) withString:@"****"];
+            _phoneLabel.text = phone;
+        }
     }
     return _phoneLabel;
 }

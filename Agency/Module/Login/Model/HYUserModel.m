@@ -62,6 +62,13 @@
     return model;
 }
 
+- (NSString *)token {
+    if (_token) {
+        return _token;
+    }
+    return @" ";
+}
+
 
 - (void)clearData{
     

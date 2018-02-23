@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface HYBaseNavController : UINavigationController
-
+- (void)backBtnAction;
 @end

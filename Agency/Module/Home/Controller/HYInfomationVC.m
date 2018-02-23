@@ -9,6 +9,7 @@
 #import "HYInfomationVC.h"
 #import "HYInfoTableViewCell.h"
 #import "HYInformationDetailVC.h"
+#import "BusinessCardVC.h"
 
 @interface HYInfomationVC ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -23,8 +24,16 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
+    
+//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addAction)];
+    
     [self setupSubviews];
     [self requestNetWork];
+}
+
+- (void)addAction {
+    BusinessCardVC* card = [[BusinessCardVC alloc] init];
+    [self.navigationController pushViewController:card animated:YES];
 }
 
 - (void)setupSubviews{

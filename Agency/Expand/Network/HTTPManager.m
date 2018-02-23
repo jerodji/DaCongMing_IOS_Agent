@@ -41,7 +41,7 @@
 
     
     [manager GET:urlString parameters:para progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        
+        NSLog(@"GET-> SUCC , %@,\n %@",urlString,responseObject);
         if (isShowHUD) {
             
             [MBProgressHUD hidePregressHUD:KEYWINDOW];
@@ -49,13 +49,13 @@
         successBlock(responseObject);
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        
+         NSLog(@"GET-> FAIL , %@,\n Task-> %@,\n Error-> %@",urlString,task,error);
         if (isShowHUD) {
             
             [MBProgressHUD hidePregressHUD:KEYWINDOW];
         }
         [JRToast showWithText:@"服务器云游四方去了"];
-        successBlock(nil);
+        //successBlock(nil);
     }];
 }
 
@@ -89,6 +89,8 @@
     
     [manager POST:urlString parameters:para progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
+        NSLog(@"POST-> SUCC , %@,\n %@",urlString,responseObject);
+        
         dispatch_async(dispatch_get_main_queue(), ^{
             
             if (isShowHUD) {
@@ -116,13 +118,13 @@
         }
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        
+        NSLog(@"POST-> FAIL , %@,\n Task-> %@,\n Error-> %@",urlString,task,error);
         if (isShowHUD) {
             
             [MBProgressHUD hidePregressHUD:KEYWINDOW];
         }
         [JRToast showWithText:@"服务器云游四方去了"];
-        successBlock(nil);
+        //successBlock(nil);
     }];
 }
 

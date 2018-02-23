@@ -11,8 +11,8 @@
 
 @interface HYRecommendBottomView ()
 
-@property (nonatomic,strong) UILabel *bankCardNoLabel;
-@property (nonatomic,strong) UILabel *tipsLabel;
+//@property (nonatomic,strong) UILabel *bankCardNoLabel;
+//@property (nonatomic,strong) UILabel *tipsLabel;
 
 @end
 
@@ -30,27 +30,27 @@
 
 - (void)setupSubviews{
     
-    [self addSubview:self.bankCardNoLabel];
-    [self addSubview:self.tipsLabel];
+//    [self addSubview:self.bankCardNoLabel];
+//    [self addSubview:self.tipsLabel];
     [self addSubview:self.confirmBtn];
 }
 
 - (void)layoutSubviews{
     
-    [_bankCardNoLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-       
-        make.left.equalTo(self).offset(30 * WIDTH_MULTIPLE);
-        make.right.equalTo(self).offset(-30 * WIDTH_MULTIPLE);
-        make.top.equalTo(self).offset(10 * WIDTH_MULTIPLE);
-        make.height.mas_equalTo(30 * WIDTH_MULTIPLE);
-    }];
+//    [_bankCardNoLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+//
+//        make.left.equalTo(self).offset(30 * WIDTH_MULTIPLE);
+//        make.right.equalTo(self).offset(-30 * WIDTH_MULTIPLE);
+//        make.top.equalTo(self).offset(10 * WIDTH_MULTIPLE);
+//        make.height.mas_equalTo(30 * WIDTH_MULTIPLE);
+//    }];
     
-    [_tipsLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        
-        make.left.right.equalTo(self);
-        make.top.equalTo(_bankCardNoLabel.mas_bottom).offset(10 * WIDTH_MULTIPLE);
-        make.height.mas_equalTo(36 * WIDTH_MULTIPLE);
-    }];
+//    [_tipsLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+//
+//        make.left.right.equalTo(self);
+//        make.top.equalTo(_bankCardNoLabel.mas_bottom).offset(10 * WIDTH_MULTIPLE);
+//        make.height.mas_equalTo(36 * WIDTH_MULTIPLE);
+//    }];
     
     [_confirmBtn mas_makeConstraints:^(MASConstraintMaker *make) {
        
@@ -62,33 +62,33 @@
 }
 
 #pragma mark - lazyload
-- (UILabel *)bankCardNoLabel{
-    
-    if (!_bankCardNoLabel) {
-        
-        _bankCardNoLabel = [[UILabel alloc] init];
-        _bankCardNoLabel.font = KFitFont(23);
-        _bankCardNoLabel.textColor = KAPP_THEME_COLOR;
-        _bankCardNoLabel.text = KBankCardNum;
-        _bankCardNoLabel.textAlignment = NSTextAlignmentLeft;
-        [_bankCardNoLabel LabelAlightLeftAndRightWithWidth:KSCREEN_WIDTH - 60 * WIDTH_MULTIPLE];
-    }
-    return _bankCardNoLabel;
-}
-
-- (UILabel *)tipsLabel{
-    
-    if (!_tipsLabel) {
-        
-        _tipsLabel = [[UILabel alloc] init];
-        _tipsLabel.font = KFitFont(14);
-        _tipsLabel.textColor = KAPP_THEME_COLOR;
-        _tipsLabel.text = KBankName;
-        _tipsLabel.numberOfLines = 0;
-        _tipsLabel.textAlignment = NSTextAlignmentCenter;
-    }
-    return _tipsLabel;
-}
+//- (UILabel *)bankCardNoLabel{
+//
+//    if (!_bankCardNoLabel) {
+//
+//        _bankCardNoLabel = [[UILabel alloc] init];
+//        _bankCardNoLabel.font = KFitFont(23);
+//        _bankCardNoLabel.textColor = KAPP_THEME_COLOR;
+//        _bankCardNoLabel.text = KBankCardNum;
+//        _bankCardNoLabel.textAlignment = NSTextAlignmentLeft;
+//        [_bankCardNoLabel LabelAlightLeftAndRightWithWidth:KSCREEN_WIDTH - 60 * WIDTH_MULTIPLE];
+//    }
+//    return _bankCardNoLabel;
+//}
+//
+//- (UILabel *)tipsLabel{
+//
+//    if (!_tipsLabel) {
+//
+//        _tipsLabel = [[UILabel alloc] init];
+//        _tipsLabel.font = KFitFont(14);
+//        _tipsLabel.textColor = KAPP_THEME_COLOR;
+//        _tipsLabel.text = KBankName;
+//        _tipsLabel.numberOfLines = 0;
+//        _tipsLabel.textAlignment = NSTextAlignmentCenter;
+//    }
+//    return _tipsLabel;
+//}
 
 - (UIButton *)confirmBtn{
     

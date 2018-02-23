@@ -10,10 +10,10 @@
 
 typedef NS_ENUM(NSUInteger, RecommendLevel) {
     
-    RecommendLevelSenior = 0,
-    RecommendLevelPractice,
-    RecommendLevelSeniorAgent,
-    RecommendLevelPracticeAgent
+    RecommendLevelSenior = 0,    /* V5 */
+    RecommendLevelPractice,      /* V4 */
+    RecommendLevelSeniorAgent,   /* V3 */
+    RecommendLevelPracticeAgent  /* V2 */
 };
 
 @interface HYRecommendViewModel : NSObject

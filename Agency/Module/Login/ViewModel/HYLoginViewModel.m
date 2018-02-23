@@ -48,7 +48,7 @@
     
     RACSignal *isValid = [RACSignal combineLatest:@[_phoneSignal,_passwordSignal] reduce:^id{
        
-        return @(_phone.length == 11 && _password.length >= 6);
+        return @(_password.length >= 6); //_phone.length == 11 &&
     }];
     
     return isValid;
@@ -56,8 +56,8 @@
 
 - (void)loginAction{
     
-    if (![self validatePhoneNum:_phone]) {
-        
+//    if (![self validatePhoneNum:_phone]) {
+    if (!_phone) {
         [JRToast showWithText:@"请输入正确的手机号"];
         return;
     }
@@ -93,7 +93,7 @@
 - (void)weChatLoginCallBack:(NSNotification *)notification{
     
     NSString *weChatCallbackCode = notification.object;
-    DLog(@"wechatLogin callBack code %@",weChatCallbackCode);
+    NSLog(@"wechatLogin callBack code %@",weChatCallbackCode);
     NSDictionary *dict = @{@"code" : weChatCallbackCode};
     [HYUserRequestHandle weChatLoginWithProgram:dict ComplectionBlock:^(NSDictionary *result) {
 

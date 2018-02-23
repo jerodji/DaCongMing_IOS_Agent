@@ -50,12 +50,23 @@
 /**
  *  上传身份证银行卡信息
  */
-+ (void)uploadIDCardInfoWithName:(NSString *)name IDCardNum:(NSString *)IDCardNum bankCardNum:(NSString *)bankCardNum authCode:(NSString *)authCode ComplectionBlock:(void(^)(BOOL isSuccess))complection;
-
+//+ (void)uploadIDCardInfoWithName:(NSString *)name IDCardNum:(NSString *)IDCardNum bankCardNum:(NSString *)bankCardNum authCode:(NSString *)authCode ComplectionBlock:(void(^)(BOOL isSuccess))complection;
++ (void)uploadIDCardInfoWithName:(NSString *)name
+                       IDCardNum:(NSString *)IDCardNum
+                     bankCardNum:(NSString *)bankCardNum
+                        phoneNum:(NSString *)phone
+                        authCode:(NSString *)authCode
+                ComplectionBlock:(void (^)(BOOL))complection;
 /**
  *  绑定银行卡
  */
-+ (void)bindBankCardWithName:(NSString *)name IDCardNum:(NSString *)IDCardNum bankCardNum:(NSString *)bankCardNum authCode:(NSString *)authCode ComplectionBlock:(void(^)(BOOL isSuccess))complection;
+//+ (void)bindBankCardWithName:(NSString *)name IDCardNum:(NSString *)IDCardNum bankCardNum:(NSString *)bankCardNum authCode:(NSString *)authCode ComplectionBlock:(void(^)(BOOL isSuccess))complection;
++ (void)bindBankCardWithName:(NSString *)name
+                   IDCardNum:(NSString *)IDCardNum
+                 bankCardNum:(NSString *)bankCardNum
+                    pboneNum:(NSString *)phone
+                    authCode:(NSString *)authCode
+            ComplectionBlock:(void (^)(BOOL))complection;
 
 /**
  *  获取账户信息
@@ -75,7 +86,7 @@
 /**
  *  获取我的钱包
  */
-+ (void)getMyWalletComplectionBlock:(void(^)(HYMyWalletModel *model))complection;
++ (void)getMyWalletWithViewWillAppear:(BOOL)isViewWillAppear ComplectionBlock:(void(^)(HYMyWalletModel *model))complection;
 
 /**
  *  提现

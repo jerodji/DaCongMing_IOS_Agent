@@ -120,7 +120,7 @@
             }
             if ([[HYUserModel sharedInstance].userInfo.isauth boolValue]) {
                 
-                [JRToast showWithText:@"你已经实名认证过了"];
+                [JRToast showWithText:@"您已完成实名认证"];
                 return;
             }
             HYUploadIDCardViewController *uploadIDCardVC = [HYUploadIDCardViewController new];
@@ -133,7 +133,7 @@
         {
             if ([[HYUserModel sharedInstance].userInfo.phone isNotBlank]) {
                 
-                [JRToast showWithText:@"你已经绑定过手机了" duration:2];
+                [JRToast showWithText:@"您已经绑定过手机了" duration:2];
                 return;
             }
             HYBandPhoneVC *bindVC = [HYBandPhoneVC new];

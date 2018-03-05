@@ -119,7 +119,7 @@
         _rightBtn.backgroundColor = [UIColor whiteColor];
         _rightBtn.titleLabel.font = KFitFont(14);
         _rightBtn.titleLabel.textAlignment = NSTextAlignmentCenter;
-        [_rightBtn setTitle:@"用户列表" forState:UIControlStateNormal];
+        [_rightBtn setTitle:@"客户列表" forState:UIControlStateNormal];
         [_rightBtn setTitleColor:KAPP_7b7b7b_COLOR forState:UIControlStateNormal];
         [self addSubview:_rightBtn];
     }

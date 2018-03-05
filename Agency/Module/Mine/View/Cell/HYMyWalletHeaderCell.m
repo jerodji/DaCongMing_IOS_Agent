@@ -133,17 +133,17 @@
     
     RAC(self.saleAmountLabel, text) = [RACObserve(viewModel, acc_totalSales) map:^id(id value) {
         
-        return [NSString stringWithFormat:@"销售总额: %@",value];
+        return [NSString stringWithFormat:@"销售总额: %.2f",[value floatValue]];
     }];
     
     RAC(self.commissionLabel, text) = [RACObserve(viewModel, acc_totalCommission) map:^id(id value) {
         
-        return [NSString stringWithFormat:@"累计佣金: %@",value];
+        return [NSString stringWithFormat:@"累计佣金: %.2f",[value floatValue] ];
     }];
     
     RAC(self.commissionBalanceLabel, attributedText) = [RACObserve(viewModel, balance) map:^id(id value) {
         
-        NSMutableAttributedString *str = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"累计余额: %@",value]];
+        NSMutableAttributedString *str = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"累计余额: %.2f",[value floatValue]]];
         NSRange strRange = {0,[str length]};
         [str addAttribute:NSFontAttributeName value:KFitFont(30) range:strRange];
         [str addAttribute:NSFontAttributeName value:KFitFont(22) range:NSMakeRange(0, 5)];
@@ -152,17 +152,17 @@
     
     RAC(self.thisMonthAmoutnLabel, text) = [RACObserve(viewModel, thisMonthSales) map:^id(id value) {
         
-        return [NSString stringWithFormat:@"本月销售额(元)\n%@",value];
+        return [NSString stringWithFormat:@"本月销售额(元)\n%.2f",[value floatValue]];
     }];
     
     RAC(self.thisMonthCommissionLabel, text) = [RACObserve(viewModel, thisMonthCommission) map:^id(id value) {
         
-        return [NSString stringWithFormat:@"本月佣金收入(元)\n%@",value];
+        return [NSString stringWithFormat:@"本月佣金收入(元)\n%.2f",[value floatValue]];
     }];
     
     RAC(self.todayAmoutnLabel, text) = [RACObserve(viewModel, todaySales) map:^id(id value) {
         
-        return [NSString stringWithFormat:@"本月销售额(元)\n%@",value];
+        return [NSString stringWithFormat:@"本月销售额(元)\n%.2f",[value floatValue]];
     }];
     
     [[_backBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribe:viewModel.backActionSubject];

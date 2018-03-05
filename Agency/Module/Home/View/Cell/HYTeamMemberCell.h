@@ -13,4 +13,10 @@
 
 @property (nonatomic,strong) HYTeamMemberModel *model;
 
+@property (nonatomic,strong) UIImageView *headerImgView;
+@property (nonatomic,strong) UILabel *nickNameLabel;
+@property (nonatomic,strong) UILabel *IDLabel;
+@property (nonatomic,strong) UILabel *agencyLabel;
+@property (nonatomic,strong) UIView *bottomLine;
+
 @end

@@ -27,4 +27,7 @@
 @property (nonatomic,strong) UIImageView *headerImageView;
 
 
+@property (nonatomic,strong) UIButton * leftBtn;
+@property (nonatomic,strong) UIButton * rightBtn;
+
 @end

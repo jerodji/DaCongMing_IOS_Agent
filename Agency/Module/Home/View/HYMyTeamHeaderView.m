@@ -12,7 +12,8 @@
 
 @property (nonatomic,strong) UIImageView *bgImageView;
 @property (nonatomic,strong) UILabel *numberLabel;
-@property (nonatomic,strong) UILabel *teamMemberLabel;
+//@property (nonatomic,strong) UILabel *teamMemberLabel;
+
 @property (nonatomic,strong) UIView *whiteBgView;
 
 @end
@@ -34,8 +35,6 @@
     [self addSubview:self.headerImageView];
     [self addSubview:self.titleLabel];
     [self addSubview:self.numberLabel];
-    
-    
 }
 
 - (void)layoutSubviews{
@@ -74,11 +73,28 @@
         make.height.mas_equalTo(75 * WIDTH_MULTIPLE);
     }];
     
-    [_teamMemberLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        
-        make.left.right.equalTo(self);
+//    [_teamMemberLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+//
+//        make.left.right.equalTo(self);
+//        make.top.equalTo(_whiteBgView.mas_bottom).offset(10 * WIDTH_MULTIPLE);
+//        make.bottom.equalTo(self).offset(-10 * WIDTH_MULTIPLE);
+//    }];
+    
+    [_leftBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+
+        make.left.equalTo(self).offset(0);
         make.top.equalTo(_whiteBgView.mas_bottom).offset(10 * WIDTH_MULTIPLE);
-        make.bottom.equalTo(self).offset(-10 * WIDTH_MULTIPLE);
+        make.bottom.equalTo(self).offset(-2);
+//        make.width.mas_equalTo(KSCREEN_WIDTH/2);
+    }];
+    
+    [_rightBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+
+        make.left.equalTo(_leftBtn.mas_right).offset(0);
+        make.right.equalTo(self).offset(0);
+        make.top.equalTo(_whiteBgView.mas_bottom).offset(10 * WIDTH_MULTIPLE);
+        make.bottom.equalTo(self).offset(-2);
+        make.width.equalTo(_leftBtn);
     }];
 }
 
@@ -88,8 +104,24 @@
     if (self.isShowBtn) {
         
         [self addSubview:self.whiteBgView];
-        [self addSubview:self.teamMemberLabel];
+//        [self addSubview:self.teamMemberLabel];
         [self createButton];
+        
+        _leftBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        _leftBtn.backgroundColor = [UIColor whiteColor];
+        _leftBtn.titleLabel.font = KFitFont(14);
+        _leftBtn.titleLabel.textAlignment = NSTextAlignmentCenter;
+        [_leftBtn setTitle:@"团队成员" forState:UIControlStateNormal];
+        [_leftBtn setTitleColor:KAPP_7b7b7b_COLOR forState:UIControlStateNormal];
+        [self addSubview:_leftBtn];
+        
+        _rightBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        _rightBtn.backgroundColor = [UIColor whiteColor];
+        _rightBtn.titleLabel.font = KFitFont(14);
+        _rightBtn.titleLabel.textAlignment = NSTextAlignmentCenter;
+        [_rightBtn setTitle:@"用户列表" forState:UIControlStateNormal];
+        [_rightBtn setTitleColor:KAPP_7b7b7b_COLOR forState:UIControlStateNormal];
+        [self addSubview:_rightBtn];
     }
 }
 
@@ -202,19 +234,23 @@
     return _numberLabel;
 }
 
-- (UILabel *)teamMemberLabel{
-    
-    if (!_teamMemberLabel) {
-        
-        _teamMemberLabel = [[UILabel alloc] init];
-        _teamMemberLabel.text = @"    团队成员";
-        _teamMemberLabel.font = KFitFont(14);
-        _teamMemberLabel.numberOfLines = 0;
-        _teamMemberLabel.textColor = KAPP_7b7b7b_COLOR;
-        _teamMemberLabel.backgroundColor = [UIColor whiteColor];
-        _teamMemberLabel.textAlignment = NSTextAlignmentLeft;
-    }
-    return _teamMemberLabel;
-}
+//- (UILabel *)teamMemberLabel{
+//
+//    if (!_teamMemberLabel) {
+//
+//        _teamMemberLabel = [[UILabel alloc] init];
+//        _teamMemberLabel.text = @"    团队成员";
+//        _teamMemberLabel.font = KFitFont(14);
+//        _teamMemberLabel.numberOfLines = 0;
+//        _teamMemberLabel.textColor = KAPP_7b7b7b_COLOR;
+//        _teamMemberLabel.backgroundColor = [UIColor whiteColor];
+//        _teamMemberLabel.textAlignment = NSTextAlignmentLeft;
+//    }
+//    return _teamMemberLabel;
+//}
+
+
+
+
 
 @end

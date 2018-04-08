@@ -65,14 +65,11 @@
 #pragma mark - action
 - (void)textChanged:(UITextField *)textField{
     
-    if (textField.text.length > 3) {
-        
+    if (textField.text.length > 0) {
         self.confirmBtn.userInteractionEnabled = YES;
         self.confirmBtn.backgroundColor = KAPP_THEME_COLOR;
         [self.confirmBtn setTitleColor:KAPP_WHITE_COLOR forState:UIControlStateNormal];
-    }
-    else{
-        
+    }else{
         self.confirmBtn.userInteractionEnabled = NO;
         self.confirmBtn.backgroundColor = KCOLOR(@"c2c2c2");
         [self.confirmBtn setTitleColor:KAPP_WHITE_COLOR forState:UIControlStateNormal];
@@ -80,7 +77,28 @@
 }
 
 - (void)comfirmBtnAction{
+    NSString* newName = self.userNameTF.text;
+    delog(@"%@",newName);
+    if (IsNull(newName))
+        return;
     
+    NSDictionary* params = @{
+                             @"token":HYUserModel.sharedInstance.token,
+                             @"name":newName
+                             };
+    
+    [[HTTPManager shareHTTPManager] postDataFromUrl:API_updateUserName withParameter:params isShowHUD:YES success:^(id returnData) {
+        
+        NSDictionary* info = (NSDictionary*)returnData;
+        if ([info[@"code"] isEqualToString:@"000"]) {
+            [JRToast showWithText:info[@"message"]];
+            [HYUserModel sharedInstance].userInfo.name = newName;
+            [self.navigationController popViewControllerAnimated:YES];
+        } else {
+            [JRToast showWithText:@"修改失败"];
+        }
+        
+    }];
     
 }
 

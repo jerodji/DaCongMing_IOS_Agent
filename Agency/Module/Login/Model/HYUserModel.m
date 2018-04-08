@@ -66,7 +66,7 @@
     if (_token) {
         return _token;
     }
-    return @" ";
+    return @"";
 }
 
 

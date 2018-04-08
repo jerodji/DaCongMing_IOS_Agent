@@ -99,4 +99,11 @@
 //获取群信息
 #define API_GetGroupInfo            @"HAILIN_AGENT_SERVER/getGroupInfo.do"
 
+
+//修改用户名字
+#define API_updateUserName @"HAILIN_AGENT_SERVER/updateUserName.do"
+
+
+
+
 #endif /* WebApi_h */

@@ -42,12 +42,12 @@
         make.size.mas_equalTo(CGSizeMake(40 * WIDTH_MULTIPLE, 40 *WIDTH_MULTIPLE));
     }];
     
-    [_agencyLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-       
-        make.right.equalTo(self).offset(-18 * WIDTH_MULTIPLE);
-        make.size.mas_equalTo(CGSizeMake(50 * WIDTH_MULTIPLE, 20 *WIDTH_MULTIPLE));
-        make.centerY.equalTo(self);
-    }];
+//    [_agencyLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+//
+//        make.right.equalTo(self).offset(-18 * WIDTH_MULTIPLE);
+//        make.size.mas_equalTo(CGSizeMake(50 * WIDTH_MULTIPLE, 20 *WIDTH_MULTIPLE));
+//        make.centerY.equalTo(self);
+//    }];
     
     [_nickNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
        
@@ -80,6 +80,15 @@
     [_headerImgView sd_setImageWithURL:[NSURL URLWithString:model.head_image_url] placeholderImage:[UIImage imageNamed:@"user_placeholder"]];
     _nickNameLabel.text = model.name;
     _IDLabel.text = model.id;
+    _agencyLabel.text = model.level_illustrate;
+    [_agencyLabel sizeToFit];
+    
+    [_agencyLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        make.right.equalTo(self).offset(-18 * WIDTH_MULTIPLE);
+        make.size.mas_equalTo(CGSizeMake((_agencyLabel.bounds.size.width + 20) * WIDTH_MULTIPLE, 20 *WIDTH_MULTIPLE));
+        make.centerY.equalTo(self);
+    }];
 }
 
 #pragma mark - lazyload

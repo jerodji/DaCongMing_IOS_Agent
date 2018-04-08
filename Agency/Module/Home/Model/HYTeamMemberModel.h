@@ -16,6 +16,7 @@
 @property (nonatomic,copy) NSString *age;
 @property (nonatomic,copy) NSString * uid;
 @property (nonatomic,copy) NSString * groupMemberNum;
+@property (nonatomic,copy) NSString * level_illustrate;
 
 @end
 

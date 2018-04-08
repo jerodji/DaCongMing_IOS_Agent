@@ -30,16 +30,16 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    [self setupSubviews];
-}
-
-- (void)setupSubviews{
-    
     self.title = @"我的账户";
-    [self setupData];
     [self.view addSubview:self.tableView];
-
 }
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self setupData];
+    [self.tableView reloadData];
+}
+
 
 - (void)setupData{
     

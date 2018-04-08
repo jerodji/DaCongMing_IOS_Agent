@@ -86,9 +86,9 @@
             [_headerView.headerImageView sd_setImageWithURL:[NSURL URLWithString:dict[@"groupInfo"][@"group_portraitUri"]] placeholderImage:[UIImage imageNamed:@"user_placeholder"]];
             
             self.leftTableview.dataArray = self.leftDatalist;
-            [self.leftTableview reloadData];
+            [self.leftTableview reloadData]; //left 团队成员
             
-            // rihgt customerList 团队成员
+            // rihgt customerList 客户成员
             NSArray *customerList = dict[@"customerList"];
             for (NSDictionary *dict in customerList) {
                 HYTeamMemberModel *model = [HYTeamMemberModel modelWithDictionary:dict];

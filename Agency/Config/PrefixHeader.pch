@@ -47,9 +47,7 @@
 #import "JJPublicDefine.h"
 #import "UIButton+parameter.h"
 #import "NSObject+isNull.h"
-#import "UIView+control.h"
-#import "UIView+viewFrame.h"
-#import "UIView+loadXIB.h"
+#import "UIView+extend.h"
 #import "UIViewController+XIB.h"
 #import "JJAlert.h"
 

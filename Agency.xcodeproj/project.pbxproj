@@ -16,10 +16,6 @@
 		3821300A204A7D3E00F1413C /* LeftTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 38213009204A7D3E00F1413C /* LeftTableView.m */; };
 		383EBB7A201F4E8100D1BAAA /* BusinessCardVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 383EBB79201F4E8100D1BAAA /* BusinessCardVC.m */; };
 		383EBB7D201F50F600D1BAAA /* BusinessCardModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 383EBB7C201F50F600D1BAAA /* BusinessCardModel.m */; };
-		383EBB8A201F57D800D1BAAA /* UIView+control.m in Sources */ = {isa = PBXBuildFile; fileRef = 383EBB81201F57D700D1BAAA /* UIView+control.m */; };
-		383EBB8B201F57D800D1BAAA /* UIView+viewFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 383EBB83201F57D700D1BAAA /* UIView+viewFrame.m */; };
-		383EBB8C201F57D800D1BAAA /* UIButton+parameter.m in Sources */ = {isa = PBXBuildFile; fileRef = 383EBB86201F57D700D1BAAA /* UIButton+parameter.m */; };
-		383EBB8D201F57D800D1BAAA /* NSObject+isNull.m in Sources */ = {isa = PBXBuildFile; fileRef = 383EBB89201F57D800D1BAAA /* NSObject+isNull.m */; };
 		3860546F2020066C0045D014 /* JJPublicDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = 3860546E2020066C0045D014 /* JJPublicDefine.m */; };
 		38605474202019A00045D014 /* CreateCardVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 38605473202019A00045D014 /* CreateCardVC.m */; };
 		386FBEF3201C4F7800944CDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 386FBDC2201C4F7800944CDF /* Assets.xcassets */; };
@@ -160,8 +156,6 @@
 		386FBF7A201C4F7800944CDF /* NSSet+HYBUnicodeReadable.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBEF0201C4F7800944CDF /* NSSet+HYBUnicodeReadable.m */; };
 		386FBF7B201C4F7800944CDF /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 386FBEF2201C4F7800944CDF /* Foundation+Log.m */; };
 		387C9ED420288C840038B15B /* BusinessCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 387C9ED320288C840038B15B /* BusinessCardView.m */; };
-		387C9EDE202891B70038B15B /* UIViewController+XIB.m in Sources */ = {isa = PBXBuildFile; fileRef = 387C9EDD202891B70038B15B /* UIViewController+XIB.m */; };
-		387C9EE1202892290038B15B /* UIView+loadXIB.m in Sources */ = {isa = PBXBuildFile; fileRef = 387C9EE0202892290038B15B /* UIView+loadXIB.m */; };
 		38A0CC542029430E007596FE /* UploadQrcodeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A0CC522029430E007596FE /* UploadQrcodeVC.m */; };
 		38A0CC552029430E007596FE /* UploadQrcodeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38A0CC532029430E007596FE /* UploadQrcodeVC.xib */; };
 		38A0CC5820294BBB007596FE /* QrButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A0CC5720294BBB007596FE /* QrButton.m */; };
@@ -177,6 +171,10 @@
 		3E95E20A1FAAC49700995AB2 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E95E2091FAAC49700995AB2 /* CFNetwork.framework */; };
 		3E95E20C1FAAC49F00995AB2 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E95E20B1FAAC49F00995AB2 /* CoreMotion.framework */; };
 		D794A536FF2A4EDED92DBF52 /* libPods-Agency.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 20B531B14B9717DA796BB8D4 /* libPods-Agency.a */; };
+		FA23021D2080C2AA00A4896A /* NSObject+isNull.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2302122080C2A900A4896A /* NSObject+isNull.m */; };
+		FA23021E2080C2AA00A4896A /* UIViewController+XIB.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2302142080C2A900A4896A /* UIViewController+XIB.m */; };
+		FA23021F2080C2AA00A4896A /* UIButton+parameter.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2302152080C2A900A4896A /* UIButton+parameter.m */; };
+		FA2302212080C2AA00A4896A /* UIView+extend.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2302192080C2A900A4896A /* UIView+extend.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -200,14 +198,6 @@
 		383EBB79201F4E8100D1BAAA /* BusinessCardVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BusinessCardVC.m; sourceTree = "<group>"; };
 		383EBB7B201F50F600D1BAAA /* BusinessCardModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BusinessCardModel.h; sourceTree = "<group>"; };
 		383EBB7C201F50F600D1BAAA /* BusinessCardModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BusinessCardModel.m; sourceTree = "<group>"; };
-		383EBB80201F57D700D1BAAA /* UIView+control.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+control.h"; sourceTree = "<group>"; };
-		383EBB81201F57D700D1BAAA /* UIView+control.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+control.m"; sourceTree = "<group>"; };
-		383EBB82201F57D700D1BAAA /* UIView+viewFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+viewFrame.h"; sourceTree = "<group>"; };
-		383EBB83201F57D700D1BAAA /* UIView+viewFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+viewFrame.m"; sourceTree = "<group>"; };
-		383EBB85201F57D700D1BAAA /* UIButton+parameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+parameter.h"; sourceTree = "<group>"; };
-		383EBB86201F57D700D1BAAA /* UIButton+parameter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+parameter.m"; sourceTree = "<group>"; };
-		383EBB88201F57D800D1BAAA /* NSObject+isNull.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+isNull.h"; sourceTree = "<group>"; };
-		383EBB89201F57D800D1BAAA /* NSObject+isNull.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+isNull.m"; sourceTree = "<group>"; };
 		3860546D2020066C0045D014 /* JJPublicDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JJPublicDefine.h; sourceTree = "<group>"; };
 		3860546E2020066C0045D014 /* JJPublicDefine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JJPublicDefine.m; sourceTree = "<group>"; };
 		38605472202019A00045D014 /* CreateCardVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CreateCardVC.h; sourceTree = "<group>"; };
@@ -486,10 +476,6 @@
 		386FBEF2201C4F7800944CDF /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
 		387C9ED220288C840038B15B /* BusinessCardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BusinessCardView.h; sourceTree = "<group>"; };
 		387C9ED320288C840038B15B /* BusinessCardView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BusinessCardView.m; sourceTree = "<group>"; };
-		387C9EDC202891B70038B15B /* UIViewController+XIB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+XIB.h"; sourceTree = "<group>"; };
-		387C9EDD202891B70038B15B /* UIViewController+XIB.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+XIB.m"; sourceTree = "<group>"; };
-		387C9EDF202892280038B15B /* UIView+loadXIB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+loadXIB.h"; sourceTree = "<group>"; };
-		387C9EE0202892290038B15B /* UIView+loadXIB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+loadXIB.m"; sourceTree = "<group>"; };
 		38A0CC512029430E007596FE /* UploadQrcodeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UploadQrcodeVC.h; sourceTree = "<group>"; };
 		38A0CC522029430E007596FE /* UploadQrcodeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UploadQrcodeVC.m; sourceTree = "<group>"; };
 		38A0CC532029430E007596FE /* UploadQrcodeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UploadQrcodeVC.xib; sourceTree = "<group>"; };
@@ -510,6 +496,14 @@
 		3E95E20B1FAAC49F00995AB2 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		7CE398DDC921D4516685D42A /* Pods-Agency.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Agency.release.xcconfig"; path = "Pods/Target Support Files/Pods-Agency/Pods-Agency.release.xcconfig"; sourceTree = "<group>"; };
 		876407F6BA8EF28FA0E76789 /* Pods-Agency.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Agency.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Agency/Pods-Agency.debug.xcconfig"; sourceTree = "<group>"; };
+		FA2302122080C2A900A4896A /* NSObject+isNull.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+isNull.m"; sourceTree = "<group>"; };
+		FA2302132080C2A900A4896A /* UIButton+parameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+parameter.h"; sourceTree = "<group>"; };
+		FA2302142080C2A900A4896A /* UIViewController+XIB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+XIB.m"; sourceTree = "<group>"; };
+		FA2302152080C2A900A4896A /* UIButton+parameter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+parameter.m"; sourceTree = "<group>"; };
+		FA2302162080C2A900A4896A /* UIViewController+XIB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+XIB.h"; sourceTree = "<group>"; };
+		FA2302182080C2A900A4896A /* NSObject+isNull.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+isNull.h"; sourceTree = "<group>"; };
+		FA2302192080C2A900A4896A /* UIView+extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+extend.m"; sourceTree = "<group>"; };
+		FA23021C2080C2AA00A4896A /* UIView+extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+extend.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -647,43 +641,16 @@
 		383EBB7E201F57AC00D1BAAA /* category */ = {
 			isa = PBXGroup;
 			children = (
-				387C9EDB2028918C0038B15B /* viewController */,
-				383EBB84201F57D700D1BAAA /* ButtonParams */,
-				383EBB87201F57D800D1BAAA /* Object */,
-				383EBB7F201F57D700D1BAAA /* View */,
+				FA2302182080C2A900A4896A /* NSObject+isNull.h */,
+				FA2302122080C2A900A4896A /* NSObject+isNull.m */,
+				FA2302132080C2A900A4896A /* UIButton+parameter.h */,
+				FA2302152080C2A900A4896A /* UIButton+parameter.m */,
+				FA23021C2080C2AA00A4896A /* UIView+extend.h */,
+				FA2302192080C2A900A4896A /* UIView+extend.m */,
+				FA2302162080C2A900A4896A /* UIViewController+XIB.h */,
+				FA2302142080C2A900A4896A /* UIViewController+XIB.m */,
 			);
 			path = category;
-			sourceTree = "<group>";
-		};
-		383EBB7F201F57D700D1BAAA /* View */ = {
-			isa = PBXGroup;
-			children = (
-				387C9EDF202892280038B15B /* UIView+loadXIB.h */,
-				387C9EE0202892290038B15B /* UIView+loadXIB.m */,
-				383EBB80201F57D700D1BAAA /* UIView+control.h */,
-				383EBB81201F57D700D1BAAA /* UIView+control.m */,
-				383EBB82201F57D700D1BAAA /* UIView+viewFrame.h */,
-				383EBB83201F57D700D1BAAA /* UIView+viewFrame.m */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		383EBB84201F57D700D1BAAA /* ButtonParams */ = {
-			isa = PBXGroup;
-			children = (
-				383EBB85201F57D700D1BAAA /* UIButton+parameter.h */,
-				383EBB86201F57D700D1BAAA /* UIButton+parameter.m */,
-			);
-			path = ButtonParams;
-			sourceTree = "<group>";
-		};
-		383EBB87201F57D800D1BAAA /* Object */ = {
-			isa = PBXGroup;
-			children = (
-				383EBB88201F57D800D1BAAA /* NSObject+isNull.h */,
-				383EBB89201F57D800D1BAAA /* NSObject+isNull.m */,
-			);
-			path = Object;
 			sourceTree = "<group>";
 		};
 		38605470202018240045D014 /* 名片 */ = {
@@ -711,7 +678,6 @@
 		386FBDC3201C4F7800944CDF /* Expand */ = {
 			isa = PBXGroup;
 			children = (
-				383EBB7E201F57AC00D1BAAA /* category */,
 				386FBDC4201C4F7800944CDF /* Network */,
 				386FBDCF201C4F7800944CDF /* Resource */,
 				386FBDD1201C4F7800944CDF /* Security */,
@@ -1215,15 +1181,6 @@
 			path = "上传二维码";
 			sourceTree = "<group>";
 		};
-		387C9EDB2028918C0038B15B /* viewController */ = {
-			isa = PBXGroup;
-			children = (
-				387C9EDC202891B70038B15B /* UIViewController+XIB.h */,
-				387C9EDD202891B70038B15B /* UIViewController+XIB.m */,
-			);
-			path = viewController;
-			sourceTree = "<group>";
-		};
 		38981E93202D7EEF0056B369 /* Deposit */ = {
 			isa = PBXGroup;
 			children = (
@@ -1280,6 +1237,7 @@
 		3E0FDF0D1FA9647400F52DC0 = {
 			isa = PBXGroup;
 			children = (
+				383EBB7E201F57AC00D1BAAA /* category */,
 				3E0FDF181FA9647500F52DC0 /* Agency */,
 				386FBE05201C4F7800944CDF /* main.m */,
 				3E0FDF171FA9647500F52DC0 /* Products */,
@@ -1471,6 +1429,7 @@
 				386FBEF7201C4F7800944CDF /* HYUserRequestHandle.m in Sources */,
 				386FBF09201C4F7800944CDF /* HYBaseModel.m in Sources */,
 				3811E2102029BC7C0008298D /* JJTailorImgVC.m in Sources */,
+				FA2302212080C2AA00A4896A /* UIView+extend.m in Sources */,
 				386FBF78201C4F7800944CDF /* NSArray+HYBUnicodeReadable.m in Sources */,
 				386FBEFC201C4F7800944CDF /* HYButton.m in Sources */,
 				386FBF79201C4F7800944CDF /* NSDictionary+HYBUnicodeReadable.m in Sources */,
@@ -1528,7 +1487,6 @@
 				386FBF57201C4F7800944CDF /* HYBillVC.m in Sources */,
 				386FBF46201C4F7800944CDF /* HYAuthPhoneVC.m in Sources */,
 				386FBF2F201C4F7800944CDF /* HYInfoTableViewCell.m in Sources */,
-				383EBB8B201F57D800D1BAAA /* UIView+viewFrame.m in Sources */,
 				386FBF53201C4F7800944CDF /* HYSelectInfoHeaderView.m in Sources */,
 				386FBF52201C4F7800944CDF /* HYSelectInfoBtnView.m in Sources */,
 				386FBF1D201C4F7800944CDF /* HYHomePageViewController.m in Sources */,
@@ -1542,6 +1500,7 @@
 				386FBF6A201C4F7800944CDF /* HYDepositWaitView.m in Sources */,
 				386FBF6B201C4F7800944CDF /* HYDispoitHeaderView.m in Sources */,
 				386FBF2C201C4F7800944CDF /* HYTeamMemberModel.m in Sources */,
+				FA23021E2080C2AA00A4896A /* UIViewController+XIB.m in Sources */,
 				386FBF49201C4F7800944CDF /* HYJoinProtocolVC.m in Sources */,
 				3811E1F520298C740008298D /* JJAlbumManager.m in Sources */,
 				386FBF4C201C4F7800944CDF /* HYUserModel.m in Sources */,
@@ -1554,17 +1513,16 @@
 				3860546F2020066C0045D014 /* JJPublicDefine.m in Sources */,
 				386FBF42201C4F7800944CDF /* HYRecommendViewModel.m in Sources */,
 				386FBF71201C4F7800944CDF /* HYSetDespoitView.m in Sources */,
+				FA23021D2080C2AA00A4896A /* NSObject+isNull.m in Sources */,
 				386FBF26201C4F7800944CDF /* HYTeamDetailViewController.m in Sources */,
+				FA23021F2080C2AA00A4896A /* UIButton+parameter.m in Sources */,
 				386FBF51201C4F7800944CDF /* HYPasswordView.m in Sources */,
 				386FBF27201C4F7800944CDF /* HYBankCardModel.m in Sources */,
-				383EBB8A201F57D800D1BAAA /* UIView+control.m in Sources */,
 				386FBF5A201C4F7800944CDF /* HYMineViewController.m in Sources */,
 				386FBF2D201C4F7800944CDF /* HYBankInfoTableViewCell.m in Sources */,
 				386FBF75201C4F7800944CDF /* HYUploadIDCardViewModel.m in Sources */,
 				386FBF13201C4F7800944CDF /* Const.m in Sources */,
 				386FBF0C201C4F7800944CDF /* HYBaseViewController.m in Sources */,
-				383EBB8C201F57D800D1BAAA /* UIButton+parameter.m in Sources */,
-				387C9EDE202891B70038B15B /* UIViewController+XIB.m in Sources */,
 				386FBEFE201C4F7800944CDF /* HYDateHandle.m in Sources */,
 				386FBEF5201C4F7800944CDF /* HYNetWorkStateManager.m in Sources */,
 				386FBF43201C4F7800944CDF /* HYReportCellViewModel.m in Sources */,
@@ -1583,12 +1541,10 @@
 				386FBEFA201C4F7800944CDF /* DESECB.m in Sources */,
 				386FBF6F201C4F7800944CDF /* HYSendAuthView.m in Sources */,
 				386FBF10201C4F7800944CDF /* AppDelegate.m in Sources */,
-				383EBB8D201F57D800D1BAAA /* NSObject+isNull.m in Sources */,
 				386FBF24201C4F7800944CDF /* HYReportListViewController.m in Sources */,
 				386FBF72201C4F7800944CDF /* HYDepositViewModel.m in Sources */,
 				386FBF30201C4F7800944CDF /* HYRecommendLevelCell.m in Sources */,
 				386FBEF6201C4F7800944CDF /* HYRCIMGetUserInfoHandle.m in Sources */,
-				387C9EE1202892290038B15B /* UIView+loadXIB.m in Sources */,
 				386FBF36201C4F7800944CDF /* HYTeamMemberCell.m in Sources */,
 				386FBF1C201C4F7800944CDF /* HYBankCardViewController.m in Sources */,
 				386FBF1F201C4F7800944CDF /* HYInformationDetailVC.m in Sources */,

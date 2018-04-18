@@ -101,13 +101,10 @@
     }];
     
     [RACObserve(viewModel, nickName) subscribeNext:^(id x) {
-       
+        
         if ([x isNotBlank]) {
-            
             _headerView.nickNameLabel.text = x;
-        }
-        else{
-            
+        } else{
             _headerView.nickNameLabel.text = @"未登录";
         }
     }];
